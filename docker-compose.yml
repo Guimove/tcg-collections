@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  yugioh-marketplace:
+    build: .
+    container_name: yugioh-marketplace
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    volumes:
+      # Montage du CSV pour mise à jour facile sans rebuild
+      - ./public/collection.csv:/usr/share/nginx/html/collection.csv:ro

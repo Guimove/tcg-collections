@@ -1,0 +1,27 @@
+{
+  "name": "yugiho-marketplace",
+  "version": "1.0.0",
+  "description": "Application web pour gérer et afficher une collection de cartes Yu-Gi-Oh! avec système de calcul intelligent des cartes à vendre",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "keywords": ["yugioh", "collection", "marketplace", "cards"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/papaparse": "^5.5.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.6"
+  },
+  "dependencies": {
+    "papaparse": "^5.5.3",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
+  }
+}
