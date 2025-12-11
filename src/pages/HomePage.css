@@ -1,0 +1,267 @@
+.homepage-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Animation de fond */
+.homepage-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  animation: pulse 15s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.homepage-container > * {
+  z-index: 1;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.homepage-container header {
+  text-align: center;
+  margin-bottom: 60px;
+  animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.homepage-container h1 {
+  font-size: 4rem;
+  color: white;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.homepage-container .subtitle {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.homepage-container .tcg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  padding: 20px;
+}
+
+.homepage-container .tcg-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+}
+
+.homepage-container .tcg-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.homepage-container .tcg-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.homepage-container .tcg-card:hover::before {
+  opacity: 1;
+}
+
+.homepage-container .tcg-card.active {
+  animation: fadeInUp 0.8s ease-out;
+  animation-fill-mode: both;
+}
+
+.homepage-container .tcg-card:nth-child(1) { animation-delay: 0.1s; }
+.homepage-container .tcg-card:nth-child(2) { animation-delay: 0.2s; }
+.homepage-container .tcg-card:nth-child(3) { animation-delay: 0.3s; }
+.homepage-container .tcg-card:nth-child(4) { animation-delay: 0.4s; }
+.homepage-container .tcg-card:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.homepage-container .logo-container {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.homepage-container .logo-container img {
+  max-height: 120px;
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+  transition: transform 0.4s ease;
+}
+
+.homepage-container .tcg-card:hover .logo-container img {
+  transform: scale(1.1) rotate(2deg);
+}
+
+.homepage-container .tcg-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Coming Soon Section */
+.homepage-container .coming-soon-section {
+  margin-top: 80px;
+  width: 100%;
+}
+
+.homepage-container .coming-soon-title {
+  font-size: 2.5rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 40px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+  letter-spacing: 1px;
+  animation: fadeInDown 1s ease-out;
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+}
+
+.homepage-container .tcg-card.coming-soon {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.homepage-container .tcg-card.coming-soon:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+}
+
+.homepage-container .tcg-card.coming-soon .logo-container img {
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1)) grayscale(20%);
+}
+
+.homepage-container .tcg-card.coming-soon:hover .logo-container img {
+  transform: scale(1.05);
+}
+
+.homepage-container footer {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 60px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .homepage-container h1 {
+    font-size: 2.5rem;
+  }
+
+  .homepage-container .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .homepage-container .tcg-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .homepage-container .tcg-card {
+    padding: 30px;
+  }
+
+  .homepage-container .coming-soon-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .homepage-container .coming-soon-section {
+    margin-top: 60px;
+  }
+}
+
+/* Effet de particules */
+.particle {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float 15s infinite;
+  z-index: 0;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(100px);
+    opacity: 0;
+  }
+}

@@ -8,7 +8,12 @@
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
-  "keywords": ["yugioh", "collection", "marketplace", "cards"],
+  "keywords": [
+    "yugioh",
+    "collection",
+    "marketplace",
+    "cards"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
@@ -22,6 +27,7 @@
   "dependencies": {
     "papaparse": "^5.5.3",
     "react": "^19.2.1",
-    "react-dom": "^19.2.1"
+    "react-dom": "^19.2.1",
+    "react-router-dom": "^7.10.1"
   }
 }
