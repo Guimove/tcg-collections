@@ -1,20 +1,30 @@
-# Yu-Gi-Oh! Marketplace
+# Guimove - Collections TCG
 
-Application web pour gérer et afficher une collection de cartes Yu-Gi-Oh! avec système de calcul intelligent des cartes à vendre.
+Application web pour gérer et afficher des collections de cartes TCG avec système de calcul intelligent des cartes à vendre.
 
 **Démo en ligne** : [https://guimove.io](https://guimove.io)
 
+## TCG Supportés
+
+- **Yu-Gi-Oh!** : Collection complète avec calcul intelligent des cartes à garder/vendre
+- **Dragon Ball Akira V2** : Lucky Cards avec gestion des quantités
+- **Riftbound** : League of Legends TCG avec filtres avancés
+
 ## Fonctionnalités
 
-- **Import CSV** : Chargement automatique de votre collection depuis un fichier CSV
-- **Calcul intelligent** : Détermine automatiquement les cartes à garder/vendre selon des règles personnalisables
-- **Filtres avancés** : Recherche par nom, rareté, langue, extension
+- **Gestion multi-TCG** : Support de plusieurs jeux de cartes avec interface unifiée
+- **Import CSV** : Chargement automatique de vos collections depuis fichiers CSV
+- **Calcul intelligent** : Détermine automatiquement les cartes à garder/vendre selon des règles personnalisables (Yu-Gi-Oh!)
+- **Gestion des quantités** : Système "garde 1, vends le reste" pour Akira et Riftbound
+- **Filtres avancés** : Recherche par nom, rareté, langue, extension, couleur, type
 - **Tri flexible** : Tri par nom, rareté, quantité (croissant/décroissant)
-- **Panier d'achat** : Sélection et export CSV des cartes choisies
-- **Images de cartes** : Chargement automatique des images via l'API YGOPRODeck
-- **Interface responsive** : Thème sombre Yu-Gi-Oh! adapté mobile/desktop
+- **Panier d'achat unifié** : Sélection et export CSV des cartes de tous les TCG
+- **Images de cartes** : Chargement automatique des images (YGOPRODeck API pour Yu-Gi-Oh!)
+- **Interface responsive** : Thèmes adaptés à chaque TCG, mobile/desktop
 
-## Logique de calcul
+## Logiques de calcul
+
+### Yu-Gi-Oh! (Calcul intelligent)
 
 Pour chaque carte :
 1. Garde 1 copie par combinaison unique (extension + rareté)
@@ -23,12 +33,18 @@ Pour chaque carte :
 
 **Exemple** : Une carte avec 5 versions différentes → garde 5 copies (max(3, 5)), vend le reste
 
+### Akira & Riftbound (Système simple)
+
+- Garde 1 exemplaire de chaque carte
+- Met en vente toutes les cartes avec quantité ≥ 2
+- Affichage des cartes non possédées (grises)
+
 ## Installation
 
 ```bash
 # Cloner le projet
 git clone <url>
-cd yugiho_seler
+cd guimove-tcg-collections
 
 # Installer les dépendances
 npm install
@@ -53,7 +69,7 @@ netlify deploy --prod --dir=dist
 
 Ou drag & drop du dossier `dist/` sur [netlify.com](https://netlify.com)
 
-L'edge function `/api/card-image` est configurée pour proxy les images (évite les problèmes CORS).
+L'edge function `/api/card-image` est configurée pour proxy les images Yu-Gi-Oh! (évite les problèmes CORS).
 
 ### Option 2 : Docker
 
@@ -70,7 +86,7 @@ docker-compose up -d --build
 - Compression Gzip activée
 - Cache optimisé (1 an pour assets, pas de cache pour CSV)
 
-**Mettre à jour le CSV sans rebuild** :
+**Mettre à jour les CSV sans rebuild** :
 ```bash
 cp nouveau_fichier.csv public/collection.csv
 docker-compose restart
@@ -78,7 +94,7 @@ docker-compose restart
 
 ## Format CSV
 
-Le fichier `public/collection.csv` doit contenir ces colonnes :
+### Yu-Gi-Oh! (`public/collection.csv`)
 
 ```csv
 Langue,Extension,Code,Nom de la carte,Rareté,1st Edition,Unlimited,Limited / Autre,Quantité,N° Artwork,Reprint
@@ -92,37 +108,61 @@ Langue,Extension,Code,Nom de la carte,Rareté,1st Edition,Unlimited,Limited / Au
 - `Langue` : Français (France), Français (Canada), Anglais (Europe), etc.
 - `Quantité` : Nombre de copies possédées
 
+### Akira (`public/akira/collection.csv`)
+
+```csv
+Categorie,Numero,Filename,Quantité
+```
+
+### Riftbound (`public/riftbound/collection.csv`)
+
+```csv
+Card ID,Card Name,Card Type,Version,Set,Rarity,Quantity,Color,Illustrator,Cost,Might,Effect,Subtype,Image Filename,Card Order,Subtype2
+```
+
 ## Stack technique
 
 - **React 19** + TypeScript
 - **Vite 7** (build & dev server)
+- **React Router 7** (navigation multi-pages)
 - **PapaParse** (parsing CSV)
-- **YGOPRODeck API** (images de cartes)
+- **YGOPRODeck API** (images de cartes Yu-Gi-Oh!)
 - Déploiement : Netlify (edge functions) ou Docker (Nginx)
 
 ## Structure du projet
 
 ```
-yugiho_seler/
+guimove-tcg-collections/
 ├── src/
 │   ├── components/
-│   │   ├── CardDetailModal.tsx    # Modal détails carte + debug
-│   │   └── CartPanel.tsx          # Panneau panier latéral
+│   │   ├── CardDetailModal.tsx    # Modal détails carte Yu-Gi-Oh!
+│   │   └── CartPanel.tsx          # Panier unifié multi-TCG
 │   ├── hooks/
-│   │   ├── useCardImage.ts        # Hook images de cartes
+│   │   ├── useCardImage.ts        # Hook images Yu-Gi-Oh!
 │   │   └── useCart.ts             # Hook gestion panier
+│   ├── pages/
+│   │   ├── HomePage.tsx           # Page d'accueil
+│   │   ├── YugiohPage.tsx         # Collection Yu-Gi-Oh!
+│   │   ├── AkiraPage.tsx          # Collection Akira
+│   │   └── RiftboundPage.tsx      # Collection Riftbound
 │   ├── utils/
-│   │   ├── algorithm.ts           # Logique keep/sell
+│   │   ├── algorithm.ts           # Logique keep/sell Yu-Gi-Oh!
 │   │   ├── scoring.ts             # Scores rareté/langue
 │   │   ├── csvParser.ts           # Parser CSV
 │   │   ├── cardImages.ts          # API images + cache
 │   │   └── cart.ts                # Utilitaires panier
-│   ├── App.tsx                    # Composant principal
-│   ├── App.css                    # Styles & thème
+│   ├── App.tsx                    # Router principal
 │   ├── types.ts                   # Types TypeScript
 │   └── main.tsx                   # Entry point
 ├── public/
-│   └── collection.csv             # Données collection
+│   ├── collection.csv             # Yu-Gi-Oh! collection
+│   ├── akira/
+│   │   ├── collection.csv         # Akira collection
+│   │   └── card_list/             # Images cartes Akira
+│   ├── riftbound/
+│   │   ├── collection.csv         # Riftbound collection
+│   │   └── cards/                 # Images cartes Riftbound
+│   └── images/                    # Logos TCG
 ├── netlify/
 │   └── edge-functions/
 │       └── card-image.ts          # Proxy images Netlify
@@ -134,18 +174,22 @@ yugiho_seler/
 
 ## Développement
 
-**Mode debug** : Cliquer sur une carte → "Afficher mode debug" pour voir :
+### Mode debug Yu-Gi-Oh!
+
+Cliquer sur une carte → "Afficher mode debug" pour voir :
 - Scores de rareté et langue
 - Calculs keep/sell détaillés
 - Nombre de versions par carte
 
-**Cache d'images** : Les images sont mises en cache dans localStorage. En console :
+### Cache d'images Yu-Gi-Oh!
+
+Les images sont mises en cache dans localStorage. En console :
 ```js
 clearImageCache()     // Vider tout le cache
 clearFailedNames()    // Réessayer les cartes échouées
 ```
 
-## Raretés supportées
+## Raretés Yu-Gi-Oh! supportées
 
 38 raretés supportées, incluant :
 - **S10K** : Secrète 10000 (score: 100)
@@ -165,9 +209,9 @@ Voir `src/utils/scoring.ts` pour la liste complète.
 
 - Pas de backend (site 100% statique client-side)
 - Pas de base de données
-- CSV local uniquement
+- CSV locaux uniquement
 - Headers de sécurité Nginx (si Docker)
-- Proxy Netlify pour images (évite exposition API directe)
+- Proxy Netlify pour images Yu-Gi-Oh! (évite exposition API directe)
 
 ## Remerciements
 

@@ -1,7 +1,7 @@
 {
-  "name": "yugiho-marketplace",
+  "name": "guimove-tcg-marketplace",
   "version": "1.0.0",
-  "description": "Application web pour gérer et afficher une collection de cartes Yu-Gi-Oh! avec système de calcul intelligent des cartes à vendre",
+  "description": "Application web pour gérer et afficher des collections de cartes TCG (Yu-Gi-Oh!, Dragon Ball Akira, Riftbound) avec système de calcul intelligent des cartes à vendre",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,10 +9,14 @@
     "preview": "vite preview"
   },
   "keywords": [
-    "yugioh",
+    "tcg",
     "collection",
     "marketplace",
-    "cards"
+    "cards",
+    "yugioh",
+    "dragonball",
+    "riftbound",
+    "akira"
   ],
   "author": "",
   "license": "MIT",
