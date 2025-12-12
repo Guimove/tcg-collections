@@ -1,11 +1,15 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import OptimizedImage from '../components/OptimizedImage';
 import './HomePage.css';
 
 export default function HomePage() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Set page title
+    document.title = 'Guimove - Gestionnaire de Collections TCG';
+
     // Animation des cartes au chargement
     const cards = document.querySelectorAll('.tcg-card');
     cards.forEach(card => {
@@ -76,7 +80,7 @@ export default function HomePage() {
           onMouseLeave={handleCardMouseLeave}
         >
           <div className="logo-container">
-            <img src="/images/dragon-ball-logo.png" alt="Dragon Ball Akira Logo" />
+            <OptimizedImage src="/images/dragon-ball-logo.png" alt="Dragon Ball Akira Logo" />
           </div>
           <h2 className="tcg-name">Dragon Ball Akira</h2>
         </Link>
@@ -88,7 +92,7 @@ export default function HomePage() {
           onMouseLeave={handleCardMouseLeave}
         >
           <div className="logo-container">
-            <img src="/images/yugioh-logo.png" alt="Yu-Gi-Oh! Logo" />
+            <OptimizedImage src="/images/yugioh-logo.png" alt="Yu-Gi-Oh! Logo" />
           </div>
           <h2 className="tcg-name">Yu-Gi-Oh!</h2>
         </Link>
@@ -100,7 +104,7 @@ export default function HomePage() {
           onMouseLeave={handleCardMouseLeave}
         >
           <div className="logo-container">
-            <img src="/images/riftbound-logo.webp" alt="Riftbound Logo" />
+            <OptimizedImage src="/images/riftbound-logo.png" alt="Riftbound Logo" />
           </div>
           <h2 className="tcg-name">Riftbound</h2>
         </Link>
@@ -111,21 +115,21 @@ export default function HomePage() {
         <div className="tcg-grid">
           <div className="tcg-card coming-soon active">
             <div className="logo-container">
-              <img src="https://cdn.shopify.com/s/files/1/0588/0866/4235/files/DLC_Logo_Full_RGB.png?v=1760968319" alt="Lorcana Logo" />
+              <OptimizedImage src="/images/lorcana-logo.png" alt="Lorcana Logo" />
             </div>
             <h2 className="tcg-name">Lorcana</h2>
           </div>
 
           <div className="tcg-card coming-soon active">
             <div className="logo-container">
-              <img src="https://www.atmos-arena.com/web/image/24111-a1c27a5e/logo_colorX.png" alt="Rise Logo" />
+              <OptimizedImage src="/images/rise-logo.png" alt="Rise Logo" />
             </div>
             <h2 className="tcg-name">Rise</h2>
           </div>
 
           <div className="tcg-card coming-soon active">
             <div className="logo-container">
-              <img src="https://static.wixstatic.com/media/57a197_e334385962ac4203abe6390f3b6ff4c6~mv2.png/v1/fill/w_560,h_314,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ONE%20PIECE%20LOGO.png" alt="One Piece Logo" />
+              <OptimizedImage src="/images/one-piece-logo.png" alt="One Piece Logo" />
             </div>
             <h2 className="tcg-name">One Piece</h2>
           </div>

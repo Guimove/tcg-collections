@@ -38,6 +38,11 @@ export default function YugiohPage() {
   // Scroll to top button visibility
   const [showScrollTop, setShowScrollTop] = useState(false);
 
+  // Set page title
+  useEffect(() => {
+    document.title = 'Yu-Gi-Oh! Marketplace - Guimove';
+  }, []);
+
   // Load default CSV on mount
   useEffect(() => {
     loadDefaultCSV().then((result) => {

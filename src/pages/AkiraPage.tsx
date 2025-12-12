@@ -39,6 +39,11 @@ export default function AkiraPage() {
   const cart = useCart();
   const [isCartOpen, setIsCartOpen] = useState(false);
 
+  // Set page title
+  useEffect(() => {
+    document.title = 'Dragon Ball Akira - Guimove';
+  }, []);
+
   useEffect(() => {
     loadCollection();
   }, []);
@@ -79,7 +84,7 @@ export default function AkiraPage() {
             category: categoryName,
             number,
             filename,
-            path: `/akira/card_list/${filename}`,
+            path: `/akira/cards/${filename}`,
             isPuzzle,
             quantity,
             owned: quantity > 0,
@@ -210,17 +215,28 @@ export default function AkiraPage() {
 
   return (
     <div className="akira-page">
-      <div className="header-stats-container">
-        <Link to="/" className="back-button" title="Retour à l'accueil">
-          ← Accueil
-        </Link>
-        <header className="header">
-          <h1>Collection Dragon Ball Akira V2</h1>
-          <p>Lucky Cards - {allCards.length} Cartes uniques</p>
-        </header>
+      <div className="header-stats-container" style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        gap: '2rem'
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flex: 1 }}>
+          <Link to="/" className="back-button" title="Retour à l'accueil">
+            ← Accueil
+          </Link>
+          <header className="header" style={{ marginBottom: 0 }}>
+            <h1>Collection Dragon Ball Akira V2</h1>
+            <p>Lucky Cards - {allCards.length} Cartes uniques</p>
+          </header>
+        </div>
 
         {!loading && (
-          <div className="stats">
+          <div className="stats" style={{
+            marginBottom: 0,
+            flexDirection: 'row',
+            gap: '2rem'
+          }}>
             <div className="stat-item">
               <div className="stat-value">{totalCards}</div>
               <div className="stat-label">Total</div>

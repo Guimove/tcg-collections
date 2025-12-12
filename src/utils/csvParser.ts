@@ -133,7 +133,7 @@ export function parseCSVText(csvText: string): ParseResult {
  */
 export async function loadDefaultCSV(): Promise<ParseResult> {
   try {
-    const response = await fetch('/collection.csv');
+    const response = await fetch('/yugioh/collection.csv');
     if (!response.ok) {
       return {
         success: false,

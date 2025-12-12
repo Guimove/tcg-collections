@@ -23,9 +23,11 @@
   background: linear-gradient(135deg, var(--rift-dark) 0%, var(--rift-dark-blue) 50%, var(--rift-blue) 100%);
   color: var(--rift-text);
   font-family: 'Segoe UI', system-ui, sans-serif;
+  padding: 1rem;
   padding-bottom: 50px;
   position: relative;
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 .riftbound-container::before {
@@ -149,17 +151,25 @@
 }
 
 /* Filters */
-.riftbound-container .filters-section {
-  max-width: 1400px;
-  margin: 0 auto 30px;
-  padding: 0 20px;
+.riftbound-container .controls {
+  background: var(--rift-blue);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-.riftbound-container .search-bar {
-  margin-bottom: 20px;
+.riftbound-container .search-filter-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.riftbound-container .search-input {
+.riftbound-container .search-box {
+  width: 100%;
+}
+
+.riftbound-container .search-box input {
   width: 100%;
   padding: 15px 20px;
   background: rgba(30, 35, 40, 0.8);
@@ -170,13 +180,13 @@
   transition: all 0.3s;
 }
 
-.riftbound-container .search-input:focus {
+.riftbound-container .search-box input:focus {
   outline: none;
   border-color: var(--rift-cyan);
   box-shadow: 0 0 20px rgba(10, 200, 185, 0.3);
 }
 
-.riftbound-container .search-input::placeholder {
+.riftbound-container .search-box input::placeholder {
   color: var(--rift-text-dim);
 }
 
@@ -271,14 +281,52 @@
   color: var(--rift-text-dim);
 }
 
+/* Extension Sections */
+.riftbound-container .container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.riftbound-container .extension-section {
+  margin-bottom: 50px;
+  background: var(--rift-blue);
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--rift-cyan);
+}
+
+.riftbound-container .extension-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--rift-cyan);
+}
+
+.riftbound-container .extension-title {
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--rift-cyan);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.riftbound-container .extension-count {
+  font-size: 1.2em;
+  color: var(--rift-text-dim);
+  background: rgba(10, 200, 185, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--rift-cyan);
+}
+
 /* Cards Grid */
 .riftbound-container .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 25px;
-  padding: 0 20px;
-  max-width: 1400px;
-  margin: 0 auto;
 }
 
 .riftbound-container .card-item {

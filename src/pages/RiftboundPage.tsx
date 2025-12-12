@@ -40,6 +40,11 @@ export default function RiftboundPage() {
   const cart = useCart();
   const [isCartOpen, setIsCartOpen] = useState(false);
 
+  // Set page title
+  useEffect(() => {
+    document.title = 'Riftbound - Guimove';
+  }, []);
+
   useEffect(() => {
     loadCollection();
 
@@ -222,17 +227,28 @@ export default function RiftboundPage() {
   return (
     <div className="riftbound-container">
       {/* Header and Stats */}
-      <div className="header-stats-container">
-        <Link to="/" className="back-button" title="Retour à l'accueil">
-          ← Accueil
-        </Link>
-        <header className="header">
-          <h1>Riftbound Collection</h1>
-          <p>League of Legends TCG - {allCards.length} Cartes uniques</p>
-        </header>
+      <div className="header-stats-container" style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        gap: '2rem'
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flex: 1 }}>
+          <Link to="/" className="back-button" title="Retour à l'accueil">
+            ← Accueil
+          </Link>
+          <header className="header" style={{ marginBottom: 0 }}>
+            <h1>Riftbound Collection</h1>
+            <p>League of Legends TCG - {allCards.length} Cartes uniques</p>
+          </header>
+        </div>
 
         {!loading && (
-          <div className="stats">
+          <div className="stats" style={{
+            marginBottom: 0,
+            flexDirection: 'row',
+            gap: '2rem'
+          }}>
             <div className="stat-item">
               <div className="stat-value">{totalCards}</div>
               <div className="stat-label">Total</div>
@@ -254,18 +270,18 @@ export default function RiftboundPage() {
       </div>
 
       {/* Filters */}
-      <div className="filters-section">
-        <div className="search-bar">
-          <input
-            type="text"
-            placeholder="Rechercher par nom, code ou sous-type..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="search-input"
-          />
-        </div>
+      <div className="controls">
+        <div className="search-filter-bar">
+          <div className="search-box">
+            <input
+              type="text"
+              placeholder="Rechercher par nom, code ou sous-type..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </div>
 
-        <div className="type-filters">
+          <div className="type-filters">
           <button
             className={`type-btn ${currentFilter === 'all' ? 'active' : ''}`}
             onClick={() => setCurrentFilter('all')}
@@ -343,6 +359,7 @@ export default function RiftboundPage() {
             ))}
           </select>
         </div>
+        </div>
       </div>
 
       {/* Cards Grid */}
@@ -353,45 +370,60 @@ export default function RiftboundPage() {
           <p>Essayez de modifier vos filtres ou votre recherche</p>
         </div>
       ) : (
-        <div className="cards-grid">
-          {filteredCards.map((card) => (
-            <div
-              key={card.cardId}
-              className={`card-item ${card.type.toLowerCase()} ${!card.owned ? 'not-owned' : ''}`}
-              onClick={() => setModalCard(card)}
-            >
-              <div className="card-image-wrapper">
-                {card.quantity > 0 && (
-                  <div className="quantity-badge">×{card.quantity}</div>
-                )}
-                <OptimizedImage
-                  src={card.imagePath}
-                  alt={card.name}
-                  className="card-image"
-                  loading="lazy"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    // Éviter la boucle infinie : ne changer le src qu'une seule fois
-                    if (!target.src.startsWith('data:')) {
-                      target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="200" height="280"%3E%3Crect fill="%23333" width="200" height="280"/%3E%3Ctext fill="%23666" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3ENo Image%3C/text%3E%3C/svg%3E';
-                    }
-                  }}
-                />
-                <div className={`card-rarity-badge ${card.rarity.toLowerCase()}`}>
-                  {card.rarity}
+        <div className="container">
+          {uniqueSets.map((set) => {
+            const setCards = filteredCards.filter((card) => card.set === set);
+            if (setCards.length === 0) return null;
+
+            return (
+              <div key={set} className="extension-section">
+                <div className="extension-header">
+                  <div className="extension-title">{set}</div>
+                  <div className="extension-count">{setCards.length} cartes</div>
+                </div>
+                <div className="cards-grid">
+                  {setCards.map((card) => (
+                    <div
+                      key={card.cardId}
+                      className={`card-item ${card.type.toLowerCase()} ${!card.owned ? 'not-owned' : ''}`}
+                      onClick={() => setModalCard(card)}
+                    >
+                      <div className="card-image-wrapper">
+                        {card.quantity > 0 && (
+                          <div className="quantity-badge">×{card.quantity}</div>
+                        )}
+                        <OptimizedImage
+                          src={card.imagePath}
+                          alt={card.name}
+                          className="card-image"
+                          loading="lazy"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            // Éviter la boucle infinie : ne changer le src qu'une seule fois
+                            if (!target.src.startsWith('data:')) {
+                              target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="200" height="280"%3E%3Crect fill="%23333" width="200" height="280"/%3E%3Ctext fill="%23666" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3ENo Image%3C/text%3E%3C/svg%3E';
+                            }
+                          }}
+                        />
+                        <div className={`card-rarity-badge ${card.rarity.toLowerCase()}`}>
+                          {card.rarity}
+                        </div>
+                      </div>
+                      <div className="card-info">
+                        <h3 className="card-name">{card.name}</h3>
+                        <p className="card-id">{card.cardId}</p>
+                        <div className="card-meta">
+                          <span className={`card-color color-${card.color.toLowerCase()}`}>{card.color}</span>
+                          {card.cost && <span className="card-cost">💎 {card.cost}</span>}
+                          {card.might && <span className="card-might">⚔️ {card.might}</span>}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-              <div className="card-info">
-                <h3 className="card-name">{card.name}</h3>
-                <p className="card-id">{card.cardId}</p>
-                <div className="card-meta">
-                  <span className={`card-color color-${card.color.toLowerCase()}`}>{card.color}</span>
-                  {card.cost && <span className="card-cost">💎 {card.cost}</span>}
-                  {card.might && <span className="card-might">⚔️ {card.might}</span>}
-                </div>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       )}
 
