@@ -566,9 +566,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 1000;
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10001;
 }
 
 .akira-page .cart-panel {
@@ -581,7 +580,7 @@
   border-left: 3px solid var(--color-orange);
   box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
   transition: right 0.3s ease;
-  z-index: 1001;
+  z-index: 10002;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -743,11 +742,38 @@
   cursor: not-allowed;
 }
 
-.akira-page .cart-item-quantity span {
+.akira-page .cart-item-quantity input.quantity-input {
+  width: 60px;
+  padding: 0.5rem;
+  text-align: center;
+  background: var(--bg-card);
+  border: 2px solid var(--color-orange);
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  -moz-appearance: textfield;
+}
+
+.akira-page .cart-item-quantity input.quantity-input:focus {
+  border-color: var(--color-red);
+  box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.2);
+}
+
+.akira-page .cart-item-quantity input.quantity-input::-webkit-inner-spin-button,
+.akira-page .cart-item-quantity input.quantity-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.akira-page .cart-item-quantity span.quantity-max {
   min-width: 40px;
   text-align: center;
   font-weight: bold;
-  color: white;
+  color: #888;
+  font-size: 0.9rem;
 }
 
 .akira-page .cart-actions {

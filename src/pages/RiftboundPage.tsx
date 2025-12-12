@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import './RiftboundPage.css';
 import CartPanel from '../components/CartPanel';
+import OptimizedImage from '../components/OptimizedImage';
 import { useCart } from '../hooks/useCart';
 
 interface RiftboundCard {
@@ -363,7 +364,7 @@ export default function RiftboundPage() {
                 {card.quantity > 0 && (
                   <div className="quantity-badge">×{card.quantity}</div>
                 )}
-                <img
+                <OptimizedImage
                   src={card.imagePath}
                   alt={card.name}
                   className="card-image"
@@ -426,7 +427,7 @@ export default function RiftboundPage() {
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close" onClick={() => setModalCard(null)}>×</button>
             <div className="modal-body">
-              <img src={modalCard.imagePath} alt={modalCard.name} className="modal-image" />
+              <OptimizedImage src={modalCard.imagePath} alt={modalCard.name} className="modal-image" loading="eager" />
               <div className="modal-info">
                 <h2>{modalCard.name}</h2>
                 <p><strong>ID:</strong> {modalCard.cardId}</p>

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './AkiraPage.css';
 import CartPanel from '../components/CartPanel';
+import OptimizedImage from '../components/OptimizedImage';
 import { useCart } from '../hooks/useCart';
 
 interface Card {
@@ -302,7 +303,7 @@ export default function AkiraPage() {
                         {card.quantity > 0 && (
                           <div className="quantity-badge">×{card.quantity}</div>
                         )}
-                        <img src={card.path} alt={card.filename} loading="lazy" />
+                        <OptimizedImage src={card.path} alt={card.filename} loading="lazy" />
                         <div className="card-info">
                           {card.category} #{card.number}
                         </div>
@@ -324,7 +325,7 @@ export default function AkiraPage() {
                 {card.quantity > 0 && (
                   <div className="quantity-badge">×{card.quantity}</div>
                 )}
-                <img src={card.path} alt={card.filename} loading="lazy" />
+                <OptimizedImage src={card.path} alt={card.filename} loading="lazy" />
                 <div className="card-info">
                   {card.category} #{card.number}
                 </div>
@@ -342,10 +343,11 @@ export default function AkiraPage() {
           <span className="modal-nav modal-prev" onClick={(e) => { e.stopPropagation(); prevCard(); }}>
             &lt;
           </span>
-          <img
+          <OptimizedImage
             className="modal-content"
             src={modalCard.path}
             alt={modalCard.filename}
+            loading="eager"
             onClick={(e) => e.stopPropagation()}
           />
           <span className="modal-nav modal-next" onClick={(e) => { e.stopPropagation(); nextCard(); }}>

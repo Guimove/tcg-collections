@@ -526,9 +526,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(1, 10, 19, 0.8);
-  z-index: 1000;
-  backdrop-filter: blur(4px);
+  background: rgba(1, 10, 19, 0.5);
+  z-index: 10001;
 }
 
 .riftbound-container .cart-panel {
@@ -541,7 +540,7 @@
   border-left: 3px solid var(--rift-cyan);
   box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
   transition: right 0.3s ease;
-  z-index: 1001;
+  z-index: 10002;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -706,6 +705,13 @@
   border-radius: 4px;
   color: var(--rift-text);
   font-size: 1rem;
+  -moz-appearance: textfield;
+}
+
+.riftbound-container .quantity-input::-webkit-inner-spin-button,
+.riftbound-container .quantity-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .riftbound-container .quantity-max {
