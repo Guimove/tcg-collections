@@ -370,7 +370,11 @@ export default function RiftboundPage() {
                   className="card-image"
                   loading="lazy"
                   onError={(e) => {
-                    (e.target as HTMLImageElement).src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="200" height="280"%3E%3Crect fill="%23333" width="200" height="280"/%3E%3Ctext fill="%23666" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3ENo Image%3C/text%3E%3C/svg%3E';
+                    const target = e.target as HTMLImageElement;
+                    // Éviter la boucle infinie : ne changer le src qu'une seule fois
+                    if (!target.src.startsWith('data:')) {
+                      target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="200" height="280"%3E%3Crect fill="%23333" width="200" height="280"/%3E%3Ctext fill="%23666" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3ENo Image%3C/text%3E%3C/svg%3E';
+                    }
                   }}
                 />
                 <div className={`card-rarity-badge ${card.rarity.toLowerCase()}`}>

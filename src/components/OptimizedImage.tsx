@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 interface OptimizedImageProps {
   src: string;
   alt: string;
@@ -9,7 +11,7 @@ interface OptimizedImageProps {
 
 /**
  * Composant d'image optimisé avec support WebP et fallback PNG
- * Charge automatiquement le format WebP si disponible, sinon utilise le PNG original
+ * Essaie de charger le WebP, fallback automatique sur PNG si échec
  */
 export default function OptimizedImage({
   src,
@@ -21,20 +23,29 @@ export default function OptimizedImage({
 }: OptimizedImageProps) {
   // Convertir l'extension en .webp pour la source WebP
   const webpSrc = src.replace(/\.(png|jpg|jpeg)$/i, '.webp');
+  const [imgSrc, setImgSrc] = useState(webpSrc);
+  const [hasTriedFallback, setHasTriedFallback] = useState(false);
+
+  const handleError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    // Si on n'a pas encore essayé le fallback et qu'on est sur le webp
+    if (!hasTriedFallback && imgSrc === webpSrc) {
+      // Fallback vers le PNG original
+      setImgSrc(src);
+      setHasTriedFallback(true);
+    } else if (onError) {
+      // Si le PNG échoue aussi, appeler le onError du parent
+      onError(e);
+    }
+  };
 
   return (
-    <picture onClick={onClick}>
-      {/* Source WebP (chargée en priorité si supportée) */}
-      <source srcSet={webpSrc} type="image/webp" />
-
-      {/* Fallback PNG/JPG pour navigateurs anciens */}
-      <img
-        src={src}
-        alt={alt}
-        className={className}
-        loading={loading}
-        onError={onError}
-      />
-    </picture>
+    <img
+      src={imgSrc}
+      alt={alt}
+      className={className}
+      loading={loading}
+      onClick={onClick}
+      onError={handleError}
+    />
   );
 }
