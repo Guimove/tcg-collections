@@ -141,9 +141,13 @@ export default function YugiohPage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [visibleCount, filteredItems.length]);
 
-  // Stats
+  // Stats - Grand total (toutes les cartes)
+  const totalAllCards = aggregatedCards.reduce((sum, item) => sum + item.totalToKeep + item.totalForSale, 0);
+  const uniqueAllCards = aggregatedCards.length;
+
+  // Stats - À vendre
   const totalCardsForSale = marketplaceItems.reduce((sum, item) => sum + item.toSell, 0);
-  const uniqueCardsForSale = new Set(marketplaceItems.map((item) => item['Nom de la carte'])).size;
+  const uniqueCardsForSale = marketplaceItems.length;
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -174,16 +178,20 @@ export default function YugiohPage() {
             gap: '2rem'
           }}>
             <div className="stat-item">
-              <div className="stat-value">{uniqueCardsForSale}</div>
-              <div className="stat-label">Cartes uniques</div>
+              <div className="stat-value">{totalAllCards}</div>
+              <div className="stat-label">Total</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-value">{uniqueAllCards}</div>
+              <div className="stat-label">Uniques</div>
             </div>
             <div className="stat-item">
               <div className="stat-value">{totalCardsForSale}</div>
-              <div className="stat-label">Copies totales</div>
+              <div className="stat-label">À vendre</div>
             </div>
             <div className="stat-item">
-              <div className="stat-value">{filteredItems.length}</div>
-              <div className="stat-label">Résultats</div>
+              <div className="stat-value">{uniqueCardsForSale}</div>
+              <div className="stat-label">Uniques à vendre</div>
             </div>
           </div>
         )}

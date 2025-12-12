@@ -202,8 +202,10 @@ export default function AkiraPage() {
   }
 
   // Calculate stats
-  const totalOwned = allCards.filter(card => card.quantity > 0).length;
-  const totalForSale = allCards.filter(card => card.quantity >= 2).length;
+  const totalCards = allCards.reduce((sum, card) => sum + card.quantity, 0);
+  const uniqueOwned = allCards.filter(card => card.quantity > 0).length;
+  const totalForSale = allCards.reduce((sum, card) => card.quantity >= 2 ? sum + (card.quantity - 1) : sum, 0);
+  const uniqueForSale = allCards.filter(card => card.quantity >= 2).length;
 
   return (
     <div className="akira-page">
@@ -213,22 +215,26 @@ export default function AkiraPage() {
         </Link>
         <header className="header">
           <h1>Collection Dragon Ball Akira V2</h1>
-          <p>Lucky Cards - 303 Cartes</p>
+          <p>Lucky Cards - {allCards.length} Cartes uniques</p>
         </header>
 
         {!loading && (
           <div className="stats">
             <div className="stat-item">
-              <div className="stat-value">{totalOwned}</div>
-              <div className="stat-label">Possédées</div>
+              <div className="stat-value">{totalCards}</div>
+              <div className="stat-label">Total</div>
+            </div>
+            <div className="stat-item">
+              <div className="stat-value">{uniqueOwned}</div>
+              <div className="stat-label">Uniques</div>
             </div>
             <div className="stat-item">
               <div className="stat-value">{totalForSale}</div>
               <div className="stat-label">À vendre</div>
             </div>
             <div className="stat-item">
-              <div className="stat-value">{filteredCards.length}</div>
-              <div className="stat-label">Résultats</div>
+              <div className="stat-value">{uniqueForSale}</div>
+              <div className="stat-label">Uniques à vendre</div>
             </div>
           </div>
         )}

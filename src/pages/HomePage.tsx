@@ -92,6 +92,18 @@ export default function HomePage() {
           </div>
           <h2 className="tcg-name">Yu-Gi-Oh!</h2>
         </Link>
+
+        <Link
+          to="/riftbound"
+          className="tcg-card active"
+          onMouseMove={handleCardMouseMove}
+          onMouseLeave={handleCardMouseLeave}
+        >
+          <div className="logo-container">
+            <img src="/images/riftbound-logo.webp" alt="Riftbound Logo" />
+          </div>
+          <h2 className="tcg-name">Riftbound</h2>
+        </Link>
       </div>
 
       <div className="coming-soon-section">
