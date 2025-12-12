@@ -1,12 +1,21 @@
 version: '3.8'
 
 services:
-  yugioh-marketplace:
+  tcg-collections:
     build: .
-    container_name: yugioh-marketplace
+    container_name: tcg-collections
     ports:
       - "8080:80"
     restart: unless-stopped
     volumes:
-      # Montage du CSV pour mise à jour facile sans rebuild
-      - ./public/collection.csv:/usr/share/nginx/html/collection.csv:ro
+      # Montage des dossiers de jeux pour mise à jour facile sans rebuild
+      - ./public/yugioh:/usr/share/nginx/html/yugioh:ro
+      - ./public/akira:/usr/share/nginx/html/akira:ro
+      - ./public/riftbound:/usr/share/nginx/html/riftbound:ro
+      - ./public/images:/usr/share/nginx/html/images:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 30s
+      timeout: 3s
+      start_period: 10s
+      retries: 3
