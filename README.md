@@ -60,21 +60,10 @@ Site accessible sur **http://localhost:5173**
 
 ## Déploiement
 
-### Option 1 : Netlify (Recommandé)
+### Docker / Kubernetes
 
 ```bash
-npm run build
-netlify deploy --prod --dir=dist
-```
-
-Ou drag & drop du dossier `dist/` sur [netlify.com](https://netlify.com)
-
-L'edge function `/api/card-image` est configurée pour proxy les images Yu-Gi-Oh! (évite les problèmes CORS).
-
-### Option 2 : Docker
-
-```bash
-# Build et lancer
+# Build et lancer avec Docker Compose
 docker-compose up -d --build
 
 # Accessible sur http://localhost:8080
@@ -82,19 +71,32 @@ docker-compose up -d --build
 
 **Configuration Docker** :
 - Multi-stage build (Node 20 Alpine → Nginx Alpine)
-- Image finale : ~25MB
+- Image finale optimisée (~25MB)
+- Health checks pour Kubernetes (liveness/readiness)
+- User non-root (nginx:101) pour la sécurité
 - Compression Gzip activée
 - Cache optimisé (1 an pour assets, pas de cache pour CSV)
+- Configuration Nginx avec SPA routing
 
-**Mettre à jour les CSV sans rebuild** :
+**Mettre à jour les collections sans rebuild** :
 ```bash
-cp nouveau_fichier.csv public/collection.csv
+# Copier les nouveaux fichiers CSV
+cp nouveau_fichier.csv public/yugioh/collection.csv
+cp nouveau_fichier.csv public/akira/collection.csv
+cp nouveau_fichier.csv public/riftbound/collection.csv
+
+# Redémarrer le container
 docker-compose restart
+```
+
+**Build de l'image Docker** :
+```bash
+docker build -t tcg-collections:latest .
 ```
 
 ## Format CSV
 
-### Yu-Gi-Oh! (`public/collection.csv`)
+### Yu-Gi-Oh! (`public/yugioh/collection.csv`)
 
 ```csv
 Langue,Extension,Code,Nom de la carte,Rareté,1st Edition,Unlimited,Limited / Autre,Quantité,N° Artwork,Reprint
@@ -127,7 +129,9 @@ Card ID,Card Name,Card Type,Version,Set,Rarity,Quantity,Color,Illustrator,Cost,M
 - **React Router 7** (navigation multi-pages)
 - **PapaParse** (parsing CSV)
 - **YGOPRODeck API** (images de cartes Yu-Gi-Oh!)
-- Déploiement : Netlify (edge functions) ou Docker (Nginx)
+- **Nginx** (serveur web production)
+- **Docker** (containerisation)
+- Déploiement : Kubernetes (self-hosted)
 
 ## Structure du projet
 
@@ -155,21 +159,19 @@ guimove-tcg-collections/
 │   ├── types.ts                   # Types TypeScript
 │   └── main.tsx                   # Entry point
 ├── public/
-│   ├── collection.csv             # Yu-Gi-Oh! collection
+│   ├── yugioh/
+│   │   ├── collection.csv         # Yu-Gi-Oh! collection
+│   │   └── cards/                 # Images cartes Yu-Gi-Oh!
 │   ├── akira/
 │   │   ├── collection.csv         # Akira collection
-│   │   └── card_list/             # Images cartes Akira
+│   │   └── cards/                 # Images cartes Akira
 │   ├── riftbound/
 │   │   ├── collection.csv         # Riftbound collection
 │   │   └── cards/                 # Images cartes Riftbound
-│   └── images/                    # Logos TCG
-├── netlify/
-│   └── edge-functions/
-│       └── card-image.ts          # Proxy images Netlify
+│   └── images/                    # Logos et favicons
 ├── Dockerfile                     # Build Docker multi-stage
 ├── docker-compose.yml             # Orchestration Docker
-├── nginx.conf                     # Config Nginx
-└── netlify.toml                   # Config Netlify
+└── nginx.conf                     # Config Nginx avec SPA routing
 ```
 
 ## Développement
@@ -210,8 +212,9 @@ Voir `src/utils/scoring.ts` pour la liste complète.
 - Pas de backend (site 100% statique client-side)
 - Pas de base de données
 - CSV locaux uniquement
-- Headers de sécurité Nginx (si Docker)
-- Proxy Netlify pour images Yu-Gi-Oh! (évite exposition API directe)
+- Container Docker non-root (user nginx:101)
+- Headers de sécurité Nginx (X-Frame-Options, X-Content-Type-Options, X-XSS-Protection)
+- Health checks pour Kubernetes
 
 ## Remerciements
 
