@@ -34,6 +34,7 @@ export default function RiftboundPage() {
   const [rarityFilter, setRarityFilter] = useState('');
   const [modalCard, setModalCard] = useState<RiftboundCard | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string>('');
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   // Cart
@@ -106,6 +107,7 @@ export default function RiftboundPage() {
       setLoading(false);
     } catch (error) {
       console.error('Error loading Riftbound collection:', error);
+      setError(`Erreur lors du chargement de la collection: ${error instanceof Error ? error.message : 'Erreur inconnue'}`);
       setLoading(false);
     }
   };
@@ -214,6 +216,15 @@ export default function RiftboundPage() {
       <div className="riftbound-container loading">
         <div className="loading-spinner"></div>
         <p>Chargement de la collection Riftbound...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="riftbound-container">
+        <Link to="/" className="back-button">← Accueil</Link>
+        <div className="error-message">{error}</div>
       </div>
     );
   }

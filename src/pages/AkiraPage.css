@@ -832,6 +832,16 @@
   transform: translateY(-2px);
 }
 
+/* Error message */
+.akira-page .error-message {
+  background: #dc3545;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  text-align: center;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .akira-page .cart-panel {

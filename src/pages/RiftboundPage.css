@@ -963,3 +963,13 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Error message */
+.riftbound-container .error-message {
+  background: #dc3545;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  text-align: center;
+}

@@ -33,6 +33,7 @@ export default function AkiraPage() {
   const [modalCard, setModalCard] = useState<Card | null>(null);
   const [modalIndex, setModalIndex] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string>('');
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   // Cart
@@ -104,6 +105,7 @@ export default function AkiraPage() {
       setLoading(false);
     } catch (error) {
       console.error('Error loading collection:', error);
+      setError(`Erreur lors du chargement de la collection: ${error instanceof Error ? error.message : 'Erreur inconnue'}`);
       setLoading(false);
     }
   };
@@ -203,6 +205,15 @@ export default function AkiraPage() {
     return (
       <div className="akira-page loading">
         <div className="loading-spinner"></div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="akira-page">
+        <Link to="/" className="back-button">← Accueil</Link>
+        <div className="error-message">{error}</div>
       </div>
     );
   }
