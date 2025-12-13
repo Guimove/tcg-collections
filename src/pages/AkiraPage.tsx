@@ -201,8 +201,8 @@ export default function AkiraPage() {
 
   if (loading) {
     return (
-      <div className="akira-page">
-        <div className="loading">Chargement des cartes...</div>
+      <div className="akira-page loading">
+        <div className="loading-spinner"></div>
       </div>
     );
   }

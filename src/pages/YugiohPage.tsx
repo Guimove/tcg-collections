@@ -205,7 +205,9 @@ export default function YugiohPage() {
       {error && <div className="error-message">{error}</div>}
 
       {loading ? (
-        <div className="loading">Chargement...</div>
+        <div className="yugioh-page loading">
+          <div className="loading-spinner"></div>
+        </div>
       ) : (
         <>
           <div className="controls">

@@ -403,11 +403,26 @@
   text-align: center;
 }
 
-.yugioh-page .loading {
-  text-align: center;
-  padding: 3rem;
-  font-size: 1.5rem;
-  color: var(--color-gold);
+.yugioh-page.loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  gap: 20px;
+}
+
+.yugioh-page .loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(212, 175, 55, 0.2);
+  border-top-color: var(--color-gold);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 .yugioh-page .empty-state {
