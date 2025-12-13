@@ -487,7 +487,7 @@
 }
 
 /* Scroll to top button */
-.riftbound-container .scroll-top-btn {
+.riftbound-container .scroll-to-top {
   position: fixed;
   bottom: 2rem;
   right: 6rem;
@@ -508,13 +508,13 @@
   justify-content: center;
 }
 
-.riftbound-container .scroll-top-btn:hover {
+.riftbound-container .scroll-to-top:hover {
   background: var(--rift-gold);
   transform: translateY(-4px);
   box-shadow: 0 6px 16px rgba(10, 200, 185, 0.6);
 }
 
-.riftbound-container .scroll-top-btn:active {
+.riftbound-container .scroll-to-top:active {
   transform: translateY(-2px);
 }
 

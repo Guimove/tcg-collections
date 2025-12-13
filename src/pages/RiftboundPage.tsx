@@ -36,6 +36,8 @@ export default function RiftboundPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string>('');
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [sortBy, setSortBy] = useState<'name' | 'rarity' | 'quantity'>('name');
+  const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
 
   // Cart
   const cart = useCart();
@@ -184,8 +186,21 @@ export default function RiftboundPage() {
       filtered = filtered.filter(card => card.rarity === rarityFilter);
     }
 
+    // Sort
+    filtered.sort((a, b) => {
+      let comparison = 0;
+      if (sortBy === 'name') {
+        comparison = a.name.localeCompare(b.name);
+      } else if (sortBy === 'rarity') {
+        comparison = a.rarity.localeCompare(b.rarity);
+      } else if (sortBy === 'quantity') {
+        comparison = a.quantity - b.quantity;
+      }
+      return sortDirection === 'asc' ? comparison : -comparison;
+    });
+
     return filtered;
-  }, [allCards, currentFilter, quantityFilter, searchTerm, setFilter, colorFilter, rarityFilter]);
+  }, [allCards, currentFilter, quantityFilter, searchTerm, setFilter, colorFilter, rarityFilter, sortBy, sortDirection]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -369,6 +384,25 @@ export default function RiftboundPage() {
               <option key={rarity} value={rarity}>{rarity}</option>
             ))}
           </select>
+
+          <select
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value as any)}
+            className="filter-select"
+          >
+            <option value="name">Trier par: Nom</option>
+            <option value="rarity">Trier par: Rareté</option>
+            <option value="quantity">Trier par: Quantité</option>
+          </select>
+
+          <select
+            value={sortDirection}
+            onChange={(e) => setSortDirection(e.target.value as any)}
+            className="filter-select"
+          >
+            <option value="asc">Croissant</option>
+            <option value="desc">Décroissant</option>
+          </select>
         </div>
         </div>
       </div>
@@ -376,7 +410,7 @@ export default function RiftboundPage() {
       {/* Cards Grid */}
       {filteredCards.length === 0 ? (
         <div className="no-results">
-          <div className="no-results-icon">🔍</div>
+          <div className="no-results-icon">🃏</div>
           <h3>Aucune carte trouvée</h3>
           <p>Essayez de modifier vos filtres ou votre recherche</p>
         </div>
@@ -408,13 +442,6 @@ export default function RiftboundPage() {
                           alt={card.name}
                           className="card-image"
                           loading="lazy"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            // Éviter la boucle infinie : ne changer le src qu'une seule fois
-                            if (!target.src.startsWith('data:')) {
-                              target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="200" height="280"%3E%3Crect fill="%23333" width="200" height="280"/%3E%3Ctext fill="%23666" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3ENo Image%3C/text%3E%3C/svg%3E';
-                            }
-                          }}
                         />
                         <div className={`card-rarity-badge ${card.rarity.toLowerCase()}`}>
                           {card.rarity}
@@ -440,7 +467,7 @@ export default function RiftboundPage() {
 
       {/* Scroll to top button */}
       {showScrollTop && (
-        <button className="scroll-top-btn" onClick={scrollToTop}>
+        <button className="scroll-to-top" onClick={scrollToTop}>
           ↑
         </button>
       )}
@@ -462,8 +489,8 @@ export default function RiftboundPage() {
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
         cart={cart.cart}
-        onRemoveItem={cart.removeFromCart}
         onUpdateQuantity={cart.updateQuantity}
+        onRemoveItem={cart.removeFromCart}
         onClearCart={cart.clearCart}
         onExportCSV={cart.exportToCSV}
       />

@@ -121,25 +121,14 @@
   box-shadow: 0 0 10px rgba(255, 140, 0, 0.3);
 }
 
-.akira-page .filters {
+/* Dropdown filters */
+.akira-page .dropdown-filters {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
-.akira-page .filter-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.akira-page .filter-group label {
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-}
-
-.akira-page .filter-group select {
+.akira-page .filter-select {
   padding: 0.75rem;
   background: var(--bg-card);
   border: 1px solid var(--color-primary);
@@ -147,10 +136,10 @@
   color: var(--color-text);
   font-size: 1rem;
   cursor: pointer;
-  min-width: 150px;
+  transition: border-color 0.3s;
 }
 
-.akira-page .filter-group select:focus {
+.akira-page .filter-select:focus {
   outline: none;
   border-color: var(--color-orange);
 }
@@ -289,85 +278,87 @@
   font-weight: bold;
 }
 
-.akira-page div.modal {
-  display: none !important;
-}
-
-.akira-page div.modal.active {
-  display: flex !important;
-  position: fixed !important;
-  z-index: 10000 !important;
-  left: 0 !important;
-  top: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  background-color: rgba(0,0,0,0.95) !important;
-  align-items: center !important;
-  justify-content: center !important;
-  cursor: pointer !important;
-  margin: 0 !important;
-  padding: 0 !important;
+/* Modal */
+.akira-page .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
 }
 
 .akira-page .modal-content {
-  max-width: 90vw !important;
-  max-height: 90vh !important;
-  object-fit: contain !important;
-  border-radius: 10px !important;
-  box-shadow: 0 0 50px rgba(255,255,255,0.2) !important;
-  cursor: default !important;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, #1a1a1a 100%);
+  border: 2px solid var(--color-orange);
+  border-radius: 16px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 0 50px rgba(255, 140, 0, 0.5);
 }
 
 .akira-page .modal-close {
-  position: absolute !important;
-  top: 20px !important;
-  right: 40px !important;
-  color: white !important;
-  font-size: 50px !important;
-  font-weight: bold !important;
-  cursor: pointer !important;
-  transition: color 0.3s !important;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(220, 53, 69, 0.8);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+  z-index: 10;
 }
 
 .akira-page .modal-close:hover {
-  color: #FF8C00 !important;
+  background: #dc3545;
+  transform: rotate(90deg);
 }
 
-.akira-page .modal-nav {
-  position: absolute !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  color: white !important;
-  font-size: 50px !important;
-  font-weight: bold !important;
-  cursor: pointer !important;
-  padding: 20px !important;
-  user-select: none !important;
-  transition: color 0.3s !important;
+.akira-page .modal-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 30px;
 }
 
-.akira-page .modal-nav:hover {
-  color: #FF8C00 !important;
-}
-
-.akira-page .modal-prev {
-  left: 20px !important;
-}
-
-.akira-page .modal-next {
-  right: 20px !important;
+.akira-page .modal-image {
+  width: 100%;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 140, 0, 0.3);
+  box-shadow: 0 0 30px rgba(255, 140, 0, 0.3);
 }
 
 .akira-page .modal-info {
-  position: absolute !important;
-  bottom: 20px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  color: white !important;
-  background: rgba(0,0,0,0.7) !important;
-  padding: 10px 20px !important;
-  border-radius: 25px !important;
-  font-size: 18px !important;
+  color: white;
+}
+
+.akira-page .modal-info h2 {
+  margin-top: 0;
+  color: var(--color-orange);
+  font-size: 1.8rem;
+  text-shadow: 0 0 15px rgba(255, 140, 0, 0.5);
+}
+
+.akira-page .modal-info p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.akira-page .modal-info strong {
+  color: var(--color-orange);
 }
 
 .akira-page.loading {
@@ -475,21 +466,23 @@
 
 /* Modal add to cart button */
 .akira-page .modal-add-to-cart-btn {
-  margin-left: 1rem;
-  padding: 0.5rem 1rem;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
   background: var(--color-orange);
   color: white;
   border: none;
-  border-radius: 20px;
-  font-size: 0.9rem;
+  border-radius: 25px;
+  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
+  width: 100%;
 }
 
 .akira-page .modal-add-to-cart-btn:hover {
   background: var(--color-red);
-  transform: scale(1.05);
+  transform: scale(1.02);
+  box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
 }
 
 /* Styles spéciaux pour les puzzles */
@@ -536,15 +529,8 @@
     padding: 20px;
   }
 
-  .akira-page .modal-nav {
-    font-size: 35px;
-    padding: 10px;
-  }
-
-  .akira-page .modal-close {
-    font-size: 35px;
-    top: 10px;
-    right: 20px;
+  .akira-page .modal-body {
+    grid-template-columns: 1fr;
   }
 
   .akira-page .puzzle-gallery {
@@ -840,6 +826,28 @@
   border-radius: 8px;
   margin: 1rem 0;
   text-align: center;
+}
+
+/* Empty state */
+.akira-page .empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.akira-page .empty-state-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.akira-page .empty-state h3 {
+  color: var(--color-orange);
+  margin-bottom: 0.5rem;
+}
+
+.akira-page .empty-state p {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* Mobile Responsive */

@@ -206,7 +206,7 @@
 }
 
 .yugioh-page .stat-item {
-  text-align: right;
+  text-align: center;
 }
 
 .yugioh-page .cache-buttons {
@@ -428,13 +428,22 @@
 .yugioh-page .empty-state {
   text-align: center;
   padding: 3rem;
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .yugioh-page .empty-state-icon {
   font-size: 4rem;
   margin-bottom: 1rem;
   opacity: 0.5;
+}
+
+.yugioh-page .empty-state h3 {
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+}
+
+.yugioh-page .empty-state p {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .yugioh-page .modal-overlay {
@@ -752,8 +761,8 @@
 .yugioh-page .cart-panel {
   position: fixed;
   top: 0;
-  right: -450px;
-  width: 450px;
+  right: -400px;
+  width: 400px;
   max-width: 90vw;
   height: 100vh;
   background: var(--bg-secondary);

@@ -33,7 +33,7 @@ export default function YugiohPage() {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   // Lazy loading state
-  const [visibleCount, setVisibleCount] = useState(60);
+  const [visibleCount, setVisibleCount] = useState(120);
 
   // Scroll to top button visibility
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -111,9 +111,9 @@ export default function YugiohPage() {
       if (sortBy === 'name') {
         comparison = a['Nom de la carte'].localeCompare(b['Nom de la carte']);
       } else if (sortBy === 'rarity') {
-        comparison = b.rarityScore - a.rarityScore;
+        comparison = a.rarityScore - b.rarityScore;
       } else if (sortBy === 'quantity') {
-        comparison = b.toSell - a.toSell;
+        comparison = a.toSell - b.toSell;
       }
       return sortDirection === 'asc' ? comparison : -comparison;
     });
@@ -123,7 +123,7 @@ export default function YugiohPage() {
 
   // Reset visible count when filters change
   useEffect(() => {
-    setVisibleCount(60);
+    setVisibleCount(120);
   }, [searchQuery, rarityFilter, languageFilter, extensionFilter, sortBy, sortDirection]);
 
   // Lazy loading on scroll
@@ -138,7 +138,7 @@ export default function YugiohPage() {
 
       // Load more when 500px from bottom
       if (scrollTop + windowHeight >= documentHeight - 500 && visibleCount < filteredItems.length) {
-        setVisibleCount(prev => Math.min(prev + 40, filteredItems.length));
+        setVisibleCount(prev => Math.min(prev + 80, filteredItems.length));
       }
     };
 
@@ -282,7 +282,8 @@ export default function YugiohPage() {
           {filteredItems.length === 0 ? (
             <div className="empty-state">
               <div className="empty-state-icon">🃏</div>
-              <p>Aucune carte trouvée</p>
+              <h3>Aucune carte trouvée</h3>
+              <p>Essayez de modifier vos filtres ou votre recherche</p>
             </div>
           ) : (
             <div className="marketplace-grid">

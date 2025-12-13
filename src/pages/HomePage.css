@@ -250,8 +250,8 @@
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0) translateX(0);
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
     opacity: 0;
   }
   10% {
@@ -261,7 +261,7 @@
     opacity: 1;
   }
   100% {
-    transform: translateY(-100vh) translateX(100px);
+    transform: translateY(-100vh) translateX(var(--x-offset, 100px)) rotate(360deg);
     opacity: 0;
   }
 }

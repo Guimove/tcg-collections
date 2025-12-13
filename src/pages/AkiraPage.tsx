@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import './AkiraPage.css';
 import CartPanel from '../components/CartPanel';
@@ -22,19 +22,18 @@ interface Category {
 }
 
 type FilterType = 'all' | 'owned' | 'not-owned' | 'for-sale';
-type ViewType = 'categories' | 'grid';
 
 export default function AkiraPage() {
   const [allCards, setAllCards] = useState<Card[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [currentFilter, setCurrentFilter] = useState<FilterType>('all');
-  const [currentView, setCurrentView] = useState<ViewType>('categories');
   const [searchTerm, setSearchTerm] = useState('');
   const [modalCard, setModalCard] = useState<Card | null>(null);
-  const [modalIndex, setModalIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string>('');
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [sortBy, setSortBy] = useState<'name' | 'quantity'>('name');
+  const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
 
   // Cart
   const cart = useCart();
@@ -124,47 +123,47 @@ export default function AkiraPage() {
     }
   };
 
-  const filteredCards = allCards.filter(
-    (card) =>
-      filterByQuantity(card) &&
-      (searchTerm === '' ||
-        card.filename.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        card.category.toLowerCase().includes(searchTerm.toLowerCase()))
-  );
+  const filteredCards = useMemo(() => {
+    let cards = allCards.filter(
+      (card) =>
+        filterByQuantity(card) &&
+        (searchTerm === '' ||
+          card.filename.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          card.category.toLowerCase().includes(searchTerm.toLowerCase()))
+    );
 
-  const openModal = (card: Card, index: number) => {
+    // Sort
+    cards.sort((a, b) => {
+      let comparison = 0;
+      if (sortBy === 'name') {
+        comparison = a.filename.localeCompare(b.filename);
+      } else if (sortBy === 'quantity') {
+        comparison = a.quantity - b.quantity;
+      }
+      return sortDirection === 'asc' ? comparison : -comparison;
+    });
+
+    return cards;
+  }, [allCards, currentFilter, searchTerm, sortBy, sortDirection]);
+
+  const openModal = (card: Card) => {
     setModalCard(card);
-    setModalIndex(index);
   };
 
   const closeModal = () => {
     setModalCard(null);
   };
 
-  const nextCard = () => {
-    const newIndex = (modalIndex + 1) % allCards.length;
-    setModalIndex(newIndex);
-    setModalCard(allCards[newIndex]);
-  };
-
-  const prevCard = () => {
-    const newIndex = (modalIndex - 1 + allCards.length) % allCards.length;
-    setModalIndex(newIndex);
-    setModalCard(allCards[newIndex]);
-  };
-
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (modalCard) {
-        if (e.key === 'Escape') closeModal();
-        if (e.key === 'ArrowLeft') prevCard();
-        if (e.key === 'ArrowRight') nextCard();
+      if (modalCard && e.key === 'Escape') {
+        closeModal();
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [modalCard, modalIndex]);
+  }, [modalCard]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -279,36 +278,39 @@ export default function AkiraPage() {
             />
           </div>
 
-          <div className="filters">
-            <div className="filter-group">
-              <label>Affichage</label>
-              <select
-                value={currentView}
-                onChange={(e) => setCurrentView(e.target.value as ViewType)}
-              >
-                <option value="categories">Par catégories</option>
-                <option value="grid">Vue compacte</option>
-              </select>
-            </div>
+          <div className="dropdown-filters">
+            <select
+              value={currentFilter}
+              onChange={(e) => setCurrentFilter(e.target.value as FilterType)}
+              className="filter-select"
+            >
+              <option value="all">Toutes</option>
+              <option value="owned">Possédées</option>
+              <option value="not-owned">Non possédées</option>
+              <option value="for-sale">À vendre (×2+)</option>
+            </select>
 
-            <div className="filter-group">
-              <label>Filtre</label>
-              <select
-                value={currentFilter}
-                onChange={(e) => setCurrentFilter(e.target.value as FilterType)}
-              >
-                <option value="all">Toutes</option>
-                <option value="owned">Possédées</option>
-                <option value="not-owned">Non possédées</option>
-                <option value="for-sale">À vendre (×2+)</option>
-              </select>
-            </div>
+            <select value={sortBy} onChange={(e) => setSortBy(e.target.value as any)} className="filter-select">
+              <option value="name">Trier par: Nom</option>
+              <option value="quantity">Trier par: Quantité</option>
+            </select>
+
+            <select value={sortDirection} onChange={(e) => setSortDirection(e.target.value as any)} className="filter-select">
+              <option value="asc">Croissant</option>
+              <option value="desc">Décroissant</option>
+            </select>
           </div>
         </div>
       </div>
 
       <div className="container">
-        {currentView === 'categories' ? (
+        {filteredCards.length === 0 ? (
+          <div className="empty-state">
+            <div className="empty-state-icon">🃏</div>
+            <h3>Aucune carte trouvée</h3>
+            <p>Essayez de modifier vos filtres ou votre recherche</p>
+          </div>
+        ) : (
           <>
             {categories.map((category) => {
               const categoryCards = filteredCards.filter((c) => c.category === category.name);
@@ -325,7 +327,7 @@ export default function AkiraPage() {
                       <div
                         key={card.filename}
                         className={`card-container ${!card.owned ? 'not-owned' : ''}`}
-                        onClick={() => openModal(card, allCards.indexOf(card))}
+                        onClick={() => openModal(card)}
                       >
                         {card.quantity > 0 && (
                           <div className="quantity-badge">×{card.quantity}</div>
@@ -341,57 +343,36 @@ export default function AkiraPage() {
               );
             })}
           </>
-        ) : (
-          <div className="gallery" style={{ padding: '20px' }}>
-            {filteredCards.map((card) => (
-              <div
-                key={card.filename}
-                className={`card-container ${!card.owned ? 'not-owned' : ''}`}
-                onClick={() => openModal(card, allCards.indexOf(card))}
-              >
-                {card.quantity > 0 && (
-                  <div className="quantity-badge">×{card.quantity}</div>
-                )}
-                <OptimizedImage src={card.path} alt={card.filename} loading="lazy" />
-                <div className="card-info">
-                  {card.category} #{card.number}
-                </div>
-              </div>
-            ))}
-          </div>
         )}
       </div>
 
       {modalCard && (
-        <div className="modal active" onClick={closeModal}>
-          <span className="modal-close" onClick={closeModal}>
-            &times;
-          </span>
-          <span className="modal-nav modal-prev" onClick={(e) => { e.stopPropagation(); prevCard(); }}>
-            &lt;
-          </span>
-          <OptimizedImage
-            className="modal-content"
-            src={modalCard.path}
-            alt={modalCard.filename}
-            loading="eager"
-            onClick={(e) => e.stopPropagation()}
-          />
-          <span className="modal-nav modal-next" onClick={(e) => { e.stopPropagation(); nextCard(); }}>
-            &gt;
-          </span>
-          <div className="modal-info" onClick={(e) => e.stopPropagation()}>
-            {modalCard.category} #{modalCard.number}
-            {modalCard.quantity > 0 ? ` (×${modalCard.quantity})` : ' (Non possédée)'} -{' '}
-            {modalIndex + 1}/{allCards.length}
-            {modalCard.quantity >= 2 && (
-              <button
-                className="modal-add-to-cart-btn"
-                onClick={(e) => { e.stopPropagation(); addToCart(modalCard); }}
-              >
-                🛒 Ajouter au panier
-              </button>
-            )}
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={closeModal}>×</button>
+            <div className="modal-body">
+              <OptimizedImage
+                src={modalCard.path}
+                alt={modalCard.filename}
+                className="modal-image"
+                loading="eager"
+              />
+              <div className="modal-info">
+                <h2>{modalCard.category} #{modalCard.number}</h2>
+                <p><strong>Catégorie:</strong> {modalCard.category}</p>
+                <p><strong>Numéro:</strong> {modalCard.number}</p>
+                <p><strong>Type:</strong> {modalCard.isPuzzle ? 'Puzzle' : 'Carte'}</p>
+                <p><strong>Quantité:</strong> {modalCard.quantity > 0 ? `×${modalCard.quantity}` : 'Non possédée'}</p>
+                {modalCard.quantity >= 2 && (
+                  <button
+                    className="modal-add-to-cart-btn"
+                    onClick={(e) => { e.stopPropagation(); addToCart(modalCard); }}
+                  >
+                    🛒 Ajouter au panier
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       )}

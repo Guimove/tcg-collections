@@ -5,10 +5,13 @@ import './HomePage.css';
 
 export default function HomePage() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const timeoutsRef = useRef<number[]>([]);
+  const isMountedRef = useRef(true);
 
   useEffect(() => {
     // Set page title
     document.title = 'Guimove - Gestionnaire de Collections TCG';
+    isMountedRef.current = true;
 
     // Animation des cartes au chargement
     const cards = document.querySelectorAll('.tcg-card');
@@ -16,32 +19,76 @@ export default function HomePage() {
       card.classList.add('active');
     });
 
-    // Créer des particules flottantes
+    // Créer des particules flottantes seulement si le container est prêt
     const particles: HTMLDivElement[] = [];
-    for (let i = 0; i < 15; i++) {
-      const particle = createParticle();
-      particles.push(particle);
+    if (containerRef.current) {
+      for (let i = 0; i < 35; i++) {
+        const particle = createParticle(i);
+        if (particle) particles.push(particle);
+      }
     }
 
     return () => {
-      // Cleanup particles on unmount
-      particles.forEach(p => p.remove());
+      // Cleanup particles and timeouts on unmount
+      isMountedRef.current = false;
+      particles.forEach(p => {
+        try {
+          p.remove();
+        } catch (e) {
+          // Ignore si déjà supprimé
+        }
+      });
+      timeoutsRef.current.forEach(timeout => clearTimeout(timeout));
+      timeoutsRef.current = [];
+
+      // Supprimer toutes les particules qui pourraient traîner
+      const allParticles = document.querySelectorAll('.particle');
+      allParticles.forEach(p => p.remove());
     };
   }, []);
 
-  const createParticle = () => {
+  const createParticle = (index?: number): HTMLDivElement | null => {
+    if (!isMountedRef.current) return null;
+
     const particle = document.createElement('div');
-    particle.className = 'particle';
+    particle.className = 'particle homepage-particle';
     particle.style.left = Math.random() * 100 + '%';
-    particle.style.animationDelay = Math.random() * 15 + 's';
-    particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+
+    // Certaines particules partent de la moitié basse
+    const startFromBottom = Math.random() > 0.5;
+    particle.style.top = startFromBottom
+      ? (50 + Math.random() * 50) + '%'  // Moitié basse (50-100%)
+      : Math.random() * 100 + '%';        // N'importe où (0-100%)
+
+    particle.style.opacity = '0';
+
+    // Varier la taille des particules
+    const size = 5 + Math.random() * 10; // Entre 5px et 15px
+    particle.style.width = size + 'px';
+    particle.style.height = size + 'px';
+
+    // Espacer les délais d'animation avec plus de variation
+    const baseDelay = index !== undefined ? index * 0.15 : Math.random() * 3;
+    const duration = 10 + Math.random() * 10; // Entre 10 et 20 secondes
+    particle.style.animationDelay = baseDelay + 's';
+    particle.style.animationDuration = duration + 's';
+
+    // Varier la trajectoire horizontale
+    const xOffset = -50 + Math.random() * 200; // Entre -50px et 150px
+    particle.style.setProperty('--x-offset', xOffset + 'px');
+
     document.body.appendChild(particle);
 
-    // Supprimer et recréer la particule après l'animation
-    setTimeout(() => {
-      particle.remove();
-      createParticle();
-    }, 25000);
+    // Supprimer et recréer la particule après l'animation complète (délai + durée)
+    const totalTime = (baseDelay + duration) * 1000;
+    const timeout = window.setTimeout(() => {
+      if (isMountedRef.current) {
+        particle.remove();
+        createParticle();
+      }
+    }, totalTime);
+
+    timeoutsRef.current.push(timeout);
 
     return particle;
   };
