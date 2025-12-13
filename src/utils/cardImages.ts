@@ -38,9 +38,7 @@ const loadFailedNames = () => {
 };
 
 function proxifyImageUrl(imageUrl: string): string {
-  if (import.meta.env.PROD) {
-    return `/api/card-image?url=${encodeURIComponent(imageUrl)}`;
-  }
+  // Direct image loading - no proxy needed
   return imageUrl;
 }
 
