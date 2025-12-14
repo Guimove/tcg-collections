@@ -157,6 +157,47 @@ export default function HomePage() {
         </Link>
       </div>
 
+      <div className="help-section">
+        <h2 className="help-title">Comment utiliser cette plateforme ?</h2>
+        <div className="help-grid">
+          <div className="help-card">
+            <div className="help-icon">🛒</div>
+            <h3>Acheter mes cartes</h3>
+            <p>Parcourez ma collection et ajoutez au panier les cartes qui vous intéressent. Seules les cartes en ×2 ou plus sont disponibles à la vente.</p>
+          </div>
+
+          <div className="help-card">
+            <div className="help-icon">🔍</div>
+            <h3>Voir ce qui me manque</h3>
+            <p>Utilisez le filtre "Non possédées" pour voir les cartes qui me manquent. Si vous les avez, vous pouvez me les proposer !</p>
+          </div>
+
+          <div className="help-card">
+            <div className="help-icon">📊</div>
+            <h3>Recherche & Filtres</h3>
+            <p>Utilisez la barre de recherche et les filtres pour trouver rapidement des cartes spécifiques par nom, rareté, extension ou langue.</p>
+          </div>
+
+          <div className="help-card">
+            <div className="help-icon">💾</div>
+            <h3>Export de votre sélection</h3>
+            <p>Une fois votre sélection faite, exportez le panier en CSV pour me contacter avec la liste des cartes qui vous intéressent.</p>
+          </div>
+
+          <div className="help-card">
+            <div className="help-icon">🎯</div>
+            <h3>Comprendre les statuts</h3>
+            <p>Badge ×N : quantité possédée. Cartes grisées : non possédées (à me proposer). Cartes colorées : disponibles ou dans ma collection.</p>
+          </div>
+
+          <div className="help-card">
+            <div className="help-icon">📱</div>
+            <h3>Interface adaptative</h3>
+            <p>La plateforme fonctionne sur tous les appareils : ordinateur, tablette et smartphone pour consulter ma collection partout.</p>
+          </div>
+        </div>
+      </div>
+
       <div className="coming-soon-section">
         <h2 className="coming-soon-title">Bientôt disponible</h2>
         <div className="tcg-grid">
