@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import Papa from 'papaparse';
 import './AkiraPage.css';
 import CartPanel from '../components/CartPanel';
 import OptimizedImage from '../components/OptimizedImage';
@@ -52,44 +53,56 @@ export default function AkiraPage() {
     try {
       const response = await fetch('/akira/collection.csv');
       const text = await response.text();
-      const lines = text.split('\n');
-      const separator = text.includes(';') ? ';' : ',';
+
+      // Parse CSV avec PapaParse pour gérer correctement les champs quotés et les différents séparateurs
+      const results = Papa.parse(text, {
+        header: false, // Pas de header pour Akira
+        skipEmptyLines: true,
+        delimiter: '', // Auto-detect (virgule ou point-virgule)
+      });
+
+      if (results.errors.length > 0) {
+        console.error('CSV parsing errors:', results.errors);
+        setError(`Erreur lors du parsing du CSV: ${results.errors[0].message}`);
+        setLoading(false);
+        return;
+      }
 
       const categoryMap = new Map<string, number>();
       const cardQuantities = new Map<string, number>();
       const cards: Card[] = [];
 
-      // Parse CSV
-      for (let i = 1; i < lines.length; i++) {
-        const line = lines[i].trim();
-        if (!line) continue;
+      // Parse CSV data (skip header row at index 0)
+      const rows = results.data as string[][];
+      for (let i = 1; i < rows.length; i++) {
+        const row = rows[i];
+        if (!row || row.length < 4) continue;
 
-        const parts = line.split(separator);
-        if (parts.length >= 4) {
-          const categoryName = parts[0].trim();
-          const number = parts[1].trim();
-          const filename = parts[2].trim();
-          const quantity = parseInt(parts[3].trim()) || 0;
+        const categoryName = (row[0] || '').trim();
+        const number = (row[1] || '').trim();
+        const filename = (row[2] || '').trim();
+        const quantity = parseInt(row[3]) || 0;
 
-          cardQuantities.set(filename, quantity);
+        if (!categoryName || !filename) continue;
 
-          if (!categoryMap.has(categoryName)) {
-            categoryMap.set(categoryName, 0);
-          }
-          categoryMap.set(categoryName, categoryMap.get(categoryName)! + 1);
+        cardQuantities.set(filename, quantity);
 
-          const isPuzzle = categoryName.toLowerCase().includes('puzzle');
-
-          cards.push({
-            category: categoryName,
-            number,
-            filename,
-            path: `/akira/cards/${filename}`,
-            isPuzzle,
-            quantity,
-            owned: quantity > 0,
-          });
+        if (!categoryMap.has(categoryName)) {
+          categoryMap.set(categoryName, 0);
         }
+        categoryMap.set(categoryName, categoryMap.get(categoryName)! + 1);
+
+        const isPuzzle = categoryName.toLowerCase().includes('puzzle');
+
+        cards.push({
+          category: categoryName,
+          number,
+          filename,
+          path: `/akira/cards/${filename}`,
+          isPuzzle,
+          quantity,
+          owned: quantity > 0,
+        });
       }
 
       setAllCards(cards);

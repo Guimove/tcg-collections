@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import Papa from 'papaparse';
 import './RiftboundPage.css';
 import CartPanel from '../components/CartPanel';
 import OptimizedImage from '../components/OptimizedImage';
@@ -36,7 +37,7 @@ export default function RiftboundPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string>('');
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const [sortBy, setSortBy] = useState<'name' | 'rarity' | 'quantity'>('name');
+  const [sortBy, setSortBy] = useState<'cardId' | 'name' | 'rarity' | 'quantity'>('cardId');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('asc');
 
   // Cart
@@ -62,47 +63,57 @@ export default function RiftboundPage() {
     try {
       const response = await fetch('/riftbound/collection.csv');
       const text = await response.text();
-      const lines = text.split('\n');
+
+      // Parse CSV avec PapaParse pour gérer correctement les champs quotés et les différents séparateurs
+      const results = Papa.parse(text, {
+        header: true,
+        skipEmptyLines: true,
+        delimiter: '', // Auto-detect (virgule ou point-virgule)
+        transformHeader: (header) => header.trim(),
+      });
+
+      if (results.errors.length > 0) {
+        console.error('CSV parsing errors:', results.errors);
+        setError(`Erreur lors du parsing du CSV: ${results.errors[0].message}`);
+        setLoading(false);
+        return;
+      }
 
       const cards: RiftboundCard[] = [];
 
-      for (let i = 1; i < lines.length; i++) {
-        const line = lines[i].trim();
-        if (!line || line.startsWith('﻿')) continue;
+      for (const row of results.data as any[]) {
+        if (!row['card-id']) continue; // Skip empty rows
 
-        const parts = line.split(',');
-        if (parts.length >= 12) {
-          const cardId = parts[0].trim();
-          const name = parts[1].trim();
-          const type = parts[2].trim();
-          const set = parts[4].trim();
-          const rarity = parts[5].trim();
-          const quantity = parseInt(parts[6].trim()) || 0;
-          const color = parts[7].trim();
-          const cost = parts[9]?.trim() || '';
-          const might = parts[10]?.trim() || '';
-          const effect = parts[11]?.trim() || '';
-          const subType = parts[12]?.trim() || '';
+        const cardId = (row['card-id'] || '').trim();
+        const name = (row['name'] || '').trim();
+        const type = (row['type'] || '').trim();
+        const set = (row['set'] || '').trim();
+        const rarity = (row['rarity'] || '').trim();
+        const quantity = parseInt(row['quantity']) || 0;
+        const color = (row['color'] || '').trim();
+        const cost = (row['cost'] || '').trim();
+        const might = (row['might'] || '').trim();
+        const effect = (row['effect'] || '').trim();
+        const subType = (row['sub-type'] || '').trim();
 
-          // Image path: /riftbound/cards/ogn-001.png
-          const imagePath = `/riftbound/cards/${cardId.toLowerCase()}.png`;
+        // Image path: /riftbound/cards/ogn-001.png
+        const imagePath = `/riftbound/cards/${cardId.toLowerCase()}.png`;
 
-          cards.push({
-            cardId,
-            name,
-            type,
-            set,
-            rarity,
-            quantity,
-            color,
-            cost,
-            might,
-            effect,
-            subType,
-            imagePath,
-            owned: quantity > 0,
-          });
-        }
+        cards.push({
+          cardId,
+          name,
+          type,
+          set,
+          rarity,
+          quantity,
+          color,
+          cost,
+          might,
+          effect,
+          subType,
+          imagePath,
+          owned: quantity > 0,
+        });
       }
 
       setAllCards(cards);
@@ -189,7 +200,9 @@ export default function RiftboundPage() {
     // Sort
     filtered.sort((a, b) => {
       let comparison = 0;
-      if (sortBy === 'name') {
+      if (sortBy === 'cardId') {
+        comparison = a.cardId.localeCompare(b.cardId);
+      } else if (sortBy === 'name') {
         comparison = a.name.localeCompare(b.name);
       } else if (sortBy === 'rarity') {
         comparison = a.rarity.localeCompare(b.rarity);
@@ -390,6 +403,7 @@ export default function RiftboundPage() {
             onChange={(e) => setSortBy(e.target.value as any)}
             className="filter-select"
           >
+            <option value="cardId">Trier par: ID</option>
             <option value="name">Trier par: Nom</option>
             <option value="rarity">Trier par: Rareté</option>
             <option value="quantity">Trier par: Quantité</option>

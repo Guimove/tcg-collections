@@ -1,612 +1,386 @@
-card-id,name,type,type-slug,set,rarity,quantity,color,recycle cost,cost,might,effect,sub-type,card-link,alt-code,card-name
-ARC-001,Vi Destructive,Champion,champion,Arcane Box Set,Showcase,0,Fury,1x Fury,2,3,"GANKING (I can move from battlefield to battlefield.)
-Recycle 1 from your trash: Give me +1 [might] this turn.","Piltover, Vi",arc-001-vi-destructive,ogn-036-2,Vi Destructive
-ARC-002,Caitlyn Patrolling,Champion,champion,Arcane Box Set,Showcase,0,Calm,1x Calm,3,3,"I must be assigned combat damage last.
-[tap]: Deal damage equal to my Might to a unit at a battlefield. Use this ability only while I'm at a battlefield.",Piltover,arc-002-caitlyn-patrolling,ogn-068-2,Caitlyn Patrolling
-ARC-003,Heimerdinger Inventor,Champion,champion,Arcane Box Set,Showcase,0,Mind,1x Mind,3,3,"I have all [tap] abilities of all friendly legends, units, and gears.","Piltover, Yordle",arc-003-heimerdinger-inventor,ogn-111-2,Heimerdinger Inventor
-ARC-004,Warwick Hunter,Champion,champion,Arcane Box Set,Showcase,0,Body,1x Body,6,5,"I enter ready.
-When I attack, destroy all damaged enemy units here.","Zaun, Dog",arc-004-warwick-hunter,ogn-159-2,Warwick Hunter
-ARC-005,Jinx Rebel,Champion,champion,Arcane Box Set,Showcase,0,Chaos,1x Chaos,5,5,"When you discard one or more cards, ready me and give me +1 [might] this turn.",Zaun,arc-005-jinx-rebel,ogn-202-3,Jinx Rebel
-ARC-006,Viktor Leader,Champion,champion,Arcane Box Set,Showcase,0,Order,1x Order,4,4,"When another non-Recruit unit you control dies, play a 1 [might] Recruit unit token into your base.",Zaun,arc-006-viktor-leader,ogn-246-3,Viktor Leader
-OGN-001,Blazing Scorcher,Unit,unit,Origins,Common,1,Fury,,5,5,ACCELERATE (You may pay [1] [fury] as an additional cost to have me enter ready.),"Noxus, Dragon",ogn-001-blazing-scorcher,ogn-001-1,Blazing Scorcher
-OGN-002,Brazen Buccaneer,Unit,unit,Origins,Common,1,Fury,,6,5,"As you play me, you may discard a card as an additional cost. If you do, reduce my cost by [2] .","Bilgewater, Pirate",ogn-002-brazen-buccaneer,ogn-002-1,Brazen Buccaneer
-OGN-003,Chemtech Enforcer,Unit,unit,Origins,Common,1,Fury,,2,2,"ASSAULT 2 ( +2 [might] while I'm an attacker. ) When you play me, discard 1.",Zaun,ogn-003-chemtech-enforcer,ogn-003-1,Chemtech Enforcer
-OGN-004,Cleave,Spell,spell,Origins,Common,1,Fury,,1,,"ACTION (Play on your turn or in showdowns.)
-Give a unit ASSAULT 3 this turn. (+3 [might] while it's an attacker.)",,ogn-004-cleave,ogn-004-1,Cleave
-OGN-005,Disintegrate,Spell,spell,Origins,Common,1,Fury,,4,,"ACTION  (Play on your turn or showdowns.)
-Deal 3 to a unit at a battlefield. If this kills it, do this: draw 1.",,ogn-005-disintegrate,ogn-005-1,Disintegrate
-OGN-006,Flame Chompers,Unit,unit,Origins,Common,1,Fury,,3,3,"When you discard me, you may pay [fury] to play me.",Zaun,ogn-006-flame-chompers,ogn-006-1,Flame Chompers
-OGN-007,Fury Rune,Rune,rune,Origins,Common,1,Fury,,,,,,ogn-007-fury-rune,ogn-007-1,Fury Rune
-OGN-007a,Fury Rune,Rune,rune,Origins,Showcase,0,Fury,,,,,,ogn-007a-fury-rune,ogn-007-2,Fury Rune
-OGN-008,Get Excited!,Spell,spell,Origins,Common,1,Fury,1x Fury,2,,"ACTION (Play on your turn or in showdowns.)
-Discard 1. Deal its Energy cost as damage to a unit at a battlefield. (Ignore its Power cost.)",,ogn-008-get-excited,ogn-008-1,Get Excited!
-OGN-009,Hextech Ray,Spell,spell,Origins,Common,1,Fury,1x Fury,1,,"ACTION (Play on your turn or in showdowns.)
-Deal 3 damage to a unit at a battlefield.",,ogn-009-hextech-ray,ogn-009-1,Hextech Ray
-OGN-010,Legion Rearguard,Unit,unit,Origins,Common,1,Fury,,2,2,"ACCELERATE (As I'm played, your may pay [1] [fury] as an additional cost to have me enter ready)","Noxus, Trifarian",ogn-010-legion-rearguard,ogn-010-1,Legion Rearguard
-OGN-011,Magma Wurm,Unit,unit,Origins,Common,1,Fury,1x Fury,8,8,Other friendly units enter ready.,Freljord,ogn-011-magma-wurm,ogn-011-1,Magma Wurm
-OGN-012,Noxus Hopeful,Unit,unit,Origins,Common,1,Fury,,4,3,LEGION — I cost [2]  less. (Get the effect if you've played another card this turn.),"Noxus, Trifarian",ogn-012-noxus-hopeful,ogn-012-1,Noxus Hopeful
-OGN-013,Pouty Poro,Unit,unit,Origins,Common,1,Fury,,2,2,DEFLECT (Opponents must pay [rune] to choose me with an ability or spell),Poro,ogn-013-pouty-poro,ogn-013-1,Pouty Poro
-OGN-014,Sky Splitter,Spell,spell,Origins,Common,1,Fury,1x Fury,8,,"ACTION (Play on your turn or in showdowns.)
-This spell's Energy cost is reduced by the highest Might among units you control. 
-Deal 5 to a unit at a battlefield.",,ogn-014-sky-splitter,ogn-014-1,Sky Splitter
-OGN-015,Captain Farron,Unit,unit,Origins,Uncommon,1,Fury,1x Fury,4,5,Other friendly units here have ASSAULT. (+1 [might] while they're attackers.),"Noxus, Trifarian",ogn-015-captain-farron,ogn-015-1,Captain Farron
-OGN-016,Dangerous Duo,Unit,unit,Origins,Uncommon,1,Fury,,3,3,"LEGION — When you play me, give a unit +2 [might] this turn. (Get the effect if you've played another card this turn.)","Bandle City, Mech",ogn-016-dangerous-duo,ogn-016-1,Dangerous Duo
-OGN-017,Iron Ballista,Gear,gear,Origins,Uncommon,1,Fury,,3,,"This enters exhausted.
-[tap]: Deal 2 to a unit at a battlefield.",,ogn-017-iron-ballista,ogn-017-1,Iron Ballista
-OGN-018,Noxus Saboteur,Unit,unit,Origins,Uncommon,1,Fury,,3,3,Your opponents' HIDDEN cards can't be revealed here.,"Noxus, Trifarian",ogn-018-noxus-saboteur,ogn-018-1,Noxus Saboteur
-OGN-019,Raging Soul,Unit,unit,Origins,Uncommon,1,Fury,,4,4,"If you've discarded a card this turn, I have ASSAULT and GANKING. (+1 [might] while I'm an attacker. I can move from battlefield to battlefield)","Shadow Isles, Spirit",ogn-019-raging-soul,ogn-019-1,Raging Soul
-OGN-020,Scrapyard Champion,Unit,unit,Origins,Uncommon,1,Fury,1x Fury,5,5,"LEGION When you play me, discard 2 then draw 2. ( Gain this effect if you've played another card this turn.)","Bandle City, Mech",ogn-020-scrapyard-champion,ogn-020-1,Scrapyard Champion
-OGN-021,Sun Disc,Gear,gear,Origins,Uncommon,1,Fury,1x Fury,2,,[tap]: LEGION — The next unit you play this turn enters ready. (Get the effect if you've played another card this turn.),,ogn-021-sun-disc,ogn-021-1,Sun Disc
-OGN-022,Thermo Beam,Spell,spell,Origins,Uncommon,1,Fury,2x Fury,5,,"ACTION (Play on your turn or in showdowns)
-Kill all gear.",,ogn-022-thermo-bear,ogn-022-1,Thermo Beam
-OGN-023,Unlicensed Armory,Gear,gear,Origins,Uncommon,1,Fury,,2,,"Discard 1, [tap]: Choose a friendly unit. The next time it would die this turn, you may pay [fury] to heal it, exhaust it, and recall it instead. (Send it to base. This isn't a move.)",,ogn-023-unlicensed-armory,ogn-023-1,Unlicensed Armory
-OGN-024,Void Seeker,Spell,spell,Origins,Uncommon,1,Fury,1x Fury,3,,"ACTION (Play on your turn or in showdowns.)
-Deal 4 to a unit at a battlefield. Draw 1.",,ogn-024-void-seeker,ogn-024-1,Void Seeker
-OGN-025,Blind Fury,Spell,spell,Origins,Rare,0,Fury,2x Fury,4,,"ACTION (Play on your turn or in showdowns.)
-Each opponent reveals the top card of their Main Deck. Choose one and banish it, then play it, ignoring its cost. 
-Then recycle the rest.",,ogn-025-blind-fury,ogn-025-1,Blind Fury
-OGN-026,Brynhir Thundersong,Unit,unit,Origins,Rare,0,Fury,,6,5,"When you play me, opponents can't play cards this turn.",Freljord,ogn-026-brynhir-thundersong,ogn-026-1,Brynhir Thundersong
-OGN-027,Darius Trifarian,Champion,champion,Origins,Rare,0,Fury,1x Fury,5,5,"When you play your second card in a turn, give me +2 [might] this turn and ready me.","Noxus, Trifarian, Darius",ogn-027-darius-trifarian,ogn-027-1,Darius Trifarian
-OGN-027a,Darius Trifarian,Champion,champion,Origins,Showcase,0,Fury,1x Fury,5,5,"When you play your second card in a turn, give me +2 [might] this turn and ready me.","Noxus, Trifarian, Darius",ogn-027a-darius-trifarian,ogn-027-2,Darius Trifarian
-OGN-028,Draven Showboat,Champion,champion,Origins,Rare,0,Fury,1x Fury,5,3,My Might is increased by your points.,"Noxus, Draven",ogn-028-draven-showboat,ogn-028-1,Draven Showboat
-OGN-029,Falling Star,Spell,spell,Origins,Rare,0,Fury,2x Fury,2,,"Do this twice:
-Deal 3 to a unit. (You can choose different units.)",,ogn-029-falling-star,ogn-029-1,Falling Star
-OGN-030,Jinx Demolitionist,Champion,champion,Origins,Rare,0,Fury,1x Fury,3,4,"ACCELERATE (You may pay [1] [fury] as an additional cost to have me enter ready.)
-ASSAULT 2 (+2 [might] while I'm an attacker.)
-When you play me, discard 2.",Zaun,ogn-030-jinx-demolitionist,ogn-030-1,Jinx Demolitionist
-OGN-030a,Jinx Demolitionist,Champion,champion,Origins,Showcase,0,Fury,1x Fury,3,4,"ACCELERATE (You may pay [1] [fury] as an additional cost to have me enter ready.) 
-ASSAULT 2 (+2 [might] while I'm an attacker.) 
-When you play me, discard 2 cards.","Zaun, Jinx",ogn-030a-jinx-demolistionist,ogn-030-2,Jinx Demolitionist
-OGN-031,Raging Firebrand,Unit,unit,Origins,Rare,0,Fury,1x Fury,6,4,"When you play me, the next spell you play this turn costs [5] less.","Dragon, Mount Targon",ogn-031-raging-firebrand,ogn-031-1,Raging Firebrand
-OGN-032,Ravenborn Tome,Gear,gear,Origins,Rare,0,Fury,,3,,[tap]: The next spell you play this turn deals 1 Bonus Damage. (Each instance of damage the spell deals is increased by 1.),,ogn-032-ravenborn-tome,ogn-032-1,Ravenborn Tome
-OGN-033,Shakedown,Spell,spell,Origins,Rare,0,Fury,1x Fury,2,,"REACTION (Play any time, even before spells and abilities resolve.)
-Choose an enemy unit. Deal 6 to it unless its controller has you draw 2.",,ogn-033-shakedown,ogn-033-1,Shakedown
-OGN-034,Tryndamere Barbarian,Champion,champion,Origins,Rare,0,Fury,2x Fury,7,8,"When I conquer after an attack, if you assigned 5 or more excess damage to opponent's units, you score 1 Point.",Freljord,ogn-034-tryndamere-barbarian,ogn-034-1,Tryndamere Barbarian
-OGN-035,Vayne Hunter,Champion,champion,Origins,Rare,0,Fury,1x Fury,4,2,"ASSAULT 3 (+3 [might] while I'm an attacker.)
-If an opponent controls a battlefield, I enter ready.
-When I conquer, you may pay [1] to return me to my owner's hand.","Demacia, Vayne",ogn-035-vayne-hunter,ogn-035-1,Vayne Hunter
-OGN-036,Vi Destructive,Champion,champion,Origins,Rare,0,Fury,1x Fury,2,3,"GANKING (I can move from battlefield to battlefield.)
-Recycle 1 from your trash: Give me +1 [might] this turn.","Piltover, Vi",ogn-036-vi-destructive,ogn-036-1,Vi Destructive
-OGN-037,Immortal Phoenix,Unit,unit,Origins,Epic,0,Fury,1x Fury,3,3,"ASSAULT 2 (+2 [might] when I'm an attacker.)
-When you kill a unit with a spell, you may pay [1] [fury] to play me from your trash.",Spirit,ogn-037-immortal-phoenix,ogn-037-1,Immortal Phoenix
-OGN-038,Kadregrin the Infernal,Unit,unit,Origins,Epic,0,Fury,2x Fury,9,9,"When you play me, draw 1 for each of your MIGHTY units. (A unit is Mighty while it has 5+ [might].)","Dragon, Demacia",ogn-038-kadregrin-the-infernal,ogn-038-1,Kadregrin the Infernal
-OGN-039,Kai'Sa Survivor,Champion,champion,Origins,Epic,0,Fury,,4,4,"ACCELERATE (You may pay [1] [fury] as an additional cost to have me enter ready.)
-When I conquer, draw 1.","Kai'Sa, The Void",ogn-039-kaisa-survivor,ogn-039-1,Kai'Sa Survivor
-OGN-039a,Kai'Sa Survivor,Champion,champion,Origins,Showcase,0,Fury,,4,4,"ACCELERATE (You may pay [1] [fury] as an additional cost to have me enter ready.)
-When I conquer, draw 1.","Kai'Sa, The Void",ogn-039a-kaisa-survivor,ogn-039-2,Kai'Sa Survivor
-OGN-040,Seal of Rage,Gear,gear,Origins,Epic,0,Fury,1x Fury,0,,[tap]: REACTION — ADD [fury] . (Abilities that add resources can't be reacted to.),,ogn-040-seal-of-rage,ogn-040-1,Seal of Rage
-OGN-041,Volibear Furious,Champion,champion,Origins,Epic,0,Fury,2x Fury,10,9,"DEFLECT 2 ( Opponents must pay [rune][rune] to choose me with a spell or ability.) 
-When I attack, deal 5 damage split among any number of enemy units here.",Freljord,ogn-041-volibear-furious,ogn-041-1,Volibear Furious
-OGN-041a,Volibear Furious,Champion,champion,Origins,Showcase,0,Fury,2x Fury,10,9,"DEFLECT 2 (Opponents must play  [rune] [rune] to choose me with a spell or effect.)
-When I attack, deal 5 damage split among any number of enemy units here.
-","Freljord, Volibear",ogn-041a-volibear-furious,ogn-041-2,Volibear Furious
-OGN-042,Calm Rune,Rune,rune,Origins,Common,1,Calm,,,,,,ogn-042-calm-rune,ogn-042-1,Calm Rune
-OGN-042a,Calm Rune,Rune,rune,Origins,Showcase,0,Calm,,,,,,ogn-042a-calm-rune,ogn-042-2,Calm Rune
-OGN-043,Charm,Spell,spell,Origins,Common,1,Calm,1x Calm,1,,"Move an enemy unit.
-",,ogn-043-charm,ogn-043-1,Charm
-OGN-044,Clockwork Keeper,Unit,unit,Origins,Common,1,Calm,,2,2,"You may pay [calm] as an additional cost to play me.
-When you play me, if you paid the additional cost, draw 1.",Shurima,ogn-044-clockwork-keeper,ogn-044-1,Clockwork Keeper
-OGN-045,Defy,Spell,spell,Origins,Common,1,Calm,1x Calm,1,,"REACTION (Play anytime, even before spells and abilities resolve.) 
-Counter a spell that costs no more than [4] and no more than [rune] .",,ogn-045-defy,ogn-045-1,Defy
-OGN-046,En Garde,Spell,spell,Origins,Common,1,Calm,,1,,"REACTION (Play any time, even before spells or abilities resolve.)
-Give a friendly unit +1 [might], then an additional +1 [might] this turn if it is the only unit you control there.",,ogn-046-en-garde,ogn-046-1,En Garde
-OGN-047,Find Your Center,Spell,spell,Origins,Common,1,Calm,,3,,"ACTION (Play on your turn or in showdowns.)
-If an opponent's score is  within 3 points of the Victory Score, this costs [2] less.
-Draw 1 and channel 1 rune exhausted.",,ogn-047-find-your-center,ogn-047-1,Find Your Center
-OGN-048,Meditation,Spell,spell,Origins,Common,1,Calm,,2,," REACTION (Play anytime, even before spells and abilities resolve.)
-As an additional cost to play this, you may exhaust a friendly unit. If you do, draw 2. Otherwise, draw 1.",,ogn-048-meditation,ogn-048-1,Meditation
-OGN-049,Playful Phantom,Unit,unit,Origins,Common,1,Calm,,5,5,,"Shadow Isles, Spirit",ogn-049-playful-phantom,ogn-049-1,Playful Phantom
-OGN-050,Rune Prison,Spell,spell,Origins,Common,1,Calm,1x Calm,2,,"ACTION (Play on your turn or in showdowns.)
-Stun a unit. (It doesn't deal combat damage this turn.)",,ogn-050-rune-prison,ogn-050-1,Rune Prison
-OGN-051,Solari Shieldbearer,Unit,unit,Origins,Common,1,Calm,,3,2,"When you play me, stun a unit. (It doesn't deal combat damage this turn.)",,ogn-051-solari-shieldbearer,ogn-051-1,Solari Shieldbearer
-OGN-052,Stalwart Poro,Unit,unit,Origins,Common,2,Calm,,2,2,SHIELD (+1 [might] while I'm a defender.),Poro,ogn-052-stalwart-poro,ogn-052-1,Stalwart Poro
-OGN-053,Stand United,Spell,spell,Origins,Common,1,Calm,,3,,"HIDDEN  (Hide now for [rune] to react with later for [0]) 
-ACTION (Play on your turn or in showdowns.)
-Buff a friendly unit. Buffs give an additional +1 [might] to friendly units this turn. (To buff a unit, give it a +1 [might] buff it it doesn't already have one.)
-",,ogn-053-stand-united,ogn-053-1,Stand United
-OGN-054,Sunlit Guardian,Unit,unit,Origins,Common,1,Calm,,3,3,"SHIELD (+1 [might] while I'm a defender.)
-TANK (I must be assigned combat damage first.)",Shurima,ogn-054-sunlit-guardian,ogn-054-1,Sunlit Guardian
-OGN-055,Wielder of Water,Unit,unit,Origins,Common,1,Calm,,3,2,"While I'm attacking or defending alone, I have +2 [might].",Ionia,ogn-055-wielder-of-water,ogn-055-1,Wielder of Water
-OGN-056,Adaptatron,Unit,unit,Origins,Uncommon,1,Calm,,4,3,"When I conquer, you may kill a gear. If you do, buff me. (If I don't have a buff, I get a +1 [might] buff.)","Mech, Piltover",ogn-056-adaptatron,ogn-056-1,Adaptatron
-OGN-057,Block,Spell,spell,Origins,Uncommon,1,Calm,,2,,"HIDDEN (Hide now for [rune] to react with later for [0].)
-ACTION (Play on your turn or in showdowns.)
-Give a unit SHIELD 3 and TANK this turn. (+3 [might] while it's a defender. It must be assigned combat damage first.)",,ogn-057-block,ogn-057-1,Block
-OGN-058,Discipline,Spell,spell,Origins,Uncommon,1,Calm,,2,,"REACTION (Play anytime, even before spells and abilities resolve.)
-Give a unit +2 [might] this turn. Draw 1.",,ogn-058-discipline,ogn-058-1,Discipline
-OGN-059,Eclipse Herald,Unit,unit,Origins,Uncommon,1,Calm,1x Calm,7,7,"When you stun an enemy unit, ready me and give me +1 [might] this turn.","Bird, Mount Targon",ogn-059-eclipse-herald,ogn-059-1,Eclipse Herald
-OGN-060,Mask of Foresight,Gear,gear,Origins,Uncommon,1,Calm,,2,,"When a friendly unit attacks or defends alone, give it +1 [might] this turn.",,ogn-060-mask-of-foresight,ogn-060-1,Mask of Foresight
-OGN-061,Poro Herder,Unit,unit,Origins,Uncommon,1,Calm,1x Calm,3,3,"When you play me, if you control a Poro, buff me and draw 1. (If I don't have a buff, I get a +1 [might] buff.)",Freljord,ogn-061-poro-herder,ogn-061-1,Poro Herder
-OGN-062,Reinforce,Spell,spell,Origins,Uncommon,1,Calm,,5,,Look at the top 5 cards of you Main Deck. You may play a unit from among them. Its Energy cost is reduced by [5]. Then recycle the remaining cards.,,ogn-062-reinforce,ogn-062-1,Reinforce
-OGN-063,Spirit's Refuge,Gear,gear,Origins,Uncommon,1,Calm,1x Calm,2,,"When you play this, buff a friendly unit. (If it doesn't have a buff, it gets a +1 [might] buff.)
-Friendly buffed units have DEFLECT if they didn't already. (Opponents must pay [rune] to choose those units with a spell or ability.)
-",,ogn-063-spirits-refuge,ogn-063-1,Spirit's Refuge
-OGN-064,Wind Wall,Spell,spell,Origins,Uncommon,1,Calm,2x Calm,3,,"REACTION (Play anytime, even before spells and abilities resolve.)
-Counter a spell.",,ogn-064-wind-wall,ogn-064-1,Wind Wall
-OGN-065,Wizened Elder,Unit,unit,Origins,Uncommon,1,Calm,,4,4,"While I'm buffed, I have an additional +1 [might].",Ionia,ogn-065-wizened-elder,ogn-065-1,Wizened Elder
-OGN-066,Ahri Alluring,Champion,champion,Origins,Rare,0,Calm,1x Calm,5,4,"When I hold, you score 1 point.
-","Ionia, Ahri",ogn-066-ahri-alluring,ogn-066-1,Ahri Alluring
-OGN-066a,Ahri Alluring,Champion,champion,Origins,Showcase,0,Calm,1x Calm,5,4,"When I hold, you score 1 point.
-","Ionia, Ahri",ogn-066a-ahri-alluring,ogn-066-2,Ahri Alluring
-OGN-067,Blitzcrank Impassive,Champion,champion,Origins,Rare,0,Calm,1x Calm,5,5,"TANK (I must be assigned combat damage first.)
-When you play me to a battlefield, you may move an enemy unit to here.
-When i hold, return me to my owner's hand.","Zaun, Mech, Blitzcrank",ogn-067-blitzcrank-impassive,ogn-067-1,Blitzcrank Impassive
-OGN-068,Caitlyn Patrolling,Champion,champion,Origins,Rare,0,Calm,1x Calm,3,3,"I must be assigned combat damage last.
-[tap]: Deal damage equal to my Might to a unit at a battlefield. Use this ability only while I'm at a battlefield.",Piltover,ogn-068-caitlyn-patrolling,ogn-068-1,Caitlyn Patrolling
-OGN-069,Last Stand,Spell,spell,Origins,Rare,0,Calm,1x Calm,3,,"ACTION (Play on your turn or in showdowns.)
-Double a friendly unit's Might this turn. Give it TEMPORARY. (Kill it at the start of its controller's Beginning Phase, before scoring.)",,ogn-069-last-stand,ogn-069-1,Last Stand
-OGN-070,Mageseeker Warden,Unit,unit,Origins,Rare,0,Calm,1x Calm,6,5,"While I'm at a battlefield, opponents can only play units to their base.
-While I'm at a battlefield, spells and abilities can't ready enemy units and gears.",Demacia,ogn-070-mageseeker-warden,ogn-070-1,Mageseeker Warden
-OGN-071,Party Favors,Spell,spell,Origins,Rare,0,Calm,,3,,"Each other player chooses Cards or Runes.
-For each player that chooses Cards, you and that player each draw 1.
-For each player that chooses Runes, you and that player each channel 1 rune exhausted.",,ogn-071-party-favors,ogn-071-1,Party Favors
-OGN-072,Solari Shrine,Gear,gear,Origins,Rare,0,Calm,,3,,"When you kill a stunned enemy unit, you may exhaust this to draw 1.",,ogn-072-solari-shrine,ogn-072-1,Solari Shrine
-OGN-073,Sona Harmonious,Champion,champion,Origins,Rare,0,Calm,1x Calm,4,4,"At the end of your turn, if I'm at a battlefield, ready up to 4 friendly runes.","Demacia, Sona",ogn-073-sona-harmonious,ogn-073-1,Sona Harmonious
-OGN-074,Taric Protector,Champion,champion,Origins,Rare,0,Calm,1x Calm,4,4,"SHIELD (+1 might while I'm a defender.)
-TANK (I must be assigned combat damage first.)
-Other friendly units here have SHIELD.","Mount Targon, Taric",ogn-074-taric-protector,ogn-074-1,Taric Protector
-OGN-075,Tasty Faefolk,Unit,unit,Origins,Rare,0,Calm,,7,6,"ACCELERATE (You may play [1] [calm] as an additional cost to have me enter ready.)
-DEATHKNELL — Channel 2 runes exhausted and draw 1. (When I die, get the effect.)","Bandle City, Fae",ogn-075-tasty-faefolk,ogn-075-1,Tasty Faefolk
-OGN-076,Yasuo Remorseful,Champion,champion,Origins,Rare,0,Calm,2x Calm,6,6,"When I attack, deal damage equal to my Might to an enemy here.
-","Ionia, Yasuo",ogn-076-yasuo-remorseful,ogn-076-1,Yasuo Remorseful
-OGN-076a,Yasuo Remorseful,Champion,champion,Origins,Showcase,0,Calm,2x Calm,6,6,"When I attack, deal damage equal to my Might to an enemy here.
-","Ionia, Yasuo",ogn-076a-yasuo-remorseful,ogn-076-2,Yasuo Remorseful
-OGN-077,Zhonya's Hourglass,Gear,gear,Origins,Rare,0,Calm,,2,,"HIDDEN (Hide for now [rune] to react with later for [0].) 
-If a friendly unit would die, kill this instead. Heal that unit, exhaust it, and recall it. (Send it to base. This isn't a move.)",,ogn-077-zhonyas-hourglass,ogn-077-1,Zhonya's Hourglass
-OGN-078,Lee Sin Ascetic,Champion,champion,Origins,Epic,0,Calm,1x Calm,5,5,"SHIELD (+1 [might] while I'm a defender.)
-[tap]: Buff me. (I get +1 [might] buff.) 
-I can have any number of buffs.
-","Ionia, Lee Sin",ogn-078-lee-sin-ascetic,ogn-078-1,Lee Sin Ascetic
-OGN-078a,Lee Sin Ascetic,Champion,champion,Origins,Showcase,0,Calm,1x Calm,5,5,"SHIELD (+1 [might] while I'm a defender.)
-[tap]: Buff me. (I get +1 might buff.) 
-I can have any number of buffs.","Ionia, Lee Sin",ogn-078a-lee-sin-ascetic,ogn-078-2,Lee Sin Ascetic
-OGN-079,Leona Zealot,Champion,champion,Origins,Epic,0,Calm,1x Calm,6,6,"If an opponent's score is within 3 points of the Victory Score, I enter ready.
-Stunned enemy units here have -8 [might], to a minimum of 1 [might].","Mount Targon, Leona",ogn-079-leona-zealot,ogn-079-1,Leona Zealot
-OGN-079a,Leona Zealot,Champion,champion,Origins,Showcase,0,Calm,1x Calm,6,6,"If an opponent's score is within 3 points of the Victory Score, I enter ready.
-Stunned enemy units here have -8 [might], to a minimum of 1 [might].","Mount Targon, Leona",ogn-079a-leona-zealot,ogn-079-2,Leona Zealot
-OGN-080,Mystic Reversal,Spell,spell,Origins,Epic,0,Calm,3x Calm,4,,"REACTION (Play any time, even before spells and abilities resolve.)
-Gain control of a spell. You may make new choices for it.",,ogn-080-mystic-reversal,ogn-080-1,Mystic Reversal
-OGN-081,Seal of Focus,Gear,gear,Origins,Epic,0,Calm,1x Calm,0,,[tap]: REACTION — ADD [calm]. (Abilities that add resources can't be reacted to.),,ogn-081-seal-of-focus,ogn-081-1,Seal of Focus
-OGN-082,Whiteflame Protector,Unit,unit,Origins,Epic,0,Calm,2x Calm,8,8,"When you play me, give a unit +8 [might] this turn.","Dragon, Mount Targon",ogn-082-whiteflame-protector,ogn-082-1,Whiteflame Protector
-OGN-083,Consult the Past,Spell,spell,Origins,Common,1,Mind,,4,,"HIDDEN (Hide now for [rune] to react with later for [0].)
-REACTION (Play any time, even before spells and abilities resolve.)
-Draw 2.",,ogn-083-consult-the-past,ogn-083-1,Consult the Past
-OGN-084,Eager Apprentice,Unit,unit,Origins,Common,1,Mind,,3,3,"While I'm at a battlefield, the Energy costs for spells you play is reduced by [1], to a minimum of [1].",Piltover,ogn-084-eager-apprentice,ogn-084-1,Eager Apprentice
-OGN-085,Falling Comet,Spell,spell,Origins,Common,1,Mind,,5,,"ACTION (play on your turn or in showdowns.)
-Deal 6 to a unit at a battlefield.",,ogn-085-falling-comet,ogn-085-1,Falling Comet
-OGN-086,Jeweled Colossus,Unit,unit,Origins,Common,1,Mind,,5,5,"VISION (When you play me, look at the top card of your Main Deck. You may recycle it.)
-SHIELD (+1 [might] while I'm a defender.)",Mount Targon,ogn-086-jeweled-colossus,ogn-086-1,Jeweled Colossus
-OGN-087,Lecturing Yordle,Unit,unit,Origins,Common,1,Mind,,3,2,"TANK (I must be assigned combat damage first.)
-When you play me, draw 1.","Bandle City, Yordle",ogn-087-lecturing-yordle,ogn-087-1,Lecturing Yordle
-OGN-088,Mega-Mech,Unit,unit,Origins,Common,1,Mind,,7,8,,"Bandle City, Mech",ogn-088-mega-mech,ogn-088-1,Mega-Mech
-OGN-089,Mind Rune,Rune,rune,Origins,Common,1,Mind,,,,,,ogn-089-mind-rune,ogn-089-1,Mind Rune
-OGN-089a,Mind Rune,Rune,rune,Origins,Showcase,0,Mind,,,,,,ogn-089a-mind-rune,ogn-089-2,Mind Rune
-OGN-090,Orb of Regret,Gear,gear,Origins,Common,1,Mind,,1,,"[tap]: Give a unit -1 [might] this turn, to a minimum of of 1 [might].",,ogn-090-orb-of-regret,ogn-090-1,Orb of Regret
-OGN-091,Pit Crew,Unit,unit,Origins,Common,1,Mind,,3,3,"When you play a gear, ready me.",,ogn-091-pit-crew,ogn-091-1,Pit Crew
-OGN-092,Riptide Rex,Unit,unit,Origins,Common,1,Mind,2x Mind,6,6,"When you play me, deal 6 to an enemy unit at a battlefield.","Bilgewater, Pirate",ogn-092-riptide-rex,ogn-092-1,Riptide Rex
-OGN-093,Smoke Screen,Spell,spell,Origins,Common,1,Mind,1x Mind,2,,"REACTION (Play any time, even before spells and abilities resolve.)
-Give a unit -4 [might] this turn, to a minimum of 1 [might].",,ogn-093-smoke-screen,ogn-093-1,Smoke Screen
-OGN-094,Sprite Call,Spell,spell,Origins,Common,1,Mind,,3,,"HIDDEN (Hide now for [rune] to react with later for [0])
-ACTION (Play on your turn or in showdowns.)
-Play a ready 3 [might] Sprite unit token with TEMPORARY (Kill it at the start of its controller's Beginning Phase, before scoring.)",,ogn-094-sprite-call,ogn-094-1,Sprite Call
-OGN-095,Stupefy,Spell,spell,Origins,Common,1,Mind,,1,,"REACTION (Play anytime, even before spells and abilities resolve.)
-Give a unit +1 [might] this turn, to a minimum of 1 [might]. Draw 1.",,ogn-095-stupefy,ogn-095-1,Stupefy
-OGN-096,Watchful Sentry,Unit,unit,Origins,Common,1,Mind,,2,1,"Deathknell — Draw 1.  When I die, get the effect.)",Freljord,ogn-096-watchful-sentry,ogn-096-1,Watchful Sentry
-OGN-097,Blastcone Fae,Unit,unit,Origins,Uncommon,1,Mind,1x Mind,2,2,"HIDDEN (Hide now for [rune] to react with later for [0].)
-When you play me, give a unit -2 [might] this turn, to a minimum of 1 [might]","Bandle City, Fae",ogn-097-blastcone-fae,ogn-097-1,Blastcone Fae
-OGN-098,Energy Conduit,Gear,gear,Origins,Uncommon,1,Mind,,3,,[tap]: REACTION - ADD 1. (Abilities that add resources can't be reacted to.),,ogn-098-energy-conduit,ogn-098-1,Energy Conduit
-OGN-099,Garbage Grabber,Gear,gear,Origins,Uncommon,1,Mind,,2,,"Recycle 3 from your trash, [1], [tap]: Draw 1.",,ogn-099-garbage-grabber,ogn-099-1,Garbage Grabber
-OGN-100,Gemcraft Seer,Unit,unit,Origins,Uncommon,1,Mind,1x Mind,3,3,"VISION (When you play me, look at the top card of your Main Deck. You may recycle it.) 
-Other friendly units have VISION. ",Mount Targon,ogn-100-gemcraft-seer,ogn-100-1,Gemcraft Seer
-OGN-101,Mushroom Pouch,Gear,gear,Origins,Uncommon,1,Mind,,2,,"At the start of your Beginning Phase, if you control a facedown card at a battlefield, draw 1.",,ogn-101-mushroom-pouch,ogn-101-1,Mushroom Pouch
-OGN-102,Portal Rescue,Spell,spell,Origins,Uncommon,1,Mind,1x Mind,3,,"ACTION (Play on your turn or in showdowns.)
-Banish a friendly unit, then its owner plays it to their base, ignoring its cost.",,ogn-102-portal-rescue,ogn-102-1,Portal Rescue
-OGN-103,Ravenbloom Student,Unit,unit,Origins,Uncommon,1,Mind,,2,2,"When you play a spell, give me +1 [might] this turn.
-",Noxus,ogn-103-ravenbloom-student,ogn-103-1,Ravenbloom Student
-OGN-104,Retreat,Spell,spell,Origins,Uncommon,1,Mind,,1,,"REACTION (Play any time, even before spells and abilities resolve.)
-Return a friendly unit to its owner's hand. Its owner channels 1 rune exhausted.",,ogn-104-retreat,ogn-104-1,Retreat
-OGN-105,Singularity,Spell,spell,Origins,Uncommon,1,Mind,2x Mind,6,,Deal 6 to each of up to two units.,,ogn-105-singularity,ogn-105-1,Singularity
-OGN-106,Sprite Mother,Unit,unit,Origins,Uncommon,1,Mind,1x Mind,4,3,"When you play me, play a ready 3 [might] Sprite unit token with TEMPORARY here. (Kill it at the start of its controller's Beginning Phase, before scoring.)",Fae,ogn-106-sprite-mother,ogn-106-1,Sprite Mother
-OGN-107,Ava Achiever,Unit,unit,Origins,Rare,0,Mind,,5,4,"When I attack, you may pay [mind] to play a card with HIDDEN from your hand, ignoring its cost. If it’s a unit, play it here.","Bandle City, Yordle",ogn-107-ava-achiever,ogn-107-1,Ava Achiever
-OGN-108,Convergent Mutation,Spell,spell,Origins,Rare,0,Mind,1x Mind,2,,"REACTION (Play any time, even before spells and abilities resolve.)
-Choose a friendly unit. This turn, increase its Might to the Might of another friendly unit.",,ogn-108-convergent-mutation,ogn-108-1,Convergent Mutation
-OGN-109,Dr. Mundo Expert,Champion,champion,Origins,Rare,0,Mind,2x Mind,8,6,"My Might is increased by the number of cards in your trash.
-At the start of your Beginning Phase, recycle 3 from your trash.","Zaun, Dr. Mundo",ogn-109-dr-mundo-expert,ogn-109-1,Dr. Mundo Expert
-OGN-110,Ekko Recurrent,Champion,champion,Origins,Rare,0,Mind,1x Mind,5,5,"ACCELERATE (You may pay [1] [mind] as an additional cost to have me enter ready.)
-DEATHKNELL - Recycle me to ready your runes. (When I die, get the effect.)",Zaun,ogn-110-ekko-recurrent,ogn-110-1,Ekko Recurrent
-OGN-111,Heimerdinger Inventor,Champion,champion,Origins,Rare,0,Mind,1x Mind,3,3,"I have all [tap] abilities of all friendly legends, units, and gears.","Piltover, Yordle",ogn-111-heimerdinger-inventor,ogn-111-1,Heimerdinger Inventor
-OGN-112,Kai'Sa Evolutionary,Champion,champion,Origins,Rare,0,Mind,1x Mind,6,6,"GANKING (I can move from battlefield to battlefield.) When I conquer, you may play a spell from your trash with Energy cost less than your points without paying its Energy cost. Then recycle it, (You must still pay its Power cost.)","Kai'Sa, The Void",ogn-112-kaisa-evolutionary,ogn-112-1,Kai'Sa Evolutionary
-OGN-112a,Kai'Sa Evolutionary,Champion,champion,Origins,Showcase,0,Mind,1x Mind,6,6,"GANKING (I can move from battlefield to battlefield.) When I conquer, you may play a spell from your trash with Energy cost less than your points without paying its Energy cost. Then recycle it, (You must still pay its Power cost.)","Kai'Sa, The Void",ogn-112a-kaisa-evolutionary,ogn-112-2,Kai'Sa Evolutionary
-OGN-113,Malzahar Fanatic,Champion,champion,Origins,Rare,0,Mind,,4,3,"Kill a friend unit or gear, [tap] : ACTION — ADD [rune] [rune]. (Use on your turn or in showdowns. Abilities that add resources can't be reacted to.)","The Void, Malzahar",ogn-113-malzahar-fanatic,ogn-113-1,Malzahar Fanatic
-OGN-114,Progress Day,Spell,spell,Origins,Rare,0,Mind,1x Mind,6,,Draw 4.,,ogn-114-progress-day,ogn-114-1,Progress Day
-OGN-115,Promising Future,Spell,spell,Origins,Rare,0,Mind,1x Mind,5,,"Each player looks at the top 5 cards of their Main Deck, banishes one of them, then recycles the rest. 
-Starting with the next player, each player plays those cards, ignoring Energy costs. (They must still pay Power costs.)",,ogn-115-promising-future,ogn-115-1,Promising Future
-OGN-116,Thousand-Tailed Watcher,Unit,unit,Origins,Rare,0,Mind,1x Mind,7,7,"ACCELERATE (You may pay [1] [mind] as an additional cost to have me enter ready.)
-When you play me, give enemy units -3 [might] this turn, to a minimum of 1 [might].",Ionia,ogn-116-thousand-tailed-watcher,ogn-116-1,Thousand-Tailed Watcher
-OGN-117,Viktor Innovator,Champion,champion,Origins,Rare,0,Mind,1x Mind,4,3,"When you play a card on an opponent's turn, play a 1 [might] Recruit unit token in your base.","Zaun, Viktor",ogn-117-viktor-innovator,ogn-117-1,Viktor Innovator
-OGN-117a,Viktor Innovator,Champion,champion,Origins,Showcase,0,Mind,1x Mind,4,3,"When you play a card on an opponent's turn, play a 1 [might] Recruit unit token in your base.","Zaun, Viktor",ogn-117a-viktor-innovator,ogn-117-2,Viktor Innovator
-OGN-118,Wraith of Echoes,Unit,unit,Origins,Rare,0,Mind,1x Mind,6,5,"The first time a friendly unit dies each turn, draw 1.","Shadow Isles, Spirit",ogn-118-wraith-of-echoes,ogn-118-1,Wraith of Echoes
-OGN-119,Ahri Inquisitive,Champion,champion,Origins,Epic,0,Mind,1x Mind,3,3,"When I attack or defend, give an enemy unit here -2 [might] this turn, to a minimum of 1 [might].","Ionia, Ahri",ogn-119-ahri-inquisitive,ogn-119-1,Ahri Inquisitive
-OGN-119a,Ahri Inquisitive,Champion,champion,Origins,Showcase,0,Mind,1x Mind,3,3,"When I attack or defend, give an enemy unit here -2 [might] this turn, to a minimum of 1 [might].","Ionia, Ahri",ogn-119a-ahri-inquisitive,ogn-119-2,Ahri Inquisitive
-OGN-120,Seal of Insight,Gear,gear,Origins,Epic,0,Mind,1x Mind,0,,"[tap]: REACTION - ADD [mind]. Activate this any time.
-(Abilities that add resources can't be reacted to.)
-",,ogn-120-seal-of-insight,ogn-120-1,Seal of Insight
-OGN-121,Teemo Strategist,Champion,champion,Origins,Epic,0,Mind,1x Mind,2,2,"HIDDEN (Hide now for [rune] to react with later for [0].)
-When I defend, choose an enemy unit here and reveal the top 5 cards of your Main Deck. Deal 1 to that unit for each card with HIDDEN revealed this way, then recycle the revealed cards.","Bandle City, Yordle, Teemo",ogn-121-teemo-strategist,ogn-121-1,Teemo Strategist
-OGN-121a,Teemo Strategist,Champion,champion,Origins,Epic,0,Mind,1x Mind,2,2,"HIDDEN (Hide now for [rune] to react with later for [0].)
-When I defend, choose an enemy unit here and reveal the top 5 cards of your Main Deck. Deal 1 to that unit for each card with HIDDEN revealed this way, then recycle the revealed cards.","Bandle City, Yordle, Teemo",ogn-121a-teemo-strategist,ogn-121-2,Teemo Strategist
-OGN-122,Time Warp,Spell,spell,Origins,Epic,0,Mind,4x Mind,10,,Take a turn after this one. Banish this.,,ogn-122-time-warp,ogn-122-1,Time Warp
-OGN-123,Unchecked Power,Spell,spell,Origins,Epic,0,Mind,2x Mind,7,,"Exhaust all friendly units, then deal 12 to all units at battlefields.",,ogn-123-unchecked-power,ogn-123-1,Unchecked Power
-OGN-124,Arena Bar,Gear,gear,Origins,Common,1,Body,,3,,"[tap]: Buff an exhausted friendly unit. (If it doesn't have a buff, it gets a +1 [might] buff.)",,ogn-124-arena-bar,ogn-124-1,Arena Bar
-OGN-125,Bilgewater Bully,Unit,unit,Origins,Common,1,Body,,6,6,"While I'm buffed, I have GANKING. (I can move from battlefield to battlefield.)",Bilgewater,ogn-125-bilgewater-bully,ogn-125-1,Bilgewater Bully
-OGN-126,Body Rune,Rune,rune,Origins,Common,1,Body,,,,,,ogn-126-body-rune,ogn-126-1,Body Rune
-OGN-126a,Body Rune,Rune,rune,Origins,Showcase,0,Body,,,,,,ogn-126a-body-rune,ogn-126-2,Body Rune
-OGN-127,Cannon Barrage,Spell,spell,Origins,Common,1,Body,1x Body,2,,"REACTION (Play any time, even before spells and abilities resolve.)
-Deal 2 to all enemy units in combat.",,ogn-127-cannon-barrage,ogn-127-1,Cannon Barrage
-OGN-128,Challenge,Spell,spell,Origins,Common,1,Body,1x Body,2,,"ACTION (Play on your turn or in showdowns.)
-Choose a friendly unit and an enemy unit. They deal damage equal to their Mights to each other.",,ogn-128-challenge,ogn-128-1,Challenge
-OGN-129,Confront,Spell,spell,Origins,Common,1,Body,,2,,"ACTION (Play on your turn or in showdowns.)
-Units you play this turn enter ready.
-Draw 1.",,ogn-129-confront,ogn-129-1,Confront
-OGN-130,Crackshot Corsair,Unit,unit,Origins,Common,1,Body,,3,3,"When I attack, deal 1 to an enemy unit here.","Bilgewater, Pirate",ogn-130-crackshot-corsair,ogn-130-1,Crackshot Corsair
-OGN-131,Dune Drake,Unit,unit,Origins,Common,1,Body,,5,5,"When I attack, give me +2 [might] this turn if there is a ready enemy unit here.","Dragon, Shurima",ogn-131-dune-drake,ogn-131-1,Dune Drake
-OGN-132,First Mate,Unit,unit,Origins,Common,1,Body,,3,3,"When you play me, ready another unit.
-","Bilgewater, Pirate",ogn-132-first-mate,ogn-132-1,First Mate
-OGN-133,Flurry of Blades,Spell,spell,Origins,Common,1,Body,,1,,"REACTION (Play any time, even before spells and abilities resolve.)
-Deal 1 to all units at battlefields.",,ogn-133-flurry-of-blades,ogn-133-1,Flurry of Blades
-OGN-134,Mobilize,Spell,spell,Origins,Common,1,Body,,2,,"Channel 1 rune exhausted, if you couldn't, draw 1.",,ogn-134-mobilize,ogn-134-1,Mobilize
-OGN-135,Pakaa Cub,Unit,unit,Origins,Common,1,Body,,3,3,HIDDEN (Hide now for [rune] to react with later for [0].),"Ixtal, Cat",ogn-135-pakaa-cub,ogn-135-1,Pakaa Cub
-OGN-136,Pit Rookie,Unit,unit,Origins,Common,1,Body,,2,2,"When you play me, buff another friendly unit. (If it doesn't have a buff, it gets +1 [might] buff.)",Bilgewater,ogn-136-pit-rookie,ogn-136-1,Pit Rookie
-OGN-137,Stormclaw Ursine,Unit,unit,Origins,Common,1,Body,,7,6,"Tank ( I must be assigned combat damage first. ) When you play me, channel 1 rune exhausted.",Freljord,ogn-137-stormclaw-ursine,ogn-137-1,Stormclaw Ursine
-OGN-138,Catalyst of Aeons,Spell,spell,Origins,Uncommon,1,Body,,4,,"Channel 2 rune exhausted. If you couldn't channel 2 runes this way, draw 1.",,ogn-138-catalyst-of-aeons,ogn-138-1,Catalyst of Aeons
-OGN-139,Cithria of Cloudfield,Unit,unit,Origins,Uncommon,1,Body,,2,1,"When you play another unit, buff me. (If i don't have a buff, I get a +1 [might] buff.)
-","Demacia, Elite",ogn-139-cithria-of-cloudfield,ogn-139-1,Cithria of Cloudfield
-OGN-140,Herald of Scales,Unit,unit,Origins,Uncommon,1,Body,,4,3,"Your Dragons' Energy costs are reduced by [2], to a minimum of [1].",Mount Targon,ogn-140-herald-of-scales,ogn-140-1,Herald of Scales
-OGN-141,Kinkou Monk,Unit,unit,Origins,Uncommon,1,Body,1x Body,4,4,"When you play me, buff up to two other friendly units. (Each one that doesn't have a buff gets a +1 [might] buff.)",Ionia,ogn-141-kinkou-monk,ogn-141-1,Kinkou Monk
-OGN-142,Mountain Drake,Unit,unit,Origins,Uncommon,1,Body,,9,10,,Dragon,ogn-142-mountain-drake,ogn-142-1,Mountain Drake
-OGN-143,Pirate's Haven,Gear,gear,Origins,Uncommon,1,Body,,3,,"When you ready a friendly unit, give it +1 [might] this turn.",,ogn-143-pirates-haven,ogn-143-1,Pirate's Haven
-OGN-144,Spoils of War,Spell,spell,Origins,Uncommon,1,Body,1x Body,4,,"REACTION (Play any time, even before spells and abilities resolve.)
-If an enemy unit has died this turn, this costs [2] less.
-Draw 2.",,ogn-144-spoils-of-war,ogn-144-1,Spoils of War
-OGN-145,Unyielding Spirit,Spell,spell,Origins,Uncommon,1,Body,1x Body,1,,"REACTION (Play at any time, even before spells and abilities resolve.)
-Prevent all spell and ability damage this turn.",,ogn-145-unyielding-spirit,ogn-145-1,Unyielding Spirit
-OGN-146,Wallop,Spell,spell,Origins,Uncommon,1,Body,,2,,"ACTION (Play on your turn or in showdowns.)
-As you play this, you may spend a buff as an additional cost. If you do, ignore this spell's cost. Ready a unit.",,ogn-146-wallop,ogn-146-1,Wallop
-OGN-147,Wildclaw Shaman,Unit,unit,Origins,Uncommon,1,Body,,4,3,"When you play me, you may spend a buff to buff me and ready me. (If I don't have a buff, I get a +1 [might] buff.)",Freljord,ogn-147-wildclaw-shaman,ogn-147-1,Wildclaw Shaman
-OGN-148,Anivia Primal,Champion,champion,Origins,Rare,0,Body,2x Body,7,8,"When I attack, deal 3 to all enemy units here.","Freljord, Bird, Anivia",ogn-148-anivia-primal,ogn-148-1,Anivia Primal
-OGN-149,Carnivorous Snapvine,Unit,unit,Origins,Rare,0,Body,2x Body,5,6,"When you play me, choose a unit at a battlefield. We deal damage equal to our Mights to each other.",Shadow Isles,ogn-149-carnivorous-snapvine,ogn-149-1,Carnivorous Snapvine
-OGN-150,Kraken Hunter,Unit,unit,Origins,Rare,0,Body,2x Body,3,5,"ACCELERATE (You may pay [1] [body] as an additional cost to have me enter ready.)
-ASSAULT (+1 [might] while I'm an attacker.)
-As you play me, you may spend any number of buffs as an additional cost. Reduce my cost by [body] for each buff you spend.","Bilgewater, Pirate",ogn-150-kraken-hunter,ogn-150-1,Kraken Hunter
-OGN-151,Lee Sin Centered,Champion,champion,Origins,Rare,0,Body,,6,6,"ACCELERATE (You may pay [1] [body] as an additional cost to have me enter ready.)
-Other buffed friendly units at my battlefield have +2 [might].","Ionia, Lee Sin",ogn-151-lee-sin-centered,ogn-151-1,Lee Sin Centered
-OGN-151a,Lee Sin Centered,Champion,champion,Origins,Showcase,0,Body,,6,6,"ACCELERATE (You may pay [1] [body] as an additional cost to have me enter ready.)
-Other buffed friendly units at my battlefield have +2 [might].","Ionia, Lee Sin",ogn-151a-lee-sin-centered,ogn-151-2,Lee Sin Centered
-OGN-152,Mistfall,Gear,gear,Origins,Rare,0,Body,,3,,"When you buff a friendly unit, you may pay [body] and exhaust this to ready it.",,ogn-152-mistfall,ogn-152-1,Mistfall
-OGN-153,Overt Operation,Spell,spell,Origins,Rare,0,Body,2x Body,5,,"ACTION (Play on your turn or in showdowns.)
-For each friendly unit, you may spend its buff to ready it. Then buff all friendly units. (Each one that doesn't have a buff gets a +1 [might] buff.)",,ogn-153-overt-operation,ogn-153-1,Overt Operation
-OGN-154,Primal Strength,Spell,spell,Origins,Rare,0,Body,1x Body,4,,"ACTION (Play on your turn or in showdowns.)
-Give a unit +7 [might] this turn.",,ogn-154-primal-strength,ogn-154-1,Primal Strength
-OGN-155,Qiyana Victorious,Champion,champion,Origins,Rare,0,Body,1x Body,4,4,"DEFLECT (Opponents must pay [rune] to choose me with a spell or ability.)
-When I conquer, draw 1 or channel 1 rune exhausted.","Qiyana, Ixtal",ogn-155-qiyana-victorious,ogn-155-1,Qiyana Victorious
-OGN-156,Sabotage,Spell,spell,Origins,Rare,0,Body,1x Body,1,,"Choose an opponent. They reveal their hand. Choose a non-unit card from it, and recycle that card.",,ogn-156-sabotage,ogn-156-1,Sabotage
-OGN-157,Udyr Wildman,Champion,champion,Origins,Rare,0,Body,1x Body,6,6,"Spend my buff: Choose one you've not chosen this turn —
-• Deal 2 to a unit at a battlefield.
-• Stun a unit at a battlefield
-• Ready me.
-• Give me GANKING this turn.","Freljord, Udyr",ogn-157-udyr-wildman,ogn-157-1,Udyr Wildman
-OGN-158,Volibear Imposing,Champion,champion,Origins,Rare,0,Body,2x Body,12,10,"SHIELD 3 (+3 [might] while I'm a defender.)
-TANK (I must be assigned combat damage first.)
-When an opponent moves to a battlefield other than mine, draw 1. (Bases are not battlefields.)",Freljord,ogn-158-volibear-imposing,ogn-158-1,Volibear Imposing
-OGN-158a,Volibear Imposing,Champion,champion,Origins,Showcase,0,Body,2x Body,12,10,"SHIELD 3 (+3 [might] while I'm a defender.)
-TANK (I must be assigned combat damage first.)
-When an opponent moves to a battlefield other than mine, draw 1. (Bases are not battlefields.)","Freljord, Volibear",ogn-158a-volibear-imposing,ogn-158-2,Volibear Imposing
-OGN-159,Warwick Hunter,Champion,champion,Origins,Rare,0,Body,1x Body,6,5,"I enter ready.
-When I attack, destroy all damaged enemy units here.","Zaun, Dog",ogn-159-warwick-hunter,ogn-159-1,Warwick Hunter
-OGN-160,Dazzling Aurora,Gear,gear,Origins,Epic,0,Body,2x Body,9,,"At the end of your turn, reveal cards from the top of your Main Deck until you reveal a unit and banish it. Play it, ignoring its cost, and recycle the rest.",,ogn-160-dazzling-aurora,ogn-160-1,Dazzling Aurora
-OGN-161,Deadbloom Predator,Unit,unit,Origins,Epic,0,Body,2x Body,8,8,"DEFLECT (Opponents must pay [rune] to choose me with a spell or ability.) 
-You may play me to an occupied enemy battlefield.",Shadow Isles,ogn-161-deadbloom-predator,ogn-161-1,Deadbloom Predator
-OGN-162,Miss Fortune Captain,Champion,champion,Origins,Epic,0,Body,1x Body,5,5,"ACCELERATE (You may pay [1] [body] as an additional cost to have me enter ready.)
-GANKING (I can move from battlefield to battlefield.)
-The first time I move each turn, you may ready something else that's exhausted.","Bilgewater, Pirate",ogn-162-miss-fortune-captain,ogn-162-1,Miss Fortune Captain
-OGN-162a,Miss Fortune Captain,Champion,champion,Origins,Showcase,0,Body,1x Body,5,5,"ACCELERATE (You may pay [1] [body] as an additional cost to have me enter ready.)
-GANKING (I can move from battlefield to battlefield.)
-The first time I move each turn, you may ready something else that's exhausted.","Bilgewater, Pirate",ogn-162a-miss-fortune-captain,ogn-162-2,Miss Fortune Captain
-OGN-163,Seal of Strength,Gear,gear,Origins,Epic,0,Body,1x Body,0,,"[tap]: REACTION — ADD [body]. Activate this any time.
-(Abilities that add resources can't be reacted to.)
-",,ogn-163-seal-of-strength,ogn-163-1,Seal of Strength
-OGN-164,Sett Brawler,Champion,champion,Origins,Epic,0,Body,1x Body,5,4,"When I'm played and when I conquer, buff me. (If I don't have a buff, I get a +1 [might] buff.)
-Spend my buff: Give me +4 [might] this turn.","Ionia, Sett",ogn-164-sett-brawler,ogn-164-1,Sett Brawler
-OGN-164a,Sett Brawler,Champion,champion,Origins,Showcase,0,Body,1x Body,5,4,"When I'm played and when I conquer, buff me. (If I don't have a buff, I get a +1 [might] buff.)
-Spend my buff: Give me +4 [might] this turn.","Ionia, Sett",ogn-164a-sett-brawler,ogn-164-2,Sett Brawler
-OGN-165,Cemetery Attendant,Unit,unit,Origins,Common,1,Chaos,1x Chaos,3,3,"When you play me, return a unit from your trash to your hand.","Shadow Isles, Dog",ogn-165-cemetery-attendant,ogn-165-1,Cemetery Attendant
-OGN-166,Chaos Rune,Rune,rune,Origins,Common,1,Chaos,,,,,,ogn-166-chaos-rune,ogn-166-1,Chaos Rune
-OGN-166a,Chaos Rune,Rune,rune,Origins,Showcase,0,Chaos,,,,,,ogn-166a-chaos-rune,ogn-166-2,Chaos Rune
-OGN-167,Ember Monk,Unit,unit,Origins,Common,1,Chaos,,4,4,"When you play a card from HIDDEN, give me +2 [might] this turn.",Bandle City,ogn-167-ember-monk,ogn-167-1,Ember Monk
-OGN-168,Fight or Flight,Spell,spell,Origins,Common,1,Chaos,,2,,"HIDDEN (Hide now for [rune] to react with later for [0].)
-ACTION (Play on your turn or in showdowns.)
-Move a unit from a battlefield to its base.",,ogn-168-fight-or-flight,ogn-168-1,Fight or Flight
-OGN-169,Gust,Spell,spell,Origins,Common,1,Chaos,,1,,"REACTION (Play any time, even before spells and abilities resolve.)
-Return a unit at a battlefield with 3 [might] or less to its owner's hand.",,ogn-169-gust,ogn-169-1,Gust
-OGN-170,Morbid Return,Spell,spell,Origins,Common,1,Chaos,,2,,"ACTION (Play on your turn or in showdowns.)
-Return a unit from your trash to your hand.",,ogn-170-morbid-return,ogn-170-1,Morbid Return
-OGN-171,Mystic Poro,Unit,unit,Origins,Common,1,Chaos,,2,2,"VISION (When you play me, look at the top card of your Main Deck. You may recycle it.)",Poro,ogn-171-mystic-poro,ogn-171-1,Mystic Poro
-OGN-172,Rebuke,Spell,spell,Origins,Common,1,Chaos,2x Chaos,2,,"ACTION (Play on your turn or in showdowns.)
-Return a unit at a battlefield to its owner's hand.",,ogn-172-rebuke,ogn-172-1,Rebuke
-OGN-173,Ride the Wind,Spell,spell,Origins,Common,1,Chaos,1x Chaos,2,,"ACTION (play on your turn or in showdowns.) 
-Move a friendly unit and ready it.",,ogn-173-ride-the-wind,ogn-173-1,Ride the Wind
-OGN-174,Sai Scout,Unit,unit,Origins,Common,1,Chaos,,6,5,"VISION (When you play me, look at the top card of your Main Deck. You may recycle it.)
-You may play me to an open battlefield.",Shurima,ogn-174-sai-scout,ogn-174-1,Sai Scout
-OGN-175,Shipyard Skulker,Unit,unit,Origins,Common,1,Chaos,,3,3,,"Bilgewater, Pirate",ogn-175-shipyard-skulker,ogn-175-1,Shipyard Skulker
-OGN-176,Sneaky Deckhand,Unit,unit,Origins,Common,1,Chaos,,3,2,You may play me to an open battlefield.,"Bilgewater, Pirate",ogn-176-sneaky-deckhand,ogn-176-1,Sneaky Deckhand
-OGN-177,Stealthy Pursuer,Unit,unit,Origins,Common,1,Chaos,1x Chaos,4,4,"When a friendly unit moves from my location, I may be moved with it.",Shurima,ogn-177-stealthy-pursuer,ogn-177-1,Stealthy Pursuer
-OGN-178,Undercover Agent,Unit,unit,Origins,Common,1,Chaos,1x Chaos,5,5,"DEATHKNELL — Discard 2, then draw 2. (When I die, get the effect.)",,ogn-178-undercover-agent,ogn-178-1,Undercover Agent
-OGN-179,Acceptable Losses,Spell,spell,Origins,Uncommon,1,Chaos,,1,,"ACTION (Play on your turn or in showdowns.)
-Each player kills one of their gear.",,ogn-179-acceptable-losses,ogn-179-1,Acceptable Losses
-OGN-180,Fading Memories,Spell,spell,Origins,Uncommon,1,Chaos,1x Chaos,4,,"Give a unit at a battlefield or a gear TEMPORARY. (Kill it at the start of its controller's Beginning Phase, before scoring.)",,ogn-180-fading-memories,ogn-180-1,Fading Memories
-OGN-181,Pack of Wonders,Gear,gear,Origins,Uncommon,1,Chaos,,2,,"[tap]: Return another friendly gear, unit, or facedown card to its owner's hand.
-",,ogn-181-pack-of-wonders,ogn-181-1,Pack of Wonders
-OGN-182,Scrapheap,Gear,gear,Origins,Uncommon,1,Chaos,,2,,"When this is played, discarded, or killed, draw 1.",,ogn-182-scrapheap,ogn-182-1,Scrapheap
-OGN-183,Stacked Deck,Spell,spell,Origins,Uncommon,1,Chaos,,1,,"ACTION (play on your turn or in showdowns.) 
-Look at the top 3 cards of your Main Deck. Put 1 into your hand and recycle the rest.",,ogn-183-stacked-deck,ogn-183-1,Stacked Deck
-OGN-184,The Syren,Gear,gear,Origins,Uncommon,1,Chaos,,2,,"[1], [tap]: Move a friendly unit at a battlefield to its base.",,ogn-184-the-syren,ogn-184-1,The Syren
-OGN-185,Traveling Merchant,Unit,unit,Origins,Uncommon,1,Chaos,,2,2,"When I move, discard 1 then draw 1.",Bilgewater,ogn-185-traveling-merchant,ogn-185-1,Traveling Merchant
-OGN-186,Treasure Trove,Gear,gear,Origins,Uncommon,1,Chaos,,2,,"When this leaves the board, draw 1 and channel 1 rune exhausted.
-[Chaos], [Tap]: Kill this.",,ogn-186-treasure-trove,ogn-186-1,Treasure Trove
-OGN-187,Whirlwind,Spell,spell,Origins,Uncommon,1,Chaos,1x Chaos,4,,"Starting with the next player, each player may return a unit to its owner's hand.
-",,ogn-187-whirlwind,ogn-187-1,Whirlwind
-OGN-188,Zaunite Bouncer,Unit,unit,Origins,Uncommon,1,Chaos,2x Chaos,4,2,"When you play me, return another unit at a battlefield to it's owner's hand.",,ogn-188-zaunite-bouncer,ogn-188-1,Zaunite Bouncer
-OGN-189,Kayn Unleashed,Champion,champion,Origins,Rare,0,Chaos,1x Chaos,6,6,"GANKING (I can move from battlefield to battlefield.) 
-If I have moved twice this turn, I don't take damage.",Ionia,ogn-189-kayn-unleashed,ogn-189-1,Kayn Unleashed
-OGN-190,Kog'Maw Caustic,Champion,champion,Origins,Rare,0,Chaos,1x Chaos,3,1,"DEATHKNELL - Deal 4 to all units at my battlefield. (When I die, get the effect)","Kog'Maw, The Void",ogn-190-kogmaw-caustic,ogn-190-1,Kog'Maw Caustic
-OGN-191,Maddened Marauder,Unit,unit,Origins,Rare,0,Chaos,,5,4,"Tank (I must be assigned combat damage first.) When you play me, move a unit from a battlefield to its base.","Bilgewater, Pirate",ogn-191-maddened-marauder,ogn-191-1,Maddened Marauder
-OGN-192,Mindsplitter,Unit,unit,Origins,Rare,0,Chaos,2x Chaos,7,7,"When you play me, choose an opponent. They reveal their hand. Choose a card from it, and they discard that card.","Dragon, Mount Targon",ogn-192-mindsplitter,ogn-192-1,Mindsplitter
-OGN-193,Miss Fortune Buccaneer,Champion,champion,Origins,Epic,0,Chaos,1x Chaos,4,4,You may play me to an open battlefield. Friendly units may be played to open battlefields.,"Bilgewater, Pirate",ogn-193-miss-fortune-buccaneer,ogn-193-1,Miss Fortune Buccaneer
-OGN-193a,Miss Fortune Buccaneer,Champion,champion,Origins,Showcase,0,Chaos,1x Chaos,4,4,"You may play me to an open battlefield.
-Friendly units may be played to open battlefields.","Bilgewater, Pirate",ogn-193a-miss-fortune-buccaneer,ogn-193-2,Miss Fortune Buccaneer
-OGN-194,Nocturne Horrifying,Champion,champion,Origins,Rare,0,Chaos,1x Chaos,4,4,"GANKING (I can move from battlefield to battlefield.)
-As you look at or reveal me from the top of your deck, you may banish me. If you do, you may play me for [rune].",Nocturne,ogn-194-nocturne-horrifying,ogn-194-1,Nocturne Horrifying
-OGN-195,Rhasa the Sunderer,Unit,unit,Origins,Rare,0,Chaos,1x Chaos,10,6,I cost [1] less for each card in your trash.,"Shadow Isles, Spirit",ogn-195-rhasa-the-sunderer,ogn-195-1,Rhasa the Sunderer
-OGN-196,Soulgorger,Unit,unit,Origins,Rare,0,Chaos,2x Chaos,8,,"When you play me, you may play a unit from your trash, ignoring its Energy cost. (You may still pay its Power cost.) ","Shadow Isles, Spirit",ogn-196-soulgorger,ogn-196-1,Soulgorger
-OGN-197,Teemo Scout,Champion,champion,Origins,Rare,0,Chaos,,2,1,"HIDDEN (Hide now for [rune] to react with later for [0].)
-When you play me, give me +3 [might] this turn.","Bandle City, Yordle",ogn-197-teemo-scout,ogn-197-1,Teemo Scout
-OGN-197a,Teemo Scout,Champion,champion,Origins,Showcase,0,Chaos,,2,1,"HIDDEN (Hide now for [rune] to react with later for [0].)
-When you play me, give me +3 [might] this turn.","Bandle City, Yordle",ogn-197a-teemo-scout,ogn-197-2,Teemo Scout
-OGN-197b,Teemo Scout,Champion,champion,Origins,Showcase,0,Chaos,,2,1,"HIDDEN (Hide now for [rune] to react with later for [0].)
-When you play me, give me +3 [might] this turn.","Bandle City, Yordle",ogn-197b-teemo-scout,ogn-197-3,Teemo Scout
-OGN-198,The Harrowing,Spell,spell,Origins,Rare,0,Chaos,2x Chaos,6,,"Play a unit from your Trash, ignoring it's energy cost. (You must still pay it's Power cost.)",,ogn-198-the-harrowing,ogn-198-1,The Harrowing
-OGN-199,Tideturner,Unit,unit,Origins,Rare,0,Chaos,,2,2,"HIDDEN (Hide now for [rune] to react with later for [0].)
-When you play me, you may choose a unit you control at another location. Move me to its location and it to my original location.",Bilgewater,ogn-199-tideturner,ogn-199-1,Tideturner
-OGN-200,Twisted Fate Gambler,Champion,champion,Origins,Rare,0,Chaos,,4,4,"When I attack, reveal the top rune of your rune deck, then recycle it. Do one of the following based on its domain:
-[fury] - Deal 2 to an enemy unit here and 1 to all other enemy units here.
-[mind] - Draw 1.
-[order] - Stun an enemy unit.","Bilgewater, Twisted Fate",ogn-200-twisted-fate-gambler,ogn-200-1,Twisted Fate Gambler
-OGN-201,Invert Timelines,Spell,spell,Origins,Epic,0,Chaos,1x Chaos,3,,"Each player discards their hand, then draws 4.",,ogn-201-invert-timelines,ogn-201-1,Invert Timelines
-OGN-202,Jinx Rebel,Champion,champion,Origins,Epic,0,Chaos,1x Chaos,5,5,"When you discard one or more cards, ready me and give me +1 [might] this turn.",Zaun,ogn-202-jinx-rebel,ogn-202-1,Jinx Rebel
-OGN-202a,Jinx Rebel,Champion,champion,Origins,Showcase,0,Chaos,1x Chaos,5,5,"When you discard one or more cards, ready me and give me +1 [might] this turn.
-","Zaun, Jinx",ogn-202a-jinx-rebel,ogn-202-2,Jinx Rebel
-OGN-203,Possession,Spell,spell,Origins,Epic,0,Chaos,3x Chaos,8,,"ACTION (Play on your turn or in showdowns.)
-Move an enemy unit at a battlefield. Take control of it and recall it. (Send it to your base. This isn't a move.)
-",,ogn-203-possession,ogn-203-1,Possession
-OGN-204,Seal of Discord,Gear,gear,Origins,Epic,0,Chaos,1x Chaos,0,,[tap] : REACTION — ADD [chaos]. (Abilities that add resources can't be reacted to.),,ogn-204-seal-of-discord,ogn-204-1,Seal of Discord
-OGN-205,Yasuo Windrider,Champion,champion,Origins,Epic,0,Chaos,1x Chaos,5,4,"GANKING (I can move from battlefield to battlefield)
-The third time I move in a turn, you score 1 point.","Ionia, Yasuo",ogn-205-yasuo-windrider,ogn-205-1,Yasuo Windrider
-OGN-205a,Yasuo Windrider,Champion,champion,Origins,Showcase,0,Chaos,1x Chaos,5,4,"GANKING (I can move from battlefield to battlefield)
-The third time I move in a turn, you score 1 point.","Ionia, Yasuo",ogn-205a-yasuo-windrider,ogn-205-2,Yasuo Windrider
-OGN-206,Back to Back,Spell,spell,Origins,Common,1,Order,,3,,"REACTION (Play any time, even before spells and abilities resolve.)
-Give two friendly units each +2 [might] this turn.",,ogn-206-back-to-back,ogn-206-1,Back to Back
-OGN-207,Call to Glory,Spell,spell,Origins,Common,1,Order,,3,,"REACTION (Play any time, even before spells and abilities resolve.)
-As you play this, you may spend a buff as an additional cost. If you do, ignore this spell's cost.
-Give a unit +3 [might] this turn.",,ogn-207-call-to-glory,ogn-207-1,Call to Glory
-OGN-208,Cruel Patron,Unit,unit,Origins,Common,1,Order,,4,6,"As an additional cost to play me, kill a friendly unit.",Noxus,ogn-208-cruel-patron,ogn-208-1,Cruel Patron
-OGN-209,Cull the Weak,Spell,spell,Origins,Common,1,Order,1x Order,2,,Each player kills one of their units.,,ogn-209-cull-the-weak,ogn-209-1,Cull the Weak
-OGN-210,Daring Poro,Unit,unit,Origins,Common,1,Order,,2,2,ASSAULT (+1 might while I'm an attacker.),Poro,ogn-210-daring-poro,ogn-210-1,Daring Poro
-OGN-211,Faithful Manufactor,Unit,unit,Origins,Common,1,Order,,3,2,"When you play me, play a 1 [might] Recruit unit token here.",Piltover,ogn-211-faithful-manufactor,ogn-211-1,Faithful Manufactor
-OGN-212,Forge of the Future,Gear,gear,Origins,Common,1,Order,,2,,"When you play this, play a 1 [might] Recruit unit token at your base.
-Kill this: Recycle up to 4 cards from trashes.",,ogn-212-forge-of-the-future,ogn-212-1,Forge of the Future
-OGN-213,Hidden Blade,Spell,spell,Origins,Common,1,Order,1x Order,2,,"HIDDEN (Hide now for [rune] to react with later for [0].)
-ACTION (Play on your turn or showdowns.)
-Kill a unit at a battlefield, Its controller draws 2.",,ogn-213-hidden-blade,ogn-213-1,Hidden Blade
-OGN-214,Order Rune,Rune,rune,Origins,Common,1,Order,,,,,,ogn-214-order-rune,ogn-214-1,Order Rune
-OGN-214a,Order Rune,Rune,rune,Origins,Showcase,0,Order,,,,,,ogn-214a-order-rune,ogn-214-2,Order Rune
-OGN-215,Petty Officer,Unit,unit,Origins,Common,1,Order,,5,5,ASSAULT (+1 [might] while I'm an attacker.),"Bilgewater, Pirate",ogn-215-petty-officer,ogn-215-1,Petty Officer
-OGN-216,Soaring Scout,Unit,unit,Origins,Common,1,Order,,2,1,"Deathknell Play your top rune exhausted. (When I die, get the effect.)","Freljord, Bird",ogn-216-soaring-scout,ogn-216-1,Soaring Scout
-OGN-217,Trifarian Gloryseeker,Unit,unit,Origins,Common,1,Order,,2,2,"LEGION — When you play me, buff me. (If I don't have a buff, I get a +1 [might] buff. Get the effect if you've played another card this turn.)","Noxus, Trifarian",ogn-217-trifarian-gloryseeker,ogn-217-1,Trifarian Gloryseeker
-OGN-218,Vanguard Captain,Unit,unit,Origins,Common,1,Order,1x Order,3,3,"LEGION — When you play me, play two 1 [might] Recruit unit tokens here. (Gain this effect if you've played another card this turn.)","Demacia, Elite",ogn-218-vanguard-captain,ogn-218-1,Vanguard Captain
-OGN-219,Vanguard Sergeant,Unit,unit,Origins,Common,1,Order,,4,4,,"Demacia, Elite",ogn-219-vanguard-sergeant,ogn-219-1,Vanguard Sergeant
-OGN-220,Facebreaker,Spell,spell,Origins,Uncommon,1,Order,,2,,"HIDDEN (Hide now for [rune] to react with later for [0].)
-ACTION (play on your turn or in showdowns.)
-Stun a friendly unit and an enemy unit at the same battlefield. (They don't deal combat damage this turn.)",,ogn-220-facebreaker,ogn-220-1,Facebreaker
-OGN-221,Imperial Decree,Spell,spell,Origins,Uncommon,1,Order,2x Order,5,,"ACTION (Play on your turn or in showdowns.) 
-When any unit takes damage this turn, kill it.",,ogn-221-imperial-decree,ogn-221-1,Imperial Decree
-OGN-222,Noxian Drummer,Unit,unit,Origins,Uncommon,1,Order,,3,3,"When I move to a battlefield, play a 1 [might] Recruit unit token here. (It is also at the battlefield.)","Noxus, Trifarian",ogn-222-noxian-drummer,ogn-222-1,Noxian Drummer
-OGN-223,Peak Guardian,Unit,unit,Origins,Uncommon,1,Order,1x Order,6,5,"When you play me, buff me. Then, if I am at a battlefield, buff all other friendly units there. (To buff a unit give it a +1 [might] if it doesn't already have one.)",Mount Targon,ogn-223-peak-guardian,ogn-223-1,Peak Guardian
-OGN-224,Salvage,Spell,spell,Origins,Uncommon,1,Order,1x Order,2,,"ACTION (play on your turn or in showdowns.) 
-You may kill up to one gear. Draw 1.",,ogn-224-salvage,ogn-224-1,Salvage
-OGN-225,Solari Chief,Unit,unit,Origins,Uncommon,1,Order,1x Order,5,4,"When you play me, choose an enemy unit. If it is stunned, kill it. Otherwise, stun it.
-",Mount Targon,ogn-225-solari-chief,ogn-225-1,Solari Chief
-OGN-226,Spectral Matron,Unit,unit,Origins,Uncommon,1,Order,2x Order,4,4,"When you play me, you may play a unit costing no more than 3 and no more than [rune] from your trash, ignoring its cost.","Shadow Isles, Spirit",ogn-226-spectral-matron,ogn-226-1,Spectral Matron
-OGN-227,Symbol of the Solari,Gear,gear,Origins,Uncommon,1,Order,,1,,"If a combat where you are the attacker ends in a tie, recall ALL units instead. (Send them to base. This isn't a move. Ties are calculated after combat damage is dealt.)",,ogn-227-symbol-of-the-solari,ogn-227-1,Symbol of the Solari
-OGN-228,Vanguard of Helm,Gear,gear,Origins,Uncommon,1,Order,,2,,"When a buffed friendly unit dies, buff another friendly unit. (If it doesn't have a buff, it gets a +1 [might] buff.)",,ogn-228-vanguard-of-helm,ogn-228-1,Vanguard of Helm
-OGN-229,Vengeance,Spell,spell,Origins,Uncommon,1,Order,2x Order,4,,Kill a unit.,,ogn-229-vengeance,ogn-229-1,Vengeance
-OGN-230,Albus Ferros,Unit,unit,Origins,Rare,0,Order,,4,3,"When you play me, spend any number of buffs.
-For each buff spent, channel 1 rune exhausted.",Piltover,ogn-230-albus-ferros,ogn-230-1,Albus Ferros
-OGN-231,Commander Ledros,Unit,unit,Origins,Rare,0,Order,4x Order,6,8,"As you play me, you may kill any number of friendly units as an additional cost. Reduce my cost by [order] for each killed this way.
-DEFLECT (Opponents must pay [rune] to choose me with a spell or ability.)
-GANKING (I can move from battlefield to battlefield.)","Shadow Isles, Spirit",ogn-231-commander-ledros,ogn-231-1,Commander Ledros
-OGN-232,Fiora Victorious,Champion,champion,Origins,Rare,0,Order,,4,4,"While I'm MIGHTY, I have DEFLECT, GANKING and SHIELD. (I'm Mighty while I have 5+ [might].)","Demacia, Fiora",ogn-232-fiora-victorious,ogn-232-1,Fiora Victorious
-OGN-233,Grand Strategem,Spell,spell,Origins,Rare,0,Order,3x Order,6,,Give friendly units +5 [might] this turn.,,ogn-233-grand-strategem,ogn-233-1,Grand Strategem
-OGN-234,Harnessed Dragon,Unit,unit,Origins,Rare,0,Order,2x Order,8,6,"When you play me, kill a unit.","Dragon, Demacia",ogn-234-harnessed-dragon,ogn-234-1,Harnessed Dragon
-OGN-235,Karma Channeler,Champion,champion,Origins,Rare,0,Order,1x Order,6,6,"VISION (When you play me, look at the top card of your Main Deck. You may recycle it.)
-When you recycle one or more cards to your Main Deck, buff a friendly unit. (If it doesn't have a buff, it gets a +1 [might] buff. Runes aren't cards.)","Ionia, Karma",ogn-235-karma-channeler,ogn-235-1,Karma Channeler
-OGN-236,Karthus Eternal,Champion,champion,Origins,Rare,0,Order,1x Order,3,3,"Your DEATHKNELL effects trigger an additional time.
-
-","Shadow Isles, Spirit, Karthus",ogn-236-karthus-eternal,ogn-236-1,Karthus Eternal
-OGN-237,King's Edict,Spell,spell,Origins,Rare,0,Order,2x Order,6,,"Starting with the next player, each other player chooses a unit you don't control that hasn't been chosen for this spell. Kill those units.
-",,ogn-237-kings-edict,ogn-237-1,King's Edict
-OGN-238,Leona Determined,Champion,champion,Origins,Rare,0,Order,1x Order,4,4,"SHIELD (+1 Might while I'm a defender.)
-When I attack, stun an enemy unit here. 
-(It doesn't deal combat damage this turn.)",Mount Targon,ogn-238-leona-determined,ogn-238-1,Leona Determined
-OGN-238a,Leona Determined,Champion,champion,Origins,Showcase,0,Order,1x Order,4,4,"SHIELD (+1 [might] while I'm a defender.)
-When I attack, stun an enemy unit here. (It doesn't deal combat damage this turn)",Mount Targon,ogn-238a-leona-determined,ogn-238-2,Leona Determined
-OGN-239,Machine Evangel,Unit,unit,Origins,Rare,0,Order,1x Order,5,4,"Deathknell Play three 1 [might] Recruit unit tokens into your base. (When I die, get the effect.)",Piltover,ogn-239-machine-evangel,ogn-239-1,Machine Evangel
-OGN-240,Sett Kingpin,Champion,champion,Origins,Rare,0,Order,1x Order,4,5,"TANK (I must be assigned combat damage first.)
-I get +1 [might] for each buffed friendly unit at my battlefield.",Ionia,ogn-240-sett-kingpin,ogn-240-1,Sett Kingpin
-OGN-240a,Sett Kingpin,Champion,champion,Origins,Showcase,0,Order,1x Order,4,5,"TANK (I must be assigned combat damage first.)
-I get +1 [might] for each buffed friendly unit at my battlefield.",Ionia,ogn-240a-sett-kingpin,ogn-240-2,Sett Kingpin
-OGN-241,Shen Kinkou,Champion,champion,Origins,Rare,0,Order,1x Order,3,3,"REACTION (Play any time, even before spells and abilities resolve, including to a battlefield you control.)
-SHIELD 2 (+2 [might] while I'm a defender.)
-TANK (I must be assigned combat damage first.)","Ionia, Shen",ogn-241-shen-kinkou,ogn-241-1,Shen Kinkou
-OGN-242,Baited Hook,Gear,gear,Origins,Epic,0,Order,,3,,"[1] [Order] [Tap]: Kill a friendly unit. Look at the top 5 cards of your Main Deck. You may banish a unit from among them that has Might up to 1 more than the killed unit and play it, ignoring its cost. Then recycle the rest.",,ogn-242-baited-hook,ogn-242-1,Baited Hook
-OGN-243,Darius Executioner,Champion,champion,Origins,Epic,0,Order,1x Order,6,6,"LEGION - When you play me, ready me. (Get the effect if you've played another card this turn)
-Other friendly units have +1 [might] here.","Noxus, Trifarian",ogn-243-darius-executioner,ogn-243-1,Darius Executioner
-OGN-243a,Darius Executioner,Champion,champion,Origins,Showcase,0,Order,1x Order,6,6,"LEGION - When you play me, ready me. (Get the effect if you've played another card this turn)
-Other friendly units have +1 [might] here.","Noxus, Trifarian",ogn-243a-darius-executioner,ogn-243-2,Darius Executioner
-OGN-244,Divine Judgment,Spell,spell,Origins,Rare,0,Order,2x Order,7,,"Each player chooses 2 units, 2 gear, 2 runes, and 2 cards in their hands. Recycle the rest.",,ogn-244-divine-judgment,ogn-244-1,Divine Judgment
-OGN-245,Seal of Unity,Gear,gear,Origins,Epic,0,Order,1x Order,0,,[tap] : Add [0] [order] . Activate this any time.,,ogn-245-seal-of-unity,ogn-245-1,Seal of Unity
-OGN-246,Viktor Leader,Champion,champion,Origins,Epic,0,Order,1x Order,4,4,"When another non-Recruit unit you control dies, play a 1 [might] Recruit unit token into your base.",Zaun,ogn-246-viktor-leader,ogn-246-1,Viktor Leader
-OGN-246a,Viktor Leader,Champion,champion,Origins,Showcase,0,Order,1x Order,4,4,"When another non-Recruit unit you control dies, play a 1 [might] Recruit unit token into your base.",Zaun,ogn-246a-viktor-leader,ogn-246-2,Viktor Leader
-OGN-247,Kai'Sa Daughter of the Void,Legend,legend,Origins,Rare,0,Fury Mind,,,,[tap] REACTION - ADD [rune]. Use only to play spells. (Abilities that add resources can't be reacted to.),Kai'Sa,ogn-247-kaisa-daughter-of-the-void,ogn-247-1,Kai'Sa Daughter of the Void
-OGN-248,Icathian Rain,Signature Spell,signature-spell,Origins,Epic,0,Fury Mind,3x Fury/Mind,7,,"Do this 6 times:
-Deal 2 to a unit. (You can choose different units.)",Kai'Sa,ogn-248-icathian-rain,ogn-248-1,Icathian Rain
-OGN-249,Volibear Relentless Storm,Legend,legend,Origins,Rare,0,Fury Body,,,,"When you play a MIGHTY unit, you may exhaust me to channel 1 rune exhausted. (A unit is Mighty while it has 5+ [might].)",Volibear,ogn-249-volibear-relentless-storm,ogn-249-1,Volibear Relentless Storm
-OGN-250,Stormbringer,Signature Spell,signature-spell,Origins,Epic,0,Fury Body,2x Fury/Body,6,,"Choose a friendly unit in your base. Deal damage equal to its Might to all enemies at a battlefield, then move your unit there.",Volibear,ogn-250-stormbringer,ogn-250-1,Stormbringer
-OGN-251,Jinx Loose Cannon,Legend,legend,Origins,Rare,0,Fury Chaos,,,,"At the start of your Beginning Phase, draw 1 if you have one or fewer cards in your hand.",Jinx,ogn-251-jinx-loose-cannon,ogn-251-1,Jinx Loose Cannon
-OGN-252,Super Mega Death Rocket!,Signature Spell,signature-spell,Origins,Epic,0,Fury Chaos,1x Fury/Chaos,4,,"Deal 5 to a unit. 
-When you conquer, you may discard 1 to return this from your trash to your hand.",Jinx,ogn-252-super-mega-death-rocket,ogn-252-1,Super Mega Death Rocket!
-OGN-253,Darius Hand of Noxus,Legend,legend,Origins,Rare,0,Fury Order,,,,"[tap] REACTION, LEGION — ADD [1] (Abilities that add resources can't be reacted to. Get the effect if you've played a card this turn.)
-",Darius,ogn-253-darius-hand-of-noxus,ogn-253-1,Darius Hand of Noxus
-OGN-254,Noxian Guillotine,Signature Spell,signature-spell,Origins,Epic,0,Fury Order,1x Fury/Order,4,,"ACTION (Play on your turn or in showdowns.)
-Choose a unit. Kill it the next time it takes damage this turn.
-LEGION - Kill it now instead. (Get the effect if you've played another card this turn)",Darius,ogn-254-noxian-guillotine,ogn-254-1,Noxian Guillotine
-OGN-255,Ahri Nine-Tailed Fox,Legend,legend,Origins,Rare,0,Calm Mind,,,,"When an enemy unit attacks a battlefield you control, give it -1 [might] this turn, to a minimum of 1 [might]
-",Ahri,ogn-255-ahri-nine-tailed-fox,ogn-255-1,Ahri Nine-Tailed Fox
-OGN-256,Fox-Fire,Signature Spell,signature-spell,Origins,Epic,0,Calm Mind,,3,,"HIDDEN  (hide now for [rune] to react with later for [0].)
-ACTION (Play on your turn or in showdowns.) 
-Kill any number of units at a battlefield with total Might 4 or less.",Ahri,ogn-256-fox-fire,ogn-256-1,Fox-Fire
-OGN-257,Lee Sin Blind Monk,Legend,legend,Origins,Rare,0,Calm Body,,,,"[1] [tap]: Buff a friendly unit. (If it doesn't have a buff, it gets a +1 [might] buff.)
-",Lee Sin,ogn-257-lee-sin-blind-monk,ogn-257-1,Lee Sin Blind Monk
-OGN-258,Dragon's Rage,Signature Spell,signature-spell,Origins,Epic,0,Calm Body,1x Calm/Body,4,,Move an enemy unit. Then do this: Choose another enemy unit at its destination. They deal damage equal to their Mights to each other.,Lee Sin,ogn-258-dragons-rage,ogn-258-1,Dragon's Rage
-OGN-259,Yasuo Unforgiven,Legend,legend,Origins,Rare,0,Calm Chaos,,,,"[2] , [tap] : Move a friendly unit to or from its base.",Yasuo,ogn-259-yasuo-unforgiven,ogn-259-1,Yasuo Unforgiven
-OGN-260,Last Breath,Signature Spell,signature-spell,Origins,Epic,0,Calm Chaos,2x Calm/Chaos,3,,"ACTION (Play on your turn or in showdowns.)
-Ready a friendly unit. It deals damage equal to its Might to an enemy at a battlefield.",Yasuo,ogn-260-last-breath,ogn-260-1,Last Breath
-OGN-261,Leona Radiant Dawn,Legend,legend,Origins,Rare,0,Calm Order,,,,"When you stun one or more enemy units, buff a friendly unit. (If it doesn't have a buff, it gets a +1 [might] buff.)
-",Leona,ogn-261-leona-radiant-dawn,ogn-261-1,Leona Radiant Dawn
-OGN-262,Zenith Blade,Signature Spell,signature-spell,Origins,Epic,0,Calm Order,2x Calm/Order,3,,"ACTION (Play on your turn or in showdowns.) 
-Stun an enemy at a battlefield. You may move a friendly unit to that enemy unit's battlefield. (A stunned unit doesn't deal combat damage this turn.)",Leona,ogn-262-zenith-blade,ogn-262-1,Zenith Blade
-OGN-263,Teemo Swift Scout,Legend,legend,Origins,Rare,0,Mind Chaos,,,,"You may pay [1] to hide a card with HIDDEN instead of [rune].
-[1], [tap] Put a Teemo unit you own into your hand from your Champion Zone on the board.
-",Teemo,ogn-263-teemo-swift-scout,ogn-263-1,Teemo Swift Scout
-OGN-264,Guerilla Warfare,Signature Spell,signature-spell,Origins,Epic,0,Mind Chaos,1x Mind/Chaos,2,,"Return up to two cards with HIDDEN from your trash to your hand. You can hide ignoring costs this turn.
-",Teemo,ogn-264-guerilla-warfare,ogn-264-1,Guerilla Warfare
-OGN-265,Viktor Herald of the Arcane,Legend,legend,Origins,Rare,0,Mind Order,,,,"[1] , [tap] : Play a 1 [might] Recuit unit token.",Viktor,ogn-265-viktor-herald-of-the-arcane,ogn-265-1,Viktor Herald of the Arcane
-OGN-266,Siphon Power,Signature Spell,signature-spell,Origins,Epic,0,Mind Order,1x Mind/Order,2,,"REACTION (Play any time, even before spells or abilities are resolved.) 
-Choose a battlefield. Give friendly units there +1 [might] this turn and enemy units there -1 [might], to a minimum of 1 [might]",Viktor,ogn-266-siphon-power,ogn-266-1,Siphon Power
-OGN-267,Miss Fortune Bounty Hunter,Legend,legend,Origins,Rare,0,Body Chaos,,,,[tap]: Give a unit GANKING this tum. (It can move from battlefield to battlefield.),Miss Fortune,ogn-267-miss-fortune-bounty-hunter,ogn-267-1,Miss Fortune Bounty Hunter
-OGN-268,Bullet Time,Signature Spell,signature-spell,Origins,Epic,0,Body Chaos,,1,,"ACTION (Play on your turn or showdowns.)
-Pay an amount of [rune] to deal that much damage to all enemy units at a battlefield.",Miss Fortune,ogn-268-bullet-time,ogn-268-1,Bullet Time
-OGN-269,Sett The Boss,Legend,legend,Origins,Rare,0,Body Order,,,,"If a buffed unit you control would die, you may pay [rune], exhaust me, and spend its buff to heal it, exhaust it, and recall it instead. (Send it to base. This isn't a move.)
-When you conquer, ready me.
-",Sett,ogn-269-sett-the-boss,ogn-269-1,Sett The Boss
-OGN-270,Showstopper,Signature Spell,signature-spell,Origins,Epic,0,Body Order,1x Body/Order,1,,"Buff a friendly unit in your base, then move it to a battlefield. (If it doesn't have a buff, it gets a +1 [might] buff.)
-",Sett,ogn-270-showstopper,ogn-270-1,Showstopper
-OGN-271,Recruit,Token,token,Origins,Common,1,,,,1,,Recruit,ogn-271-recruit,ogn-271-1,Recruit
-OGN-272,Recruit,Token,token,Origins,Common,1,,,,1,,,ogn-272-recruit,ogn-272-1,Recruit
-OGN-273,Recruit,Token,token,Origins,Common,1,,,,1,,,ogn-273-recruit,ogn-273-1,Recruit
-OGN-274,Sprite,Token,token,Origins,Common,1,,,,3,"TEMPORARY (Kill me at the start of your Beginning Phase, before scoring.)",Fae,ogn-274-sprite,ogn-274-1,Sprite
-OGN-275,Altar to Unity,Battlefield,battlefield,Origins,Uncommon,1,,,,,"When you hold here, play a 1 [might] Recruit unit token in your base.",,ogn-275-altar-to-unity,ogn-275-1,Altar to Unity
-OGN-276,Aspirant's Climb,Battlefield,battlefield,Origins,Uncommon,1,,,,,Increase the points needed to win the game by 1.,,ogn-276-aspirants-climb,ogn-276-1,Aspirant's Climb
-OGN-277,Back-Alley Bar,Battlefield,battlefield,Origins,Uncommon,1,,,,,"When a unit moves from here, give it +1 [might] this turn.",,ogn-277-back-alley-bar,ogn-277-1,Back-Alley Bar
-OGN-278,Bandle Tree,Battlefield,battlefield,Origins,Uncommon,1,,,,,You may hide an additional card here.,,ogn-278-bandle-tree,ogn-278-1,Bandle Tree
-OGN-279,Fortified Position,Battlefield,battlefield,Origins,Uncommon,1,,,,,"When you defend here, choose a unit. It gains SHIELD 2 this combat. (+2 might while It's a defender.)",,ogn-279-fortified-position,ogn-279-1,Fortified Position
-OGN-280,Grove of the God-Willow,Battlefield,battlefield,Origins,Uncommon,1,,,,,"When you hold here, draw 1.",,ogn-280-grove-of-the-god-willow,ogn-280-1,Grove of the God-Willow
-OGN-281,Hallowed Tomb,Battlefield,battlefield,Origins,Uncommon,1,,,,,"When you hold here, you may return your Chosen Champion from your trash to your Champion Zone if it is empty.",,ogn-281-hallowed-tomb,ogn-281-1,Hallowed Tomb
-OGN-282,Monastery of Hirana,Battlefield,battlefield,Origins,Uncommon,1,,,,,"When you conquer here, you may spend a buff to draw 1.",,ogn-282-monastery-of-hirana,ogn-282-1,Monastery of Hirana
-OGN-283,Navori Fighting Pit,Battlefield,battlefield,Origins,Uncommon,1,,,,,"When you hold here, buff a unit here. (If it doesn't have a buff, it gets a +1 [might] buff.)",,ogn-283-navori-fighting-pit,ogn-283-1,Navori Fighting Pit
-OGN-284,Obelisk of Power,Battlefield,battlefield,Origins,Uncommon,1,,,,,"At the start of each player's first Beginning Phase, that player channels 1 rune.",,ogn-284-obelisk-of-power,ogn-284-1,Obelisk of Power
-OGN-285,Reaver's Row,Battlefield,battlefield,Origins,Uncommon,1,,,,,"When you defend here, you may move a friendly unit here to base.",,ogn-285-reavers-row,ogn-285-1,Reaver's Row
-OGN-286,Reckoner's Arena,Battlefield,battlefield,Origins,Uncommon,1,,,,,"When you hold here, activate the conquer effects of units here.",,ogn-286-reckoners-arena,ogn-286-1,Reckoner's Arena
-OGN-287,Sigil of the Storm,Battlefield,battlefield,Origins,,0,,,,,"When you conquer here, you must recycle one of your runes. (This doesn’t choose anything.)",,ogn-287-sigil-of-the-storm,ogn-287-1,Sigil of the Storm
-OGN-288,Startipped Peak,Battlefield,battlefield,Origins,Uncommon,1,,,,,"When you hold here, you may channel 1 rune exhausted.",,ogn-288-startipped-peak,ogn-288-1,Startipped Peak
-OGN-289,Targon's Peak,Battlefield,battlefield,Origins,Uncommon,1,,,,,"When you conquer here, ready up to 2 runes at the end of this turn.",,ogn-289-targons-peak,ogn-289-1,Targon's Peak
-OGN-290,The Arena's Greatest,Battlefield,battlefield,Origins,Uncommon,1,,,,,"At the start of each player's first Beginning Phase, that player gains 1 point. ",,ogn-290-the-arenas-greatest,ogn-290-1,The Arena's Greatest
-OGN-291,The Candlelit Sanctum,Battlefield,battlefield,Origins,Uncommon,1,,,,,"When you conquer here, look at the top two cards of your Main Deck. You may recycle one or both of them. Put those you don't back in any order.",,ogn-291-the-candlelit-sanctum,ogn-291-1,The Candlelit Sanctum
-OGN-292,The Dreaming Tree,Battlefield,battlefield,Origins,Uncommon,1,,,,,"When a player chooses a friendly unit here with a spell for the first time each turn, they draw 1.",,ogn-292-the-dreaming-tree,ogn-292-1,The Dreaming Tree
-OGN-293,The Grand Plaza,Battlefield,battlefield,Origins,Uncommon,1,,,,,"When you hold here, if you have 7+ units here, you win the game.",,ogn-293-the-grand-plaza,ogn-293-1,The Grand Plaza
-OGN-294,Trifarian War Camp,Battlefield,battlefield,Origins,Uncommon,1,,,,,Units here have +1 [might] . (Including attackers.),,ogn-294-trifarian-war-camp,ogn-294-1,Trifarian War Camp
-OGN-295,Vilemaw's Lair,Battlefield,battlefield,Origins,Uncommon,1,,,,,Units can't move from here to base.,,ogn-295-vilemaws-lair,ogn-295-1,Vilemaw's Lair
-OGN-296,Void Gate,Battlefield,battlefield,Origins,Uncommon,1,,,,,Spells and abilities deal 1 Bonus Damage to units here. (Each instance of damage the spell deals to a unit here is increased by 1.),,ogn-296-void-gate,ogn-296-1,Void Gate
-OGN-297,Windswept Hillock,Battlefield,battlefield,Origins,Uncommon,1,,,,,Units here have Ganking . (They can move battlefield to battlefield.),,ogn-297-windswept-hillock,ogn-297-1,Windswept Hillock
-OGN-298,Zaun Warrens,Battlefield,battlefield,Origins,Uncommon,1,,,,,"When you conquer here, discard 1 then draw 1.",,ogn-298-zaun-warrens,ogn-298-1,Zaun Warrens
-OGN-299,Kai'Sa Daughter of the Void,Legend,legend,Origins,Showcase,0,Fury Mind,,,,[tap] REACTION - ADD [rune]. Use only to play spells. (Abilities that add resources can't be reacted to.),Kai'Sa,ogn-299-kaisa-daughter-of-the-void,ogn-247-2,Kai'Sa Daughter of the Void
-OGN-299s,Kai'Sa Daughter of the Void,Legend,legend,Origins,Showcase,0,Fury Mind,,,,[tap] REACTION - ADD [rune]. Use only to play spells. (Abilities that add resources can't be reacted to.),Kai'Sa,ogn-299s-kaisa-daughter-of-the-void,ogn-247-3,Kai'Sa Daughter of the Void
-OGN-300,Volibear Relentless Storm,Legend,legend,Origins,Showcase,0,Fury Body,,,,"When you play a Mighty unit, you may exhaust me to channel 1 rune exhausted. (A unit is Mighty while it has 5+ [might].)",Volibear,ogn-300-volibear-relentless-storm,ogn-249-3,Volibear Relentless Storm
-OGN-300s,Volibear Relentless Storm,Legend,legend,Origins,Showcase,0,Fury Body,,,,"When you play a Mighty unit, you may exhaust me to channel 1 rune exhausted. (A unit is Mighty while it has 5+ [might].)",Volibear,ogn-300s-volibear-relentless-storm,ogn-249-4,Volibear Relentless Storm
-OGN-301,Jinx Loose Cannon,Legend,legend,Origins,Showcase,0,Fury Chaos,,,,"At the start of your Beginning Phase, draw 1 if you have one or fewer cards in your hand.",Jinx,ogn-301-jinx-loose-cannon,ogn-251-2,Jinx Loose Cannon
-OGN-301s,Jinx Loose Cannon,Legend,legend,Origins,Showcase,0,Fury Chaos,,,,"At the start of your Beginning Phase, draw 1 if you have one or fewer cards in your hand.",Jinx,ogn-301s-jinx-loose-cannon,ogn-251-3,Jinx Loose Cannon
-OGN-302,Darius Hand of Noxus,Legend,legend,Origins,Showcase,0,Fury Order,,,,"[tap] REACTION, LEGION — ADD [1] (Abilities that add resources can't be reacted to. Get the effect if you've played a card this turn.)
-",Darius,ogn-302-darius-hand-of-noxus,ogn-253-2,Darius Hand of Noxus
-OGN-302s,Darius Hand of Noxus,Legend,legend,Origins,Showcase,0,Fury Order,,,,"[tap] REACTION, LEGION — ADD [1] (Abilities that add resources can't be reacted to. Get the effect if you've played a card this turn.)
-",Darius,ogn-302s-darius-hand-of-noxus,ogn-253-3,Darius Hand of Noxus
-OGN-303,Ahri Nine-Tailed Fox,Legend,legend,Origins,Showcase,0,Calm Mind,,,,"When an enemy unit attacks a battlefield you control, give it -1 [might] this turn, to a minimum of 1 [might]
-",Ahri,ogn-303-ahri-nine-tailed-fox,ogn-255-2,Ahri Nine-Tailed Fox
-OGN-303s,Ahri Nine-Tailed Fox,Legend,legend,Origins,Showcase,0,Calm Mind,,,,"When an enemy unit attacks a battlefield you control, give it -1 [might] this turn, to a minimum of 1 [might]
-",Ahri,ogn-303s-ahri-nine-tailed-fox,ogn-255-3,Ahri Nine-Tailed Fox
-OGN-304,Lee Sin Blind Monk,Legend,legend,Origins,Showcase,0,Calm Body,,,,"[1] [tap]: Buff a friendly unit. (If it doesn't have a buff, it gets a +1 [might] buff.)
-",Lee Sin,ogn-304-lee-sin-blind-monk,ogn-257-2,Lee Sin Blind Monk
-OGN-304s,Lee Sin Blind Monk,Legend,legend,Origins,Showcase,0,Calm Body,,,,"[1] [tap]: Buff a friendly unit. (If it doesn't have a buff, it gets a +1 [might] buff.)
-",Lee Sin,ogn-304s-lee-sin-blind-monk,ogn-257-3,Lee Sin Blind Monk
-OGN-305,Yasuo Unforgiven,Legend,legend,Origins,Showcase,0,Calm Chaos,,,,"[2] , [tap] : Move a friendly unit to or from its base.",Yasuo,ogn-305-yasuo-unforgiven,ogn-259-3,Yasuo Unforgiven
-OGN-305s,Yasuo Unforgiven,Legend,legend,Origins,Showcase,0,Calm Chaos,,,,"[2] , [tap] : Move a friendly unit to or from its base.",Yasuo,ogn-305s-yasuo-unforgiven,ogn-259-4,Yasuo Unforgiven
-OGN-306,Leona Radiant Dawn,Legend,legend,Origins,Showcase,0,Calm Order,,,,"When you stun one or more enemy units, buff a friendly unit. (If it doesn't have a buff, it gets a +1 [might] buff.)
-",Leona,ogn-306-leona-radiant-dawn,ogn-261-2,Leona Radiant Dawn
-OGN-306s,Leona Radiant Dawn,Legend,legend,Origins,Showcase,0,Calm Order,,,,"When you stun one or more enemy units, buff a friendly unit. (If it doesn't have a buff, it gets a +1 [might] buff.)
-",Leona,ogn-306s-leona-radiant-dawn,ogn-261-3,Leona Radiant Dawn
-OGN-307,Teemo Swift Scout,Legend,legend,Origins,Showcase,0,Mind Chaos,,,,"You may pay [1] to hide a card with HIDDEN instead of [rune].
-[1], [tap] Put a Teemo unit you own into your hand from your Champion Zone on the board.
-",Teemo,ogn-307-teemo-swift-scout,ogn-263-2,Teemo Swift Scout
-OGN-307s,Teemo Swift Scout,Legend,legend,Origins,Showcase,0,Mind Chaos,,,,"You may pay [1] to hide a card with HIDDEN instead of [rune].
-[1], [tap] Put a Teemo unit you own into your hand from your Champion Zone on the board.
-",Teemo,ogn-307s-teemo-swift-scout,ogn-263-3,Teemo Swift Scout
-OGN-308,Viktor Herald of the Arcane,Legend,legend,Origins,Showcase,0,Mind Order,,,,"[1] , [tap] : Play a 1 [might] Recuit unit token.",Viktor,ogn-308-viktor-herald-of-the-arcane,ogn-265-2,Viktor Herald of the Arcane
-OGN-308s,Viktor Herald of the Arcane,Legend,legend,Origins,Showcase,0,Mind Order,,,,"[1] , [tap] : Play a 1 [might] Recuit unit token.",Viktor,ogn-308s-viktor-herald-of-the-arcane,ogn-265-3,Viktor Herald of the Arcane
-OGN-309,Miss Fortune Bounty Hunter,Legend,legend,Origins,Showcase,0,Body Chaos,,,,[tap]: Give a unit GANKING this tum. (It can move from battlefield to battlefield.),Miss Fortune,ogn-309-miss-fortune-bounty-hunter,ogn-267-2,Miss Fortune Bounty Hunter
-OGN-309s,Miss Fortune Bounty Hunter,Legend,legend,Origins,Showcase,0,Body Chaos,,,,[tap]: Give a unit GANKING this tum. (It can move from battlefield to battlefield.),Miss Fortune,ogn-309s-miss-fortune-bounty-hunter,ogn-267-3,Miss Fortune Bounty Hunter
-OGN-310,Sett The Boss,Legend,legend,Origins,Showcase,0,Body Order,,,,"If a buffed unit you control would die, you may pay [rune], exhaust me, and spend its buff to heal it, exhaust it, and recall it instead. (Send it to base. This isn't a move.)
-When you conquer, ready me.",Sett,ogn-310-sett-the-boss,ogn-269-2,Sett The Boss
-OGN-310s,Sett The Boss,Legend,legend,Origins,Showcase,0,Body Order,,,,"If a buffed unit you control would die, you may pay [rune], exhaust me, and spend its buff to heal it, exhaust it, and recall it instead. (Send it to base. This isn't a move.)
-When you conquer, ready me.",Sett,ogn-310s-sett-the-boss,ogn-269-3,Sett The Boss
-OGS-001,Annie Fiery,Champion,champion,Proving Grounds,Epic,0,Fury,1x Fury,5,4,Your spells and abilities deal 1 Bonus Damage. (Each instance of damage they deal is increased by 1.),"Noxus, Annie",ogs-001-annie-fiery,ogs-001-1,Annie Fiery
-OGS-002,Firestorm,Spell,spell,Proving Grounds,Uncommon,1,Fury,1x Fury,6,,Deal 3 to all enemy units at a battlefield.,,ogs-002-firestorm,ogs-002-1,Firestorm
-OGS-003,Incinerate,Spell,spell,Proving Grounds,Common,1,Fury,,2,,"ACTION (play on your turn or in showdowns.) 
-Deal 2 to a unit at a battlefield.",,ogs-003-incinerate,ogs-003-1,Incinerate
-OGS-004,Master Yi Meditative,Champion,champion,Proving Grounds,Epic,0,Calm,1x Calm,5,4,"While you have 8+ runes, I have +4 [might].","Ionia, Master Yi",ogs-004-master-yi-meditative,ogs-004-1,Master Yi Meditative
-OGS-005,Zephyr Sage,Unit,unit,Proving Grounds,Uncommon,1,Calm,1x Calm,6,6,SHIELD (+1 [might] while I'm a defender.),"Ionia, Bird",ogs-005-zephyr-sage,ogs-005-1,Zephyr Sage
-OGS-006,Lux Illuminated,Champion,champion,Proving Grounds,Rare,0,Mind,1x Mind,6,5,"When you play a spell that costs 5 or more, give me +3 [might] this turn.","Demacia, Lux",ogs-006-lux-illuminated,ogs-006-1,Lux Illuminated
-OGS-007,Garen Rugged,Champion,champion,Proving Grounds,Rare,0,Body,1x Body,6,5,"ASSAULT 2, SHIELD 2 (+2 [might] while I'm an attacker or defender.)","Demacia, Elite, Garen",ogs-007-garen-rugged,ogs-007-1,Garen Rugged
-OGS-008,Gentlemen's Duel,Spell,spell,Proving Grounds,Common,1,Body,1x Body,6,,"ACTION (Play on your turn or in showdowns.)
-Give a friendly unit +3 [might] this turn. Then, choose an enemy unit. They deal damage equal to their Mights to each other.",,ogs-008-gentlemens-duel,ogs-008-1,Gentlemen's Duel
-OGS-009,Master Yi Honed,Champion,champion,Proving Grounds,Epic,0,Body,1x Body,7,6,"GANKING (I can move from battlefield to battlefield.)
-I enter ready.","Ionia, Master Yi",ogs-009-master-yi-honed,ogs-009-1,Master Yi Honed
-OGS-010,Annie Stubborn,Champion,champion,Proving Grounds,Rare,0,Chaos,1x Chaos,4,3,"When you play me, return a spell from your trash to your hand.","Noxus, Annie",ogs-010-annie-stubborn,ogs-010-1,Annie Stubborn
-OGS-011,Flash,Spell,spell,Proving Grounds,Common,1,Chaos,,2,,"REACTION (Play at any time, even before spells and abilities resolve.)
-Move up to 2 friendly units to base.",,ogs-011-flash,ogs-011-1,Flash
-OGS-012,Blast of Power,Spell,spell,Proving Grounds,Common,1,Order,1x Order,6,,"ACTION (Play on your turn or in showdowns.)
-Kill a unit at a battlefield.",,ogs-012-blast-of-power,ogs-012-1,Blast of Power
-OGS-013,Garen Commander,Champion,champion,Proving Grounds,Epic,0,Order,1x Order,6,5,Other friendly units have +1 might here.,"Demacia, Elite, Garen",ogs-013-garen-commander,ogs-013-1,Garen Commander
-OGS-014,Lux Crownguard,Champion,champion,Proving Grounds,Epic,0,Order,,4,2,[tap]: REACTION — ADD [2] Use only to play spells. (Abilities that add resources can't be reacted to.),"Demacia, Lux",ogs-014-lux-crownguard,ogs-014-1,Lux Crownguard
-OGS-015,Recruit the Vanguard,Spell,spell,Proving Grounds,Uncommon,1,Order,,6,,"ACTION (Play on your turn or in showdowns.)
-Play four 1 might Recruit unit tokens. (They can be played to your base or to battlefields you control.)",,ogs-015-recruit-the-vanguard,ogs-015-1,Recruit the Vanguard
-OGS-016,Vanguard Attendant,Unit,unit,Proving Grounds,Common,1,Order,1x Order,6,5,I enter ready.,"Demacia, Elite",ogs-016-vanguard-attendant,ogs-016-1,Vanguard Attendant
-OGS-017,Annie Dark Child,Legend,legend,Proving Grounds,Rare,0,Fury Chaos,,,,"At the end of your turn, ready up to 2 runes.",Annie,ogs-017-annie-dark-child,ogs-017-1,Annie Dark Child
-OGS-018,Tibbers,Signature Unit,signature-unit,Proving Grounds,Epic,0,Fury Chaos,2x Fury/Chaos,8,7,"When you play me, deal 3 damage to all units at battlefields.",Annie,ogs-018-tibbers,ogs-018-1,Tibbers
-OGS-019,Master Yi Wuju Bladesman,Legend,legend,Proving Grounds,Rare,0,Calm Body,,,,"While a friendly unit defends alone, it gets +2 [might].",Master Yi,ogs-019-master-yi-wuju-bladesman,ogs-019-1,Master Yi Wuju Bladesman
-OGS-020,Highlander,Signature Spell,signature-spell,Proving Grounds,Epic,0,Calm Body,,4,,"REACTION (Play any time, even before spells and abilities resolve.)
-Choose a friendly unit. The next time it would die this turn, heal it, exhaust it, and recall it instead. (Send it to base. This isn't a move.)",Master Yi,ogs-020-highlander,ogs-020-1,Highlander
-OGS-021,Lux Lady of Luminosity,Legend,legend,Proving Grounds,Rare,0,Mind Order,,,,"When you play a spell that costs 5 or more, draw a 1.",Lux,ogs-021-lux-lady-of-luminosity,ogs-021-1,Lux Lady of Luminosity
-OGS-022,Final Spark,Signature Spell,signature-spell,Proving Grounds,Epic,0,Mind Order,,8,,"ACTION (Play on your turn or in showdowns.)
-Deal 8 to a unit.",Lux,ogs-022-final-spark,ogs-022-1,Final Spark
-OGS-023,Garen Might of Demacia,Legend,legend,Proving Grounds,Rare,0,Body Order,,,,"When you conquer, if you have 4+ units at that battlefield, draw 2.",Garen,ogs-023-garen-might-of-demacia,ogs-023-1,Garen Might of Demacia
-OGS-024,Decisive Strike,Signature Spell,signature-spell,Proving Grounds,Epic,0,Body Order,1x Body/Order,5,,"ACTION (Play on your turn or in showdowns.)
-Give friendly units +2 [might] this turn.",Garen,ogs-024-decisive-strike,ogs-024-1,Decisive Strike
-OGN-XXX,Buff,Token,token,Origins,Common,0,,,,1,A unit may have no more than one buff at a time.,,ogn-buff,ogn-xxx-1,Buff
-OGN-XXXs,Buff,Token,token,Origins,Promo,0,,,,1,A unit may have no more than one buff at a time.,,ogn-buff,ogn-xxx-2,Buff
+card-id;name;type;type-slug;set;rarity;quantity;color;recycle cost;cost;might;effect;sub-type;card-link;alt-code;card-name
+ARC-001;Vi Destructive;Champion;champion;Arcane Box Set;Showcase;0;Fury;1x Fury;2;3;GANKING (I can move from battlefield to battlefield.) Recycle 1 from your trash: Give me +1 [might] this turn.;Piltover, Vi;arc-001-vi-destructive;ogn-036-2;Vi Destructive
+ARC-002;Caitlyn Patrolling;Champion;champion;Arcane Box Set;Showcase;0;Calm;1x Calm;3;3;I must be assigned combat damage last. [tap]: Deal damage equal to my Might to a unit at a battlefield. Use this ability only while I'm at a battlefield.;Piltover;arc-002-caitlyn-patrolling;ogn-068-2;Caitlyn Patrolling
+ARC-003;Heimerdinger Inventor;Champion;champion;Arcane Box Set;Showcase;0;Mind;1x Mind;3;3;I have all [tap] abilities of all friendly legends, units, and gears.;Piltover, Yordle;arc-003-heimerdinger-inventor;ogn-111-2;Heimerdinger Inventor
+ARC-004;Warwick Hunter;Champion;champion;Arcane Box Set;Showcase;0;Body;1x Body;6;5;I enter ready. When I attack, destroy all damaged enemy units here.;Zaun, Dog;arc-004-warwick-hunter;ogn-159-2;Warwick Hunter
+ARC-005;Jinx Rebel;Champion;champion;Arcane Box Set;Showcase;0;Chaos;1x Chaos;5;5;When you discard one or more cards, ready me and give me +1 [might] this turn.;Zaun;arc-005-jinx-rebel;ogn-202-3;Jinx Rebel
+ARC-006;Viktor Leader;Champion;champion;Arcane Box Set;Showcase;0;Order;1x Order;4;4;When another non-Recruit unit you control dies, play a 1 [might] Recruit unit token into your base.;Zaun;arc-006-viktor-leader;ogn-246-3;Viktor Leader
+OGN-001;Blazing Scorcher;Unit;unit;Origins;Common;1;Fury;;5;5;ACCELERATE (You may pay [1] [fury] as an additional cost to have me enter ready.);Noxus, Dragon;ogn-001-blazing-scorcher;ogn-001-1;Blazing Scorcher
+OGN-002;Brazen Buccaneer;Unit;unit;Origins;Common;1;Fury;;6;5;As you play me, you may discard a card as an additional cost. If you do, reduce my cost by [2] .;Bilgewater, Pirate;ogn-002-brazen-buccaneer;ogn-002-1;Brazen Buccaneer
+OGN-003;Chemtech Enforcer;Unit;unit;Origins;Common;1;Fury;;2;2;ASSAULT 2 ( +2 [might] while I'm an attacker. ) When you play me, discard 1.;Zaun;ogn-003-chemtech-enforcer;ogn-003-1;Chemtech Enforcer
+OGN-004;Cleave;Spell;spell;Origins;Common;1;Fury;;1;;ACTION (Play on your turn or in showdowns.) Give a unit ASSAULT 3 this turn. (+3 [might] while it's an attacker.);;ogn-004-cleave;ogn-004-1;Cleave
+OGN-005;Disintegrate;Spell;spell;Origins;Common;1;Fury;;4;;ACTION  (Play on your turn or showdowns.) Deal 3 to a unit at a battlefield. If this kills it, do this: draw 1.;;ogn-005-disintegrate;ogn-005-1;Disintegrate
+OGN-006;Flame Chompers;Unit;unit;Origins;Common;1;Fury;;3;3;When you discard me, you may pay [fury] to play me.;Zaun;ogn-006-flame-chompers;ogn-006-1;Flame Chompers
+OGN-007;Fury Rune;Rune;rune;Origins;Common;1;Fury;;;;;;ogn-007-fury-rune;ogn-007-1;Fury Rune
+OGN-007a;Fury Rune;Rune;rune;Origins;Showcase;0;Fury;;;;;;ogn-007a-fury-rune;ogn-007-2;Fury Rune
+OGN-008;Get Excited!;Spell;spell;Origins;Common;1;Fury;1x Fury;2;;ACTION (Play on your turn or in showdowns.) Discard 1. Deal its Energy cost as damage to a unit at a battlefield. (Ignore its Power cost.);;ogn-008-get-excited;ogn-008-1;Get Excited!
+OGN-009;Hextech Ray;Spell;spell;Origins;Common;1;Fury;1x Fury;1;;ACTION (Play on your turn or in showdowns.) Deal 3 damage to a unit at a battlefield.;;ogn-009-hextech-ray;ogn-009-1;Hextech Ray
+OGN-010;Legion Rearguard;Unit;unit;Origins;Common;1;Fury;;2;2;ACCELERATE (As I'm played, your may pay [1] [fury] as an additional cost to have me enter ready);Noxus, Trifarian;ogn-010-legion-rearguard;ogn-010-1;Legion Rearguard
+OGN-011;Magma Wurm;Unit;unit;Origins;Common;1;Fury;1x Fury;8;8;Other friendly units enter ready.;Freljord;ogn-011-magma-wurm;ogn-011-1;Magma Wurm
+OGN-012;Noxus Hopeful;Unit;unit;Origins;Common;1;Fury;;4;3;LEGION — I cost [2]  less. (Get the effect if you've played another card this turn.);Noxus, Trifarian;ogn-012-noxus-hopeful;ogn-012-1;Noxus Hopeful
+OGN-013;Pouty Poro;Unit;unit;Origins;Common;1;Fury;;2;2;DEFLECT (Opponents must pay [rune] to choose me with an ability or spell);Poro;ogn-013-pouty-poro;ogn-013-1;Pouty Poro
+OGN-014;Sky Splitter;Spell;spell;Origins;Common;1;Fury;1x Fury;8;;ACTION (Play on your turn or in showdowns.) This spell's Energy cost is reduced by the highest Might among units you control.  Deal 5 to a unit at a battlefield.;;ogn-014-sky-splitter;ogn-014-1;Sky Splitter
+OGN-015;Captain Farron;Unit;unit;Origins;Uncommon;1;Fury;1x Fury;4;5;Other friendly units here have ASSAULT. (+1 [might] while they're attackers.);Noxus, Trifarian;ogn-015-captain-farron;ogn-015-1;Captain Farron
+OGN-016;Dangerous Duo;Unit;unit;Origins;Uncommon;1;Fury;;3;3;LEGION — When you play me, give a unit +2 [might] this turn. (Get the effect if you've played another card this turn.);Bandle City, Mech;ogn-016-dangerous-duo;ogn-016-1;Dangerous Duo
+OGN-017;Iron Ballista;Gear;gear;Origins;Uncommon;1;Fury;;3;;This enters exhausted. [tap]: Deal 2 to a unit at a battlefield.;;ogn-017-iron-ballista;ogn-017-1;Iron Ballista
+OGN-018;Noxus Saboteur;Unit;unit;Origins;Uncommon;1;Fury;;3;3;Your opponents' HIDDEN cards can't be revealed here.;Noxus, Trifarian;ogn-018-noxus-saboteur;ogn-018-1;Noxus Saboteur
+OGN-019;Raging Soul;Unit;unit;Origins;Uncommon;1;Fury;;4;4;If you've discarded a card this turn, I have ASSAULT and GANKING. (+1 [might] while I'm an attacker. I can move from battlefield to battlefield);Shadow Isles, Spirit;ogn-019-raging-soul;ogn-019-1;Raging Soul
+OGN-020;Scrapyard Champion;Unit;unit;Origins;Uncommon;1;Fury;1x Fury;5;5;LEGION When you play me, discard 2 then draw 2. ( Gain this effect if you've played another card this turn.);Bandle City, Mech;ogn-020-scrapyard-champion;ogn-020-1;Scrapyard Champion
+OGN-021;Sun Disc;Gear;gear;Origins;Uncommon;1;Fury;1x Fury;2;;[tap]: LEGION — The next unit you play this turn enters ready. (Get the effect if you've played another card this turn.);;ogn-021-sun-disc;ogn-021-1;Sun Disc
+OGN-022;Thermo Beam;Spell;spell;Origins;Uncommon;1;Fury;2x Fury;5;;ACTION (Play on your turn or in showdowns) Kill all gear.;;ogn-022-thermo-bear;ogn-022-1;Thermo Beam
+OGN-023;Unlicensed Armory;Gear;gear;Origins;Uncommon;1;Fury;;2;;Discard 1, [tap]: Choose a friendly unit. The next time it would die this turn, you may pay [fury] to heal it, exhaust it, and recall it instead. (Send it to base. This isn't a move.);;ogn-023-unlicensed-armory;ogn-023-1;Unlicensed Armory
+OGN-024;Void Seeker;Spell;spell;Origins;Uncommon;1;Fury;1x Fury;3;;ACTION (Play on your turn or in showdowns.) Deal 4 to a unit at a battlefield. Draw 1.;;ogn-024-void-seeker;ogn-024-1;Void Seeker
+OGN-025;Blind Fury;Spell;spell;Origins;Rare;3;Fury;2x Fury;4;;ACTION (Play on your turn or in showdowns.) Each opponent reveals the top card of their Main Deck. Choose one and banish it, then play it, ignoring its cost.  Then recycle the rest.;;ogn-025-blind-fury;ogn-025-1;Blind Fury
+OGN-026;Brynhir Thundersong;Unit;unit;Origins;Rare;3;Fury;;6;5;When you play me, opponents can't play cards this turn.;Freljord;ogn-026-brynhir-thundersong;ogn-026-1;Brynhir Thundersong
+OGN-027;Darius Trifarian;Champion;champion;Origins;Rare;1;Fury;1x Fury;5;5;When you play your second card in a turn, give me +2 [might] this turn and ready me.;Noxus, Trifarian, Darius;ogn-027-darius-trifarian;ogn-027-1;Darius Trifarian
+OGN-027a;Darius Trifarian;Champion;champion;Origins;Showcase;0;Fury;1x Fury;5;5;When you play your second card in a turn, give me +2 [might] this turn and ready me.;Noxus, Trifarian, Darius;ogn-027a-darius-trifarian;ogn-027-2;Darius Trifarian
+OGN-028;Draven Showboat;Champion;champion;Origins;Rare;3;Fury;1x Fury;5;3;My Might is increased by your points.;Noxus, Draven;ogn-028-draven-showboat;ogn-028-1;Draven Showboat
+OGN-029;Falling Star;Spell;spell;Origins;Rare;0;Fury;2x Fury;2;;Do this twice: Deal 3 to a unit. (You can choose different units.);;ogn-029-falling-star;ogn-029-1;Falling Star
+OGN-030;Jinx Demolitionist;Champion;champion;Origins;Rare;3;Fury;1x Fury;3;4;ACCELERATE (You may pay [1] [fury] as an additional cost to have me enter ready.) ASSAULT 2 (+2 [might] while I'm an attacker.) When you play me, discard 2.;Zaun;ogn-030-jinx-demolitionist;ogn-030-1;Jinx Demolitionist
+OGN-030a;Jinx Demolitionist;Champion;champion;Origins;Showcase;1;Fury;1x Fury;3;4;ACCELERATE (You may pay [1] [fury] as an additional cost to have me enter ready.)  ASSAULT 2 (+2 [might] while I'm an attacker.)  When you play me, discard 2 cards.;Zaun, Jinx;ogn-030a-jinx-demolistionist;ogn-030-2;Jinx Demolitionist
+OGN-031;Raging Firebrand;Unit;unit;Origins;Rare;3;Fury;1x Fury;6;4;When you play me, the next spell you play this turn costs [5] less.;Dragon, Mount Targon;ogn-031-raging-firebrand;ogn-031-1;Raging Firebrand
+OGN-032;Ravenborn Tome;Gear;gear;Origins;Rare;3;Fury;;3;;[tap]: The next spell you play this turn deals 1 Bonus Damage. (Each instance of damage the spell deals is increased by 1.);;ogn-032-ravenborn-tome;ogn-032-1;Ravenborn Tome
+OGN-033;Shakedown;Spell;spell;Origins;Rare;3;Fury;1x Fury;2;;REACTION (Play any time, even before spells and abilities resolve.) Choose an enemy unit. Deal 6 to it unless its controller has you draw 2.;;ogn-033-shakedown;ogn-033-1;Shakedown
+OGN-034;Tryndamere Barbarian;Champion;champion;Origins;Rare;3;Fury;2x Fury;7;8;When I conquer after an attack, if you assigned 5 or more excess damage to opponent's units, you score 1 Point.;Freljord;ogn-034-tryndamere-barbarian;ogn-034-1;Tryndamere Barbarian
+OGN-035;Vayne Hunter;Champion;champion;Origins;Rare;3;Fury;1x Fury;4;2;ASSAULT 3 (+3 [might] while I'm an attacker.) If an opponent controls a battlefield, I enter ready. When I conquer, you may pay [1] to return me to my owner's hand.;Demacia, Vayne;ogn-035-vayne-hunter;ogn-035-1;Vayne Hunter
+OGN-036;Vi Destructive;Champion;champion;Origins;Rare;3;Fury;1x Fury;2;3;GANKING (I can move from battlefield to battlefield.) Recycle 1 from your trash: Give me +1 [might] this turn.;Piltover, Vi;ogn-036-vi-destructive;ogn-036-1;Vi Destructive
+OGN-037;Immortal Phoenix;Unit;unit;Origins;Epic;0;Fury;1x Fury;3;3;ASSAULT 2 (+2 [might] when I'm an attacker.) When you kill a unit with a spell, you may pay [1] [fury] to play me from your trash.;Spirit;ogn-037-immortal-phoenix;ogn-037-1;Immortal Phoenix
+OGN-038;Kadregrin the Infernal;Unit;unit;Origins;Epic;1;Fury;2x Fury;9;9;When you play me, draw 1 for each of your MIGHTY units. (A unit is Mighty while it has 5+ [might].);Dragon, Demacia;ogn-038-kadregrin-the-infernal;ogn-038-1;Kadregrin the Infernal
+OGN-039;Kai'Sa Survivor;Champion;champion;Origins;Epic;0;Fury;;4;4;ACCELERATE (You may pay [1] [fury] as an additional cost to have me enter ready.) When I conquer, draw 1.;Kai'Sa, The Void;ogn-039-kaisa-survivor;ogn-039-1;Kai'Sa Survivor
+OGN-039a;Kai'Sa Survivor;Champion;champion;Origins;Showcase;0;Fury;;4;4;ACCELERATE (You may pay [1] [fury] as an additional cost to have me enter ready.) When I conquer, draw 1.;Kai'Sa, The Void;ogn-039a-kaisa-survivor;ogn-039-2;Kai'Sa Survivor
+OGN-040;Seal of Rage;Gear;gear;Origins;Epic;1;Fury;1x Fury;0;;[tap]: REACTION — ADD [fury] . (Abilities that add resources can't be reacted to.);;ogn-040-seal-of-rage;ogn-040-1;Seal of Rage
+OGN-041;Volibear Furious;Champion;champion;Origins;Epic;0;Fury;2x Fury;10;9;DEFLECT 2 ( Opponents must pay [rune][rune] to choose me with a spell or ability.)  When I attack, deal 5 damage split among any number of enemy units here.;Freljord;ogn-041-volibear-furious;ogn-041-1;Volibear Furious
+OGN-041a;Volibear Furious;Champion;champion;Origins;Showcase;1;Fury;2x Fury;10;9;DEFLECT 2 (Opponents must play  [rune] [rune] to choose me with a spell or effect.) When I attack, deal 5 damage split among any number of enemy units here. ;Freljord, Volibear;ogn-041a-volibear-furious;ogn-041-2;Volibear Furious
+OGN-042;Calm Rune;Rune;rune;Origins;Common;1;Calm;;;;;;ogn-042-calm-rune;ogn-042-1;Calm Rune
+OGN-042a;Calm Rune;Rune;rune;Origins;Showcase;0;Calm;;;;;;ogn-042a-calm-rune;ogn-042-2;Calm Rune
+OGN-043;Charm;Spell;spell;Origins;Common;1;Calm;1x Calm;1;;Move an enemy unit. ;;ogn-043-charm;ogn-043-1;Charm
+OGN-044;Clockwork Keeper;Unit;unit;Origins;Common;1;Calm;;2;2;You may pay [calm] as an additional cost to play me. When you play me, if you paid the additional cost, draw 1.;Shurima;ogn-044-clockwork-keeper;ogn-044-1;Clockwork Keeper
+OGN-045;Defy;Spell;spell;Origins;Common;1;Calm;1x Calm;1;;REACTION (Play anytime, even before spells and abilities resolve.)  Counter a spell that costs no more than [4] and no more than [rune] .;;ogn-045-defy;ogn-045-1;Defy
+OGN-046;En Garde;Spell;spell;Origins;Common;1;Calm;;1;;REACTION (Play any time, even before spells or abilities resolve.) Give a friendly unit +1 [might], then an additional +1 [might] this turn if it is the only unit you control there.;;ogn-046-en-garde;ogn-046-1;En Garde
+OGN-047;Find Your Center;Spell;spell;Origins;Common;1;Calm;;3;;ACTION (Play on your turn or in showdowns.) If an opponent's score is  within 3 points of the Victory Score, this costs [2] less. Draw 1 and channel 1 rune exhausted.;;ogn-047-find-your-center;ogn-047-1;Find Your Center
+OGN-048;Meditation;Spell;spell;Origins;Common;1;Calm;;2;; REACTION (Play anytime, even before spells and abilities resolve.) As an additional cost to play this, you may exhaust a friendly unit. If you do, draw 2. Otherwise, draw 1.;;ogn-048-meditation;ogn-048-1;Meditation
+OGN-049;Playful Phantom;Unit;unit;Origins;Common;1;Calm;;5;5;;Shadow Isles, Spirit;ogn-049-playful-phantom;ogn-049-1;Playful Phantom
+OGN-050;Rune Prison;Spell;spell;Origins;Common;1;Calm;1x Calm;2;;ACTION (Play on your turn or in showdowns.) Stun a unit. (It doesn't deal combat damage this turn.);;ogn-050-rune-prison;ogn-050-1;Rune Prison
+OGN-051;Solari Shieldbearer;Unit;unit;Origins;Common;1;Calm;;3;2;When you play me, stun a unit. (It doesn't deal combat damage this turn.);;ogn-051-solari-shieldbearer;ogn-051-1;Solari Shieldbearer
+OGN-052;Stalwart Poro;Unit;unit;Origins;Common;2;Calm;;2;2;SHIELD (+1 [might] while I'm a defender.);Poro;ogn-052-stalwart-poro;ogn-052-1;Stalwart Poro
+OGN-053;Stand United;Spell;spell;Origins;Common;1;Calm;;3;;HIDDEN  (Hide now for [rune] to react with later for [0])  ACTION (Play on your turn or in showdowns.) Buff a friendly unit. Buffs give an additional +1 [might] to friendly units this turn. (To buff a unit, give it a +1 [might] buff it it doesn't already have one.) ;;ogn-053-stand-united;ogn-053-1;Stand United
+OGN-054;Sunlit Guardian;Unit;unit;Origins;Common;1;Calm;;3;3;SHIELD (+1 [might] while I'm a defender.) TANK (I must be assigned combat damage first.);Shurima;ogn-054-sunlit-guardian;ogn-054-1;Sunlit Guardian
+OGN-055;Wielder of Water;Unit;unit;Origins;Common;1;Calm;;3;2;While I'm attacking or defending alone, I have +2 [might].;Ionia;ogn-055-wielder-of-water;ogn-055-1;Wielder of Water
+OGN-056;Adaptatron;Unit;unit;Origins;Uncommon;1;Calm;;4;3;When I conquer, you may kill a gear. If you do, buff me. (If I don't have a buff, I get a +1 [might] buff.);Mech, Piltover;ogn-056-adaptatron;ogn-056-1;Adaptatron
+OGN-057;Block;Spell;spell;Origins;Uncommon;1;Calm;;2;;HIDDEN (Hide now for [rune] to react with later for [0].) ACTION (Play on your turn or in showdowns.) Give a unit SHIELD 3 and TANK this turn. (+3 [might] while it's a defender. It must be assigned combat damage first.);;ogn-057-block;ogn-057-1;Block
+OGN-058;Discipline;Spell;spell;Origins;Uncommon;1;Calm;;2;;REACTION (Play anytime, even before spells and abilities resolve.) Give a unit +2 [might] this turn. Draw 1.;;ogn-058-discipline;ogn-058-1;Discipline
+OGN-059;Eclipse Herald;Unit;unit;Origins;Uncommon;1;Calm;1x Calm;7;7;When you stun an enemy unit, ready me and give me +1 [might] this turn.;Bird, Mount Targon;ogn-059-eclipse-herald;ogn-059-1;Eclipse Herald
+OGN-060;Mask of Foresight;Gear;gear;Origins;Uncommon;1;Calm;;2;;When a friendly unit attacks or defends alone, give it +1 [might] this turn.;;ogn-060-mask-of-foresight;ogn-060-1;Mask of Foresight
+OGN-061;Poro Herder;Unit;unit;Origins;Uncommon;1;Calm;1x Calm;3;3;When you play me, if you control a Poro, buff me and draw 1. (If I don't have a buff, I get a +1 [might] buff.);Freljord;ogn-061-poro-herder;ogn-061-1;Poro Herder
+OGN-062;Reinforce;Spell;spell;Origins;Uncommon;1;Calm;;5;;Look at the top 5 cards of you Main Deck. You may play a unit from among them. Its Energy cost is reduced by [5]. Then recycle the remaining cards.;;ogn-062-reinforce;ogn-062-1;Reinforce
+OGN-063;Spirit's Refuge;Gear;gear;Origins;Uncommon;1;Calm;1x Calm;2;;When you play this, buff a friendly unit. (If it doesn't have a buff, it gets a +1 [might] buff.) Friendly buffed units have DEFLECT if they didn't already. (Opponents must pay [rune] to choose those units with a spell or ability.) ;;ogn-063-spirits-refuge;ogn-063-1;Spirit's Refuge
+OGN-064;Wind Wall;Spell;spell;Origins;Uncommon;1;Calm;2x Calm;3;;REACTION (Play anytime, even before spells and abilities resolve.) Counter a spell.;;ogn-064-wind-wall;ogn-064-1;Wind Wall
+OGN-065;Wizened Elder;Unit;unit;Origins;Uncommon;1;Calm;;4;4;While I'm buffed, I have an additional +1 [might].;Ionia;ogn-065-wizened-elder;ogn-065-1;Wizened Elder
+OGN-066;Ahri Alluring;Champion;champion;Origins;Rare;3;Calm;1x Calm;5;4;When I hold, you score 1 point. ;Ionia, Ahri;ogn-066-ahri-alluring;ogn-066-1;Ahri Alluring
+OGN-066a;Ahri Alluring;Champion;champion;Origins;Showcase;0;Calm;1x Calm;5;4;When I hold, you score 1 point. ;Ionia, Ahri;ogn-066a-ahri-alluring;ogn-066-2;Ahri Alluring
+OGN-067;Blitzcrank Impassive;Champion;champion;Origins;Rare;3;Calm;1x Calm;5;5;TANK (I must be assigned combat damage first.) When you play me to a battlefield, you may move an enemy unit to here. When i hold, return me to my owner's hand.;Zaun, Mech, Blitzcrank;ogn-067-blitzcrank-impassive;ogn-067-1;Blitzcrank Impassive
+OGN-068;Caitlyn Patrolling;Champion;champion;Origins;Rare;3;Calm;1x Calm;3;3;I must be assigned combat damage last. [tap]: Deal damage equal to my Might to a unit at a battlefield. Use this ability only while I'm at a battlefield.;Piltover;ogn-068-caitlyn-patrolling;ogn-068-1;Caitlyn Patrolling
+OGN-069;Last Stand;Spell;spell;Origins;Rare;3;Calm;1x Calm;3;;ACTION (Play on your turn or in showdowns.) Double a friendly unit's Might this turn. Give it TEMPORARY. (Kill it at the start of its controller's Beginning Phase, before scoring.);;ogn-069-last-stand;ogn-069-1;Last Stand
+OGN-070;Mageseeker Warden;Unit;unit;Origins;Rare;3;Calm;1x Calm;6;5;While I'm at a battlefield, opponents can only play units to their base. While I'm at a battlefield, spells and abilities can't ready enemy units and gears.;Demacia;ogn-070-mageseeker-warden;ogn-070-1;Mageseeker Warden
+OGN-071;Party Favors;Spell;spell;Origins;Rare;3;Calm;;3;;Each other player chooses Cards or Runes. For each player that chooses Cards, you and that player each draw 1. For each player that chooses Runes, you and that player each channel 1 rune exhausted.;;ogn-071-party-favors;ogn-071-1;Party Favors
+OGN-072;Solari Shrine;Gear;gear;Origins;Rare;3;Calm;;3;;When you kill a stunned enemy unit, you may exhaust this to draw 1.;;ogn-072-solari-shrine;ogn-072-1;Solari Shrine
+OGN-073;Sona Harmonious;Champion;champion;Origins;Rare;3;Calm;1x Calm;4;4;At the end of your turn, if I'm at a battlefield, ready up to 4 friendly runes.;Demacia, Sona;ogn-073-sona-harmonious;ogn-073-1;Sona Harmonious
+OGN-074;Taric Protector;Champion;champion;Origins;Rare;3;Calm;1x Calm;4;4;SHIELD (+1 might while I'm a defender.) TANK (I must be assigned combat damage first.) Other friendly units here have SHIELD.;Mount Targon, Taric;ogn-074-taric-protector;ogn-074-1;Taric Protector
+OGN-075;Tasty Faefolk;Unit;unit;Origins;Rare;1;Calm;;7;6;ACCELERATE (You may play [1] [calm] as an additional cost to have me enter ready.) DEATHKNELL — Channel 2 runes exhausted and draw 1. (When I die, get the effect.);Bandle City, Fae;ogn-075-tasty-faefolk;ogn-075-1;Tasty Faefolk
+OGN-076;Yasuo Remorseful;Champion;champion;Origins;Rare;3;Calm;2x Calm;6;6;When I attack, deal damage equal to my Might to an enemy here. ;Ionia, Yasuo;ogn-076-yasuo-remorseful;ogn-076-1;Yasuo Remorseful
+OGN-076a;Yasuo Remorseful;Champion;champion;Origins;Showcase;0;Calm;2x Calm;6;6;When I attack, deal damage equal to my Might to an enemy here. ;Ionia, Yasuo;ogn-076a-yasuo-remorseful;ogn-076-2;Yasuo Remorseful
+OGN-077;Zhonya's Hourglass;Gear;gear;Origins;Rare;1;Calm;;2;;HIDDEN (Hide for now [rune] to react with later for [0].)  If a friendly unit would die, kill this instead. Heal that unit, exhaust it, and recall it. (Send it to base. This isn't a move.);;ogn-077-zhonyas-hourglass;ogn-077-1;Zhonya's Hourglass
+OGN-078;Lee Sin Ascetic;Champion;champion;Origins;Epic;1;Calm;1x Calm;5;5;SHIELD (+1 [might] while I'm a defender.) [tap]: Buff me. (I get +1 [might] buff.)  I can have any number of buffs. ;Ionia, Lee Sin;ogn-078-lee-sin-ascetic;ogn-078-1;Lee Sin Ascetic
+OGN-078a;Lee Sin Ascetic;Champion;champion;Origins;Showcase;0;Calm;1x Calm;5;5;SHIELD (+1 [might] while I'm a defender.) [tap]: Buff me. (I get +1 might buff.)  I can have any number of buffs.;Ionia, Lee Sin;ogn-078a-lee-sin-ascetic;ogn-078-2;Lee Sin Ascetic
+OGN-079;Leona Zealot;Champion;champion;Origins;Epic;0;Calm;1x Calm;6;6;If an opponent's score is within 3 points of the Victory Score, I enter ready. Stunned enemy units here have -8 [might], to a minimum of 1 [might].;Mount Targon, Leona;ogn-079-leona-zealot;ogn-079-1;Leona Zealot
+OGN-079a;Leona Zealot;Champion;champion;Origins;Showcase;0;Calm;1x Calm;6;6;If an opponent's score is within 3 points of the Victory Score, I enter ready. Stunned enemy units here have -8 [might], to a minimum of 1 [might].;Mount Targon, Leona;ogn-079a-leona-zealot;ogn-079-2;Leona Zealot
+OGN-080;Mystic Reversal;Spell;spell;Origins;Epic;1;Calm;3x Calm;4;;REACTION (Play any time, even before spells and abilities resolve.) Gain control of a spell. You may make new choices for it.;;ogn-080-mystic-reversal;ogn-080-1;Mystic Reversal
+OGN-081;Seal of Focus;Gear;gear;Origins;Epic;0;Calm;1x Calm;0;;[tap]: REACTION — ADD [calm]. (Abilities that add resources can't be reacted to.);;ogn-081-seal-of-focus;ogn-081-1;Seal of Focus
+OGN-082;Whiteflame Protector;Unit;unit;Origins;Epic;0;Calm;2x Calm;8;8;When you play me, give a unit +8 [might] this turn.;Dragon, Mount Targon;ogn-082-whiteflame-protector;ogn-082-1;Whiteflame Protector
+OGN-083;Consult the Past;Spell;spell;Origins;Common;1;Mind;;4;;HIDDEN (Hide now for [rune] to react with later for [0].) REACTION (Play any time, even before spells and abilities resolve.) Draw 2.;;ogn-083-consult-the-past;ogn-083-1;Consult the Past
+OGN-084;Eager Apprentice;Unit;unit;Origins;Common;1;Mind;;3;3;While I'm at a battlefield, the Energy costs for spells you play is reduced by [1], to a minimum of [1].;Piltover;ogn-084-eager-apprentice;ogn-084-1;Eager Apprentice
+OGN-085;Falling Comet;Spell;spell;Origins;Common;1;Mind;;5;;ACTION (play on your turn or in showdowns.) Deal 6 to a unit at a battlefield.;;ogn-085-falling-comet;ogn-085-1;Falling Comet
+OGN-086;Jeweled Colossus;Unit;unit;Origins;Common;1;Mind;;5;5;VISION (When you play me, look at the top card of your Main Deck. You may recycle it.) SHIELD (+1 [might] while I'm a defender.);Mount Targon;ogn-086-jeweled-colossus;ogn-086-1;Jeweled Colossus
+OGN-087;Lecturing Yordle;Unit;unit;Origins;Common;1;Mind;;3;2;TANK (I must be assigned combat damage first.) When you play me, draw 1.;Bandle City, Yordle;ogn-087-lecturing-yordle;ogn-087-1;Lecturing Yordle
+OGN-088;Mega-Mech;Unit;unit;Origins;Common;1;Mind;;7;8;;Bandle City, Mech;ogn-088-mega-mech;ogn-088-1;Mega-Mech
+OGN-089;Mind Rune;Rune;rune;Origins;Common;1;Mind;;;;;;ogn-089-mind-rune;ogn-089-1;Mind Rune
+OGN-089a;Mind Rune;Rune;rune;Origins;Showcase;0;Mind;;;;;;ogn-089a-mind-rune;ogn-089-2;Mind Rune
+OGN-090;Orb of Regret;Gear;gear;Origins;Common;1;Mind;;1;;[tap]: Give a unit -1 [might] this turn, to a minimum of of 1 [might].;;ogn-090-orb-of-regret;ogn-090-1;Orb of Regret
+OGN-091;Pit Crew;Unit;unit;Origins;Common;1;Mind;;3;3;When you play a gear, ready me.;;ogn-091-pit-crew;ogn-091-1;Pit Crew
+OGN-092;Riptide Rex;Unit;unit;Origins;Common;1;Mind;2x Mind;6;6;When you play me, deal 6 to an enemy unit at a battlefield.;Bilgewater, Pirate;ogn-092-riptide-rex;ogn-092-1;Riptide Rex
+OGN-093;Smoke Screen;Spell;spell;Origins;Common;1;Mind;1x Mind;2;;REACTION (Play any time, even before spells and abilities resolve.) Give a unit -4 [might] this turn, to a minimum of 1 [might].;;ogn-093-smoke-screen;ogn-093-1;Smoke Screen
+OGN-094;Sprite Call;Spell;spell;Origins;Common;1;Mind;;3;;HIDDEN (Hide now for [rune] to react with later for [0]) ACTION (Play on your turn or in showdowns.) Play a ready 3 [might] Sprite unit token with TEMPORARY (Kill it at the start of its controller's Beginning Phase, before scoring.);;ogn-094-sprite-call;ogn-094-1;Sprite Call
+OGN-095;Stupefy;Spell;spell;Origins;Common;1;Mind;;1;;REACTION (Play anytime, even before spells and abilities resolve.) Give a unit +1 [might] this turn, to a minimum of 1 [might]. Draw 1.;;ogn-095-stupefy;ogn-095-1;Stupefy
+OGN-096;Watchful Sentry;Unit;unit;Origins;Common;1;Mind;;2;1;Deathknell — Draw 1.  When I die, get the effect.);Freljord;ogn-096-watchful-sentry;ogn-096-1;Watchful Sentry
+OGN-097;Blastcone Fae;Unit;unit;Origins;Uncommon;1;Mind;1x Mind;2;2;HIDDEN (Hide now for [rune] to react with later for [0].) When you play me, give a unit -2 [might] this turn, to a minimum of 1 [might];Bandle City, Fae;ogn-097-blastcone-fae;ogn-097-1;Blastcone Fae
+OGN-098;Energy Conduit;Gear;gear;Origins;Uncommon;1;Mind;;3;;[tap]: REACTION - ADD 1. (Abilities that add resources can't be reacted to.);;ogn-098-energy-conduit;ogn-098-1;Energy Conduit
+OGN-099;Garbage Grabber;Gear;gear;Origins;Uncommon;1;Mind;;2;;Recycle 3 from your trash, [1], [tap]: Draw 1.;;ogn-099-garbage-grabber;ogn-099-1;Garbage Grabber
+OGN-100;Gemcraft Seer;Unit;unit;Origins;Uncommon;1;Mind;1x Mind;3;3;VISION (When you play me, look at the top card of your Main Deck. You may recycle it.)  Other friendly units have VISION. ;Mount Targon;ogn-100-gemcraft-seer;ogn-100-1;Gemcraft Seer
+OGN-101;Mushroom Pouch;Gear;gear;Origins;Uncommon;1;Mind;;2;;At the start of your Beginning Phase, if you control a facedown card at a battlefield, draw 1.;;ogn-101-mushroom-pouch;ogn-101-1;Mushroom Pouch
+OGN-102;Portal Rescue;Spell;spell;Origins;Uncommon;1;Mind;1x Mind;3;;ACTION (Play on your turn or in showdowns.) Banish a friendly unit, then its owner plays it to their base, ignoring its cost.;;ogn-102-portal-rescue;ogn-102-1;Portal Rescue
+OGN-103;Ravenbloom Student;Unit;unit;Origins;Uncommon;1;Mind;;2;2;When you play a spell, give me +1 [might] this turn. ;Noxus;ogn-103-ravenbloom-student;ogn-103-1;Ravenbloom Student
+OGN-104;Retreat;Spell;spell;Origins;Uncommon;1;Mind;;1;;REACTION (Play any time, even before spells and abilities resolve.) Return a friendly unit to its owner's hand. Its owner channels 1 rune exhausted.;;ogn-104-retreat;ogn-104-1;Retreat
+OGN-105;Singularity;Spell;spell;Origins;Uncommon;1;Mind;2x Mind;6;;Deal 6 to each of up to two units.;;ogn-105-singularity;ogn-105-1;Singularity
+OGN-106;Sprite Mother;Unit;unit;Origins;Uncommon;1;Mind;1x Mind;4;3;When you play me, play a ready 3 [might] Sprite unit token with TEMPORARY here. (Kill it at the start of its controller's Beginning Phase, before scoring.);Fae;ogn-106-sprite-mother;ogn-106-1;Sprite Mother
+OGN-107;Ava Achiever;Unit;unit;Origins;Rare;3;Mind;;5;4;When I attack, you may pay [mind] to play a card with HIDDEN from your hand, ignoring its cost. If it’s a unit, play it here.;Bandle City, Yordle;ogn-107-ava-achiever;ogn-107-1;Ava Achiever
+OGN-108;Convergent Mutation;Spell;spell;Origins;Rare;3;Mind;1x Mind;2;;REACTION (Play any time, even before spells and abilities resolve.) Choose a friendly unit. This turn, increase its Might to the Might of another friendly unit.;;ogn-108-convergent-mutation;ogn-108-1;Convergent Mutation
+OGN-109;Dr. Mundo Expert;Champion;champion;Origins;Rare;1;Mind;2x Mind;8;6;My Might is increased by the number of cards in your trash. At the start of your Beginning Phase, recycle 3 from your trash.;Zaun, Dr. Mundo;ogn-109-dr-mundo-expert;ogn-109-1;Dr. Mundo Expert
+OGN-110;Ekko Recurrent;Champion;champion;Origins;Rare;3;Mind;1x Mind;5;5;ACCELERATE (You may pay [1] [mind] as an additional cost to have me enter ready.) DEATHKNELL - Recycle me to ready your runes. (When I die, get the effect.);Zaun;ogn-110-ekko-recurrent;ogn-110-1;Ekko Recurrent
+OGN-111;Heimerdinger Inventor;Champion;champion;Origins;Rare;3;Mind;1x Mind;3;3;I have all [tap] abilities of all friendly legends, units, and gears.;Piltover, Yordle;ogn-111-heimerdinger-inventor;ogn-111-1;Heimerdinger Inventor
+OGN-112;Kai'Sa Evolutionary;Champion;champion;Origins;Rare;3;Mind;1x Mind;6;6;GANKING (I can move from battlefield to battlefield.) When I conquer, you may play a spell from your trash with Energy cost less than your points without paying its Energy cost. Then recycle it, (You must still pay its Power cost.);Kai'Sa, The Void;ogn-112-kaisa-evolutionary;ogn-112-1;Kai'Sa Evolutionary
+OGN-112a;Kai'Sa Evolutionary;Champion;champion;Origins;Showcase;0;Mind;1x Mind;6;6;GANKING (I can move from battlefield to battlefield.) When I conquer, you may play a spell from your trash with Energy cost less than your points without paying its Energy cost. Then recycle it, (You must still pay its Power cost.);Kai'Sa, The Void;ogn-112a-kaisa-evolutionary;ogn-112-2;Kai'Sa Evolutionary
+OGN-113;Malzahar Fanatic;Champion;champion;Origins;Rare;3;Mind;;4;3;Kill a friend unit or gear, [tap] : ACTION — ADD [rune] [rune]. (Use on your turn or in showdowns. Abilities that add resources can't be reacted to.);The Void, Malzahar;ogn-113-malzahar-fanatic;ogn-113-1;Malzahar Fanatic
+OGN-114;Progress Day;Spell;spell;Origins;Rare;3;Mind;1x Mind;6;;Draw 4.;;ogn-114-progress-day;ogn-114-1;Progress Day
+OGN-115;Promising Future;Spell;spell;Origins;Rare;3;Mind;1x Mind;5;;Each player looks at the top 5 cards of their Main Deck, banishes one of them, then recycles the rest.  Starting with the next player, each player plays those cards, ignoring Energy costs. (They must still pay Power costs.);;ogn-115-promising-future;ogn-115-1;Promising Future
+OGN-116;Thousand-Tailed Watcher;Unit;unit;Origins;Rare;0;Mind;1x Mind;7;7;ACCELERATE (You may pay [1] [mind] as an additional cost to have me enter ready.) When you play me, give enemy units -3 [might] this turn, to a minimum of 1 [might].;Ionia;ogn-116-thousand-tailed-watcher;ogn-116-1;Thousand-Tailed Watcher
+OGN-117;Viktor Innovator;Champion;champion;Origins;Rare;3;Mind;1x Mind;4;3;When you play a card on an opponent's turn, play a 1 [might] Recruit unit token in your base.;Zaun, Viktor;ogn-117-viktor-innovator;ogn-117-1;Viktor Innovator
+OGN-117a;Viktor Innovator;Champion;champion;Origins;Showcase;0;Mind;1x Mind;4;3;When you play a card on an opponent's turn, play a 1 [might] Recruit unit token in your base.;Zaun, Viktor;ogn-117a-viktor-innovator;ogn-117-2;Viktor Innovator
+OGN-118;Wraith of Echoes;Unit;unit;Origins;Rare;3;Mind;1x Mind;6;5;The first time a friendly unit dies each turn, draw 1.;Shadow Isles, Spirit;ogn-118-wraith-of-echoes;ogn-118-1;Wraith of Echoes
+OGN-119;Ahri Inquisitive;Champion;champion;Origins;Epic;0;Mind;1x Mind;3;3;When I attack or defend, give an enemy unit here -2 [might] this turn, to a minimum of 1 [might].;Ionia, Ahri;ogn-119-ahri-inquisitive;ogn-119-1;Ahri Inquisitive
+OGN-119a;Ahri Inquisitive;Champion;champion;Origins;Showcase;0;Mind;1x Mind;3;3;When I attack or defend, give an enemy unit here -2 [might] this turn, to a minimum of 1 [might].;Ionia, Ahri;ogn-119a-ahri-inquisitive;ogn-119-2;Ahri Inquisitive
+OGN-120;Seal of Insight;Gear;gear;Origins;Epic;1;Mind;1x Mind;0;;[tap]: REACTION - ADD [mind]. Activate this any time. (Abilities that add resources can't be reacted to.) ;;ogn-120-seal-of-insight;ogn-120-1;Seal of Insight
+OGN-121;Teemo Strategist;Champion;champion;Origins;Epic;1;Mind;1x Mind;2;2;HIDDEN (Hide now for [rune] to react with later for [0].) When I defend, choose an enemy unit here and reveal the top 5 cards of your Main Deck. Deal 1 to that unit for each card with HIDDEN revealed this way, then recycle the revealed cards.;Bandle City, Yordle, Teemo;ogn-121-teemo-strategist;ogn-121-1;Teemo Strategist
+OGN-121a;Teemo Strategist;Champion;champion;Origins;Epic;1;Mind;1x Mind;2;2;HIDDEN (Hide now for [rune] to react with later for [0].) When I defend, choose an enemy unit here and reveal the top 5 cards of your Main Deck. Deal 1 to that unit for each card with HIDDEN revealed this way, then recycle the revealed cards.;Bandle City, Yordle, Teemo;ogn-121a-teemo-strategist;ogn-121-2;Teemo Strategist
+OGN-122;Time Warp;Spell;spell;Origins;Epic;0;Mind;4x Mind;10;;Take a turn after this one. Banish this.;;ogn-122-time-warp;ogn-122-1;Time Warp
+OGN-123;Unchecked Power;Spell;spell;Origins;Epic;0;Mind;2x Mind;7;;Exhaust all friendly units, then deal 12 to all units at battlefields.;;ogn-123-unchecked-power;ogn-123-1;Unchecked Power
+OGN-124;Arena Bar;Gear;gear;Origins;Common;1;Body;;3;;[tap]: Buff an exhausted friendly unit. (If it doesn't have a buff, it gets a +1 [might] buff.);;ogn-124-arena-bar;ogn-124-1;Arena Bar
+OGN-125;Bilgewater Bully;Unit;unit;Origins;Common;1;Body;;6;6;While I'm buffed, I have GANKING. (I can move from battlefield to battlefield.);Bilgewater;ogn-125-bilgewater-bully;ogn-125-1;Bilgewater Bully
+OGN-126;Body Rune;Rune;rune;Origins;Common;1;Body;;;;;;ogn-126-body-rune;ogn-126-1;Body Rune
+OGN-126a;Body Rune;Rune;rune;Origins;Showcase;0;Body;;;;;;ogn-126a-body-rune;ogn-126-2;Body Rune
+OGN-127;Cannon Barrage;Spell;spell;Origins;Common;1;Body;1x Body;2;;REACTION (Play any time, even before spells and abilities resolve.) Deal 2 to all enemy units in combat.;;ogn-127-cannon-barrage;ogn-127-1;Cannon Barrage
+OGN-128;Challenge;Spell;spell;Origins;Common;1;Body;1x Body;2;;ACTION (Play on your turn or in showdowns.) Choose a friendly unit and an enemy unit. They deal damage equal to their Mights to each other.;;ogn-128-challenge;ogn-128-1;Challenge
+OGN-129;Confront;Spell;spell;Origins;Common;1;Body;;2;;ACTION (Play on your turn or in showdowns.) Units you play this turn enter ready. Draw 1.;;ogn-129-confront;ogn-129-1;Confront
+OGN-130;Crackshot Corsair;Unit;unit;Origins;Common;1;Body;;3;3;When I attack, deal 1 to an enemy unit here.;Bilgewater, Pirate;ogn-130-crackshot-corsair;ogn-130-1;Crackshot Corsair
+OGN-131;Dune Drake;Unit;unit;Origins;Common;1;Body;;5;5;When I attack, give me +2 [might] this turn if there is a ready enemy unit here.;Dragon, Shurima;ogn-131-dune-drake;ogn-131-1;Dune Drake
+OGN-132;First Mate;Unit;unit;Origins;Common;1;Body;;3;3;When you play me, ready another unit. ;Bilgewater, Pirate;ogn-132-first-mate;ogn-132-1;First Mate
+OGN-133;Flurry of Blades;Spell;spell;Origins;Common;1;Body;;1;;REACTION (Play any time, even before spells and abilities resolve.) Deal 1 to all units at battlefields.;;ogn-133-flurry-of-blades;ogn-133-1;Flurry of Blades
+OGN-134;Mobilize;Spell;spell;Origins;Common;1;Body;;2;;Channel 1 rune exhausted, if you couldn't, draw 1.;;ogn-134-mobilize;ogn-134-1;Mobilize
+OGN-135;Pakaa Cub;Unit;unit;Origins;Common;1;Body;;3;3;HIDDEN (Hide now for [rune] to react with later for [0].);Ixtal, Cat;ogn-135-pakaa-cub;ogn-135-1;Pakaa Cub
+OGN-136;Pit Rookie;Unit;unit;Origins;Common;1;Body;;2;2;When you play me, buff another friendly unit. (If it doesn't have a buff, it gets +1 [might] buff.);Bilgewater;ogn-136-pit-rookie;ogn-136-1;Pit Rookie
+OGN-137;Stormclaw Ursine;Unit;unit;Origins;Common;1;Body;;7;6;Tank ( I must be assigned combat damage first. ) When you play me, channel 1 rune exhausted.;Freljord;ogn-137-stormclaw-ursine;ogn-137-1;Stormclaw Ursine
+OGN-138;Catalyst of Aeons;Spell;spell;Origins;Uncommon;1;Body;;4;;Channel 2 rune exhausted. If you couldn't channel 2 runes this way, draw 1.;;ogn-138-catalyst-of-aeons;ogn-138-1;Catalyst of Aeons
+OGN-139;Cithria of Cloudfield;Unit;unit;Origins;Uncommon;1;Body;;2;1;When you play another unit, buff me. (If i don't have a buff, I get a +1 [might] buff.) ;Demacia, Elite;ogn-139-cithria-of-cloudfield;ogn-139-1;Cithria of Cloudfield
+OGN-140;Herald of Scales;Unit;unit;Origins;Uncommon;1;Body;;4;3;Your Dragons' Energy costs are reduced by [2], to a minimum of [1].;Mount Targon;ogn-140-herald-of-scales;ogn-140-1;Herald of Scales
+OGN-141;Kinkou Monk;Unit;unit;Origins;Uncommon;1;Body;1x Body;4;4;When you play me, buff up to two other friendly units. (Each one that doesn't have a buff gets a +1 [might] buff.);Ionia;ogn-141-kinkou-monk;ogn-141-1;Kinkou Monk
+OGN-142;Mountain Drake;Unit;unit;Origins;Uncommon;1;Body;;9;10;;Dragon;ogn-142-mountain-drake;ogn-142-1;Mountain Drake
+OGN-143;Pirate's Haven;Gear;gear;Origins;Uncommon;1;Body;;3;;When you ready a friendly unit, give it +1 [might] this turn.;;ogn-143-pirates-haven;ogn-143-1;Pirate's Haven
+OGN-144;Spoils of War;Spell;spell;Origins;Uncommon;1;Body;1x Body;4;;REACTION (Play any time, even before spells and abilities resolve.) If an enemy unit has died this turn, this costs [2] less. Draw 2.;;ogn-144-spoils-of-war;ogn-144-1;Spoils of War
+OGN-145;Unyielding Spirit;Spell;spell;Origins;Uncommon;1;Body;1x Body;1;;REACTION (Play at any time, even before spells and abilities resolve.) Prevent all spell and ability damage this turn.;;ogn-145-unyielding-spirit;ogn-145-1;Unyielding Spirit
+OGN-146;Wallop;Spell;spell;Origins;Uncommon;1;Body;;2;;ACTION (Play on your turn or in showdowns.) As you play this, you may spend a buff as an additional cost. If you do, ignore this spell's cost. Ready a unit.;;ogn-146-wallop;ogn-146-1;Wallop
+OGN-147;Wildclaw Shaman;Unit;unit;Origins;Uncommon;1;Body;;4;3;When you play me, you may spend a buff to buff me and ready me. (If I don't have a buff, I get a +1 [might] buff.);Freljord;ogn-147-wildclaw-shaman;ogn-147-1;Wildclaw Shaman
+OGN-148;Anivia Primal;Champion;champion;Origins;Rare;3;Body;2x Body;7;8;When I attack, deal 3 to all enemy units here.;Freljord, Bird, Anivia;ogn-148-anivia-primal;ogn-148-1;Anivia Primal
+OGN-149;Carnivorous Snapvine;Unit;unit;Origins;Rare;3;Body;2x Body;5;6;When you play me, choose a unit at a battlefield. We deal damage equal to our Mights to each other.;Shadow Isles;ogn-149-carnivorous-snapvine;ogn-149-1;Carnivorous Snapvine
+OGN-150;Kraken Hunter;Unit;unit;Origins;Rare;3;Body;2x Body;3;5;ACCELERATE (You may pay [1] [body] as an additional cost to have me enter ready.) ASSAULT (+1 [might] while I'm an attacker.) As you play me, you may spend any number of buffs as an additional cost. Reduce my cost by [body] for each buff you spend.;Bilgewater, Pirate;ogn-150-kraken-hunter;ogn-150-1;Kraken Hunter
+OGN-151;Lee Sin Centered;Champion;champion;Origins;Rare;3;Body;;6;6;ACCELERATE (You may pay [1] [body] as an additional cost to have me enter ready.) Other buffed friendly units at my battlefield have +2 [might].;Ionia, Lee Sin;ogn-151-lee-sin-centered;ogn-151-1;Lee Sin Centered
+OGN-151a;Lee Sin Centered;Champion;champion;Origins;Showcase;0;Body;;6;6;ACCELERATE (You may pay [1] [body] as an additional cost to have me enter ready.) Other buffed friendly units at my battlefield have +2 [might].;Ionia, Lee Sin;ogn-151a-lee-sin-centered;ogn-151-2;Lee Sin Centered
+OGN-152;Mistfall;Gear;gear;Origins;Rare;3;Body;;3;;When you buff a friendly unit, you may pay [body] and exhaust this to ready it.;;ogn-152-mistfall;ogn-152-1;Mistfall
+OGN-153;Overt Operation;Spell;spell;Origins;Rare;3;Body;2x Body;5;;ACTION (Play on your turn or in showdowns.) For each friendly unit, you may spend its buff to ready it. Then buff all friendly units. (Each one that doesn't have a buff gets a +1 [might] buff.);;ogn-153-overt-operation;ogn-153-1;Overt Operation
+OGN-154;Primal Strength;Spell;spell;Origins;Rare;3;Body;1x Body;4;;ACTION (Play on your turn or in showdowns.) Give a unit +7 [might] this turn.;;ogn-154-primal-strength;ogn-154-1;Primal Strength
+OGN-155;Qiyana Victorious;Champion;champion;Origins;Rare;1;Body;1x Body;4;4;DEFLECT (Opponents must pay [rune] to choose me with a spell or ability.) When I conquer, draw 1 or channel 1 rune exhausted.;Qiyana, Ixtal;ogn-155-qiyana-victorious;ogn-155-1;Qiyana Victorious
+OGN-156;Sabotage;Spell;spell;Origins;Rare;3;Body;1x Body;1;;Choose an opponent. They reveal their hand. Choose a non-unit card from it, and recycle that card.;;ogn-156-sabotage;ogn-156-1;Sabotage
+OGN-157;Udyr Wildman;Champion;champion;Origins;Rare;3;Body;1x Body;6;6;Spend my buff: Choose one you've not chosen this turn — • Deal 2 to a unit at a battlefield. • Stun a unit at a battlefield • Ready me. • Give me GANKING this turn.;Freljord, Udyr;ogn-157-udyr-wildman;ogn-157-1;Udyr Wildman
+OGN-158;Volibear Imposing;Champion;champion;Origins;Rare;3;Body;2x Body;12;10;SHIELD 3 (+3 [might] while I'm a defender.) TANK (I must be assigned combat damage first.) When an opponent moves to a battlefield other than mine, draw 1. (Bases are not battlefields.);Freljord;ogn-158-volibear-imposing;ogn-158-1;Volibear Imposing
+OGN-158a;Volibear Imposing;Champion;champion;Origins;Showcase;0;Body;2x Body;12;10;SHIELD 3 (+3 [might] while I'm a defender.) TANK (I must be assigned combat damage first.) When an opponent moves to a battlefield other than mine, draw 1. (Bases are not battlefields.);Freljord, Volibear;ogn-158a-volibear-imposing;ogn-158-2;Volibear Imposing
+OGN-159;Warwick Hunter;Champion;champion;Origins;Rare;3;Body;1x Body;6;5;I enter ready. When I attack, destroy all damaged enemy units here.;Zaun, Dog;ogn-159-warwick-hunter;ogn-159-1;Warwick Hunter
+OGN-160;Dazzling Aurora;Gear;gear;Origins;Epic;0;Body;2x Body;9;;At the end of your turn, reveal cards from the top of your Main Deck until you reveal a unit and banish it. Play it, ignoring its cost, and recycle the rest.;;ogn-160-dazzling-aurora;ogn-160-1;Dazzling Aurora
+OGN-161;Deadbloom Predator;Unit;unit;Origins;Epic;0;Body;2x Body;8;8;DEFLECT (Opponents must pay [rune] to choose me with a spell or ability.)  You may play me to an occupied enemy battlefield.;Shadow Isles;ogn-161-deadbloom-predator;ogn-161-1;Deadbloom Predator
+OGN-162;Miss Fortune Captain;Champion;champion;Origins;Epic;1;Body;1x Body;5;5;ACCELERATE (You may pay [1] [body] as an additional cost to have me enter ready.) GANKING (I can move from battlefield to battlefield.) The first time I move each turn, you may ready something else that's exhausted.;Bilgewater, Pirate;ogn-162-miss-fortune-captain;ogn-162-1;Miss Fortune Captain
+OGN-162a;Miss Fortune Captain;Champion;champion;Origins;Showcase;0;Body;1x Body;5;5;ACCELERATE (You may pay [1] [body] as an additional cost to have me enter ready.) GANKING (I can move from battlefield to battlefield.) The first time I move each turn, you may ready something else that's exhausted.;Bilgewater, Pirate;ogn-162a-miss-fortune-captain;ogn-162-2;Miss Fortune Captain
+OGN-163;Seal of Strength;Gear;gear;Origins;Epic;0;Body;1x Body;0;;[tap]: REACTION — ADD [body]. Activate this any time. (Abilities that add resources can't be reacted to.) ;;ogn-163-seal-of-strength;ogn-163-1;Seal of Strength
+OGN-164;Sett Brawler;Champion;champion;Origins;Epic;0;Body;1x Body;5;4;When I'm played and when I conquer, buff me. (If I don't have a buff, I get a +1 [might] buff.) Spend my buff: Give me +4 [might] this turn.;Ionia, Sett;ogn-164-sett-brawler;ogn-164-1;Sett Brawler
+OGN-164a;Sett Brawler;Champion;champion;Origins;Showcase;0;Body;1x Body;5;4;When I'm played and when I conquer, buff me. (If I don't have a buff, I get a +1 [might] buff.) Spend my buff: Give me +4 [might] this turn.;Ionia, Sett;ogn-164a-sett-brawler;ogn-164-2;Sett Brawler
+OGN-165;Cemetery Attendant;Unit;unit;Origins;Common;1;Chaos;1x Chaos;3;3;When you play me, return a unit from your trash to your hand.;Shadow Isles, Dog;ogn-165-cemetery-attendant;ogn-165-1;Cemetery Attendant
+OGN-166;Chaos Rune;Rune;rune;Origins;Common;1;Chaos;;;;;;ogn-166-chaos-rune;ogn-166-1;Chaos Rune
+OGN-166a;Chaos Rune;Rune;rune;Origins;Showcase;0;Chaos;;;;;;ogn-166a-chaos-rune;ogn-166-2;Chaos Rune
+OGN-167;Ember Monk;Unit;unit;Origins;Common;1;Chaos;;4;4;When you play a card from HIDDEN, give me +2 [might] this turn.;Bandle City;ogn-167-ember-monk;ogn-167-1;Ember Monk
+OGN-168;Fight or Flight;Spell;spell;Origins;Common;1;Chaos;;2;;HIDDEN (Hide now for [rune] to react with later for [0].) ACTION (Play on your turn or in showdowns.) Move a unit from a battlefield to its base.;;ogn-168-fight-or-flight;ogn-168-1;Fight or Flight
+OGN-169;Gust;Spell;spell;Origins;Common;1;Chaos;;1;;REACTION (Play any time, even before spells and abilities resolve.) Return a unit at a battlefield with 3 [might] or less to its owner's hand.;;ogn-169-gust;ogn-169-1;Gust
+OGN-170;Morbid Return;Spell;spell;Origins;Common;1;Chaos;;2;;ACTION (Play on your turn or in showdowns.) Return a unit from your trash to your hand.;;ogn-170-morbid-return;ogn-170-1;Morbid Return
+OGN-171;Mystic Poro;Unit;unit;Origins;Common;1;Chaos;;2;2;VISION (When you play me, look at the top card of your Main Deck. You may recycle it.);Poro;ogn-171-mystic-poro;ogn-171-1;Mystic Poro
+OGN-172;Rebuke;Spell;spell;Origins;Common;1;Chaos;2x Chaos;2;;ACTION (Play on your turn or in showdowns.) Return a unit at a battlefield to its owner's hand.;;ogn-172-rebuke;ogn-172-1;Rebuke
+OGN-173;Ride the Wind;Spell;spell;Origins;Common;1;Chaos;1x Chaos;2;;ACTION (play on your turn or in showdowns.)  Move a friendly unit and ready it.;;ogn-173-ride-the-wind;ogn-173-1;Ride the Wind
+OGN-174;Sai Scout;Unit;unit;Origins;Common;1;Chaos;;6;5;VISION (When you play me, look at the top card of your Main Deck. You may recycle it.) You may play me to an open battlefield.;Shurima;ogn-174-sai-scout;ogn-174-1;Sai Scout
+OGN-175;Shipyard Skulker;Unit;unit;Origins;Common;1;Chaos;;3;3;;Bilgewater, Pirate;ogn-175-shipyard-skulker;ogn-175-1;Shipyard Skulker
+OGN-176;Sneaky Deckhand;Unit;unit;Origins;Common;1;Chaos;;3;2;You may play me to an open battlefield.;Bilgewater, Pirate;ogn-176-sneaky-deckhand;ogn-176-1;Sneaky Deckhand
+OGN-177;Stealthy Pursuer;Unit;unit;Origins;Common;1;Chaos;1x Chaos;4;4;When a friendly unit moves from my location, I may be moved with it.;Shurima;ogn-177-stealthy-pursuer;ogn-177-1;Stealthy Pursuer
+OGN-178;Undercover Agent;Unit;unit;Origins;Common;1;Chaos;1x Chaos;5;5;DEATHKNELL — Discard 2, then draw 2. (When I die, get the effect.);;ogn-178-undercover-agent;ogn-178-1;Undercover Agent
+OGN-179;Acceptable Losses;Spell;spell;Origins;Uncommon;1;Chaos;;1;;ACTION (Play on your turn or in showdowns.) Each player kills one of their gear.;;ogn-179-acceptable-losses;ogn-179-1;Acceptable Losses
+OGN-180;Fading Memories;Spell;spell;Origins;Uncommon;1;Chaos;1x Chaos;4;;Give a unit at a battlefield or a gear TEMPORARY. (Kill it at the start of its controller's Beginning Phase, before scoring.);;ogn-180-fading-memories;ogn-180-1;Fading Memories
+OGN-181;Pack of Wonders;Gear;gear;Origins;Uncommon;1;Chaos;;2;;[tap]: Return another friendly gear, unit, or facedown card to its owner's hand. ;;ogn-181-pack-of-wonders;ogn-181-1;Pack of Wonders
+OGN-182;Scrapheap;Gear;gear;Origins;Uncommon;1;Chaos;;2;;When this is played, discarded, or killed, draw 1.;;ogn-182-scrapheap;ogn-182-1;Scrapheap
+OGN-183;Stacked Deck;Spell;spell;Origins;Uncommon;1;Chaos;;1;;ACTION (play on your turn or in showdowns.)  Look at the top 3 cards of your Main Deck. Put 1 into your hand and recycle the rest.;;ogn-183-stacked-deck;ogn-183-1;Stacked Deck
+OGN-184;The Syren;Gear;gear;Origins;Uncommon;1;Chaos;;2;;[1], [tap]: Move a friendly unit at a battlefield to its base.;;ogn-184-the-syren;ogn-184-1;The Syren
+OGN-185;Traveling Merchant;Unit;unit;Origins;Uncommon;1;Chaos;;2;2;When I move, discard 1 then draw 1.;Bilgewater;ogn-185-traveling-merchant;ogn-185-1;Traveling Merchant
+OGN-186;Treasure Trove;Gear;gear;Origins;Uncommon;1;Chaos;;2;;When this leaves the board, draw 1 and channel 1 rune exhausted. [Chaos], [Tap]: Kill this.;;ogn-186-treasure-trove;ogn-186-1;Treasure Trove
+OGN-187;Whirlwind;Spell;spell;Origins;Uncommon;1;Chaos;1x Chaos;4;;Starting with the next player, each player may return a unit to its owner's hand. ;;ogn-187-whirlwind;ogn-187-1;Whirlwind
+OGN-188;Zaunite Bouncer;Unit;unit;Origins;Uncommon;1;Chaos;2x Chaos;4;2;When you play me, return another unit at a battlefield to it's owner's hand.;;ogn-188-zaunite-bouncer;ogn-188-1;Zaunite Bouncer
+OGN-189;Kayn Unleashed;Champion;champion;Origins;Rare;3;Chaos;1x Chaos;6;6;GANKING (I can move from battlefield to battlefield.)  If I have moved twice this turn, I don't take damage.;Ionia;ogn-189-kayn-unleashed;ogn-189-1;Kayn Unleashed
+OGN-190;Kog'Maw Caustic;Champion;champion;Origins;Rare;3;Chaos;1x Chaos;3;1;DEATHKNELL - Deal 4 to all units at my battlefield. (When I die, get the effect);Kog'Maw, The Void;ogn-190-kogmaw-caustic;ogn-190-1;Kog'Maw Caustic
+OGN-191;Maddened Marauder;Unit;unit;Origins;Rare;3;Chaos;;5;4;Tank (I must be assigned combat damage first.) When you play me, move a unit from a battlefield to its base.;Bilgewater, Pirate;ogn-191-maddened-marauder;ogn-191-1;Maddened Marauder
+OGN-192;Mindsplitter;Unit;unit;Origins;Rare;3;Chaos;2x Chaos;7;7;When you play me, choose an opponent. They reveal their hand. Choose a card from it, and they discard that card.;Dragon, Mount Targon;ogn-192-mindsplitter;ogn-192-1;Mindsplitter
+OGN-193;Miss Fortune Buccaneer;Champion;champion;Origins;Epic;3;Chaos;1x Chaos;4;4;You may play me to an open battlefield. Friendly units may be played to open battlefields.;Bilgewater, Pirate;ogn-193-miss-fortune-buccaneer;ogn-193-1;Miss Fortune Buccaneer
+OGN-193a;Miss Fortune Buccaneer;Champion;champion;Origins;Showcase;1;Chaos;1x Chaos;4;4;You may play me to an open battlefield. Friendly units may be played to open battlefields.;Bilgewater, Pirate;ogn-193a-miss-fortune-buccaneer;ogn-193-2;Miss Fortune Buccaneer
+OGN-194;Nocturne Horrifying;Champion;champion;Origins;Rare;3;Chaos;1x Chaos;4;4;GANKING (I can move from battlefield to battlefield.) As you look at or reveal me from the top of your deck, you may banish me. If you do, you may play me for [rune].;Nocturne;ogn-194-nocturne-horrifying;ogn-194-1;Nocturne Horrifying
+OGN-195;Rhasa the Sunderer;Unit;unit;Origins;Rare;3;Chaos;1x Chaos;10;6;I cost [1] less for each card in your trash.;Shadow Isles, Spirit;ogn-195-rhasa-the-sunderer;ogn-195-1;Rhasa the Sunderer
+OGN-196;Soulgorger;Unit;unit;Origins;Rare;3;Chaos;2x Chaos;8;;When you play me, you may play a unit from your trash, ignoring its Energy cost. (You may still pay its Power cost.) ;Shadow Isles, Spirit;ogn-196-soulgorger;ogn-196-1;Soulgorger
+OGN-197;Teemo Scout;Champion;champion;Origins;Rare;3;Chaos;;2;1;HIDDEN (Hide now for [rune] to react with later for [0].) When you play me, give me +3 [might] this turn.;Bandle City, Yordle;ogn-197-teemo-scout;ogn-197-1;Teemo Scout
+OGN-197a;Teemo Scout;Champion;champion;Origins;Showcase;0;Chaos;;2;1;HIDDEN (Hide now for [rune] to react with later for [0].) When you play me, give me +3 [might] this turn.;Bandle City, Yordle;ogn-197a-teemo-scout;ogn-197-2;Teemo Scout
+OGN-197b;Teemo Scout;Champion;champion;Origins;Showcase;0;Chaos;;2;1;HIDDEN (Hide now for [rune] to react with later for [0].) When you play me, give me +3 [might] this turn.;Bandle City, Yordle;ogn-197b-teemo-scout;ogn-197-3;Teemo Scout
+OGN-198;The Harrowing;Spell;spell;Origins;Rare;3;Chaos;2x Chaos;6;;Play a unit from your Trash, ignoring it's energy cost. (You must still pay it's Power cost.);;ogn-198-the-harrowing;ogn-198-1;The Harrowing
+OGN-199;Tideturner;Unit;unit;Origins;Rare;3;Chaos;;2;2;HIDDEN (Hide now for [rune] to react with later for [0].) When you play me, you may choose a unit you control at another location. Move me to its location and it to my original location.;Bilgewater;ogn-199-tideturner;ogn-199-1;Tideturner
+OGN-200;Twisted Fate Gambler;Champion;champion;Origins;Rare;3;Chaos;;4;4;When I attack, reveal the top rune of your rune deck, then recycle it. Do one of the following based on its domain: [fury] - Deal 2 to an enemy unit here and 1 to all other enemy units here. [mind] - Draw 1. [order] - Stun an enemy unit.;Bilgewater, Twisted Fate;ogn-200-twisted-fate-gambler;ogn-200-1;Twisted Fate Gambler
+OGN-201;Invert Timelines;Spell;spell;Origins;Epic;0;Chaos;1x Chaos;3;;Each player discards their hand, then draws 4.;;ogn-201-invert-timelines;ogn-201-1;Invert Timelines
+OGN-202;Jinx Rebel;Champion;champion;Origins;Epic;1;Chaos;1x Chaos;5;5;When you discard one or more cards, ready me and give me +1 [might] this turn.;Zaun;ogn-202-jinx-rebel;ogn-202-1;Jinx Rebel
+OGN-202a;Jinx Rebel;Champion;champion;Origins;Showcase;1;Chaos;1x Chaos;5;5;When you discard one or more cards, ready me and give me +1 [might] this turn. ;Zaun, Jinx;ogn-202a-jinx-rebel;ogn-202-2;Jinx Rebel
+OGN-203;Possession;Spell;spell;Origins;Epic;0;Chaos;3x Chaos;8;;ACTION (Play on your turn or in showdowns.) Move an enemy unit at a battlefield. Take control of it and recall it. (Send it to your base. This isn't a move.) ;;ogn-203-possession;ogn-203-1;Possession
+OGN-204;Seal of Discord;Gear;gear;Origins;Epic;0;Chaos;1x Chaos;0;;[tap] : REACTION — ADD [chaos]. (Abilities that add resources can't be reacted to.);;ogn-204-seal-of-discord;ogn-204-1;Seal of Discord
+OGN-205;Yasuo Windrider;Champion;champion;Origins;Epic;1;Chaos;1x Chaos;5;4;GANKING (I can move from battlefield to battlefield) The third time I move in a turn, you score 1 point.;Ionia, Yasuo;ogn-205-yasuo-windrider;ogn-205-1;Yasuo Windrider
+OGN-205a;Yasuo Windrider;Champion;champion;Origins;Showcase;0;Chaos;1x Chaos;5;4;GANKING (I can move from battlefield to battlefield) The third time I move in a turn, you score 1 point.;Ionia, Yasuo;ogn-205a-yasuo-windrider;ogn-205-2;Yasuo Windrider
+OGN-206;Back to Back;Spell;spell;Origins;Common;1;Order;;3;;REACTION (Play any time, even before spells and abilities resolve.) Give two friendly units each +2 [might] this turn.;;ogn-206-back-to-back;ogn-206-1;Back to Back
+OGN-207;Call to Glory;Spell;spell;Origins;Common;1;Order;;3;;REACTION (Play any time, even before spells and abilities resolve.) As you play this, you may spend a buff as an additional cost. If you do, ignore this spell's cost. Give a unit +3 [might] this turn.;;ogn-207-call-to-glory;ogn-207-1;Call to Glory
+OGN-208;Cruel Patron;Unit;unit;Origins;Common;1;Order;;4;6;As an additional cost to play me, kill a friendly unit.;Noxus;ogn-208-cruel-patron;ogn-208-1;Cruel Patron
+OGN-209;Cull the Weak;Spell;spell;Origins;Common;1;Order;1x Order;2;;Each player kills one of their units.;;ogn-209-cull-the-weak;ogn-209-1;Cull the Weak
+OGN-210;Daring Poro;Unit;unit;Origins;Common;1;Order;;2;2;ASSAULT (+1 might while I'm an attacker.);Poro;ogn-210-daring-poro;ogn-210-1;Daring Poro
+OGN-211;Faithful Manufactor;Unit;unit;Origins;Common;1;Order;;3;2;When you play me, play a 1 [might] Recruit unit token here.;Piltover;ogn-211-faithful-manufactor;ogn-211-1;Faithful Manufactor
+OGN-212;Forge of the Future;Gear;gear;Origins;Common;1;Order;;2;;When you play this, play a 1 [might] Recruit unit token at your base. Kill this: Recycle up to 4 cards from trashes.;;ogn-212-forge-of-the-future;ogn-212-1;Forge of the Future
+OGN-213;Hidden Blade;Spell;spell;Origins;Common;1;Order;1x Order;2;;HIDDEN (Hide now for [rune] to react with later for [0].) ACTION (Play on your turn or showdowns.) Kill a unit at a battlefield, Its controller draws 2.;;ogn-213-hidden-blade;ogn-213-1;Hidden Blade
+OGN-214;Order Rune;Rune;rune;Origins;Common;1;Order;;;;;;ogn-214-order-rune;ogn-214-1;Order Rune
+OGN-214a;Order Rune;Rune;rune;Origins;Showcase;1;Order;;;;;;ogn-214a-order-rune;ogn-214-2;Order Rune
+OGN-215;Petty Officer;Unit;unit;Origins;Common;1;Order;;5;5;ASSAULT (+1 [might] while I'm an attacker.);Bilgewater, Pirate;ogn-215-petty-officer;ogn-215-1;Petty Officer
+OGN-216;Soaring Scout;Unit;unit;Origins;Common;1;Order;;2;1;Deathknell Play your top rune exhausted. (When I die, get the effect.);Freljord, Bird;ogn-216-soaring-scout;ogn-216-1;Soaring Scout
+OGN-217;Trifarian Gloryseeker;Unit;unit;Origins;Common;1;Order;;2;2;LEGION — When you play me, buff me. (If I don't have a buff, I get a +1 [might] buff. Get the effect if you've played another card this turn.);Noxus, Trifarian;ogn-217-trifarian-gloryseeker;ogn-217-1;Trifarian Gloryseeker
+OGN-218;Vanguard Captain;Unit;unit;Origins;Common;1;Order;1x Order;3;3;LEGION — When you play me, play two 1 [might] Recruit unit tokens here. (Gain this effect if you've played another card this turn.);Demacia, Elite;ogn-218-vanguard-captain;ogn-218-1;Vanguard Captain
+OGN-219;Vanguard Sergeant;Unit;unit;Origins;Common;1;Order;;4;4;;Demacia, Elite;ogn-219-vanguard-sergeant;ogn-219-1;Vanguard Sergeant
+OGN-220;Facebreaker;Spell;spell;Origins;Uncommon;1;Order;;2;;HIDDEN (Hide now for [rune] to react with later for [0].) ACTION (play on your turn or in showdowns.) Stun a friendly unit and an enemy unit at the same battlefield. (They don't deal combat damage this turn.);;ogn-220-facebreaker;ogn-220-1;Facebreaker
+OGN-221;Imperial Decree;Spell;spell;Origins;Uncommon;1;Order;2x Order;5;;ACTION (Play on your turn or in showdowns.)  When any unit takes damage this turn, kill it.;;ogn-221-imperial-decree;ogn-221-1;Imperial Decree
+OGN-222;Noxian Drummer;Unit;unit;Origins;Uncommon;1;Order;;3;3;When I move to a battlefield, play a 1 [might] Recruit unit token here. (It is also at the battlefield.);Noxus, Trifarian;ogn-222-noxian-drummer;ogn-222-1;Noxian Drummer
+OGN-223;Peak Guardian;Unit;unit;Origins;Uncommon;1;Order;1x Order;6;5;When you play me, buff me. Then, if I am at a battlefield, buff all other friendly units there. (To buff a unit give it a +1 [might] if it doesn't already have one.);Mount Targon;ogn-223-peak-guardian;ogn-223-1;Peak Guardian
+OGN-224;Salvage;Spell;spell;Origins;Uncommon;1;Order;1x Order;2;;ACTION (play on your turn or in showdowns.)  You may kill up to one gear. Draw 1.;;ogn-224-salvage;ogn-224-1;Salvage
+OGN-225;Solari Chief;Unit;unit;Origins;Uncommon;1;Order;1x Order;5;4;When you play me, choose an enemy unit. If it is stunned, kill it. Otherwise, stun it. ;Mount Targon;ogn-225-solari-chief;ogn-225-1;Solari Chief
+OGN-226;Spectral Matron;Unit;unit;Origins;Uncommon;1;Order;2x Order;4;4;When you play me, you may play a unit costing no more than 3 and no more than [rune] from your trash, ignoring its cost.;Shadow Isles, Spirit;ogn-226-spectral-matron;ogn-226-1;Spectral Matron
+OGN-227;Symbol of the Solari;Gear;gear;Origins;Uncommon;1;Order;;1;;If a combat where you are the attacker ends in a tie, recall ALL units instead. (Send them to base. This isn't a move. Ties are calculated after combat damage is dealt.);;ogn-227-symbol-of-the-solari;ogn-227-1;Symbol of the Solari
+OGN-228;Vanguard of Helm;Gear;gear;Origins;Uncommon;1;Order;;2;;When a buffed friendly unit dies, buff another friendly unit. (If it doesn't have a buff, it gets a +1 [might] buff.);;ogn-228-vanguard-of-helm;ogn-228-1;Vanguard of Helm
+OGN-229;Vengeance;Spell;spell;Origins;Uncommon;1;Order;2x Order;4;;Kill a unit.;;ogn-229-vengeance;ogn-229-1;Vengeance
+OGN-230;Albus Ferros;Unit;unit;Origins;Rare;3;Order;;4;3;When you play me, spend any number of buffs. For each buff spent, channel 1 rune exhausted.;Piltover;ogn-230-albus-ferros;ogn-230-1;Albus Ferros
+OGN-231;Commander Ledros;Unit;unit;Origins;Rare;3;Order;4x Order;6;8;As you play me, you may kill any number of friendly units as an additional cost. Reduce my cost by [order] for each killed this way. DEFLECT (Opponents must pay [rune] to choose me with a spell or ability.) GANKING (I can move from battlefield to battlefield.);Shadow Isles, Spirit;ogn-231-commander-ledros;ogn-231-1;Commander Ledros
+OGN-232;Fiora Victorious;Champion;champion;Origins;Rare;3;Order;;4;4;While I'm MIGHTY, I have DEFLECT, GANKING and SHIELD. (I'm Mighty while I have 5+ [might].);Demacia, Fiora;ogn-232-fiora-victorious;ogn-232-1;Fiora Victorious
+OGN-233;Grand Strategem;Spell;spell;Origins;Rare;3;Order;3x Order;6;;Give friendly units +5 [might] this turn.;;ogn-233-grand-strategem;ogn-233-1;Grand Strategem
+OGN-234;Harnessed Dragon;Unit;unit;Origins;Rare;3;Order;2x Order;8;6;When you play me, kill a unit.;Dragon, Demacia;ogn-234-harnessed-dragon;ogn-234-1;Harnessed Dragon
+OGN-235;Karma Channeler;Champion;champion;Origins;Rare;3;Order;1x Order;6;6;VISION (When you play me, look at the top card of your Main Deck. You may recycle it.) When you recycle one or more cards to your Main Deck, buff a friendly unit. (If it doesn't have a buff, it gets a +1 [might] buff. Runes aren't cards.);Ionia, Karma;ogn-235-karma-channeler;ogn-235-1;Karma Channeler
+OGN-236;Karthus Eternal;Champion;champion;Origins;Rare;3;Order;1x Order;3;3;Your DEATHKNELL effects trigger an additional time.  ;Shadow Isles, Spirit, Karthus;ogn-236-karthus-eternal;ogn-236-1;Karthus Eternal
+OGN-237;King's Edict;Spell;spell;Origins;Rare;3;Order;2x Order;6;;Starting with the next player, each other player chooses a unit you don't control that hasn't been chosen for this spell. Kill those units. ;;ogn-237-kings-edict;ogn-237-1;King's Edict
+OGN-238;Leona Determined;Champion;champion;Origins;Rare;3;Order;1x Order;4;4;SHIELD (+1 Might while I'm a defender.) When I attack, stun an enemy unit here.  (It doesn't deal combat damage this turn.);Mount Targon;ogn-238-leona-determined;ogn-238-1;Leona Determined
+OGN-238a;Leona Determined;Champion;champion;Origins;Showcase;0;Order;1x Order;4;4;SHIELD (+1 [might] while I'm a defender.) When I attack, stun an enemy unit here. (It doesn't deal combat damage this turn);Mount Targon;ogn-238a-leona-determined;ogn-238-2;Leona Determined
+OGN-239;Machine Evangel;Unit;unit;Origins;Rare;3;Order;1x Order;5;4;Deathknell Play three 1 [might] Recruit unit tokens into your base. (When I die, get the effect.);Piltover;ogn-239-machine-evangel;ogn-239-1;Machine Evangel
+OGN-240;Sett Kingpin;Champion;champion;Origins;Rare;3;Order;1x Order;4;5;TANK (I must be assigned combat damage first.) I get +1 [might] for each buffed friendly unit at my battlefield.;Ionia;ogn-240-sett-kingpin;ogn-240-1;Sett Kingpin
+OGN-240a;Sett Kingpin;Champion;champion;Origins;Showcase;0;Order;1x Order;4;5;TANK (I must be assigned combat damage first.) I get +1 [might] for each buffed friendly unit at my battlefield.;Ionia;ogn-240a-sett-kingpin;ogn-240-2;Sett Kingpin
+OGN-241;Shen Kinkou;Champion;champion;Origins;Rare;3;Order;1x Order;3;3;REACTION (Play any time, even before spells and abilities resolve, including to a battlefield you control.) SHIELD 2 (+2 [might] while I'm a defender.) TANK (I must be assigned combat damage first.);Ionia, Shen;ogn-241-shen-kinkou;ogn-241-1;Shen Kinkou
+OGN-242;Baited Hook;Gear;gear;Origins;Epic;1;Order;;3;;[1] [Order] [Tap]: Kill a friendly unit. Look at the top 5 cards of your Main Deck. You may banish a unit from among them that has Might up to 1 more than the killed unit and play it, ignoring its cost. Then recycle the rest.;;ogn-242-baited-hook;ogn-242-1;Baited Hook
+OGN-243;Darius Executioner;Champion;champion;Origins;Epic;0;Order;1x Order;6;6;LEGION - When you play me, ready me. (Get the effect if you've played another card this turn) Other friendly units have +1 [might] here.;Noxus, Trifarian;ogn-243-darius-executioner;ogn-243-1;Darius Executioner
+OGN-243a;Darius Executioner;Champion;champion;Origins;Showcase;0;Order;1x Order;6;6;LEGION - When you play me, ready me. (Get the effect if you've played another card this turn) Other friendly units have +1 [might] here.;Noxus, Trifarian;ogn-243a-darius-executioner;ogn-243-2;Darius Executioner
+OGN-244;Divine Judgment;Spell;spell;Origins;Rare;0;Order;2x Order;7;;Each player chooses 2 units, 2 gear, 2 runes, and 2 cards in their hands. Recycle the rest.;;ogn-244-divine-judgment;ogn-244-1;Divine Judgment
+OGN-245;Seal of Unity;Gear;gear;Origins;Epic;0;Order;1x Order;0;;[tap] : Add [0] [order] . Activate this any time.;;ogn-245-seal-of-unity;ogn-245-1;Seal of Unity
+OGN-246;Viktor Leader;Champion;champion;Origins;Epic;0;Order;1x Order;4;4;When another non-Recruit unit you control dies, play a 1 [might] Recruit unit token into your base.;Zaun;ogn-246-viktor-leader;ogn-246-1;Viktor Leader
+OGN-246a;Viktor Leader;Champion;champion;Origins;Showcase;0;Order;1x Order;4;4;When another non-Recruit unit you control dies, play a 1 [might] Recruit unit token into your base.;Zaun;ogn-246a-viktor-leader;ogn-246-2;Viktor Leader
+OGN-247;Kai'Sa Daughter of the Void;Legend;legend;Origins;Rare;1;Fury Mind;;;;[tap] REACTION - ADD [rune]. Use only to play spells. (Abilities that add resources can't be reacted to.);Kai'Sa;ogn-247-kaisa-daughter-of-the-void;ogn-247-1;Kai'Sa Daughter of the Void
+OGN-248;Icathian Rain;Signature Spell;signature-spell;Origins;Epic;0;Fury Mind;3x Fury/Mind;7;;Do this 6 times: Deal 2 to a unit. (You can choose different units.);Kai'Sa;ogn-248-icathian-rain;ogn-248-1;Icathian Rain
+OGN-249;Volibear Relentless Storm;Legend;legend;Origins;Rare;1;Fury Body;;;;When you play a MIGHTY unit, you may exhaust me to channel 1 rune exhausted. (A unit is Mighty while it has 5+ [might].);Volibear;ogn-249-volibear-relentless-storm;ogn-249-1;Volibear Relentless Storm
+OGN-250;Stormbringer;Signature Spell;signature-spell;Origins;Epic;1;Fury Body;2x Fury/Body;6;;Choose a friendly unit in your base. Deal damage equal to its Might to all enemies at a battlefield, then move your unit there.;Volibear;ogn-250-stormbringer;ogn-250-1;Stormbringer
+OGN-251;Jinx Loose Cannon;Legend;legend;Origins;Rare;1;Fury Chaos;;;;At the start of your Beginning Phase, draw 1 if you have one or fewer cards in your hand.;Jinx;ogn-251-jinx-loose-cannon;ogn-251-1;Jinx Loose Cannon
+OGN-252;Super Mega Death Rocket!;Signature Spell;signature-spell;Origins;Epic;0;Fury Chaos;1x Fury/Chaos;4;;Deal 5 to a unit.  When you conquer, you may discard 1 to return this from your trash to your hand.;Jinx;ogn-252-super-mega-death-rocket;ogn-252-1;Super Mega Death Rocket!
+OGN-253;Darius Hand of Noxus;Legend;legend;Origins;Rare;0;Fury Order;;;;[tap] REACTION, LEGION — ADD [1] (Abilities that add resources can't be reacted to. Get the effect if you've played a card this turn.) ;Darius;ogn-253-darius-hand-of-noxus;ogn-253-1;Darius Hand of Noxus
+OGN-254;Noxian Guillotine;Signature Spell;signature-spell;Origins;Epic;0;Fury Order;1x Fury/Order;4;;ACTION (Play on your turn or in showdowns.) Choose a unit. Kill it the next time it takes damage this turn. LEGION - Kill it now instead. (Get the effect if you've played another card this turn);Darius;ogn-254-noxian-guillotine;ogn-254-1;Noxian Guillotine
+OGN-255;Ahri Nine-Tailed Fox;Legend;legend;Origins;Rare;1;Calm Mind;;;;When an enemy unit attacks a battlefield you control, give it -1 [might] this turn, to a minimum of 1 [might] ;Ahri;ogn-255-ahri-nine-tailed-fox;ogn-255-1;Ahri Nine-Tailed Fox
+OGN-256;Fox-Fire;Signature Spell;signature-spell;Origins;Epic;1;Calm Mind;;3;;HIDDEN  (hide now for [rune] to react with later for [0].) ACTION (Play on your turn or in showdowns.)  Kill any number of units at a battlefield with total Might 4 or less.;Ahri;ogn-256-fox-fire;ogn-256-1;Fox-Fire
+OGN-257;Lee Sin Blind Monk;Legend;legend;Origins;Rare;1;Calm Body;;;;[1] [tap]: Buff a friendly unit. (If it doesn't have a buff, it gets a +1 [might] buff.) ;Lee Sin;ogn-257-lee-sin-blind-monk;ogn-257-1;Lee Sin Blind Monk
+OGN-258;Dragon's Rage;Signature Spell;signature-spell;Origins;Epic;0;Calm Body;1x Calm/Body;4;;Move an enemy unit. Then do this: Choose another enemy unit at its destination. They deal damage equal to their Mights to each other.;Lee Sin;ogn-258-dragons-rage;ogn-258-1;Dragon's Rage
+OGN-259;Yasuo Unforgiven;Legend;legend;Origins;Rare;1;Calm Chaos;;;;[2] , [tap] : Move a friendly unit to or from its base.;Yasuo;ogn-259-yasuo-unforgiven;ogn-259-1;Yasuo Unforgiven
+OGN-260;Last Breath;Signature Spell;signature-spell;Origins;Epic;1;Calm Chaos;2x Calm/Chaos;3;;ACTION (Play on your turn or in showdowns.) Ready a friendly unit. It deals damage equal to its Might to an enemy at a battlefield.;Yasuo;ogn-260-last-breath;ogn-260-1;Last Breath
+OGN-261;Leona Radiant Dawn;Legend;legend;Origins;Rare;1;Calm Order;;;;When you stun one or more enemy units, buff a friendly unit. (If it doesn't have a buff, it gets a +1 [might] buff.) ;Leona;ogn-261-leona-radiant-dawn;ogn-261-1;Leona Radiant Dawn
+OGN-262;Zenith Blade;Signature Spell;signature-spell;Origins;Epic;1;Calm Order;2x Calm/Order;3;;ACTION (Play on your turn or in showdowns.)  Stun an enemy at a battlefield. You may move a friendly unit to that enemy unit's battlefield. (A stunned unit doesn't deal combat damage this turn.);Leona;ogn-262-zenith-blade;ogn-262-1;Zenith Blade
+OGN-263;Teemo Swift Scout;Legend;legend;Origins;Rare;1;Mind Chaos;;;;You may pay [1] to hide a card with HIDDEN instead of [rune]. [1], [tap] Put a Teemo unit you own into your hand from your Champion Zone on the board. ;Teemo;ogn-263-teemo-swift-scout;ogn-263-1;Teemo Swift Scout
+OGN-264;Guerilla Warfare;Signature Spell;signature-spell;Origins;Epic;0;Mind Chaos;1x Mind/Chaos;2;;Return up to two cards with HIDDEN from your trash to your hand. You can hide ignoring costs this turn. ;Teemo;ogn-264-guerilla-warfare;ogn-264-1;Guerilla Warfare
+OGN-265;Viktor Herald of the Arcane;Legend;legend;Origins;Rare;1;Mind Order;;;;[1] , [tap] : Play a 1 [might] Recuit unit token.;Viktor;ogn-265-viktor-herald-of-the-arcane;ogn-265-1;Viktor Herald of the Arcane
+OGN-266;Siphon Power;Signature Spell;signature-spell;Origins;Epic;0;Mind Order;1x Mind/Order;2;;REACTION (Play any time, even before spells or abilities are resolved.)  Choose a battlefield. Give friendly units there +1 [might] this turn and enemy units there -1 [might], to a minimum of 1 [might];Viktor;ogn-266-siphon-power;ogn-266-1;Siphon Power
+OGN-267;Miss Fortune Bounty Hunter;Legend;legend;Origins;Rare;1;Body Chaos;;;;[tap]: Give a unit GANKING this tum. (It can move from battlefield to battlefield.);Miss Fortune;ogn-267-miss-fortune-bounty-hunter;ogn-267-1;Miss Fortune Bounty Hunter
+OGN-268;Bullet Time;Signature Spell;signature-spell;Origins;Epic;1;Body Chaos;;1;;ACTION (Play on your turn or showdowns.) Pay an amount of [rune] to deal that much damage to all enemy units at a battlefield.;Miss Fortune;ogn-268-bullet-time;ogn-268-1;Bullet Time
+OGN-269;Sett The Boss;Legend;legend;Origins;Rare;1;Body Order;;;;If a buffed unit you control would die, you may pay [rune], exhaust me, and spend its buff to heal it, exhaust it, and recall it instead. (Send it to base. This isn't a move.) When you conquer, ready me. ;Sett;ogn-269-sett-the-boss;ogn-269-1;Sett The Boss
+OGN-270;Showstopper;Signature Spell;signature-spell;Origins;Epic;0;Body Order;1x Body/Order;1;;Buff a friendly unit in your base, then move it to a battlefield. (If it doesn't have a buff, it gets a +1 [might] buff.) ;Sett;ogn-270-showstopper;ogn-270-1;Showstopper
+OGN-271;Recruit;Token;token;Origins;Common;1;;;;1;;Recruit;ogn-271-recruit;ogn-271-1;Recruit
+OGN-272;Recruit;Token;token;Origins;Common;1;;;;1;;;ogn-272-recruit;ogn-272-1;Recruit
+OGN-273;Recruit;Token;token;Origins;Common;1;;;;1;;;ogn-273-recruit;ogn-273-1;Recruit
+OGN-274;Sprite;Token;token;Origins;Common;1;;;;3;TEMPORARY (Kill me at the start of your Beginning Phase, before scoring.);Fae;ogn-274-sprite;ogn-274-1;Sprite
+OGN-275;Altar to Unity;Battlefield;battlefield;Origins;Uncommon;1;;;;;When you hold here, play a 1 [might] Recruit unit token in your base.;;ogn-275-altar-to-unity;ogn-275-1;Altar to Unity
+OGN-276;Aspirant's Climb;Battlefield;battlefield;Origins;Uncommon;1;;;;;Increase the points needed to win the game by 1.;;ogn-276-aspirants-climb;ogn-276-1;Aspirant's Climb
+OGN-277;Back-Alley Bar;Battlefield;battlefield;Origins;Uncommon;1;;;;;When a unit moves from here, give it +1 [might] this turn.;;ogn-277-back-alley-bar;ogn-277-1;Back-Alley Bar
+OGN-278;Bandle Tree;Battlefield;battlefield;Origins;Uncommon;1;;;;;You may hide an additional card here.;;ogn-278-bandle-tree;ogn-278-1;Bandle Tree
+OGN-279;Fortified Position;Battlefield;battlefield;Origins;Uncommon;1;;;;;When you defend here, choose a unit. It gains SHIELD 2 this combat. (+2 might while It's a defender.);;ogn-279-fortified-position;ogn-279-1;Fortified Position
+OGN-280;Grove of the God-Willow;Battlefield;battlefield;Origins;Uncommon;1;;;;;When you hold here, draw 1.;;ogn-280-grove-of-the-god-willow;ogn-280-1;Grove of the God-Willow
+OGN-281;Hallowed Tomb;Battlefield;battlefield;Origins;Uncommon;1;;;;;When you hold here, you may return your Chosen Champion from your trash to your Champion Zone if it is empty.;;ogn-281-hallowed-tomb;ogn-281-1;Hallowed Tomb
+OGN-282;Monastery of Hirana;Battlefield;battlefield;Origins;Uncommon;1;;;;;When you conquer here, you may spend a buff to draw 1.;;ogn-282-monastery-of-hirana;ogn-282-1;Monastery of Hirana
+OGN-283;Navori Fighting Pit;Battlefield;battlefield;Origins;Uncommon;1;;;;;When you hold here, buff a unit here. (If it doesn't have a buff, it gets a +1 [might] buff.);;ogn-283-navori-fighting-pit;ogn-283-1;Navori Fighting Pit
+OGN-284;Obelisk of Power;Battlefield;battlefield;Origins;Uncommon;1;;;;;At the start of each player's first Beginning Phase, that player channels 1 rune.;;ogn-284-obelisk-of-power;ogn-284-1;Obelisk of Power
+OGN-285;Reaver's Row;Battlefield;battlefield;Origins;Uncommon;1;;;;;When you defend here, you may move a friendly unit here to base.;;ogn-285-reavers-row;ogn-285-1;Reaver's Row
+OGN-286;Reckoner's Arena;Battlefield;battlefield;Origins;Uncommon;1;;;;;When you hold here, activate the conquer effects of units here.;;ogn-286-reckoners-arena;ogn-286-1;Reckoner's Arena
+OGN-287;Sigil of the Storm;Battlefield;battlefield;Origins;Uncommon;1;;;;;When you conquer here, you must recycle one of your runes. (This doesn’t choose anything.);;ogn-287-sigil-of-the-storm;ogn-287-1;Sigil of the Storm
+OGN-288;Startipped Peak;Battlefield;battlefield;Origins;Uncommon;1;;;;;When you hold here, you may channel 1 rune exhausted.;;ogn-288-startipped-peak;ogn-288-1;Startipped Peak
+OGN-289;Targon's Peak;Battlefield;battlefield;Origins;Uncommon;1;;;;;When you conquer here, ready up to 2 runes at the end of this turn.;;ogn-289-targons-peak;ogn-289-1;Targon's Peak
+OGN-290;The Arena's Greatest;Battlefield;battlefield;Origins;Uncommon;1;;;;;At the start of each player's first Beginning Phase, that player gains 1 point. ;;ogn-290-the-arenas-greatest;ogn-290-1;The Arena's Greatest
+OGN-291;The Candlelit Sanctum;Battlefield;battlefield;Origins;Uncommon;1;;;;;When you conquer here, look at the top two cards of your Main Deck. You may recycle one or both of them. Put those you don't back in any order.;;ogn-291-the-candlelit-sanctum;ogn-291-1;The Candlelit Sanctum
+OGN-292;The Dreaming Tree;Battlefield;battlefield;Origins;Uncommon;1;;;;;When a player chooses a friendly unit here with a spell for the first time each turn, they draw 1.;;ogn-292-the-dreaming-tree;ogn-292-1;The Dreaming Tree
+OGN-293;The Grand Plaza;Battlefield;battlefield;Origins;Uncommon;1;;;;;When you hold here, if you have 7+ units here, you win the game.;;ogn-293-the-grand-plaza;ogn-293-1;The Grand Plaza
+OGN-294;Trifarian War Camp;Battlefield;battlefield;Origins;Uncommon;1;;;;;Units here have +1 [might] . (Including attackers.);;ogn-294-trifarian-war-camp;ogn-294-1;Trifarian War Camp
+OGN-295;Vilemaw's Lair;Battlefield;battlefield;Origins;Uncommon;1;;;;;Units can't move from here to base.;;ogn-295-vilemaws-lair;ogn-295-1;Vilemaw's Lair
+OGN-296;Void Gate;Battlefield;battlefield;Origins;Uncommon;1;;;;;Spells and abilities deal 1 Bonus Damage to units here. (Each instance of damage the spell deals to a unit here is increased by 1.);;ogn-296-void-gate;ogn-296-1;Void Gate
+OGN-297;Windswept Hillock;Battlefield;battlefield;Origins;Uncommon;1;;;;;Units here have Ganking . (They can move battlefield to battlefield.);;ogn-297-windswept-hillock;ogn-297-1;Windswept Hillock
+OGN-298;Zaun Warrens;Battlefield;battlefield;Origins;Uncommon;1;;;;;When you conquer here, discard 1 then draw 1.;;ogn-298-zaun-warrens;ogn-298-1;Zaun Warrens
+OGN-299;Kai'Sa Daughter of the Void;Legend;legend;Origins;Showcase;0;Fury Mind;;;;[tap] REACTION - ADD [rune]. Use only to play spells. (Abilities that add resources can't be reacted to.);Kai'Sa;ogn-299-kaisa-daughter-of-the-void;ogn-247-2;Kai'Sa Daughter of the Void
+OGN-299s;Kai'Sa Daughter of the Void;Legend;legend;Origins;Showcase;0;Fury Mind;;;;[tap] REACTION - ADD [rune]. Use only to play spells. (Abilities that add resources can't be reacted to.);Kai'Sa;ogn-299s-kaisa-daughter-of-the-void;ogn-247-3;Kai'Sa Daughter of the Void
+OGN-300;Volibear Relentless Storm;Legend;legend;Origins;Showcase;0;Fury Body;;;;When you play a Mighty unit, you may exhaust me to channel 1 rune exhausted. (A unit is Mighty while it has 5+ [might].);Volibear;ogn-300-volibear-relentless-storm;ogn-249-3;Volibear Relentless Storm
+OGN-300s;Volibear Relentless Storm;Legend;legend;Origins;Showcase;0;Fury Body;;;;When you play a Mighty unit, you may exhaust me to channel 1 rune exhausted. (A unit is Mighty while it has 5+ [might].);Volibear;ogn-300s-volibear-relentless-storm;ogn-249-4;Volibear Relentless Storm
+OGN-301;Jinx Loose Cannon;Legend;legend;Origins;Showcase;0;Fury Chaos;;;;At the start of your Beginning Phase, draw 1 if you have one or fewer cards in your hand.;Jinx;ogn-301-jinx-loose-cannon;ogn-251-2;Jinx Loose Cannon
+OGN-301s;Jinx Loose Cannon;Legend;legend;Origins;Showcase;0;Fury Chaos;;;;At the start of your Beginning Phase, draw 1 if you have one or fewer cards in your hand.;Jinx;ogn-301s-jinx-loose-cannon;ogn-251-3;Jinx Loose Cannon
+OGN-302;Darius Hand of Noxus;Legend;legend;Origins;Showcase;0;Fury Order;;;;[tap] REACTION, LEGION — ADD [1] (Abilities that add resources can't be reacted to. Get the effect if you've played a card this turn.) ;Darius;ogn-302-darius-hand-of-noxus;ogn-253-2;Darius Hand of Noxus
+OGN-302s;Darius Hand of Noxus;Legend;legend;Origins;Showcase;0;Fury Order;;;;[tap] REACTION, LEGION — ADD [1] (Abilities that add resources can't be reacted to. Get the effect if you've played a card this turn.) ;Darius;ogn-302s-darius-hand-of-noxus;ogn-253-3;Darius Hand of Noxus
+OGN-303;Ahri Nine-Tailed Fox;Legend;legend;Origins;Showcase;0;Calm Mind;;;;When an enemy unit attacks a battlefield you control, give it -1 [might] this turn, to a minimum of 1 [might] ;Ahri;ogn-303-ahri-nine-tailed-fox;ogn-255-2;Ahri Nine-Tailed Fox
+OGN-303s;Ahri Nine-Tailed Fox;Legend;legend;Origins;Showcase;0;Calm Mind;;;;When an enemy unit attacks a battlefield you control, give it -1 [might] this turn, to a minimum of 1 [might] ;Ahri;ogn-303s-ahri-nine-tailed-fox;ogn-255-3;Ahri Nine-Tailed Fox
+OGN-304;Lee Sin Blind Monk;Legend;legend;Origins;Showcase;0;Calm Body;;;;[1] [tap]: Buff a friendly unit. (If it doesn't have a buff, it gets a +1 [might] buff.) ;Lee Sin;ogn-304-lee-sin-blind-monk;ogn-257-2;Lee Sin Blind Monk
+OGN-304s;Lee Sin Blind Monk;Legend;legend;Origins;Showcase;0;Calm Body;;;;[1] [tap]: Buff a friendly unit. (If it doesn't have a buff, it gets a +1 [might] buff.) ;Lee Sin;ogn-304s-lee-sin-blind-monk;ogn-257-3;Lee Sin Blind Monk
+OGN-305;Yasuo Unforgiven;Legend;legend;Origins;Showcase;0;Calm Chaos;;;;[2] , [tap] : Move a friendly unit to or from its base.;Yasuo;ogn-305-yasuo-unforgiven;ogn-259-3;Yasuo Unforgiven
+OGN-305s;Yasuo Unforgiven;Legend;legend;Origins;Showcase;0;Calm Chaos;;;;[2] , [tap] : Move a friendly unit to or from its base.;Yasuo;ogn-305s-yasuo-unforgiven;ogn-259-4;Yasuo Unforgiven
+OGN-306;Leona Radiant Dawn;Legend;legend;Origins;Showcase;0;Calm Order;;;;When you stun one or more enemy units, buff a friendly unit. (If it doesn't have a buff, it gets a +1 [might] buff.) ;Leona;ogn-306-leona-radiant-dawn;ogn-261-2;Leona Radiant Dawn
+OGN-306s;Leona Radiant Dawn;Legend;legend;Origins;Showcase;0;Calm Order;;;;When you stun one or more enemy units, buff a friendly unit. (If it doesn't have a buff, it gets a +1 [might] buff.) ;Leona;ogn-306s-leona-radiant-dawn;ogn-261-3;Leona Radiant Dawn
+OGN-307;Teemo Swift Scout;Legend;legend;Origins;Showcase;0;Mind Chaos;;;;You may pay [1] to hide a card with HIDDEN instead of [rune]. [1], [tap] Put a Teemo unit you own into your hand from your Champion Zone on the board. ;Teemo;ogn-307-teemo-swift-scout;ogn-263-2;Teemo Swift Scout
+OGN-307s;Teemo Swift Scout;Legend;legend;Origins;Showcase;0;Mind Chaos;;;;You may pay [1] to hide a card with HIDDEN instead of [rune]. [1], [tap] Put a Teemo unit you own into your hand from your Champion Zone on the board. ;Teemo;ogn-307s-teemo-swift-scout;ogn-263-3;Teemo Swift Scout
+OGN-308;Viktor Herald of the Arcane;Legend;legend;Origins;Showcase;0;Mind Order;;;;[1] , [tap] : Play a 1 [might] Recuit unit token.;Viktor;ogn-308-viktor-herald-of-the-arcane;ogn-265-2;Viktor Herald of the Arcane
+OGN-308s;Viktor Herald of the Arcane;Legend;legend;Origins;Showcase;0;Mind Order;;;;[1] , [tap] : Play a 1 [might] Recuit unit token.;Viktor;ogn-308s-viktor-herald-of-the-arcane;ogn-265-3;Viktor Herald of the Arcane
+OGN-309;Miss Fortune Bounty Hunter;Legend;legend;Origins;Showcase;0;Body Chaos;;;;[tap]: Give a unit GANKING this tum. (It can move from battlefield to battlefield.);Miss Fortune;ogn-309-miss-fortune-bounty-hunter;ogn-267-2;Miss Fortune Bounty Hunter
+OGN-309s;Miss Fortune Bounty Hunter;Legend;legend;Origins;Showcase;0;Body Chaos;;;;[tap]: Give a unit GANKING this tum. (It can move from battlefield to battlefield.);Miss Fortune;ogn-309s-miss-fortune-bounty-hunter;ogn-267-3;Miss Fortune Bounty Hunter
+OGN-310;Sett The Boss;Legend;legend;Origins;Showcase;0;Body Order;;;;If a buffed unit you control would die, you may pay [rune], exhaust me, and spend its buff to heal it, exhaust it, and recall it instead. (Send it to base. This isn't a move.) When you conquer, ready me.;Sett;ogn-310-sett-the-boss;ogn-269-2;Sett The Boss
+OGN-310s;Sett The Boss;Legend;legend;Origins;Showcase;0;Body Order;;;;If a buffed unit you control would die, you may pay [rune], exhaust me, and spend its buff to heal it, exhaust it, and recall it instead. (Send it to base. This isn't a move.) When you conquer, ready me.;Sett;ogn-310s-sett-the-boss;ogn-269-3;Sett The Boss
+OGS-001;Annie Fiery;Champion;champion;Proving Grounds;Epic;1;Fury;1x Fury;5;4;Your spells and abilities deal 1 Bonus Damage. (Each instance of damage they deal is increased by 1.);Noxus, Annie;ogs-001-annie-fiery;ogs-001-1;Annie Fiery
+OGS-002;Firestorm;Spell;spell;Proving Grounds;Uncommon;1;Fury;1x Fury;6;;Deal 3 to all enemy units at a battlefield.;;ogs-002-firestorm;ogs-002-1;Firestorm
+OGS-003;Incinerate;Spell;spell;Proving Grounds;Common;1;Fury;;2;;ACTION (play on your turn or in showdowns.)  Deal 2 to a unit at a battlefield.;;ogs-003-incinerate;ogs-003-1;Incinerate
+OGS-004;Master Yi Meditative;Champion;champion;Proving Grounds;Epic;1;Calm;1x Calm;5;4;While you have 8+ runes, I have +4 [might].;Ionia, Master Yi;ogs-004-master-yi-meditative;ogs-004-1;Master Yi Meditative
+OGS-005;Zephyr Sage;Unit;unit;Proving Grounds;Uncommon;1;Calm;1x Calm;6;6;SHIELD (+1 [might] while I'm a defender.);Ionia, Bird;ogs-005-zephyr-sage;ogs-005-1;Zephyr Sage
+OGS-006;Lux Illuminated;Champion;champion;Proving Grounds;Rare;1;Mind;1x Mind;6;5;When you play a spell that costs 5 or more, give me +3 [might] this turn.;Demacia, Lux;ogs-006-lux-illuminated;ogs-006-1;Lux Illuminated
+OGS-007;Garen Rugged;Champion;champion;Proving Grounds;Rare;1;Body;1x Body;6;5;ASSAULT 2, SHIELD 2 (+2 [might] while I'm an attacker or defender.);Demacia, Elite, Garen;ogs-007-garen-rugged;ogs-007-1;Garen Rugged
+OGS-008;Gentlemen's Duel;Spell;spell;Proving Grounds;Common;1;Body;1x Body;6;;ACTION (Play on your turn or in showdowns.) Give a friendly unit +3 [might] this turn. Then, choose an enemy unit. They deal damage equal to their Mights to each other.;;ogs-008-gentlemens-duel;ogs-008-1;Gentlemen's Duel
+OGS-009;Master Yi Honed;Champion;champion;Proving Grounds;Epic;1;Body;1x Body;7;6;GANKING (I can move from battlefield to battlefield.) I enter ready.;Ionia, Master Yi;ogs-009-master-yi-honed;ogs-009-1;Master Yi Honed
+OGS-010;Annie Stubborn;Champion;champion;Proving Grounds;Rare;1;Chaos;1x Chaos;4;3;When you play me, return a spell from your trash to your hand.;Noxus, Annie;ogs-010-annie-stubborn;ogs-010-1;Annie Stubborn
+OGS-011;Flash;Spell;spell;Proving Grounds;Common;1;Chaos;;2;;REACTION (Play at any time, even before spells and abilities resolve.) Move up to 2 friendly units to base.;;ogs-011-flash;ogs-011-1;Flash
+OGS-012;Blast of Power;Spell;spell;Proving Grounds;Common;1;Order;1x Order;6;;ACTION (Play on your turn or in showdowns.) Kill a unit at a battlefield.;;ogs-012-blast-of-power;ogs-012-1;Blast of Power
+OGS-013;Garen Commander;Champion;champion;Proving Grounds;Epic;1;Order;1x Order;6;5;Other friendly units have +1 might here.;Demacia, Elite, Garen;ogs-013-garen-commander;ogs-013-1;Garen Commander
+OGS-014;Lux Crownguard;Champion;champion;Proving Grounds;Epic;1;Order;;4;2;[tap]: REACTION — ADD [2] Use only to play spells. (Abilities that add resources can't be reacted to.);Demacia, Lux;ogs-014-lux-crownguard;ogs-014-1;Lux Crownguard
+OGS-015;Recruit the Vanguard;Spell;spell;Proving Grounds;Uncommon;1;Order;;6;;ACTION (Play on your turn or in showdowns.) Play four 1 might Recruit unit tokens. (They can be played to your base or to battlefields you control.);;ogs-015-recruit-the-vanguard;ogs-015-1;Recruit the Vanguard
+OGS-016;Vanguard Attendant;Unit;unit;Proving Grounds;Common;1;Order;1x Order;6;5;I enter ready.;Demacia, Elite;ogs-016-vanguard-attendant;ogs-016-1;Vanguard Attendant
+OGS-017;Annie Dark Child;Legend;legend;Proving Grounds;Rare;1;Fury Chaos;;;;At the end of your turn, ready up to 2 runes.;Annie;ogs-017-annie-dark-child;ogs-017-1;Annie Dark Child
+OGS-018;Tibbers;Signature Unit;signature-unit;Proving Grounds;Epic;1;Fury Chaos;2x Fury/Chaos;8;7;When you play me, deal 3 damage to all units at battlefields.;Annie;ogs-018-tibbers;ogs-018-1;Tibbers
+OGS-019;Master Yi Wuju Bladesman;Legend;legend;Proving Grounds;Rare;1;Calm Body;;;;While a friendly unit defends alone, it gets +2 [might].;Master Yi;ogs-019-master-yi-wuju-bladesman;ogs-019-1;Master Yi Wuju Bladesman
+OGS-020;Highlander;Signature Spell;signature-spell;Proving Grounds;Epic;1;Calm Body;;4;;REACTION (Play any time, even before spells and abilities resolve.) Choose a friendly unit. The next time it would die this turn, heal it, exhaust it, and recall it instead. (Send it to base. This isn't a move.);Master Yi;ogs-020-highlander;ogs-020-1;Highlander
+OGS-021;Lux Lady of Luminosity;Legend;legend;Proving Grounds;Rare;1;Mind Order;;;;When you play a spell that costs 5 or more, draw a 1.;Lux;ogs-021-lux-lady-of-luminosity;ogs-021-1;Lux Lady of Luminosity
+OGS-022;Final Spark;Signature Spell;signature-spell;Proving Grounds;Epic;1;Mind Order;;8;;ACTION (Play on your turn or in showdowns.) Deal 8 to a unit.;Lux;ogs-022-final-spark;ogs-022-1;Final Spark
+OGS-023;Garen Might of Demacia;Legend;legend;Proving Grounds;Rare;1;Body Order;;;;When you conquer, if you have 4+ units at that battlefield, draw 2.;Garen;ogs-023-garen-might-of-demacia;ogs-023-1;Garen Might of Demacia
+OGS-024;Decisive Strike;Signature Spell;signature-spell;Proving Grounds;Epic;1;Body Order;1x Body/Order;5;;ACTION (Play on your turn or in showdowns.) Give friendly units +2 [might] this turn.;Garen;ogs-024-decisive-strike;ogs-024-1;Decisive Strike
+OGN-XXX;Buff;Token;token;Origins;Common;1;;;;1;A unit may have no more than one buff at a time.;;ogn-buff;ogn-xxx-1;Buff
+OGN-XXXs;Buff;Token;token;Origins;Promo;0;;;;1;A unit may have no more than one buff at a time.;;ogn-buff;ogn-xxx-2;Buff
