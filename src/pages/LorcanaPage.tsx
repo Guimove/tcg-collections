@@ -121,11 +121,11 @@ export default function LorcanaPage() {
         if (!rawSet || !rawNumber) continue; // Skip empty rows
 
         // Normaliser le set (prendre le premier si plusieurs)
-        const setCodes = rawSet.split('\n').map(c => c.trim()).filter(c => c);
+        const setCodes = rawSet.split('\n').map((c: string) => c.trim()).filter((c: string) => c);
         const set = setCodes.length > 0 ? setCodes[0] : rawSet;
 
         // Normaliser le numéro (prendre le premier si plusieurs)
-        const numbers = rawNumber.split('\n').map(n => n.trim()).filter(n => n);
+        const numbers = rawNumber.split('\n').map((n: string) => n.trim()).filter((n: string) => n);
         const number = numbers.length > 0 ? numbers[0] : rawNumber;
 
         const name = (row['NAME'] || '').trim();
