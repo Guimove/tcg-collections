@@ -155,6 +155,18 @@ export default function HomePage() {
           </div>
           <h2 className="tcg-name">Riftbound</h2>
         </Link>
+
+        <Link
+          to="/lorcana"
+          className="tcg-card active"
+          onMouseMove={handleCardMouseMove}
+          onMouseLeave={handleCardMouseLeave}
+        >
+          <div className="logo-container">
+            <OptimizedImage src="/images/lorcana-logo.png" alt="Lorcana Logo" />
+          </div>
+          <h2 className="tcg-name">Lorcana</h2>
+        </Link>
       </div>
 
       <div className="help-section">
@@ -201,12 +213,6 @@ export default function HomePage() {
       <div className="coming-soon-section">
         <h2 className="coming-soon-title">Bientôt disponible</h2>
         <div className="tcg-grid">
-          <div className="tcg-card coming-soon active">
-            <div className="logo-container">
-              <OptimizedImage src="/images/lorcana-logo.png" alt="Lorcana Logo" />
-            </div>
-            <h2 className="tcg-name">Lorcana</h2>
-          </div>
 
           <div className="tcg-card coming-soon active">
             <div className="logo-container">
