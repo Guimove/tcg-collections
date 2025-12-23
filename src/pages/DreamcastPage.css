@@ -1,0 +1,549 @@
+/* Sega Dreamcast Theme */
+:root {
+  --dreamcast-orange: #F26522;
+  --dreamcast-blue: #0052CC;
+  --dreamcast-light-blue: #3399FF;
+  --dreamcast-white: #FFFFFF;
+  --dreamcast-dark: #0A0E1A;
+  --dreamcast-dark-blue: #0F1419;
+  --dreamcast-gray: #1A1F2E;
+  --dreamcast-text: #E8E8E8;
+  --dreamcast-text-dim: #9CA3AF;
+}
+
+.dreamcast-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--dreamcast-dark) 0%, var(--dreamcast-dark-blue) 50%, #001533 100%);
+  color: var(--dreamcast-text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  padding: 1rem;
+  padding-bottom: 50px;
+  position: relative;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.dreamcast-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(242, 101, 34, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 82, 204, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.dreamcast-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Loading */
+.dreamcast-container.loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.dreamcast-container .loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(242, 101, 34, 0.2);
+  border-top-color: var(--dreamcast-orange);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Error */
+.dreamcast-container.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  padding: 3rem;
+}
+
+.dreamcast-container.error h2 {
+  color: #ff6b6b;
+  font-size: 2rem;
+}
+
+.dreamcast-container.error a {
+  color: var(--dreamcast-orange);
+  text-decoration: underline;
+}
+
+/* Header and Stats Container */
+.dreamcast-container .header-stats-container {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding: 2rem 1rem;
+  background: var(--dreamcast-gray);
+  border-top: 3px solid var(--dreamcast-orange);
+  border-bottom: 3px solid var(--dreamcast-orange);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dreamcast-container .back-button {
+  color: var(--dreamcast-text);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: var(--dreamcast-dark-blue);
+  border: 1px solid var(--dreamcast-orange);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.dreamcast-container .back-button:hover {
+  background: var(--dreamcast-orange);
+  color: var(--dreamcast-white);
+  transform: translateX(-4px);
+}
+
+.dreamcast-container .header {
+  flex: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.dreamcast-container .header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--dreamcast-orange);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.dreamcast-container .header p {
+  color: var(--dreamcast-text-dim);
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.dreamcast-container .stats {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.dreamcast-container .stat-item {
+  text-align: center;
+}
+
+.dreamcast-container .stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dreamcast-orange);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.25rem;
+}
+
+.dreamcast-container .stat-label {
+  font-size: 0.9rem;
+  color: var(--dreamcast-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Filters */
+.dreamcast-container .controls {
+  background: var(--dreamcast-gray);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dreamcast-container .search-filter-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dreamcast-container .search-box {
+  width: 100%;
+}
+
+.dreamcast-container .search-box input {
+  width: 100%;
+  padding: 15px 20px;
+  background: rgba(10, 14, 26, 0.8);
+  border: 2px solid rgba(242, 101, 34, 0.3);
+  border-radius: 8px;
+  color: var(--dreamcast-text);
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.dreamcast-container .search-box input:focus {
+  outline: none;
+  border-color: var(--dreamcast-orange);
+  box-shadow: 0 0 20px rgba(242, 101, 34, 0.3);
+}
+
+.dreamcast-container .search-box input::placeholder {
+  color: var(--dreamcast-text-dim);
+}
+
+.dreamcast-container .quantity-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.dreamcast-container .quantity-btn {
+  flex: 1;
+  min-width: 120px;
+  padding: 12px 24px;
+  background: rgba(10, 14, 26, 0.8);
+  border: 2px solid rgba(242, 101, 34, 0.3);
+  border-radius: 8px;
+  color: var(--dreamcast-text);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dreamcast-container .quantity-btn:hover {
+  border-color: var(--dreamcast-orange);
+  background: rgba(242, 101, 34, 0.1);
+  transform: translateY(-2px);
+}
+
+.dreamcast-container .quantity-btn.active {
+  background: var(--dreamcast-orange);
+  color: var(--dreamcast-white);
+  border-color: var(--dreamcast-orange);
+  box-shadow: 0 0 20px rgba(242, 101, 34, 0.5);
+}
+
+.dreamcast-container .dropdown-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.dreamcast-container .filter-select {
+  padding: 12px 16px;
+  background: rgba(10, 14, 26, 0.8);
+  border: 2px solid rgba(242, 101, 34, 0.3);
+  border-radius: 8px;
+  color: var(--dreamcast-text);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dreamcast-container .filter-select:hover,
+.dreamcast-container .filter-select:focus {
+  outline: none;
+  border-color: var(--dreamcast-orange);
+  box-shadow: 0 0 15px rgba(242, 101, 34, 0.3);
+}
+
+.dreamcast-container .filter-select option {
+  background: var(--dreamcast-gray);
+  color: var(--dreamcast-text);
+}
+
+/* No Results */
+.dreamcast-container .no-results {
+  text-align: center;
+  padding: 80px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--dreamcast-text);
+}
+
+.dreamcast-container .no-results-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.dreamcast-container .no-results h3 {
+  font-size: 1.8rem;
+  color: var(--dreamcast-orange);
+  margin-bottom: 10px;
+}
+
+.dreamcast-container .no-results p {
+  font-size: 1.1rem;
+  color: var(--dreamcast-text-dim);
+}
+
+/* Container */
+.dreamcast-container .container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Region Sections */
+.dreamcast-container .region-section {
+  margin-bottom: 50px;
+  background: var(--dreamcast-gray);
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(242, 101, 34, 0.2);
+}
+
+.dreamcast-container .region-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--dreamcast-orange);
+}
+
+.dreamcast-container .region-title {
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--dreamcast-orange);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin: 0;
+}
+
+.dreamcast-container .region-count {
+  font-size: 1.2em;
+  color: var(--dreamcast-text-dim);
+  background: rgba(242, 101, 34, 0.2);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--dreamcast-orange);
+}
+
+/* Games Grid */
+.dreamcast-container .games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.dreamcast-container .game-card {
+  background: var(--dreamcast-gray);
+  border: 2px solid rgba(242, 101, 34, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s;
+  backdrop-filter: blur(5px);
+  position: relative;
+}
+
+.dreamcast-container .game-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--dreamcast-orange);
+  box-shadow: 0 8px 24px rgba(242, 101, 34, 0.3);
+}
+
+.dreamcast-container .game-card.not-owned {
+  opacity: 0.6;
+  border-color: rgba(156, 163, 175, 0.2);
+}
+
+.dreamcast-container .game-card.not-owned:hover {
+  opacity: 0.8;
+  border-color: var(--dreamcast-text-dim);
+}
+
+.dreamcast-container .quantity-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--dreamcast-orange);
+  color: var(--dreamcast-white);
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  border: 2px solid var(--dreamcast-blue);
+}
+
+.dreamcast-container .game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(242, 101, 34, 0.2);
+}
+
+.dreamcast-container .game-name {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dreamcast-text);
+  flex: 1;
+  line-height: 1.4;
+}
+
+.dreamcast-container .region-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: rgba(242, 101, 34, 0.2);
+  color: var(--dreamcast-orange);
+  white-space: nowrap;
+  border: 1px solid var(--dreamcast-orange);
+}
+
+.dreamcast-container .region-badge.region-japan {
+  background: rgba(255, 69, 0, 0.2);
+  color: #FF4500;
+  border-color: #FF4500;
+}
+
+.dreamcast-container .region-badge.region-usa {
+  background: rgba(0, 82, 204, 0.2);
+  color: var(--dreamcast-light-blue);
+  border-color: var(--dreamcast-light-blue);
+}
+
+.dreamcast-container .region-badge.region-europe {
+  background: rgba(0, 200, 83, 0.2);
+  color: #00C853;
+  border-color: #00C853;
+}
+
+.dreamcast-container .game-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dreamcast-container .info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.dreamcast-container .info-label {
+  color: var(--dreamcast-text-dim);
+  font-weight: 600;
+}
+
+.dreamcast-container .info-value {
+  color: var(--dreamcast-orange);
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+}
+
+.dreamcast-container .status-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.dreamcast-container .status-badge.owned {
+  background: rgba(0, 200, 83, 0.2);
+  color: #00C853;
+  border: 1px solid #00C853;
+}
+
+.dreamcast-container .status-badge.not-owned {
+  background: rgba(156, 163, 175, 0.2);
+  color: var(--dreamcast-text-dim);
+  border: 1px solid var(--dreamcast-text-dim);
+}
+
+/* Scroll to Top */
+.dreamcast-container .scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 55px;
+  height: 55px;
+  background: var(--dreamcast-orange);
+  color: var(--dreamcast-white);
+  border: 3px solid var(--dreamcast-blue);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(242, 101, 34, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.dreamcast-container .scroll-to-top:hover {
+  background: var(--dreamcast-blue);
+  border-color: var(--dreamcast-orange);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(242, 101, 34, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dreamcast-container .header-stats-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .dreamcast-container .header h1 {
+    font-size: 2rem;
+  }
+
+  .dreamcast-container .dreamcast-logo {
+    width: 60px;
+  }
+
+  .dreamcast-container .stats {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .dreamcast-container .stat-value {
+    font-size: 1.5rem;
+  }
+
+  .dreamcast-container .games-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .dreamcast-container .scroll-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 45px;
+    height: 45px;
+  }
+}

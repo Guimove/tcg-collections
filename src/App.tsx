@@ -4,6 +4,7 @@ import AkiraPage from './pages/AkiraPage';
 import YugiohPage from './pages/YugiohPage';
 import RiftboundPage from './pages/RiftboundPage';
 import LorcanaPage from './pages/LorcanaPage';
+import DreamcastPage from './pages/DreamcastPage';
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/yugioh" element={<YugiohPage />} />
         <Route path="/riftbound" element={<RiftboundPage />} />
         <Route path="/lorcana" element={<LorcanaPage />} />
+        <Route path="/dreamcast" element={<DreamcastPage />} />
       </Routes>
     </BrowserRouter>
   );

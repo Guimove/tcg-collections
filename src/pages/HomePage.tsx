@@ -167,6 +167,18 @@ export default function HomePage() {
           </div>
           <h2 className="tcg-name">Lorcana</h2>
         </Link>
+
+        <Link
+          to="/dreamcast"
+          className="tcg-card active"
+          onMouseMove={handleCardMouseMove}
+          onMouseLeave={handleCardMouseLeave}
+        >
+          <div className="logo-container">
+            <OptimizedImage src="/dreamcast-logo.png" alt="Dreamcast Logo" />
+          </div>
+          <h2 className="tcg-name">Dreamcast</h2>
+        </Link>
       </div>
 
       <div className="help-section">
