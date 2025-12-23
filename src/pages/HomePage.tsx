@@ -175,7 +175,7 @@ export default function HomePage() {
           onMouseLeave={handleCardMouseLeave}
         >
           <div className="logo-container">
-            <OptimizedImage src="/dreamcast-logo.png" alt="Dreamcast Logo" />
+            <OptimizedImage src="/images/dreamcast-logo.png" alt="Dreamcast Logo" />
           </div>
           <h2 className="tcg-name">Dreamcast</h2>
         </Link>

@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import Papa from 'papaparse';
+import OptimizedImage from '../components/OptimizedImage';
 import './DreamcastPage.css';
 
 interface DreamcastGame {
@@ -114,6 +115,12 @@ export default function DreamcastPage() {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Helper function to get cover image path
+  const getCoverImage = (serial: string) => {
+    const sanitizedSerial = serial.replace(/\//g, '-').replace(/\s/g, '_');
+    return `/dreamcast/covers/${sanitizedSerial}.png`;
   };
 
   if (loading) {
@@ -244,6 +251,22 @@ export default function DreamcastPage() {
                     {game.quantity > 0 && (
                       <div className="quantity-badge">×{game.quantity}</div>
                     )}
+                    <div className="game-cover">
+                      <OptimizedImage
+                        src={getCoverImage(game.serial)}
+                        alt={game.name}
+                        loading="lazy"
+                        onError={(e) => {
+                          // OptimizedImage will handle the fallback to PNG automatically
+                          // If both webp and png fail, show placeholder
+                          const placeholder = '/dreamcast/dreamcast-placeholder.png';
+                          if (!e.currentTarget.src.includes('placeholder')) {
+                            e.currentTarget.src = placeholder;
+                            e.currentTarget.onerror = null;
+                          }
+                        }}
+                      />
+                    </div>
                     <div className="game-header">
                       <h3 className="game-name">{game.name}</h3>
                       <span className={`region-badge region-${game.region.toLowerCase().replace(/[^a-z]/g, '')}`}>
