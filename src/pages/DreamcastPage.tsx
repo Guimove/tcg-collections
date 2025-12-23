@@ -31,6 +31,7 @@ export default function DreamcastPage() {
     Papa.parse('/dreamcast/collection.csv', {
       download: true,
       header: true,
+      delimiter: ';',
       complete: (results) => {
         const gamesData = results.data
           .filter((row: any) => row.name && row.name.trim())
