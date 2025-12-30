@@ -8,7 +8,9 @@ interface DreamcastGame {
   name: string;
   region: string;
   serial: string;
-  quantity: number;
+  disc: boolean;
+  manual: boolean;
+  box: boolean;
   rom_name?: string;
   rom_size?: string;
   rom_crc?: string;
@@ -24,7 +26,7 @@ export default function DreamcastPage() {
   const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedRegion, setSelectedRegion] = useState<string>('all');
-  const [quantityFilter, setQuantityFilter] = useState<'all' | 'owned' | 'not-owned' | 'for-sale'>('all');
+  const [quantityFilter, setQuantityFilter] = useState<'all' | 'owned' | 'not-owned'>('all');
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   // Load CSV data
@@ -37,13 +39,17 @@ export default function DreamcastPage() {
         const gamesData = results.data
           .filter((row: any) => row.name && row.name.trim())
           .map((row: any) => {
-            const quantity = parseInt(row.quantity) || 0;
+            const disc = row.disc === '1' || row.disc === 1 || row.disc === true;
+            const manual = row.manual === '1' || row.manual === 1 || row.manual === true;
+            const box = row.box === '1' || row.box === 1 || row.box === true;
             return {
               name: row.name.trim(),
               region: row.region?.trim() || 'Unknown',
               serial: row.serial?.trim() || 'N/A',
-              quantity: quantity,
-              owned: quantity > 0,
+              disc: disc,
+              manual: manual,
+              box: box,
+              owned: disc || manual || box,
               rom_name: row.rom_name?.trim(),
               rom_size: row.rom_size?.trim(),
               rom_crc: row.rom_crc?.trim(),
@@ -80,7 +86,7 @@ export default function DreamcastPage() {
   // Stats
   const ownedCount = useMemo(() => games.filter(g => g.owned).length, [games]);
   const notOwnedCount = useMemo(() => games.filter(g => !g.owned).length, [games]);
-  const forSaleCount = useMemo(() => games.filter(g => g.quantity >= 2).length, [games]);
+  const completeCount = useMemo(() => games.filter(g => g.disc && g.manual && g.box).length, [games]);
 
   // Filter games
   const filteredGames = useMemo(() => {
@@ -92,7 +98,6 @@ export default function DreamcastPage() {
       let matchesQuantity = true;
       if (quantityFilter === 'owned') matchesQuantity = game.owned;
       else if (quantityFilter === 'not-owned') matchesQuantity = !game.owned;
-      else if (quantityFilter === 'for-sale') matchesQuantity = game.quantity >= 2;
 
       return matchesSearch && matchesRegion && matchesQuantity;
     });
@@ -167,8 +172,8 @@ export default function DreamcastPage() {
             <div className="stat-label">Manquants</div>
           </div>
           <div className="stat-item">
-            <div className="stat-value">{forSaleCount}</div>
-            <div className="stat-label">À vendre</div>
+            <div className="stat-value">{completeCount}</div>
+            <div className="stat-label">Complets</div>
           </div>
         </div>
       </div>
@@ -204,12 +209,6 @@ export default function DreamcastPage() {
               onClick={() => setQuantityFilter('not-owned')}
             >
               Non possédés ({notOwnedCount})
-            </button>
-            <button
-              className={`quantity-btn ${quantityFilter === 'for-sale' ? 'active' : ''}`}
-              onClick={() => setQuantityFilter('for-sale')}
-            >
-              À vendre ({forSaleCount})
             </button>
           </div>
 
@@ -248,9 +247,6 @@ export default function DreamcastPage() {
               <div className="games-grid">
                 {regionGames.map((game, index) => (
                   <div key={`${game.serial}-${index}`} className={`game-card ${!game.owned ? 'not-owned' : ''}`}>
-                    {game.quantity > 0 && (
-                      <div className="quantity-badge">×{game.quantity}</div>
-                    )}
                     <div className="game-cover">
                       <OptimizedImage
                         src={getCoverImage(game.serial)}
@@ -267,7 +263,7 @@ export default function DreamcastPage() {
                         }}
                       />
                     </div>
-                    <div className="game-header">
+                    <div className="game-header" data-game-title={game.name}>
                       <h3 className="game-name">{game.name}</h3>
                       <span className={`region-badge region-${game.region.toLowerCase().replace(/[^a-z]/g, '')}`}>
                         {game.region}
@@ -278,11 +274,19 @@ export default function DreamcastPage() {
                         <span className="info-label">Série:</span>
                         <span className="info-value">{game.serial}</span>
                       </div>
-                      <div className="info-row">
-                        <span className="info-label">Statut:</span>
-                        <span className={`status-badge ${game.owned ? 'owned' : 'not-owned'}`}>
-                          {game.owned ? '✓ Possédé' : '✗ Manquant'}
-                        </span>
+                      <div className="info-row inventory-status">
+                        <span className="info-label">Inventaire:</span>
+                        <div className="status-icons">
+                          <span className={`status-icon ${game.disc ? 'owned' : 'missing'}`} title="Disque">
+                            💿 {game.disc ? '✓' : '✗'}
+                          </span>
+                          <span className={`status-icon ${game.manual ? 'owned' : 'missing'}`} title="Notice">
+                            📄 {game.manual ? '✓' : '✗'}
+                          </span>
+                          <span className={`status-icon ${game.box ? 'owned' : 'missing'}`} title="Boîte">
+                            📦 {game.box ? '✓' : '✗'}
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
