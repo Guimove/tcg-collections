@@ -49,3 +49,4 @@ coverage/
 
 # Local Netlify folder
 .netlify
+.codex
