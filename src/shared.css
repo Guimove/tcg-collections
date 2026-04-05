@@ -573,27 +573,22 @@
 
 /* Cardmarket export */
 .export-section {
-  text-align: center;
-  margin-bottom: 1.5rem;
+  text-align: right;
+  margin-bottom: 1rem;
 }
 
 .export-cardmarket-btn {
-  padding: 0.75rem 2rem;
-  background: linear-gradient(135deg, #1a237e, #283593);
-  color: white;
+  padding: 0.4rem 0.8rem;
+  background: none;
+  color: inherit;
   border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 0.8rem;
   cursor: pointer;
-  transition: all 0.3s;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
+  transition: opacity 0.2s;
+  opacity: 0.4;
+  text-decoration: underline;
 }
 
 .export-cardmarket-btn:hover {
-  background: linear-gradient(135deg, #283593, #3949ab);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(26, 35, 126, 0.4);
+  opacity: 0.8;
 }

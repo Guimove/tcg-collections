@@ -12,4 +12,5 @@ yarn-debug.log*
 yarn-error.log*
 .vscode
 .idea
+.codex
 *.xlsx
