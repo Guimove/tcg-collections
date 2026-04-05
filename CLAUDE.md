@@ -142,4 +142,4 @@ Add to `docker-compose.yml` for CSV hot-reload without rebuild:
 
 ## Language
 
-The application UI and README are in French. Code (variables, comments) is in English.
+The application UI labels are in French. Code, comments, documentation (README, CLAUDE.md), and variable names are in English.

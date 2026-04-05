@@ -1,92 +1,86 @@
-# Guimove - Collections TCG
+# Guimove - TCG Collections
 
-Application web pour gérer et afficher des collections de cartes TCG avec système de calcul intelligent des cartes à vendre.
+Web application to manage and display TCG card collections with intelligent keep/sell calculation.
 
-**Démo en ligne** : [https://guimove.io](https://guimove.io)
+**Live demo**: [https://guimove.io](https://guimove.io)
 
-## TCG Supportés
+## Supported TCGs
 
-- **Yu-Gi-Oh!** : Collection complète avec calcul intelligent des cartes à garder/vendre
-- **Dragon Ball Akira V2** : Lucky Cards avec gestion des quantités
-- **Riftbound** : League of Legends TCG avec filtres avancés
-- **Lorcana** : Disney Lorcana TCG avec filtres par encre, rareté, franchise
-- **Dreamcast** : Collection de jeux Sega Dreamcast (disque/notice/boîte)
+- **Yu-Gi-Oh!** — Full collection with intelligent keep/sell algorithm
+- **Dragon Ball Akira V2** — Lucky Cards with quantity management
+- **Riftbound** — League of Legends TCG with advanced filters
+- **Lorcana** — Disney Lorcana TCG with ink, rarity, and franchise filters
+- **Dreamcast** — Sega Dreamcast game collection (disc/manual/box tracking)
 
-## Fonctionnalités
+## Features
 
-- **Gestion multi-TCG** : Support de plusieurs jeux de cartes avec interface unifiée
-- **Import CSV** : Chargement automatique de vos collections depuis fichiers CSV
-- **Calcul intelligent** : Détermine automatiquement les cartes à garder/vendre selon des règles personnalisables (Yu-Gi-Oh!)
-- **Gestion des quantités** : Système "garde 1, vends le reste" pour Akira, Riftbound et Lorcana
-- **Filtres avancés** : Recherche par nom, rareté, langue, extension, couleur, type
-- **Tri flexible** : Tri par nom, rareté, quantité (croissant/décroissant)
-- **Panier d'achat unifié** : Sélection et export CSV des cartes de tous les TCG
-- **Images de cartes** : Chargement automatique des images (YGOPRODeck API pour Yu-Gi-Oh!)
-- **Interface responsive** : Thèmes adaptés à chaque TCG, mobile/desktop
-- **Code splitting** : Chaque page est chargée à la demande (React.lazy)
+- **Multi-TCG management** — Multiple card games with a unified interface
+- **CSV import** — Automatic collection loading from CSV files
+- **Intelligent calculation** — Automatically determines which cards to keep/sell with configurable rules (Yu-Gi-Oh!)
+- **Quantity management** — "Keep 1, sell the rest" system for Akira, Riftbound, and Lorcana
+- **Advanced filters** — Search by name, rarity, language, set, color, type
+- **Flexible sorting** — Sort by name, rarity, quantity (ascending/descending)
+- **Unified shopping cart** — Select and export cards to CSV across all TCGs
+- **Card images** — Automatic image loading (YGOPRODeck API for Yu-Gi-Oh!)
+- **Responsive design** — Per-TCG themes, mobile/desktop
+- **Code splitting** — Each page is loaded on demand (React.lazy)
 
-## Logiques de calcul
+## Keep/Sell Logic
 
-### Yu-Gi-Oh! (Calcul intelligent)
+### Yu-Gi-Oh! (Intelligent calculation)
 
-Pour chaque carte :
-1. Garde 1 copie par combinaison unique (extension + rareté)
-2. Minimum 3 copies ou le nombre de versions uniques (le plus élevé)
-3. Priorité : Rareté > Langue > Index
+For each card:
+1. Keep 1 copy per unique combination (set + rarity)
+2. Minimum 3 copies or the number of unique versions (whichever is higher)
+3. Priority: Rarity > Language > Index
 
-**Exemple** : Une carte avec 5 versions différentes → garde 5 copies (max(3, 5)), vend le reste
+**Example**: A card with 5 different versions → keep 5 copies (max(3, 5)), sell the rest
 
-### Akira, Riftbound & Lorcana (Système simple)
+### Akira, Riftbound & Lorcana (Simple system)
 
-- Garde 1 exemplaire de chaque carte
-- Met en vente toutes les cartes avec quantité ≥ 2
-- Affichage des cartes non possédées (grises)
+- Keep 1 copy of each card
+- List for sale all cards with quantity >= 2
+- Display unowned cards (greyed out)
 
 ## Installation
 
 ```bash
-# Cloner le projet
 git clone <url>
 cd guimove-tcg-collections
 
-# Installer les dépendances
 npm install
 
-# Lancer en développement
+# Development
 npm run dev
 
-# Build production
+# Production build
 npm run build
 ```
 
-Site accessible sur **http://localhost:5173**
+Dev server at **http://localhost:5173**
 
-## Déploiement
+## Deployment
 
 ### Docker / Kubernetes
 
 ```bash
-# Build et lancer avec Docker Compose
 docker-compose up -d --build
 
-# Accessible sur http://localhost:8080
+# Available at http://localhost:8080
 ```
 
-**Configuration Docker** :
-- Multi-stage build (Node 20 Alpine → Nginx Alpine)
-- Image finale optimisée (~25MB)
-- Health checks pour Kubernetes (liveness/readiness)
-- User non-root (nginx:101) pour la sécurité
-- Compression Gzip activée
-- Cache optimisé (1 an pour assets, pas de cache pour CSV)
-- Configuration Nginx avec SPA routing
+**Docker configuration**:
+- Multi-stage build (Node 20 Alpine -> Nginx Alpine)
+- Optimized final image (~25MB)
+- Kubernetes health checks (liveness/readiness)
+- Non-root user (nginx:101) for security
+- Gzip compression enabled
+- Optimized caching (1 year for assets, no-cache for CSV)
+- Nginx SPA routing
 
-**Mettre à jour les collections sans rebuild** :
+**Update collections without rebuild**:
 ```bash
-# Copier les nouveaux fichiers CSV
-cp nouveau_fichier.csv public/yugioh/collection.csv
-
-# Redémarrer le container
+cp new_collection.csv public/yugioh/collection.csv
 docker-compose restart
 ```
 
@@ -147,9 +141,9 @@ export default function MyTcgPage() {
       loading={loading} error={error}
       stats={[
         { value: stats.totalCards, label: 'Total' },
-        { value: stats.uniqueOwned, label: 'Uniques' },
-        { value: stats.totalForSale, label: 'À vendre' },
-        { value: stats.uniqueForSale, label: 'Uniques à vendre' },
+        { value: stats.uniqueOwned, label: 'Owned' },
+        { value: stats.totalForSale, label: 'For sale' },
+        { value: stats.uniqueForSale, label: 'Unique for sale' },
       ]}
       hasCart={true}
     >
@@ -177,7 +171,7 @@ Add to `docker-compose.yml` for CSV updates without rebuild:
 - ./public/mytcg:/usr/share/nginx/html/mytcg:ro
 ```
 
-## Format CSV
+## CSV Formats
 
 ### Yu-Gi-Oh! (`public/yugioh/collection.csv`)
 
@@ -211,104 +205,104 @@ name;region;serial;disc;manual;box
 
 Delimiter: semicolon. `disc`, `manual`, `box` are `1` (owned) or `0` (not owned).
 
-## Stack technique
+## Tech Stack
 
 - **React 19** + TypeScript 5.9
 - **Vite 7** (build & dev server)
-- **React Router 7** (navigation avec code splitting)
-- **PapaParse** (parsing CSV)
-- **YGOPRODeck API** (images de cartes Yu-Gi-Oh!)
-- **Nginx** (serveur web production)
-- **Docker** (containerisation)
-- Déploiement : Kubernetes (self-hosted)
+- **React Router 7** (navigation with code splitting)
+- **PapaParse** (CSV parsing)
+- **YGOPRODeck API** (Yu-Gi-Oh! card images)
+- **Nginx** (production web server)
+- **Docker** (containerization)
+- Deployment: Kubernetes (self-hosted)
 
-## Structure du projet
+## Project Structure
 
 ```
 src/
-├── collectibles.ts              # Registre des collections (routes + homepage auto-générés)
-├── shared.css                   # CSS structurel partagé (.collection-page)
+├── collectibles.ts              # Collectible registry (routes + homepage auto-generated)
+├── shared.css                   # Shared structural CSS (.collection-page)
 ├── components/
-│   ├── CollectionPageLayout.tsx  # Layout partagé (header, stats, cart, loading/error)
-│   ├── CollectionHeader.tsx      # En-tête avec stats
-│   ├── CardModal.tsx             # Modal générique (overlay + ESC)
-│   ├── CardDetailModal.tsx       # Modal détails carte Yu-Gi-Oh!
-│   ├── CartPanel.tsx             # Panier latéral unifié
-│   ├── EmptyState.tsx            # État vide
-│   ├── FloatingCartButton.tsx    # Bouton panier flottant
-│   ├── ScrollToTopButton.tsx     # Bouton retour en haut
-│   └── OptimizedImage.tsx        # Image avec fallback WebP/PNG
+│   ├── CollectionPageLayout.tsx  # Shared layout (header, stats, cart, loading/error)
+│   ├── CollectionHeader.tsx      # Header with stats
+│   ├── CardModal.tsx             # Generic modal (overlay + ESC close)
+│   ├── CardDetailModal.tsx       # Yu-Gi-Oh! card detail modal
+│   ├── CartPanel.tsx             # Unified side cart panel
+│   ├── EmptyState.tsx            # Empty state display
+│   ├── FloatingCartButton.tsx    # Floating cart button
+│   ├── ScrollToTopButton.tsx     # Scroll-to-top button
+│   └── OptimizedImage.tsx        # Image with WebP/PNG fallback
 ├── hooks/
-│   ├── useCollectionData.ts      # Chargement CSV (fetch + parse + état)
-│   ├── useCart.ts                # Gestion panier (localStorage)
-│   ├── useCardImage.ts           # Images Yu-Gi-Oh! (API + cache)
-│   ├── useScrollToTop.ts         # Détection scroll + retour en haut
-│   └── usePageTitle.ts           # Titre de page
+│   ├── useCollectionData.ts      # CSV loading (fetch + parse + state)
+│   ├── useCart.ts                # Cart management (localStorage)
+│   ├── useCardImage.ts           # Yu-Gi-Oh! images (API + cache)
+│   ├── useScrollToTop.ts         # Scroll detection + scroll to top
+│   └── usePageTitle.ts           # Page title
 ├── pages/
-│   ├── HomePage.tsx              # Page d'accueil (généré depuis collectibles.ts)
+│   ├── HomePage.tsx              # Homepage (generated from collectibles.ts)
 │   ├── AkiraPage.tsx             # Dragon Ball Akira
 │   ├── YugiohPage.tsx            # Yu-Gi-Oh!
 │   ├── RiftboundPage.tsx         # Riftbound (LoL TCG)
 │   ├── LorcanaPage.tsx           # Disney Lorcana
 │   └── DreamcastPage.tsx         # Sega Dreamcast
 ├── utils/
-│   ├── filters.ts                # Filtres, stats, tri partagés
-│   ├── algorithm.ts              # Logique keep/sell Yu-Gi-Oh!
-│   ├── scoring.ts                # Scores rareté/langue
-│   ├── csvParser.ts              # Parser CSV Yu-Gi-Oh!
-│   ├── cardImages.ts             # API images + cache
-│   └── cart.ts                   # Utilitaires panier
-├── types.ts                      # Types TypeScript partagés
-├── App.tsx                       # Router (routes auto-générées)
+│   ├── filters.ts                # Shared filters, stats, sorting
+│   ├── algorithm.ts              # Yu-Gi-Oh! keep/sell logic
+│   ├── scoring.ts                # Rarity/language scoring
+│   ├── csvParser.ts              # Yu-Gi-Oh! CSV parser
+│   ├── cardImages.ts             # Image API + cache
+│   └── cart.ts                   # Cart utilities
+├── types.ts                      # Shared TypeScript types
+├── App.tsx                       # Router (auto-generated routes)
 └── main.tsx                      # Entry point
 ```
 
-## Développement
+## Development
 
-### Mode debug Yu-Gi-Oh!
+### Yu-Gi-Oh! Debug Mode
 
-Cliquer sur une carte → "Afficher mode debug" pour voir :
-- Scores de rareté et langue
-- Calculs keep/sell détaillés
-- Nombre de versions par carte
+Click a card -> "Show debug mode" to see:
+- Rarity and language scores
+- Detailed keep/sell calculations
+- Number of versions per card
 
-### Cache d'images Yu-Gi-Oh!
+### Yu-Gi-Oh! Image Cache
 
-Les images sont mises en cache dans localStorage. En console :
+Images are cached in localStorage. In browser console:
 ```js
-clearImageCache()     // Vider tout le cache
-clearFailedNames()    // Réessayer les cartes échouées
+clearImageCache()     // Clear all cached images
+clearFailedNames()    // Retry failed card lookups
 ```
 
-## Raretés Yu-Gi-Oh! supportées
+## Supported Yu-Gi-Oh! Rarities
 
-38 raretés supportées, incluant :
-- **S10K** : Secrète 10000 (score: 100)
-- **STR** : Starlight Rare (score: 98)
-- **G** : Ghost Rare (score: 97)
-- **QCR** : Secrète Rare Quart de Siècle (score: 95)
-- **UTR** : Ultimate Rare (score: 90)
-- **SCR** : Secrète Rare (score: 80)
-- **U** : Ultra Rare (score: 70)
-- **SR** : Super Rare (score: 62)
-- **R** : Rare (score: 56)
-- **C** : Commune (score: 50)
+38 rarities supported, including:
+- **S10K**: Secret 10000 (score: 100)
+- **STR**: Starlight Rare (score: 98)
+- **G**: Ghost Rare (score: 97)
+- **QCR**: Quarter Century Secret Rare (score: 95)
+- **UTR**: Ultimate Rare (score: 90)
+- **SCR**: Secret Rare (score: 80)
+- **U**: Ultra Rare (score: 70)
+- **SR**: Super Rare (score: 62)
+- **R**: Rare (score: 56)
+- **C**: Common (score: 50)
 
-Voir `src/utils/scoring.ts` pour la liste complète.
+See `src/utils/scoring.ts` for the full list.
 
-## Sécurité
+## Security
 
-- Pas de backend (site 100% statique client-side)
-- Pas de base de données
-- CSV locaux uniquement
-- Container Docker non-root (user nginx:101)
-- Headers de sécurité Nginx (X-Frame-Options, X-Content-Type-Options, X-XSS-Protection)
-- Health checks pour Kubernetes
+- No backend (100% static client-side)
+- No database
+- Local CSV files only
+- Non-root Docker container (nginx:101)
+- Nginx security headers (X-Frame-Options, X-Content-Type-Options, X-XSS-Protection)
+- Kubernetes health checks
 
-## Remerciements
+## Acknowledgments
 
-Un grand merci à [ScanFlip](https://www.scanflip.fr/fr) et son créateur **Doc Seven** pour l'excellent outil de gestion de collection Yu-Gi-Oh! qui permet de générer facilement le fichier CSV utilisé par cette application.
+Thanks to [ScanFlip](https://www.scanflip.fr/fr) and its creator **Doc Seven** for the excellent Yu-Gi-Oh! collection management tool that generates the CSV files used by this application.
 
-## Licence
+## License
 
 MIT
