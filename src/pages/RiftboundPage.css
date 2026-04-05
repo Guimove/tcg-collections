@@ -330,6 +330,16 @@
   border: 1px solid var(--rift-cyan);
 }
 
+.riftbound-container .extension-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.riftbound-container .progress-fill {
+  background: var(--rift-cyan);
+}
+
 /* Cards Grid */
 .riftbound-container .cards-grid {
   display: grid;

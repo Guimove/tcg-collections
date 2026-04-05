@@ -346,6 +346,16 @@
   border: 2px solid var(--dreamcast-blue);
 }
 
+.dreamcast-container .region-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dreamcast-container .progress-fill {
+  background: var(--dreamcast-blue);
+}
+
 /* Games Grid */
 .dreamcast-container .games-grid {
   display: grid;

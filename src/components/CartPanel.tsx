@@ -44,7 +44,7 @@ function CartPanel({
           <div className="cart-empty">
             <p>Votre panier est vide</p>
             <p style={{ fontSize: '0.9rem', color: 'var(--color-secondary)' }}>
-              Ajoutez des cartes depuis le marketplace
+              Parcourez la collection pour ajouter des éléments
             </p>
           </div>
         ) : (

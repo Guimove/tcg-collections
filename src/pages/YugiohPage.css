@@ -578,6 +578,67 @@
   line-height: 1.6;
 }
 
+/* Price estimation */
+.yugioh-page .price-section {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.yugioh-page .load-prices-btn {
+  padding: 0.75rem 2rem;
+  background: var(--color-gold);
+  color: var(--bg-primary);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.yugioh-page .load-prices-btn:hover:not(:disabled) {
+  background: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.yugioh-page .load-prices-btn:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.yugioh-page .price-result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--color-gold);
+}
+
+.yugioh-page .price-total {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--color-gold);
+}
+
+.yugioh-page .price-refresh-btn {
+  padding: 0.5rem 1rem;
+  background: var(--bg-card);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-text-muted);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s;
+}
+
+.yugioh-page .price-refresh-btn:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
 @media (max-width: 768px) {
   .yugioh-page .app {
     padding: 1rem;

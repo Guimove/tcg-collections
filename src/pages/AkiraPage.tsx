@@ -4,8 +4,10 @@ import OptimizedImage from '../components/OptimizedImage';
 import CollectionPageLayout from '../components/CollectionPageLayout';
 import EmptyState from '../components/EmptyState';
 import CardModal from '../components/CardModal';
+import DiffBanner from '../components/DiffBanner';
 import { filterByQuantity, computeSimpleStats, sortCards, addSimpleCardToCart, QuantityFilterType, SortDirection } from '../utils/filters';
 import { useCollectionData } from '../hooks/useCollectionData';
+import { useCollectionDiff } from '../hooks/useCollectionDiff';
 
 interface Card {
   category: string;
@@ -81,23 +83,44 @@ export default function AkiraPage() {
 
   const stats = computeSimpleStats(allCards);
 
+  const diffCards = useMemo(() => allCards.map(c => ({ key: c.filename, quantity: c.quantity })), [allCards]);
+  const { diff, dismissDiff } = useCollectionDiff('akira', diffCards, loading);
+
   return (
     <CollectionPageLayout
       pageTitle="Dragon Ball Akira - Guimove"
       title="Collection Dragon Ball Akira V2"
-      subtitle={`Lucky Cards - ${allCards.length} Cartes uniques`}
+      subtitle={`Lucky Cards - ${allCards.length} cartes`}
       cssClass="akira-page"
       loading={loading}
       error={error}
       stats={[
-        { value: stats.totalCards, label: 'Total' },
-        { value: stats.uniqueOwned, label: 'Uniques' },
+        { value: allCards.length, label: 'Total' },
+        { value: stats.uniqueOwned, label: 'Possédées' },
+        { value: stats.totalCards, label: 'Exemplaires' },
         { value: stats.totalForSale, label: 'À vendre' },
-        { value: stats.uniqueForSale, label: 'Uniques à vendre' },
       ]}
     >
-      {({ cart, openCart }) => (
+      {({ cart, openCart }) => {
+        const bulkAddToCart = (cards: Card[]) => {
+          const sellable = cards.filter(c => c.quantity >= 2);
+          sellable.forEach(card => {
+            cart.addToCart({
+              cardName: `${card.category} #${card.number}`,
+              extension: 'Akira',
+              code: card.number,
+              rarity: card.category,
+              edition: 'N/A',
+              quantity: 1,
+              maxQuantity: card.quantity - 1,
+            });
+          });
+          if (sellable.length > 0) openCart();
+        };
+
+        return (
         <>
+          <DiffBanner diff={diff} onDismiss={dismissDiff} />
           <div className="controls">
             <div className="search-filter-bar">
               <div className="search-box">
@@ -135,11 +158,24 @@ export default function AkiraPage() {
                 {categories.map((category) => {
                   const categoryCards = filteredCards.filter((c) => c.category === category.name);
                   if (categoryCards.length === 0) return null;
+                  const allCategoryCards = allCards.filter(c => c.category === category.name);
+                  const ownedInCategory = allCategoryCards.filter(c => c.owned).length;
                   return (
                     <div key={category.name} className="category-section">
                       <div className="category-header">
                         <div className="category-title">{category.name}</div>
-                        <div className="category-count">{categoryCards.length} cartes</div>
+                        <div className="category-meta">
+                          <span className="category-count">{categoryCards.length} cartes</span>
+                          <div className="progress-bar">
+                            <div className="progress-fill" style={{ width: `${allCategoryCards.length > 0 ? (ownedInCategory / allCategoryCards.length) * 100 : 0}%` }} />
+                          </div>
+                          <span className="progress-text">{ownedInCategory}/{allCategoryCards.length}</span>
+                          {categoryCards.some(c => c.quantity >= 2) && (
+                            <button className="bulk-add-btn" onClick={(e) => { e.stopPropagation(); bulkAddToCart(categoryCards); }}>
+                              Tout ajouter au panier
+                            </button>
+                          )}
+                        </div>
                       </div>
                       <div className={category.isPuzzle ? 'gallery puzzle-gallery' : 'gallery'}>
                         {categoryCards.map((card) => (
@@ -198,7 +234,8 @@ export default function AkiraPage() {
             </CardModal>
           )}
         </>
-      )}
+        );
+      }}
     </CollectionPageLayout>
   );
 }

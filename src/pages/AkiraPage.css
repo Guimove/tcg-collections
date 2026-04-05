@@ -191,20 +191,37 @@
 }
 
 .akira-page .category-title {
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
   color: var(--color-orange);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .akira-page .category-count {
-  font-size: 1.2em;
-  color: var(--color-text);
-  background: var(--bg-card);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.akira-page .category-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.akira-page .progress-fill {
+  background: var(--color-orange);
+}
+
+.akira-page .bulk-add-btn {
   padding: 0.5rem 1rem;
-  border-radius: var(--border-radius);
-  font-weight: bold;
+  background: rgba(255, 140, 0, 0.15);
   border: 1px solid var(--color-orange);
+  color: var(--color-orange);
+}
+
+.akira-page .bulk-add-btn:hover {
+  background: var(--color-orange);
+  color: white;
 }
 
 .akira-page .gallery {

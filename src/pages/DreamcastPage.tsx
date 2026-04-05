@@ -2,7 +2,9 @@ import { useState, useMemo } from 'react';
 import OptimizedImage from '../components/OptimizedImage';
 import CollectionPageLayout from '../components/CollectionPageLayout';
 import EmptyState from '../components/EmptyState';
+import DiffBanner from '../components/DiffBanner';
 import { useCollectionData } from '../hooks/useCollectionData';
+import { useCollectionDiff } from '../hooks/useCollectionDiff';
 import './DreamcastPage.css';
 
 interface DreamcastGame {
@@ -96,6 +98,10 @@ export default function DreamcastPage() {
     return Array.from(grouped.entries()).sort((a, b) => a[0].localeCompare(b[0]));
   }, [filteredGames]);
 
+  // Diff
+  const diffCards = useMemo(() => games.map(g => ({ key: g.serial, quantity: g.owned ? 1 : 0 })), [games]);
+  const { diff, dismissDiff } = useCollectionDiff('dreamcast', diffCards, loading);
+
   // Helper function to get cover image path
   const getCoverImage = (serial: string) => {
     const sanitizedSerial = serial.replace(/\//g, '-').replace(/\s/g, '_');
@@ -120,6 +126,7 @@ export default function DreamcastPage() {
     >
       {() => (
         <>
+          <DiffBanner diff={diff} onDismiss={dismissDiff} />
           {/* Filters */}
           <div className="controls">
             <div className="search-filter-bar">
@@ -180,7 +187,13 @@ export default function DreamcastPage() {
                 <div key={region} className="region-section">
                   <div className="region-header">
                     <h2 className="region-title">{region}</h2>
-                    <span className="region-count">{regionGames.length} jeu{regionGames.length > 1 ? 'x' : ''}</span>
+                    <div className="region-meta">
+                      <span className="region-count">{regionGames.length} jeu{regionGames.length > 1 ? 'x' : ''}</span>
+                      <div className="progress-bar">
+                        <div className="progress-fill" style={{ width: `${(() => { const all = games.filter(g => g.region === region); const owned = all.filter(g => g.owned).length; return all.length > 0 ? (owned / all.length) * 100 : 0; })()}%` }} />
+                      </div>
+                      <span className="progress-text">{games.filter(g => g.region === region && g.owned).length}/{games.filter(g => g.region === region).length}</span>
+                    </div>
                   </div>
                   <div className="games-grid">
                     {regionGames.map((game, index) => (

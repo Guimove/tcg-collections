@@ -4,7 +4,9 @@ import OptimizedImage from '../components/OptimizedImage';
 import EmptyState from '../components/EmptyState';
 import CardModal from '../components/CardModal';
 import CollectionPageLayout from '../components/CollectionPageLayout';
+import DiffBanner from '../components/DiffBanner';
 import { useCollectionData } from '../hooks/useCollectionData';
+import { useCollectionDiff } from '../hooks/useCollectionDiff';
 import { filterByQuantity, computeSimpleStats, sortCards, addSimpleCardToCart, QuantityFilterType, SortDirection } from '../utils/filters';
 
 interface RiftboundCard {
@@ -148,24 +150,44 @@ export default function RiftboundPage() {
   }, [allCards, currentFilter, quantityFilter, searchTerm, setFilter, colorFilter, rarityFilter, sortBy, sortDirection]);
 
   const stats = computeSimpleStats(allCards);
+  const diffCards = useMemo(() => allCards.map(c => ({ key: c.cardId, quantity: c.quantity })), [allCards]);
+  const { diff, dismissDiff } = useCollectionDiff('riftbound', diffCards, loading);
 
   return (
     <CollectionPageLayout
       pageTitle="Riftbound - Guimove"
       title="Riftbound Collection"
-      subtitle={`League of Legends TCG - ${allCards.length} Cartes uniques`}
+      subtitle={`League of Legends - ${allCards.length} cartes`}
       cssClass="riftbound-container"
       loading={loading}
       error={error}
       stats={[
-        { value: stats.totalCards, label: 'Total' },
-        { value: stats.uniqueOwned, label: 'Uniques' },
+        { value: allCards.length, label: 'Total' },
+        { value: stats.uniqueOwned, label: 'Possédées' },
+        { value: stats.totalCards, label: 'Exemplaires' },
         { value: stats.totalForSale, label: 'À vendre' },
-        { value: stats.uniqueForSale, label: 'Uniques à vendre' },
       ]}
     >
-      {({ cart, openCart }) => (
+      {({ cart, openCart }) => {
+        const bulkAddToCart = (cards: RiftboundCard[]) => {
+          const sellable = cards.filter(c => c.quantity >= 2);
+          sellable.forEach(card => {
+            cart.addToCart({
+              cardName: card.name,
+              extension: 'Riftbound',
+              code: card.cardId,
+              rarity: card.rarity,
+              edition: card.set,
+              quantity: 1,
+              maxQuantity: card.quantity - 1,
+            });
+          });
+          if (sellable.length > 0) openCart();
+        };
+
+        return (
         <>
+          <DiffBanner diff={diff} onDismiss={dismissDiff} />
           {/* Filters */}
           <div className="controls">
             <div className="search-filter-bar">
@@ -292,7 +314,18 @@ export default function RiftboundPage() {
                   <div key={set} className="extension-section">
                     <div className="extension-header">
                       <div className="extension-title">{set}</div>
-                      <div className="extension-count">{setCards.length} cartes</div>
+                      <div className="extension-meta">
+                        <span className="extension-count">{setCards.length} cartes</span>
+                        <div className="progress-bar">
+                          <div className="progress-fill" style={{ width: `${(() => { const all = allCards.filter(c => c.set === set); const owned = all.filter(c => c.owned).length; return all.length > 0 ? (owned / all.length) * 100 : 0; })()}%` }} />
+                        </div>
+                        <span className="progress-text">{allCards.filter(c => c.set === set && c.owned).length}/{allCards.filter(c => c.set === set).length}</span>
+                        {setCards.some(c => c.quantity >= 2) && (
+                          <button className="bulk-add-btn" onClick={(e) => { e.stopPropagation(); bulkAddToCart(setCards); }}>
+                            Tout ajouter au panier
+                          </button>
+                        )}
+                      </div>
                     </div>
                     <div className="cards-grid">
                       {setCards.map((card) => (
@@ -382,7 +415,8 @@ export default function RiftboundPage() {
             </CardModal>
           )}
         </>
-      )}
+        );
+      }}
     </CollectionPageLayout>
   );
 }

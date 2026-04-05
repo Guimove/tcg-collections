@@ -7,7 +7,9 @@ import { getRarityColor, getRarityDisplayName, getRarityFullName } from '../util
 import CardDetailModal from '../components/CardDetailModal';
 import CollectionPageLayout from '../components/CollectionPageLayout';
 import EmptyState from '../components/EmptyState';
+import DiffBanner from '../components/DiffBanner';
 import { useCardImage } from '../hooks/useCardImage';
+import { useCollectionDiff } from '../hooks/useCollectionDiff';
 
 export default function YugiohPage() {
   const [aggregatedCards, setAggregatedCards] = useState<AggregatedCard[]>([]);
@@ -70,7 +72,6 @@ export default function YugiohPage() {
   const filteredItems = useMemo(() => {
     let items = [...marketplaceItems];
 
-    // Apply filters
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
       items = items.filter((item) =>
@@ -90,7 +91,6 @@ export default function YugiohPage() {
       items = items.filter((item) => item.Extension === extensionFilter);
     }
 
-    // Sort
     items.sort((a, b) => {
       let comparison = 0;
       if (sortBy === 'name') {
@@ -118,7 +118,6 @@ export default function YugiohPage() {
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
 
-      // Load more when 500px from bottom
       if (scrollTop + windowHeight >= documentHeight - 500 && visibleCount < filteredItems.length) {
         setVisibleCount(prev => Math.min(prev + 80, filteredItems.length));
       }
@@ -128,13 +127,20 @@ export default function YugiohPage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [visibleCount, filteredItems.length]);
 
-  // Stats - Grand total (toutes les cartes)
+  // Stats
   const totalAllCards = aggregatedCards.reduce((sum, item) => sum + item.totalToKeep + item.totalForSale, 0);
   const uniqueAllCards = aggregatedCards.length;
-
-  // Stats - À vendre
   const totalCardsForSale = marketplaceItems.reduce((sum, item) => sum + item.toSell, 0);
   const uniqueCardsForSale = marketplaceItems.length;
+
+  // Diff banner — track per version including language to catch any inventory change
+  const diffCards = useMemo(() =>
+    aggregatedCards.flatMap(c =>
+      c.versions.map(v => ({ key: `${v.Code}|${v.Extension}|${v.Rareté}|${v.Langue}`, quantity: v.Quantité }))
+    ),
+    [aggregatedCards]
+  );
+  const { diff, dismissDiff } = useCollectionDiff('yugioh', diffCards, loading);
 
   return (
     <CollectionPageLayout
@@ -145,16 +151,16 @@ export default function YugiohPage() {
       loading={loading}
       error={error}
       stats={[
-        { value: totalAllCards, label: 'Total' },
-        { value: uniqueAllCards, label: 'Uniques' },
+        { value: uniqueAllCards, label: 'Total' },
+        { value: totalAllCards, label: 'Exemplaires' },
         { value: totalCardsForSale, label: 'À vendre' },
         { value: uniqueCardsForSale, label: 'Uniques à vendre' },
       ]}
     >
       {({ cart, openCart }) => (
         <>
+          <DiffBanner diff={diff} onDismiss={dismissDiff} />
           <div className="controls">
-
             <div className="search-filter-bar">
               <div className="search-box">
                 <input
@@ -278,7 +284,6 @@ function CardTile({ item, onClick }: CardTileProps) {
   const rarityColor = getRarityColor(item.rarityScore);
   const rarityName = getRarityDisplayName(item.Rareté);
 
-  // Determine edition from available data
   const getEdition = (): string => {
     if (item['1st Edition'] && item['1st Edition'].trim() !== '') return '1st';
     if (item['Unlimited'] && item['Unlimited'].trim() !== '') return 'Unlimited';

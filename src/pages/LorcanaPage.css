@@ -360,6 +360,16 @@
   border: 1px solid var(--lorcana-cyan);
 }
 
+.lorcana-container .extension-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lorcana-container .progress-fill {
+  background: var(--lorcana-cyan);
+}
+
 /* Cards Grid */
 .lorcana-container .cards-grid {
   display: grid;

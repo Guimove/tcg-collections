@@ -15,7 +15,7 @@ const PARTICLES = Array.from({ length: 35 }, (_, i) => ({
 }));
 
 export default function HomePage() {
-  usePageTitle('Guimove - Gestionnaire de Collections TCG');
+  usePageTitle('Guimove - Mes Collections');
 
   const handleCardMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const card = e.currentTarget;
@@ -58,7 +58,8 @@ export default function HomePage() {
 
       <header>
         <h1>Guimove</h1>
-        <p className="subtitle">Gestionnaire de Collections TCG</p>
+        <p className="subtitle">Mes Collections</p>
+        <Link to="/stats" className="stats-link">Statistiques</Link>
       </header>
 
       <div className="tcg-grid">
@@ -83,38 +84,38 @@ export default function HomePage() {
         <div className="help-grid">
           <div className="help-card">
             <div className="help-icon">🛒</div>
-            <h3>Acheter mes cartes</h3>
-            <p>Parcourez ma collection et ajoutez au panier les cartes qui vous intéressent. Seules les cartes en ×2 ou plus sont disponibles à la vente.</p>
+            <h3>Acheter</h3>
+            <p>Parcourez mes collections et ajoutez au panier ce qui vous intéresse. Les éléments disponibles à la vente sont calculés automatiquement selon les règles de chaque collection.</p>
           </div>
 
           <div className="help-card">
             <div className="help-icon">🔍</div>
-            <h3>Voir ce qui me manque</h3>
-            <p>Utilisez le filtre "Non possédées" pour voir les cartes qui me manquent. Si vous les avez, vous pouvez me les proposer !</p>
+            <h3>Ce qui me manque</h3>
+            <p>Utilisez le filtre "Non possédées" pour voir ce qui me manque. Si vous les avez, vous pouvez me les proposer !</p>
           </div>
 
           <div className="help-card">
             <div className="help-icon">📊</div>
             <h3>Recherche & Filtres</h3>
-            <p>Utilisez la barre de recherche et les filtres pour trouver rapidement des cartes spécifiques par nom, rareté, extension ou langue.</p>
+            <p>Utilisez la barre de recherche et les filtres pour trouver rapidement un élément par nom, rareté, extension ou langue.</p>
           </div>
 
           <div className="help-card">
             <div className="help-icon">💾</div>
-            <h3>Export de votre sélection</h3>
-            <p>Une fois votre sélection faite, exportez le panier en CSV pour me contacter avec la liste des cartes qui vous intéressent.</p>
+            <h3>Exporter</h3>
+            <p>Une fois votre sélection faite, exportez le panier en CSV pour me contacter avec votre liste.</p>
           </div>
 
           <div className="help-card">
             <div className="help-icon">🎯</div>
             <h3>Comprendre les statuts</h3>
-            <p>Badge ×N : quantité possédée. Cartes grisées : non possédées (à me proposer). Cartes colorées : disponibles ou dans ma collection.</p>
+            <p>Badge ×N : quantité possédée. Éléments grisés : non possédés. Éléments colorés : disponibles ou dans ma collection.</p>
           </div>
 
           <div className="help-card">
             <div className="help-icon">📱</div>
-            <h3>Interface adaptative</h3>
-            <p>La plateforme fonctionne sur tous les appareils : ordinateur, tablette et smartphone pour consulter ma collection partout.</p>
+            <h3>Mobile & Desktop</h3>
+            <p>La plateforme fonctionne sur tous les appareils pour consulter mes collections partout.</p>
           </div>
         </div>
       </div>
@@ -122,7 +123,6 @@ export default function HomePage() {
       <div className="coming-soon-section">
         <h2 className="coming-soon-title">Bientôt disponible</h2>
         <div className="tcg-grid">
-
           {comingSoon.map((c) => (
             <div key={c.name} className="tcg-card coming-soon active">
               <div className="logo-container">
@@ -135,7 +135,7 @@ export default function HomePage() {
       </div>
 
       <footer>
-        <p>© 2024 Guimove - Gestionnaire de Collections TCG</p>
+        <p>© 2025 Guimove</p>
       </footer>
     </div>
   );
