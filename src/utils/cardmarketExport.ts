@@ -61,7 +61,7 @@ function downloadCSV(content: string, filename: string) {
  * Columns: Amount;Name;Expansion;Card Number;Condition;Language;Is First Edition;Is Signed;Is Altered;Is Playset;Price
  */
 export function exportYugiohForCardmarket(items: ProcessedCardVersion[]) {
-  const header = '"Amount";"Name";"Expansion";"Card Number";"Condition";"Language";"Is First Edition";"Is Signed";"Is Altered";"Is Playset";"Price"';
+  const header = '"Amount";"Name";"Expansion";"Card Number";"Rarity";"Condition";"Language";"Is First Edition";"Is Signed";"Is Altered";"Is Playset";"Price"';
 
   const rows = items
     .filter(item => item.toSell > 0)
@@ -73,6 +73,7 @@ export function exportYugiohForCardmarket(items: ProcessedCardVersion[]) {
         escapeCSVField(item['Nom de la carte']),
         escapeCSVField(item.Extension),
         escapeCSVField(item.Code),
+        escapeCSVField(item.Rareté),
         escapeCSVField(condition),
         escapeCSVField(language),
         escapeCSVField(edition),
@@ -103,7 +104,7 @@ export function exportSimpleForCardmarket(
   items: SimpleCardForExport[],
   tcgName: string,
 ) {
-  const header = '"Amount";"Name";"Expansion";"Card Number";"Condition";"Language";"Is First Edition";"Price"';
+  const header = '"Amount";"Name";"Expansion";"Card Number";"Rarity";"Condition";"Language";"Is First Edition";"Price"';
 
   const rows = items
     .filter(item => item.quantity >= 2)
@@ -114,6 +115,7 @@ export function exportSimpleForCardmarket(
         escapeCSVField(item.name),
         escapeCSVField(item.set),
         escapeCSVField(item.cardId),
+        escapeCSVField(item.rarity),
         escapeCSVField('Near Mint'),
         escapeCSVField('French'),
         '""', // Is First Edition
