@@ -20,29 +20,22 @@ Docker deployment: `docker-compose up -d --build` (serves on localhost:8080 via 
 
 ## Architecture
 
-**React 19 + TypeScript + Vite SPA** with React Router for navigation.
+**React 19 + TypeScript + Vite SPA** with React Router and route-level code splitting (`React.lazy` + `Suspense`).
+
+### Collectible registry (config-driven)
+
+`src/collectibles.ts` is the single source of truth for all collectibles. Adding an entry here auto-generates the route in `App.tsx` and the homepage card in `HomePage.tsx`. See "Adding a new collectible" below.
 
 ### Shared infrastructure
 
-All collection pages use shared building blocks:
-- `src/hooks/useScrollToTop.ts` — scroll-to-top visibility + smooth scroll
-- `src/hooks/usePageTitle.ts` — sets document.title
-- `src/components/CollectionHeader.tsx` — back link, title, subtitle, stats grid
-- `src/components/EmptyState.tsx` — icon + title + message empty state
-- `src/components/ScrollToTopButton.tsx` — conditional scroll-to-top button
-- `src/components/FloatingCartButton.tsx` — cart button with badge
-- `src/components/CardModal.tsx` — modal wrapper with overlay click-to-close and ESC key
-- `src/utils/filters.ts` — `filterByQuantity()`, `computeSimpleStats()`, shared types
-- `src/shared.css` — structural CSS shared across all collection pages (layout, modal, controls)
+All collection pages use shared building blocks to minimize duplication:
 
-### Adding a new collectible
-
-1. Create `src/pages/<Tcg>Page.tsx` — use an existing simple page (e.g. AkiraPage) as template
-2. Create `src/pages/<Tcg>Page.css` — only theme colors and card-specific styles; structural CSS comes from `shared.css`
-3. Add route in `src/App.tsx`
-4. Add card link in `src/pages/HomePage.tsx`
-5. Add CSV + images in `public/<tcg>/`
-6. Add volume mount in `docker-compose.yml`
+- **Layout:** `src/components/CollectionPageLayout.tsx` — handles loading, error, header+stats, scroll-to-top, cart panel (conditionally via `WithCart` wrapper). Every page wraps its content in this layout.
+- **Data loading:** `src/hooks/useCollectionData.ts` — fetch + PapaParse + loading/error state. Checks `response.ok` for clear error on bad paths.
+- **Hooks:** `useScrollToTop`, `usePageTitle` — used by the layout internally.
+- **Components:** `CollectionHeader`, `EmptyState`, `ScrollToTopButton`, `FloatingCartButton`, `CardModal`, `CartPanel`, `OptimizedImage`
+- **Utilities:** `src/utils/filters.ts` — `filterByQuantity()`, `computeSimpleStats(cards, keepThreshold?)`, `sortCards()`, `addSimpleCardToCart()`. Business rules (keep threshold) are configurable, defaulting to 2.
+- **CSS:** `src/shared.css` — structural layout scoped under `.collection-page`, plus global styles for fixed-position elements (modal, cart, floating buttons). Page CSS files contain only theme colors and card-specific styles.
 
 ### Key data flow (Yu-Gi-Oh!, the most complex module)
 
@@ -53,17 +46,95 @@ All collection pages use shared building blocks:
 
 ### Simpler TCGs (Akira, Riftbound, Lorcana, Dreamcast)
 
-Keep 1 copy, sell duplicates (qty >= 2). Each has its own page component and CSV in `public/<tcg>/`.
+Keep 1 copy, sell duplicates (qty >= 2). Each has its own page component with a `parseRows` function and card-specific rendering, using `useCollectionData` + `CollectionPageLayout` for everything else.
 
 ### Directory layout
 
+- `src/collectibles.ts` — collectible registry (routes + homepage auto-generated)
 - `src/pages/` — one page component per TCG + HomePage
-- `src/components/` — shared components (CollectionHeader, EmptyState, CardModal, CartPanel, etc.)
-- `src/hooks/` — useCart, useCardImage, useScrollToTop, usePageTitle
+- `src/components/` — shared components (CollectionPageLayout, CollectionHeader, CardModal, CartPanel, etc.)
+- `src/hooks/` — useCollectionData, useCart, useCardImage, useScrollToTop, usePageTitle
 - `src/utils/` — algorithm, scoring, csvParser, cardImages, cart, filters
 - `src/types.ts` — shared TypeScript interfaces
 - `src/shared.css` — shared structural CSS for collection pages
 - `public/<tcg>/` — CSV collection data and card images per TCG
+
+## Adding a new collectible
+
+### Step 1: Prepare data
+
+Create `public/<slug>/collection.csv` with your CSV data and `public/<slug>/cards/` with card images.
+
+### Step 2: Register in `src/collectibles.ts`
+
+Add an entry to the `collectibles` array:
+
+```typescript
+{
+  slug: 'mytcg',
+  name: 'My TCG',
+  logo: '/images/mytcg-logo.png',
+  logoAlt: 'My TCG Logo',
+  page: lazy(() => import('./pages/MyTcgPage')),
+},
+```
+
+This auto-generates the route (`/mytcg`) and homepage card. No changes needed in `App.tsx` or `HomePage.tsx`.
+
+### Step 3: Create the page component
+
+Create `src/pages/MyTcgPage.tsx`. Use `AkiraPage.tsx` as a template (~185 lines). You need to write:
+
+1. **Card interface** — fields specific to your TCG
+2. **`parseRows` function** — transforms PapaParse output into your card type
+3. **Filter/sort state** — which filters your page offers
+4. **Card grid JSX** — how cards render in the grid
+5. **Modal content JSX** — what the detail modal shows
+
+Everything else (loading, error, header, stats, scroll-to-top, cart panel, empty state) is handled by `CollectionPageLayout` + `useCollectionData`:
+
+```tsx
+export default function MyTcgPage() {
+  const { data: allCards, loading, error } = useCollectionData<MyCard>(
+    '/mytcg/collection.csv',
+    parseMyTcgRows,
+    { header: true },  // PapaParse options
+  );
+  // ... filter state ...
+  const stats = computeSimpleStats(allCards);
+
+  return (
+    <CollectionPageLayout
+      pageTitle="My TCG - Guimove"
+      title="My TCG Collection"
+      subtitle={`${allCards.length} cards`}
+      cssClass="mytcg-page"
+      loading={loading}
+      error={error}
+      stats={[...]}
+      hasCart={true}  // set false for non-sellable collections
+    >
+      {({ cart, openCart }) => (
+        <>
+          {/* filters, card grid, modal */}
+        </>
+      )}
+    </CollectionPageLayout>
+  );
+}
+```
+
+### Step 4: Create page CSS
+
+Create `src/pages/MyTcgPage.css` with theme colors and card-specific styles only. Structural CSS (header, controls, modal, cart, buttons) comes from `shared.css` via the `.collection-page` class.
+
+### Step 5: Docker volume (optional)
+
+Add to `docker-compose.yml` for CSV hot-reload without rebuild:
+
+```yaml
+- ./public/mytcg:/usr/share/nginx/html/mytcg:ro
+```
 
 ## Yu-Gi-Oh! Scoring System
 
