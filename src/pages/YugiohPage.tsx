@@ -1,17 +1,15 @@
 import { useState, useEffect, useMemo } from 'react';
-import { Link } from 'react-router-dom';
 import './YugiohPage.css';
-import { CardRow, AggregatedCard, ProcessedCardVersion } from '../types';
+import { AggregatedCard, ProcessedCardVersion } from '../types';
 import { loadDefaultCSV } from '../utils/csvParser';
 import { processCardCollection, getMarketplaceItems } from '../utils/algorithm';
 import { getRarityColor, getRarityDisplayName, getRarityFullName } from '../utils/scoring';
 import CardDetailModal from '../components/CardDetailModal';
-import CartPanel from '../components/CartPanel';
+import CollectionPageLayout from '../components/CollectionPageLayout';
+import EmptyState from '../components/EmptyState';
 import { useCardImage } from '../hooks/useCardImage';
-import { useCart } from '../hooks/useCart';
 
 export default function YugiohPage() {
-  const [, setCardRows] = useState<CardRow[]>([]);
   const [aggregatedCards, setAggregatedCards] = useState<AggregatedCard[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -28,26 +26,13 @@ export default function YugiohPage() {
   const [selectedCard, setSelectedCard] = useState<AggregatedCard | null>(null);
   const [selectedVersion, setSelectedVersion] = useState<ProcessedCardVersion | null>(null);
 
-  // Cart
-  const cart = useCart();
-  const [isCartOpen, setIsCartOpen] = useState(false);
-
   // Lazy loading state
   const [visibleCount, setVisibleCount] = useState(120);
-
-  // Scroll to top button visibility
-  const [showScrollTop, setShowScrollTop] = useState(false);
-
-  // Set page title
-  useEffect(() => {
-    document.title = 'Yu-Gi-Oh! Marketplace - Guimove';
-  }, []);
 
   // Load default CSV on mount
   useEffect(() => {
     loadDefaultCSV().then((result) => {
       if (result.success && result.data) {
-        setCardRows(result.data);
         const processed = processCardCollection(result.data);
         setAggregatedCards(processed);
       } else {
@@ -133,9 +118,6 @@ export default function YugiohPage() {
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
 
-      // Show scroll to top button when scrolled down 300px
-      setShowScrollTop(scrollTop > 300);
-
       // Load more when 500px from bottom
       if (scrollTop + windowHeight >= documentHeight - 500 && visibleCount < filteredItems.length) {
         setVisibleCount(prev => Math.min(prev + 80, filteredItems.length));
@@ -154,61 +136,22 @@ export default function YugiohPage() {
   const totalCardsForSale = marketplaceItems.reduce((sum, item) => sum + item.toSell, 0);
   const uniqueCardsForSale = marketplaceItems.length;
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
-    <div className="yugioh-page">
-      <div className="header-stats-container" style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        gap: '2rem'
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flex: 1 }}>
-          <Link to="/" className="back-button" title="Retour à l'accueil">
-            ← Accueil
-          </Link>
-          <header className="header" style={{ marginBottom: 0 }}>
-            <h1>Yu-Gi-Oh! Marketplace</h1>
-            <p>Collection personnelle - Cartes disponibles</p>
-          </header>
-        </div>
-
-        {!loading && (
-          <div className="stats" style={{
-            marginBottom: 0,
-            flexDirection: 'row',
-            gap: '2rem'
-          }}>
-            <div className="stat-item">
-              <div className="stat-value">{totalAllCards}</div>
-              <div className="stat-label">Total</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-value">{uniqueAllCards}</div>
-              <div className="stat-label">Uniques</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-value">{totalCardsForSale}</div>
-              <div className="stat-label">À vendre</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-value">{uniqueCardsForSale}</div>
-              <div className="stat-label">Uniques à vendre</div>
-            </div>
-          </div>
-        )}
-      </div>
-
-      {error && <div className="error-message">{error}</div>}
-
-      {loading ? (
-        <div className="yugioh-page loading">
-          <div className="loading-spinner"></div>
-        </div>
-      ) : (
+    <CollectionPageLayout
+      pageTitle="Yu-Gi-Oh! Marketplace - Guimove"
+      title="Yu-Gi-Oh! Marketplace"
+      subtitle="Collection personnelle - Cartes disponibles"
+      cssClass="yugioh-page"
+      loading={loading}
+      error={error}
+      stats={[
+        { value: totalAllCards, label: 'Total' },
+        { value: uniqueAllCards, label: 'Uniques' },
+        { value: totalCardsForSale, label: 'À vendre' },
+        { value: uniqueCardsForSale, label: 'Uniques à vendre' },
+      ]}
+    >
+      {({ cart, openCart }) => (
         <>
           <div className="controls">
 
@@ -261,7 +204,7 @@ export default function YugiohPage() {
 
                 <div className="filter-group">
                   <label>Trier par</label>
-                  <select value={sortBy} onChange={(e) => setSortBy(e.target.value as any)}>
+                  <select value={sortBy} onChange={(e) => setSortBy(e.target.value as 'name' | 'rarity' | 'quantity')}>
                     <option value="name">Nom</option>
                     <option value="rarity">Rareté</option>
                     <option value="quantity">Quantité</option>
@@ -270,7 +213,7 @@ export default function YugiohPage() {
 
                 <div className="filter-group">
                   <label>Ordre</label>
-                  <select value={sortDirection} onChange={(e) => setSortDirection(e.target.value as any)}>
+                  <select value={sortDirection} onChange={(e) => setSortDirection(e.target.value as 'asc' | 'desc')}>
                     <option value="asc">Croissant</option>
                     <option value="desc">Décroissant</option>
                   </select>
@@ -280,11 +223,7 @@ export default function YugiohPage() {
           </div>
 
           {filteredItems.length === 0 ? (
-            <div className="empty-state">
-              <div className="empty-state-icon">🃏</div>
-              <h3>Aucune carte trouvée</h3>
-              <p>Essayez de modifier vos filtres ou votre recherche</p>
-            </div>
+            <EmptyState icon="🃏" title="Aucune carte trouvée" message="Essayez de modifier vos filtres ou votre recherche" />
           ) : (
             <div className="marketplace-grid">
               {filteredItems.slice(0, visibleCount).map((item, index) => (
@@ -304,51 +243,24 @@ export default function YugiohPage() {
               ))}
             </div>
           )}
+
+          {selectedCard && (
+            <CardDetailModal
+              card={selectedCard}
+              clickedVersion={selectedVersion}
+              onAddToCart={(item) => {
+                cart.addToCart(item);
+                openCart();
+              }}
+              onClose={() => {
+                setSelectedCard(null);
+                setSelectedVersion(null);
+              }}
+            />
+          )}
         </>
       )}
-
-      {selectedCard && (
-        <CardDetailModal
-          card={selectedCard}
-          clickedVersion={selectedVersion}
-          onAddToCart={(item) => {
-            cart.addToCart(item);
-            setIsCartOpen(true);
-          }}
-          onClose={() => {
-            setSelectedCard(null);
-            setSelectedVersion(null);
-          }}
-        />
-      )}
-
-      {showScrollTop && (
-        <button className="scroll-to-top" onClick={scrollToTop} title="Retour en haut">
-          ↑
-        </button>
-      )}
-
-      <button
-        className="floating-cart-btn"
-        onClick={() => setIsCartOpen(true)}
-        title="Voir le panier"
-      >
-        🛒
-        {cart.itemCount > 0 && (
-          <span className="cart-badge">{cart.itemCount}</span>
-        )}
-      </button>
-
-      <CartPanel
-        isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
-        cart={cart.cart}
-        onUpdateQuantity={cart.updateQuantity}
-        onRemoveItem={cart.removeFromCart}
-        onClearCart={cart.clearCart}
-        onExportCSV={cart.exportToCSV}
-      />
-    </div>
+    </CollectionPageLayout>
   );
 }
 

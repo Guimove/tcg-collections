@@ -37,6 +37,11 @@
   width: 100%;
 }
 
+.homepage-container > .particles-container {
+  max-width: none;
+  width: auto;
+}
+
 .homepage-container header {
   text-align: center;
   margin-bottom: 60px;
@@ -325,16 +330,27 @@
   }
 }
 
+/* Particules container */
+.particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
 /* Effet de particules */
 .particle {
-  position: fixed;
+  position: absolute;
   width: 10px;
   height: 10px;
   background: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   pointer-events: none;
   animation: float 15s infinite;
-  z-index: 0;
 }
 
 @keyframes float {
