@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 import './LorcanaPage.css';
 import OptimizedImage from '../components/OptimizedImage';
+import { exportSimpleForCardmarket } from '../utils/cardmarketExport';
 import EmptyState from '../components/EmptyState';
 import CardModal from '../components/CardModal';
 import CollectionPageLayout from '../components/CollectionPageLayout';
@@ -386,6 +387,17 @@ export default function LorcanaPage() {
             </div>
             </div>
           </div>
+
+          {allCards.some(c => c.quantity >= 2) && (
+            <div className="export-section">
+              <button className="export-cardmarket-btn" onClick={() => exportSimpleForCardmarket(
+                allCards.filter(c => c.quantity >= 2).map(c => ({ name: c.name, set: c.set, cardId: c.cardId, rarity: c.rarity, quantity: c.quantity })),
+                'Lorcana',
+              )}>
+                Exporter pour Cardmarket ({allCards.reduce((s, c) => c.quantity >= 2 ? s + c.quantity - 1 : s, 0)} cartes)
+              </button>
+            </div>
+          )}
 
           {/* Cards Grid */}
           {filteredCards.length === 0 ? (

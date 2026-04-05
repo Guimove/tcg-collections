@@ -3,6 +3,7 @@ import './YugiohPage.css';
 import { AggregatedCard, ProcessedCardVersion } from '../types';
 import { loadDefaultCSV } from '../utils/csvParser';
 import { processCardCollection, getMarketplaceItems } from '../utils/algorithm';
+import { exportYugiohForCardmarket } from '../utils/cardmarketExport';
 import { getRarityColor, getRarityDisplayName, getRarityFullName } from '../utils/scoring';
 import CardDetailModal from '../components/CardDetailModal';
 import CollectionPageLayout from '../components/CollectionPageLayout';
@@ -227,6 +228,14 @@ export default function YugiohPage() {
               </div>
             </div>
           </div>
+
+          {marketplaceItems.length > 0 && (
+            <div className="export-section">
+              <button className="export-cardmarket-btn" onClick={() => exportYugiohForCardmarket(marketplaceItems)}>
+                Exporter pour Cardmarket ({marketplaceItems.reduce((s, i) => s + i.toSell, 0)} cartes)
+              </button>
+            </div>
+          )}
 
           {filteredItems.length === 0 ? (
             <EmptyState icon="🃏" title="Aucune carte trouvée" message="Essayez de modifier vos filtres ou votre recherche" />

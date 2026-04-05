@@ -570,3 +570,30 @@
   transform: translateY(-1px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
+
+/* Cardmarket export */
+.export-section {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.export-cardmarket-btn {
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, #1a237e, #283593);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.export-cardmarket-btn:hover {
+  background: linear-gradient(135deg, #283593, #3949ab);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 35, 126, 0.4);
+}
