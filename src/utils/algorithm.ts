@@ -51,25 +51,24 @@ function processCardGroup(cardName: string, rows: CardRow[]): AggregatedCard {
     };
   });
 
-  // Step 2: Count unique (extension, rareté, reprint) combinations with Quantité > 0
-  // Reprints are treated as separate combos so "RP2|SCR" and "RP2|SCR|Reprint" each get a keep slot
+  // Step 2: Count unique (extension, rareté) combinations with Quantité > 0
+  // Reprints share the same combo as originals — they just score lower
   const extensionRarityCombos = new Set<string>();
   scoredRows.forEach((row) => {
     if (row.Quantité > 0) {
-      const reprintFlag = (row.Reprint && row.Reprint.trim()) ? '|R' : '';
-      extensionRarityCombos.add(`${row.Extension}|${row.Rareté}${reprintFlag}`);
+      extensionRarityCombos.add(`${row.Extension}|${row.Rareté}`);
     }
   });
 
   const numCombinations = extensionRarityCombos.size;
   const totalToKeep = Math.max(3, numCombinations);
 
-  // Step 3: Keep 1 per (extension, rareté, reprint) combination (highest score per combo)
+  // Step 3: Keep 1 per (extension, rareté) combination (highest score per combo)
+  // Reprints are in the same group but score lower, so originals are preferred
   const extensionRarityGroups = new Map<string, ProcessedCardVersion[]>();
 
   scoredRows.forEach((row) => {
-    const reprintFlag = (row.Reprint && row.Reprint.trim()) ? '|R' : '';
-    const key = `${row.Extension}|${row.Rareté}${reprintFlag}`;
+    const key = `${row.Extension}|${row.Rareté}`;
     if (!extensionRarityGroups.has(key)) {
       extensionRarityGroups.set(key, []);
     }

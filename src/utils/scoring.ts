@@ -114,8 +114,10 @@ export function calculateTotalScore(
   isReprint: boolean = false,
 ): number {
   // totalScore = rarityScore * 100 + languageScore + tiny tiebreaker
-  // Reprints get a penalty so originals are always preferred
-  const reprintPenalty = isReprint ? -10 : 0;
+  // Reprints get a -50 penalty: always loses to an original of the same rarity
+  // (language range is 1-3, so -50 is decisive within a tier)
+  // but doesn't drop below the next rarity tier (gap between tiers is 100+)
+  const reprintPenalty = isReprint ? -50 : 0;
   return rarityScore * 100 + languageScore + reprintPenalty + rowIndex * 1e-6;
 }
 
