@@ -110,10 +110,13 @@ export function getLanguageScore(language: string): number {
 export function calculateTotalScore(
   rarityScore: number,
   languageScore: number,
-  rowIndex: number
+  rowIndex: number,
+  isReprint: boolean = false,
 ): number {
   // totalScore = rarityScore * 100 + languageScore + tiny tiebreaker
-  return rarityScore * 100 + languageScore + rowIndex * 1e-6;
+  // Reprints get a penalty so originals are always preferred
+  const reprintPenalty = isReprint ? -10 : 0;
+  return rarityScore * 100 + languageScore + reprintPenalty + rowIndex * 1e-6;
 }
 
 // Get rarity display color based on score

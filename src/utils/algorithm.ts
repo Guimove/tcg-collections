@@ -31,11 +31,12 @@ export function processCardCollection(rows: CardRow[]): AggregatedCard[] {
  * Process a single card (all versions of same card name)
  */
 function processCardGroup(cardName: string, rows: CardRow[]): AggregatedCard {
-  // Step 1: Calculate scores for each row
+  // Step 1: Calculate scores for each row (reprints get a penalty)
   const scoredRows: ProcessedCardVersion[] = rows.map((row, index) => {
+    const isReprint = !!(row.Reprint && row.Reprint.trim());
     const rarityScore = getRarityScore(row.Rareté);
     const languageScore = getLanguageScore(row.Langue);
-    const totalScore = calculateTotalScore(rarityScore, languageScore, index);
+    const totalScore = calculateTotalScore(rarityScore, languageScore, index, isReprint);
 
     return {
       ...row,
@@ -50,22 +51,25 @@ function processCardGroup(cardName: string, rows: CardRow[]): AggregatedCard {
     };
   });
 
-  // Step 2: Count unique (extension, rareté) combinations with Quantité > 0
+  // Step 2: Count unique (extension, rareté, reprint) combinations with Quantité > 0
+  // Reprints are treated as separate combos so "RP2|SCR" and "RP2|SCR|Reprint" each get a keep slot
   const extensionRarityCombos = new Set<string>();
   scoredRows.forEach((row) => {
     if (row.Quantité > 0) {
-      extensionRarityCombos.add(`${row.Extension}|${row.Rareté}`);
+      const reprintFlag = (row.Reprint && row.Reprint.trim()) ? '|R' : '';
+      extensionRarityCombos.add(`${row.Extension}|${row.Rareté}${reprintFlag}`);
     }
   });
 
   const numCombinations = extensionRarityCombos.size;
   const totalToKeep = Math.max(3, numCombinations);
 
-  // Step 3: Keep 1 per (extension, rareté) combination (highest score per combo)
+  // Step 3: Keep 1 per (extension, rareté, reprint) combination (highest score per combo)
   const extensionRarityGroups = new Map<string, ProcessedCardVersion[]>();
 
   scoredRows.forEach((row) => {
-    const key = `${row.Extension}|${row.Rareté}`;
+    const reprintFlag = (row.Reprint && row.Reprint.trim()) ? '|R' : '';
+    const key = `${row.Extension}|${row.Rareté}${reprintFlag}`;
     if (!extensionRarityGroups.has(key)) {
       extensionRarityGroups.set(key, []);
     }
