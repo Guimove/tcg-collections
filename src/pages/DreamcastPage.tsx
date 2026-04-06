@@ -14,12 +14,7 @@ interface DreamcastGame {
   disc: boolean;
   manual: boolean;
   box: boolean;
-  rom_name?: string;
-  rom_size?: string;
-  rom_crc?: string;
-  rom_md5?: string;
-  rom_sha1?: string;
-  rom_serial?: string;
+  type: string;
   owned: boolean;
 }
 
@@ -37,13 +32,8 @@ function parseDreamcastRows(rows: Record<string, any>[]): DreamcastGame[] {
         disc,
         manual,
         box,
+        type: row.type?.trim() || 'Jeu',
         owned: disc || manual || box,
-        rom_name: row.rom_name?.trim(),
-        rom_size: row.rom_size?.trim(),
-        rom_crc: row.rom_crc?.trim(),
-        rom_md5: row.rom_md5?.trim(),
-        rom_sha1: row.rom_sha1?.trim(),
-        rom_serial: row.rom_serial?.trim(),
       };
     });
 }
@@ -57,11 +47,16 @@ export default function DreamcastPage() {
 
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedRegion, setSelectedRegion] = useState<string>('all');
+  const [selectedType, setSelectedType] = useState<string>('all');
   const [quantityFilter, setQuantityFilter] = useState<'all' | 'owned' | 'not-owned'>('all');
 
-  // Get unique regions
+  // Get unique regions and types
   const regions = useMemo(() => {
     return Array.from(new Set(games.map(g => g.region))).sort();
+  }, [games]);
+
+  const types = useMemo(() => {
+    return Array.from(new Set(games.map(g => g.type))).sort();
   }, [games]);
 
   // Stats
@@ -75,14 +70,15 @@ export default function DreamcastPage() {
       const matchesSearch = game.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                           game.serial.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesRegion = selectedRegion === 'all' || game.region === selectedRegion;
+      const matchesType = selectedType === 'all' || game.type === selectedType;
 
       let matchesQuantity = true;
       if (quantityFilter === 'owned') matchesQuantity = game.owned;
       else if (quantityFilter === 'not-owned') matchesQuantity = !game.owned;
 
-      return matchesSearch && matchesRegion && matchesQuantity;
+      return matchesSearch && matchesRegion && matchesType && matchesQuantity;
     });
-  }, [games, searchTerm, selectedRegion, quantityFilter]);
+  }, [games, searchTerm, selectedRegion, selectedType, quantityFilter]);
 
   // Group games by region
   const gamesByRegion = useMemo(() => {
@@ -171,6 +167,18 @@ export default function DreamcastPage() {
                   {regions.map(region => (
                     <option key={region} value={region}>
                       {region} ({games.filter(g => g.region === region).length})
+                    </option>
+                  ))}
+                </select>
+                <select
+                  value={selectedType}
+                  onChange={(e) => setSelectedType(e.target.value)}
+                  className="filter-select"
+                >
+                  <option value="all">Tous les types</option>
+                  {types.map(type => (
+                    <option key={type} value={type}>
+                      {type} ({games.filter(g => g.type === type).length})
                     </option>
                   ))}
                 </select>
