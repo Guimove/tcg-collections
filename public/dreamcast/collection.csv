@@ -1,5 +1,5 @@
 name;region;serial;disc;manual;box;type
-18 Wheeler - American Pro Trucker (Europe) (En,Fr,De,Es);Europe;MK-51064-50;0;0;0;Jeu
+18 Wheeler - American Pro Trucker (Europe) (En,Fr,De,Es);Europe;MK-51064-50;1;1;1;Jeu
 4 Wheel Thunder (Europe) (En,Fr);Europe;952-0063-50;1;1;1;Jeu
 90 Minutes - Sega Championship Football (Europe) (En,Fr,De,Es,It);Europe;MK-51190-50;0;0;0;Jeu
 Action Replay CDX Version 3.0 (France);France;HDR-0030;0;0;0;Utilitaire
@@ -14,7 +14,7 @@ Buggy Heat (Europe) (En,Fr,De,Es);Europe;MK-54040-50;0;0;0;Jeu
 Bust-A-Move 4 (Europe);Europe;T-8109D-50;0;0;0;Jeu
 Caesars Palace 2000 - Millennium Gold Edition (Europe);Europe;T-12502D-50;0;0;0;Jeu
 Cannon Spike (Europe);Europe;T-46601D-50;0;0;0;Jeu
-Capcom vs. SNK (Europe);Europe;T-7017D-50;0;0;0;Jeu
+Capcom vs. SNK (Europe);Europe;T-7017D-50;1;1;1;Jeu
 Carrier (Europe) (En,Fr,De,Es);Europe;T-44901D-50;0;0;0;Jeu
 Championship Surfer (Europe) (En,Fr,De,Es,It);Europe;T-41402D-50;0;0;0;Jeu
 Charge 'N Blast (Europe);Europe;T-44902D-50;0;0;0;Jeu
@@ -87,7 +87,7 @@ Evolution - The World of Sacred Device (Europe);Europe;T-17705D-50;0;0;0;Jeu
 Evolution 2 - Far Off Promise (Europe);Europe;T-45005D-50;0;0;0;Jeu
 Exhibition of Speed (Europe) (En,Fr,De,Es,It,Nl);Europe;T-22903D-50;0;0;0;Jeu
 F1 Racing Championship (Europe) (En,Fr,De,Es,It);Europe;T-17706D-50;0;0;0;Jeu
-F1 World Grand Prix for Dreamcast (Europe) (En,Fr,De,Es);Europe;950-0017-50;0;0;0;Jeu
+F1 World Grand Prix for Dreamcast (Europe) (En,Fr,De,Es);Europe;950-0017-50;1;1;1;Jeu
 F1 World Grand Prix II for Dreamcast (Europe) (En,Fr,De,Es,It);Europe;T-3002D-50;0;0;0;Jeu
 F355 Challenge - Passione Rossa (Europe) (En,Fr,De,Es,It);Europe;830-0174-50;1;1;1;Jeu
 Fast Striker Ver. 1.5 (Europe) (Rerelease);Europe;FSRE2-DC;0;0;0;Homebrew
@@ -135,7 +135,7 @@ Millennium Soldier - Expendable (Europe) (En,Fr,De,Es,It);Europe;T-15101D-50;1;1
 MoHo (Europe) (En,Fr,De);Europe;T-40508D-50;0;0;0;Jeu
 Mortal Kombat Gold (Europe);Europe;T-9701D-50;0;0;0;Jeu
 MP3 DC - Use MP3 Audio CD's on Your Dreamcast (Europe);Europe;;0;0;0;Utilitaire
-Mr. Driller (Europe) (En,Fr,De,Es,It);Europe;T-7020D-50;0;0;0;Jeu
+Mr. Driller (Europe) (En,Fr,De,Es,It);Europe;T-7020D-50;1;1;1;Jeu
 MSR - Metropolis Street Racer (Europe) (En,Fr,De,Es);Europe;952-0042-50;1;1;1;Jeu
 MTV Sports - Skateboarding featuring Andy Macdonald (Europe);Europe;T-10001D-50;0;0;0;Jeu
 NBA 2K (Europe) (En,Fr,De,Es);Europe;952-0036-50;1;1;1;Jeu
@@ -143,7 +143,7 @@ NBA 2K2 (Europe);Europe;MK-51178-50;1;1;1;Jeu
 NBA Hoopz (Europe) (En,Fr,De);Europe;T-9713D-50;0;0;0;Jeu
 NBA Showtime - NBA on NBC (Europe);Europe;T-9705D-50;0;0;0;Jeu
 Neo XYX (Europe);Europe;;0;0;0;Homebrew
-Next Tetris, The (Europe);Europe;T-17717D-50;0;0;0;Jeu
+Next Tetris, The (Europe);Europe;T-17717D-50;1;1;1;Jeu
 NFL Blitz 2000 (Europe);Europe;830-0052-50;0;0;0;Jeu
 NFL Quarterback Club 2000 (Europe);Europe;T-8102D-18;1;1;1;Jeu
 NHL 2K (Europe);Europe;MK-51025-50;1;0;0;Jeu
@@ -189,7 +189,7 @@ Sega Extreme Sports (Europe) (En,Fr,De,Es);Europe;MK-51081-50;0;0;0;Jeu
 Sega GT (Europe) (En,Fr,De,Es);Europe;950-0103-50;0;0;0;Jeu
 Sega Rally 2 (Europe);Europe;MK-51019-50;1;1;1;Jeu
 Sega Worldwide Soccer 2000 - Euro Edition (Europe) (En,Fr,De,Es);Europe;MK-51083-50;0;0;0;Jeu
-Sega Worldwide Soccer 2000 (Europe) (En,Fr,De,Es);Europe;MK-51031-50;0;0;0;Jeu
+Sega Worldwide Soccer 2000 (Europe) (En,Fr,De,Es);Europe;MK-51031-50;1;1;1;Jeu
 Shadow Man (Europe) (En,Fr,Es,It);Europe;T-8104D-50;0;0;0;Jeu
 Shenmue (Europe) (En,Fr,De,Es);Europe;952-0102-50;1;1;1;Jeu
 Shenmue (Europe) (En,Fr,De,Es) (Shenmue Passport);Europe;952-0102-50;1;1;1;Jeu
@@ -202,7 +202,7 @@ SnoCross Championship Racing (Europe) (En,Fr,De);Europe;830-0223-50;0;0;0;Jeu
 Snow Surfers (Europe);Europe;MK-51010-50;1;1;1;Jeu
 Soldier of Fortune (Europe);Europe;T-17726D-50;1;1;1;Jeu
 Sonic Adventure (Europe) (En,Ja,Fr,De,Es);Europe;MK-51000-50;1;1;1;Jeu
-Sonic Adventure 2 (Europe) (En,Ja,Fr,De,Es);Europe;952-0161-50;0;0;0;Jeu
+Sonic Adventure 2 (Europe) (En,Ja,Fr,De,Es);Europe;952-0161-50;1;1;1;Jeu
 Sonic Shuffle (Europe) (En,Fr,De,Es);Europe;MK-51060-50;0;0;0;Jeu
 Soul Fighter (Europe);Europe;T-41401D-61;1;1;1;Jeu
 Soulcalibur (Europe) (En,Fr,De,Es);Europe;T-1401D-50;0;0;0;Jeu
@@ -217,7 +217,7 @@ Spider-Man (Europe);Europe;T-13011D-50;0;0;0;Jeu
 Spirit of Speed 1937 (Europe) (En,Fr,De,Es);Europe;T-8117D-50;0;0;0;Jeu
 Star Wars - Demolition (Europe);Europe;830-0215-50;1;1;1;Jeu
 Star Wars - Episode I - Jedi Power Battles (Europe);Europe;T-23002D-50;0;0;0;Jeu
-Star Wars - Episode I - Racer (Europe);Europe;T-13006D-50;0;0;0;Jeu
+Star Wars - Episode I - Racer (Europe);Europe;T-13006D-50;1;1;1;Jeu
 StarLancer (Europe);Europe;T-17723D-05;0;0;0;Jeu
 Street Fighter Alpha 3 (Europe);Europe;T-7005D-50;1;1;1;Jeu
 Street Fighter III - 3rd Strike (Europe);Europe;T-7013D-50;0;0;0;Jeu
@@ -257,7 +257,7 @@ Vanishing Point (Europe) (En,Fr,De,Es,It);Europe;T-8110D-50;0;0;0;Jeu
 Vigilante 8 - 2nd Offense (Europe);Europe;T-13002D-50;1;1;1;Jeu
 Virtua Athlete 2K (Europe) (En,Fr,De,Es);Europe;952-0076-50;0;0;0;Jeu
 Virtua Fighter 3tb (Europe);Europe;MK-51001-53;1;1;1;Jeu
-Virtua Striker 2 Ver. 2000.1 (Europe) (En,Ja,Fr,De,Es);Europe;MK-51028-50;0;0;0;Jeu
+Virtua Striker 2 Ver. 2000.1 (Europe) (En,Ja,Fr,De,Es);Europe;MK-51028-50;1;1;1;Jeu
 Virtua Tennis - Sega Professional Tennis (Europe) (En,Fr,De,Es);Europe;MK-51054-50;1;1;1;Jeu
 Virtua Tennis 2 - Sega Professional Tennis (Europe) (En,Fr,De,Es);Europe;952-0168-50;1;1;1;Jeu
 V-Rally 2 - Expert Edition (Europe) (En,Fr,De);Europe;T-15105D-50;1;1;1;Jeu
