@@ -76,6 +76,8 @@ const failedNames = loadFailedNames();
 const pendingRequests = new Map<string, Promise<string | null>>();
 const CARDINFO_URL = 'https://db.ygoprodeck.com/api/v7/cardinfo.php';
 const FETCH_DELAY_MS = 50;
+const MAX_CONCURRENT_FETCHES = 6;
+const MAX_CACHE_ENTRIES = 6000;
 
 console.log(`[Cache] Loaded ${imageCache.size} cached images, ${imageByName.size} name mappings, and ${failedNames.size} failed cards from localStorage`);
 
@@ -123,7 +125,8 @@ function cacheImage(cardCode: string, cardName: string, imageUrl: string) {
   const proxifiedUrl = proxifyImageUrl(imageUrl);
   imageCache.set(cardCode, proxifiedUrl);
   imageByName.set(cardName.toLowerCase(), proxifiedUrl);
-  saveCache();
+  evictIfNeeded();
+  scheduleSaveCache();
   notifyCacheUpdate();
 }
 
@@ -135,11 +138,7 @@ export function getCachedImage(cardCode: string, cardName?: string): string | nu
 
   if (cardName) {
     const byName = imageByName.get(cardName.toLowerCase());
-    if (byName) {
-      imageCache.set(cardCode, byName);
-      saveCache();
-      return byName;
-    }
+    if (byName) return byName; // pure read — no side-effecting writes during render
   }
 
   if (byCode !== undefined) {
@@ -167,6 +166,31 @@ const saveCache = () => {
   }
 };
 
+// Debounce persistence: many images resolve in a burst while a collection loads;
+// re-serializing the whole map on each one is O(n²). Coalesce into one write.
+let saveTimer: ReturnType<typeof setTimeout> | null = null;
+const scheduleSaveCache = () => {
+  if (saveTimer) return;
+  saveTimer = setTimeout(() => {
+    saveTimer = null;
+    saveCache();
+  }, 600);
+};
+
+// Bound cache growth (insertion-order eviction) to avoid localStorage quota errors.
+function evictIfNeeded() {
+  while (imageCache.size > MAX_CACHE_ENTRIES) {
+    const oldest = imageCache.keys().next().value;
+    if (oldest === undefined) break;
+    imageCache.delete(oldest);
+  }
+  while (imageByName.size > MAX_CACHE_ENTRIES) {
+    const oldest = imageByName.keys().next().value;
+    if (oldest === undefined) break;
+    imageByName.delete(oldest);
+  }
+}
+
 const saveFailedNames = () => {
   try {
     localStorage.setItem('ygo-failed-names', JSON.stringify(Array.from(failedNames)));
@@ -186,7 +210,7 @@ let activeRequests = 0;
 let rateLimitDelay = FETCH_DELAY_MS;
 
 function runQueue() {
-  while (queue.length > 0) {
+  while (queue.length > 0 && activeRequests < MAX_CONCURRENT_FETCHES) {
     const { task, resolve, reject } = queue.shift()!;
     activeRequests++;
 

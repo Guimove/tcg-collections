@@ -14,13 +14,10 @@ interface CardDetailModalProps {
 function CardDetailModal({ card, clickedVersion, onAddToCart, onClose }: CardDetailModalProps) {
   const [showDebug, setShowDebug] = useState(false);
 
-  const imageHooks = card.versions.map(version =>
-    useCardImage(version.Code, card.cardName)
-  );
-
+  // One hook call for the version actually displayed — calling a hook inside
+  // card.versions.map() violated the Rules of Hooks and fired N redundant fetches.
   const displayVersion = clickedVersion || card.versions[0];
-  const displayIndex = card.versions.indexOf(displayVersion);
-  const { imageUrl, loading } = imageHooks[displayIndex] || imageHooks[0];
+  const { imageUrl, loading } = useCardImage(displayVersion.Code, card.cardName);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {

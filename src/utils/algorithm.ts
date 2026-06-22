@@ -40,6 +40,7 @@ function processCardGroup(cardName: string, rows: CardRow[]): AggregatedCard {
 
     return {
       ...row,
+      Quantité: Number(row.Quantité) || 0, // defensive: tolerate string/NaN quantities
       rarityScore,
       languageScore,
       totalScore,
@@ -61,7 +62,9 @@ function processCardGroup(cardName: string, rows: CardRow[]): AggregatedCard {
   });
 
   const numCombinations = extensionRarityCombos.size;
-  const totalToKeep = Math.max(3, numCombinations);
+  // Keep at least 3 (or one per combo), but never more than we actually own.
+  const totalOwned = scoredRows.reduce((sum, row) => sum + Math.max(0, row.Quantité), 0);
+  const totalToKeep = Math.min(Math.max(3, numCombinations), totalOwned);
 
   // Step 3: Keep 1 per (extension, rareté) combination (highest score per combo)
   // Reprints are in the same group but score lower, so originals are preferred

@@ -52,8 +52,8 @@ export function addToCart(item: CartItem, cart: CartItem[]): CartItem[] {
     };
     return newCart;
   } else {
-    // Add new item
-    return [...cart, item];
+    // Add new item, clamped to its max quantity
+    return [...cart, { ...item, quantity: Math.min(item.quantity, item.maxQuantity) }];
   }
 }
 

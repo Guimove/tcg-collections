@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   tcg-collections:
     build: .
@@ -8,13 +6,16 @@ services:
       - "8080:80"
     restart: unless-stopped
     volumes:
-      # Montage des dossiers de jeux pour mise à jour facile sans rebuild
+      # Montage des dossiers de collections pour mise à jour facile sans rebuild
       - ./public/yugioh:/usr/share/nginx/html/yugioh:ro
       - ./public/akira:/usr/share/nginx/html/akira:ro
       - ./public/riftbound:/usr/share/nginx/html/riftbound:ro
+      - ./public/lorcana:/usr/share/nginx/html/lorcana:ro
+      - ./public/dreamcast:/usr/share/nginx/html/dreamcast:ro
       - ./public/images:/usr/share/nginx/html/images:ro
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost/"]
+      # nginx:alpine ships wget, not curl
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/"]
       interval: 30s
       timeout: 3s
       start_period: 10s

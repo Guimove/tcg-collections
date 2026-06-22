@@ -6,10 +6,20 @@ export function useScrollToTop() {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setShowScrollTop(window.scrollY > SCROLL_THRESHOLD);
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        // Only setState when the boolean actually flips — avoids re-renders on every scroll tick.
+        setShowScrollTop((prev) => {
+          const next = window.scrollY > SCROLL_THRESHOLD;
+          return next === prev ? prev : next;
+        });
+        ticking = false;
+      });
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

@@ -24,15 +24,20 @@ export function parseCSV(file: File): Promise<ParseResult> {
         return value;
       },
       complete: (results) => {
+        const data = results.data as CardRow[];
+
+        // Per-row issues (ragged lines, extra fields) shouldn't discard the
+        // whole collection — warn but keep going. Only fail with no usable data.
         if (results.errors.length > 0) {
+          console.warn('Avertissements de parsing CSV:', results.errors.map((e) => e.message));
+        }
+        if (data.length === 0) {
           resolve({
             success: false,
-            error: `Erreurs de parsing: ${results.errors.map((e) => e.message).join(', ')}`,
+            error: 'Fichier CSV vide ou illisible',
           });
           return;
         }
-
-        const data = results.data as CardRow[];
 
         // Validate that we have the required columns
         if (data.length > 0) {
@@ -91,14 +96,18 @@ export function parseCSVText(csvText: string): ParseResult {
     },
   });
 
+  const data = results.data as CardRow[];
+
+  // Per-row issues shouldn't discard the whole collection — warn but keep going.
   if (results.errors.length > 0) {
+    console.warn('Avertissements de parsing CSV:', results.errors.map((e) => e.message));
+  }
+  if (data.length === 0) {
     return {
       success: false,
-      error: `Erreurs de parsing: ${results.errors.map((e) => e.message).join(', ')}`,
+      error: 'Fichier CSV vide ou illisible',
     };
   }
-
-  const data = results.data as CardRow[];
 
   // Validate that we have the required columns
   if (data.length > 0) {

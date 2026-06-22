@@ -13,12 +13,11 @@ export function useCardImage(
   useEffect(() => {
     return onCacheUpdate(() => {
       const newCached = getCachedImage(cardCode, cardName);
-      if (newCached !== undefined && newCached !== imageUrl) {
-        setImageUrl(newCached);
-        setLoading(false);
-      }
+      if (newCached === undefined) return;
+      setImageUrl((prev) => (newCached === prev ? prev : newCached));
+      setLoading(false);
     });
-  }, [cardCode, cardName, imageUrl]);
+  }, [cardCode, cardName]);
 
   useEffect(() => {
     let cancelled = false;

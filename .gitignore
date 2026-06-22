@@ -50,3 +50,8 @@ coverage/
 # Local Netlify folder
 .netlify
 .codex
+
+# Backups & dead tooling
+*.bak
+*.backup
+deno.lock
