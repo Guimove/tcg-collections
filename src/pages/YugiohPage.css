@@ -1,298 +1,49 @@
+/* Yu-Gi-Oh! Marketplace — accent + card tiles + detailed modal.
+   Shared chrome comes from shared.css via .collection-page. */
 .yugioh-page {
-  --bg-primary: #0f0f1e;
-  --bg-secondary: #1a1a2e;
-  --bg-card: #16213e;
-  --bg-hover: #1f2d4a;
-  --color-primary: #e4c580;
-  --color-gold: #ffd700;
+  --accent: #e8c25a;
+  --accent-2: #ffd700;
+  --accent-rgb: 232, 194, 90;
+
+  /* Compatibility aliases for CardDetailModal inline styles */
+  --color-gold: var(--accent);
   --color-blue: #4169e1;
   --color-red: #dc143c;
-  --color-text: #e8e8e8;
-  --color-text-muted: #a0a0a0;
-  --border-gold: 2px solid #ffd700;
-  --border-radius: 8px;
-  --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  --shadow-hover: 0 8px 12px rgba(0, 0, 0, 0.5);
-
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: var(--bg-primary);
-  color: var(--color-text);
-  background-image:
-    radial-gradient(circle at 20% 50%, rgba(65, 105, 225, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(220, 20, 60, 0.1) 0%, transparent 50%);
-
-  min-height: 100vh;
-  padding: 1rem;
-  max-width: 100%;
-  overflow-x: hidden;
+  --bg-primary: var(--ink-900);
+  --border-radius: var(--radius-sm);
 }
 
-.yugioh-page .header-stats-container {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  margin-bottom: 2rem;
-  margin-left: -1rem;
-  margin-right: -1rem;
-  padding: 2rem 1rem;
-  background: var(--bg-secondary);
-  border-top: 3px solid var(--color-gold);
-  border-bottom: 3px solid var(--color-gold);
-  box-shadow: var(--shadow);
-}
-
-.yugioh-page .back-button {
-  color: var(--color-text);
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  border-radius: var(--border-radius);
-  background: var(--bg-card);
-  border: 1px solid var(--color-gold);
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-
-.yugioh-page .back-button:hover {
-  background: var(--color-gold);
-  color: var(--bg-primary);
-  transform: translateX(-4px);
-}
-
-.yugioh-page .header {
-  flex: 1;
-  text-align: left;
-}
-
-.yugioh-page .header h1 {
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: var(--color-gold);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  margin-bottom: 0.5rem;
-  letter-spacing: 1px;
-}
-
-.yugioh-page .header p {
-  color: var(--color-text-muted);
-  font-size: 1.1rem;
-  font-weight: 400;
-}
-
-.yugioh-page .upload-section {
-  background: var(--bg-secondary);
-  border: 2px dashed var(--color-primary);
-  border-radius: var(--border-radius);
-  padding: 2rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.yugioh-page .upload-section:hover {
-  background: var(--bg-hover);
-  border-color: var(--color-gold);
-}
-
-.yugioh-page .upload-section.dragging {
-  background: var(--bg-hover);
-  border-color: var(--color-gold);
-  transform: scale(1.02);
-}
-
-.yugioh-page .upload-label {
-  display: block;
-  cursor: pointer;
-}
-
-.yugioh-page .upload-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.yugioh-page .upload-text {
-  font-size: 1.2rem;
-  color: var(--color-primary);
-  margin-bottom: 0.5rem;
-}
-
-.yugioh-page .upload-hint {
-  font-size: 0.9rem;
-  color: var(--color-text-muted);
-}
-
-.yugioh-page input[type='file'] {
-  display: none;
-}
-
-.yugioh-page .controls {
-  background: var(--bg-secondary);
-  border-radius: var(--border-radius);
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  box-shadow: var(--shadow);
-}
-
-.yugioh-page .search-filter-bar {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-  align-items: flex-end;
-}
-
-.yugioh-page .search-box {
-  flex: 1;
-  min-width: 250px;
-}
-
-.yugioh-page .search-box input {
-  width: 100%;
-  padding: 0.75rem;
-  background: var(--bg-card);
-  border: 1px solid var(--color-primary);
-  border-radius: var(--border-radius);
-  color: var(--color-text);
-  font-size: 1rem;
-}
-
-.yugioh-page .search-box input:focus {
-  outline: none;
-  border-color: var(--color-gold);
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-}
-
-.yugioh-page .filters {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.yugioh-page .filter-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.yugioh-page .filter-group label {
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-}
-
-.yugioh-page .filter-group select {
-  padding: 0.75rem;
-  background: var(--bg-card);
-  border: 1px solid var(--color-primary);
-  border-radius: var(--border-radius);
-  color: var(--color-text);
-  font-size: 1rem;
-  cursor: pointer;
-  min-width: 150px;
-}
-
-.yugioh-page .filter-group select:focus {
-  outline: none;
-  border-color: var(--color-gold);
-}
-
-.yugioh-page .stats {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  padding: 0;
-}
-
-.yugioh-page .stat-item {
-  text-align: center;
-}
-
-.yugioh-page .cache-buttons {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.yugioh-page .clear-cache-btn {
-  padding: 0.5rem 1rem;
-  background: var(--bg-card);
-  color: var(--color-text-muted);
-  border: 1px solid var(--color-text-muted);
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  font-size: 0.85rem;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-
-.yugioh-page .clear-cache-btn:hover {
-  background: var(--bg-hover);
-  border-color: var(--color-gold);
-  color: var(--color-gold);
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
-}
-
-.yugioh-page .modal-stats {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  padding: 1rem;
-  background: var(--bg-card);
-  border-radius: var(--border-radius);
-  margin-bottom: 1.5rem;
-}
-
-.yugioh-page .modal-stats .stat-item {
-  text-align: center;
-}
-
-.yugioh-page .stat-value {
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--color-gold);
-}
-
-.yugioh-page .stat-label {
-  font-size: 0.9rem;
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-}
-
+/* ---------- Marketplace grid ---------- */
 .yugioh-page .marketplace-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
 }
 
 .yugioh-page .card-tile {
-  background: var(--bg-card);
-  border-radius: var(--border-radius);
-  padding: 1.5rem;
-  box-shadow: var(--shadow);
-  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  background: var(--ink-700);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
   cursor: pointer;
-  border: 2px solid transparent;
+  transition: transform 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s;
+}
+
+.yugioh-page .card-tile:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(var(--accent-rgb), 0.4);
 }
 
 .yugioh-page .card-media {
-  background: linear-gradient(135deg, rgba(65, 105, 225, 0.15), rgba(220, 20, 60, 0.1));
-  border: 1px solid var(--color-primary);
-  border-radius: calc(var(--border-radius) - 2px);
-  width: 200px;
-  height: 200px;
+  background: var(--ink-750);
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  margin: 0 auto 1rem;
+  aspect-ratio: 59 / 86;
 }
 
-.yugioh-page .card-media img,
-.yugioh-page .modal-image img {
+.yugioh-page .card-media img {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -300,533 +51,160 @@
 }
 
 .yugioh-page .card-media-fallback {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.35rem;
-  color: var(--color-text-muted);
+  padding: 1rem;
   text-align: center;
-  padding: 0.5rem;
+  color: var(--paper-faint);
 }
 
-.yugioh-page .fallback-code {
-  font-weight: bold;
-  color: var(--color-gold);
-}
-
-.yugioh-page .fallback-ext {
-  font-size: 0.9rem;
-}
-
-.yugioh-page .fallback-state {
-  font-size: 0.85rem;
-}
-
-.yugioh-page .card-tile:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-  border-color: var(--color-gold);
-}
+.yugioh-page .fallback-code { font-family: var(--font-mono); font-size: 1rem; color: var(--paper); }
+.yugioh-page .fallback-ext { font-size: 0.8rem; color: var(--paper-dim); }
+.yugioh-page .fallback-state { font-size: 0.72rem; }
 
 .yugioh-page .card-header {
-  margin-bottom: 1rem;
+  padding: 0.75rem 0.85rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .yugioh-page .card-name {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: var(--color-primary);
-  margin-bottom: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.98rem;
+  line-height: 1.2;
+  color: var(--paper);
 }
 
-.yugioh-page .card-badges {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  margin-bottom: 0.75rem;
-}
-
-.yugioh-page .badge {
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-size: 0.85rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.yugioh-page .badge-rarity {
-  background: var(--color-gold);
-  color: #000;
-}
-
-.yugioh-page .badge-language {
-  background: var(--bg-hover);
-  color: var(--color-text);
-  border: 1px solid var(--color-primary);
-}
+.yugioh-page .card-badges { display: flex; gap: 0.35rem; flex-wrap: wrap; }
 
 .yugioh-page .card-info {
+  padding: 0 0.85rem 0.6rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
+  gap: 0.15rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--paper-dim);
 }
 
 .yugioh-page .card-footer {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--color-primary);
+  margin-top: auto;
+  padding: 0.6rem 0.85rem;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
+  border-top: 1px solid var(--line);
+  font-size: 0.74rem;
+  color: var(--paper-faint);
 }
 
-.yugioh-page .quantity-badge {
-  background: var(--color-red);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: var(--border-radius);
-  font-weight: bold;
-  font-size: 1.1rem;
+/* Override shared absolute badge — here it sits inline in the footer */
+.yugioh-page .card-footer .quantity-badge {
+  position: static;
+  background: var(--accent);
+  color: var(--ink-900);
+  padding: 0.15rem 0.55rem;
+  font-size: 0.78rem;
+  box-shadow: none;
 }
 
-.yugioh-page .error-message {
-  background: var(--color-red);
-  color: white;
-  padding: 1rem;
-  border-radius: var(--border-radius);
-  margin: 1rem 0;
-  text-align: center;
-}
-
-.yugioh-page.loading {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 400px;
-  gap: 20px;
-}
-
-.yugioh-page .loading-spinner {
-  width: 50px;
-  height: 50px;
-  border: 4px solid rgba(212, 175, 55, 0.2);
-  border-top-color: var(--color-gold);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-.yugioh-page .empty-state {
-  text-align: center;
-  padding: 3rem;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.yugioh-page .empty-state-icon {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  opacity: 0.5;
-}
-
-.yugioh-page .empty-state h3 {
-  color: var(--color-gold);
-  margin-bottom: 0.5rem;
-}
-
-.yugioh-page .empty-state p {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.yugioh-page .modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  padding: 2rem;
-}
-
-.yugioh-page .modal {
-  background: var(--bg-secondary);
-  border: var(--border-gold);
-  border-radius: var(--border-radius);
-  max-width: 800px;
-  width: 100%;
-  max-height: 90vh;
-  overflow-y: auto;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
-}
-
+/* ---------- Detailed modal (CardDetailModal) ---------- */
 .yugioh-page .modal-header {
-  padding: 1.5rem;
-  border-bottom: 1px solid var(--color-primary);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--line);
   position: sticky;
   top: 0;
-  background: var(--bg-secondary);
-  z-index: 1;
+  background: var(--ink-800);
+  z-index: 5;
 }
 
 .yugioh-page .modal-title {
-  font-size: 1.8rem;
-  color: var(--color-gold);
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--paper);
 }
 
-.yugioh-page .modal-close {
-  background: none;
-  border: none;
-  color: var(--color-text);
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 0;
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.2s;
-}
-
-.yugioh-page .modal-close:hover {
-  color: var(--color-red);
-}
-
-.yugioh-page .modal-content {
-  padding: 1.5rem;
-}
+.yugioh-page .modal-content { padding: 1.5rem; }
 
 .yugioh-page .modal-image {
-  max-width: 360px;
-  margin: 0 auto 1.5rem auto;
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  border: 1px solid var(--color-primary);
-  background: var(--bg-card);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  border: none;
 }
 
-.yugioh-page .version-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.yugioh-page .modal-image img {
+  max-height: 360px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line-strong);
 }
+
+.yugioh-page .modal-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.yugioh-page .modal-stats .stat-item {
+  text-align: center;
+  padding: 1rem 0.5rem;
+  background: var(--ink-750);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
+.yugioh-page .modal-stats .stat-label {
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--paper-faint);
+  margin-top: 0.35rem;
+}
+
+.yugioh-page .version-list { display: flex; flex-direction: column; gap: 0.85rem; }
 
 .yugioh-page .version-item {
-  background: var(--bg-card);
-  border-radius: var(--border-radius);
   padding: 1rem;
-  border: 1px solid var(--color-primary);
-}
-
-.yugioh-page .version-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.75rem;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  background: var(--ink-750);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
 }
 
 .yugioh-page .version-details {
+  margin-top: 0.85rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  color: var(--color-text-muted);
+  gap: 0.4rem 1rem;
 }
 
 .yugioh-page .detail-row {
   display: flex;
   justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--paper-dim);
+  padding: 0.2rem 0;
+  border-bottom: 1px dashed var(--line);
 }
 
-.yugioh-page .detail-label {
-  font-weight: bold;
-}
+.yugioh-page .detail-label { color: var(--paper-faint); }
 
 .yugioh-page .debug-section {
-  margin-top: 2rem;
-  padding: 1rem;
-  background: var(--bg-card);
-  border-radius: var(--border-radius);
-  border: 1px solid var(--color-blue);
+  background: var(--ink-900);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem;
 }
 
-.yugioh-page .debug-title {
-  color: var(--color-blue);
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-}
-
-.yugioh-page .debug-info {
-  font-family: 'Courier New', monospace;
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
-
-/* Price estimation */
-.yugioh-page .price-section {
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-.yugioh-page .load-prices-btn {
-  padding: 0.75rem 2rem;
-  background: var(--color-gold);
-  color: var(--bg-primary);
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.yugioh-page .load-prices-btn:hover:not(:disabled) {
-  background: var(--color-primary);
-  transform: translateY(-2px);
-}
-
-.yugioh-page .load-prices-btn:disabled {
-  opacity: 0.7;
-  cursor: wait;
-}
-
-.yugioh-page .price-result {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  padding: 1rem;
-  background: var(--bg-secondary);
-  border-radius: 8px;
-  border: 1px solid var(--color-gold);
-}
-
-.yugioh-page .price-total {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: var(--color-gold);
-}
-
-.yugioh-page .price-refresh-btn {
-  padding: 0.5rem 1rem;
-  background: var(--bg-card);
-  color: var(--color-text-muted);
-  border: 1px solid var(--color-text-muted);
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.85rem;
-  transition: all 0.3s;
-}
-
-.yugioh-page .price-refresh-btn:hover {
-  border-color: var(--color-gold);
-  color: var(--color-gold);
-}
-
-@media (max-width: 768px) {
-  .yugioh-page .app {
-    padding: 1rem;
-  }
-
-  .yugioh-page .header-stats-container {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .yugioh-page .header {
-    text-align: center;
-  }
-
-  .yugioh-page .header h1 {
-    font-size: 2rem;
-  }
-
-  .yugioh-page .stat-item {
-    text-align: center;
-  }
-
-  .yugioh-page .modal-stats {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .yugioh-page .marketplace-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .yugioh-page .search-filter-bar {
-    flex-direction: column;
-  }
-
-  .yugioh-page .stats {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .yugioh-page .scroll-to-top {
-    width: 45px;
-    height: 45px;
-  }
-}
-
-/* Scroll to top button */
-.yugioh-page .scroll-to-top {
-  position: fixed;
-  bottom: 2rem;
-  right: 6rem;
-  width: 50px;
-  height: 50px;
-  background: var(--color-gold);
-  color: var(--bg-primary);
-  border: none;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
-  transition: all 0.3s ease;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.yugioh-page .scroll-to-top:hover {
-  background: var(--color-primary);
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(255, 215, 0, 0.6);
-}
-
-.yugioh-page .scroll-to-top:active {
-  transform: translateY(-2px);
-}
-
-/* Floating cart button */
-.yugioh-page .floating-cart-btn {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 50px;
-  height: 50px;
-  background: var(--color-gold);
-  color: var(--bg-primary);
-  border: none;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
-  transition: all 0.3s ease;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.yugioh-page .floating-cart-btn:hover {
-  background: var(--color-primary);
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(255, 215, 0, 0.6);
-}
-
-.yugioh-page .floating-cart-btn:active {
-  transform: translateY(-2px);
-}
-
-.yugioh-page .floating-cart-btn .cart-badge {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-}
-
-/* Cart button in header */
-.yugioh-page .cart-button {
-  position: relative;
-  background: var(--color-gold);
-  color: var(--bg-primary);
-  border: none;
-  border-radius: var(--border-radius);
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.yugioh-page .cart-button:hover {
-  background: var(--color-primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-hover);
-}
-
-/* Cart color overrides */
-.yugioh-page .cart-panel { background: var(--bg-secondary); border-left: 3px solid var(--color-gold); max-width: 90vw; }
-.yugioh-page .cart-header { background: var(--bg-card); border-bottom: 2px solid var(--color-gold); }
-.yugioh-page .cart-header h2 { color: var(--color-gold); }
-.yugioh-page .cart-close-btn { color: var(--color-text); border-radius: 4px; }
-.yugioh-page .cart-close-btn:hover { background: var(--bg-hover); color: var(--color-gold); }
-.yugioh-page .cart-empty { color: var(--color-text-muted); }
-.yugioh-page .cart-summary { background: var(--bg-card); border-bottom: 1px solid var(--bg-hover); color: var(--color-gold); }
-.yugioh-page .cart-item { background: var(--bg-card); border: 1px solid var(--bg-hover); }
-.yugioh-page .cart-item-name { color: var(--color-gold); }
-.yugioh-page .cart-item-label { color: var(--color-text-muted); font-weight: bold; }
-.yugioh-page .cart-item-quantity { padding-top: 0.75rem; border-top: 1px solid var(--bg-hover); }
-.yugioh-page .quantity-btn { background: var(--color-blue); color: white; border: none; border-radius: 4px; width: 32px; height: 32px; }
-.yugioh-page .quantity-btn:hover:not(:disabled) { background: var(--color-gold); color: var(--bg-primary); transform: scale(1.1); }
-.yugioh-page .quantity-input { background: var(--bg-primary); border: 1px solid var(--bg-hover); color: var(--color-text); font-weight: bold; width: 60px; padding: 0.5rem; }
-.yugioh-page .quantity-input:focus { border-color: var(--color-gold); }
-.yugioh-page .quantity-max { color: var(--color-text-muted); }
-.yugioh-page .cart-actions { background: var(--bg-card); border-top: 2px solid var(--color-gold); padding: 1.5rem; }
-.yugioh-page .cart-btn-primary { background: var(--color-gold); color: var(--bg-primary); }
-.yugioh-page .cart-btn-primary:hover { background: var(--color-primary); box-shadow: var(--shadow-hover); }
-.yugioh-page .cart-btn-secondary { background: var(--bg-hover); color: var(--color-text); }
-.yugioh-page .cart-btn-secondary:hover { background: var(--color-red); color: white; }
-.yugioh-page .cart-badge { border: 2px solid var(--bg-primary); }
-
-/* Add to cart button on cards */
-.yugioh-page .add-to-cart-btn {
-  background: var(--color-gold);
-  color: var(--bg-primary);
-  border: none;
-  border-radius: var(--border-radius);
-  padding: 0.4rem 0.75rem;
-  font-size: 0.85rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  width: auto;
-  margin-top: 0.5rem;
-}
-
-.yugioh-page .add-to-cart-btn:hover {
-  background: var(--color-primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
-}
-
-.yugioh-page .add-to-cart-btn:active {
-  transform: translateY(0);
-}
+.yugioh-page .debug-title { font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; }
+.yugioh-page .debug-info { font-family: var(--font-mono); font-size: 0.75rem; color: var(--paper-dim); display: flex; flex-direction: column; gap: 0.2rem; }

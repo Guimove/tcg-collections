@@ -4,12 +4,23 @@
   box-sizing: border-box;
 }
 
+html { -webkit-text-size-adjust: 100%; }
+
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  background: #08090d;
+  color: #ece9e1;
+  font-family: 'Hanken Grotesk', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-#root {
-  min-height: 100vh;
+#root { min-height: 100vh; }
+
+/* Visible keyboard focus everywhere (quality floor) */
+:focus-visible {
+  outline: 2px solid var(--accent, #c9a24a);
+  outline-offset: 2px;
 }

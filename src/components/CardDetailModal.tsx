@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { AggregatedCard, ProcessedCardVersion, CartItem } from '../types';
 import { getRarityColor, getRarityDisplayName } from '../utils/scoring';
 import { useCardImage } from '../hooks/useCardImage';
+import Icon from './Icon';
 
 interface CardDetailModalProps {
   card: AggregatedCard;
@@ -153,6 +154,9 @@ function CardDetailModal({ card, clickedVersion, onAddToCart, onClose }: CardDet
                         <button
                           onClick={() => handleAddToCart(version)}
                           style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '0.35rem',
                             padding: '0.25rem 0.75rem',
                             fontSize: '0.85rem',
                             fontWeight: 'bold',
@@ -164,7 +168,7 @@ function CardDetailModal({ card, clickedVersion, onAddToCart, onClose }: CardDet
                             transition: 'all 0.3s ease'
                           }}
                         >
-                          🛒 Ajouter
+                          <Icon name="cart" size={15} /> Ajouter
                         </button>
                       )}
                     </div>

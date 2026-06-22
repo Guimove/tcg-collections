@@ -1,4 +1,5 @@
 import { CartItem } from '../types';
+import Icon from './Icon';
 
 interface CartPanelProps {
   isOpen: boolean;
@@ -35,7 +36,7 @@ function CartPanel({
       <div className={`cart-panel ${isOpen ? 'cart-panel-open' : ''}`}>
         <div className="cart-header">
           <h2>Panier</h2>
-          <button className="cart-close-btn" onClick={onClose}>
+          <button className="cart-close-btn" onClick={onClose} aria-label="Fermer le panier">
             ×
           </button>
         </div>
@@ -43,7 +44,7 @@ function CartPanel({
         {cart.length === 0 ? (
           <div className="cart-empty">
             <p>Votre panier est vide</p>
-            <p style={{ fontSize: '0.9rem', color: 'var(--color-secondary)' }}>
+            <p style={{ fontSize: '0.9rem', color: 'var(--paper-faint)' }}>
               Parcourez la collection pour ajouter des éléments
             </p>
           </div>
@@ -123,7 +124,7 @@ function CartPanel({
                 className="cart-btn cart-btn-primary"
                 onClick={onExportCSV}
               >
-                📥 Exporter en CSV
+                <Icon name="download" size={18} /> Exporter en CSV
               </button>
               <button
                 className="cart-btn cart-btn-secondary"
@@ -133,7 +134,7 @@ function CartPanel({
                   }
                 }}
               >
-                🗑️ Vider le panier
+                <Icon name="trash" size={18} /> Vider le panier
               </button>
             </div>
           </>

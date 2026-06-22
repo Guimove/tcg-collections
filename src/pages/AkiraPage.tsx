@@ -5,6 +5,7 @@ import CollectionPageLayout from '../components/CollectionPageLayout';
 import EmptyState from '../components/EmptyState';
 import CardModal from '../components/CardModal';
 import DiffBanner from '../components/DiffBanner';
+import Icon from '../components/Icon';
 import { filterByQuantity, computeSimpleStats, sortCards, addSimpleCardToCart, QuantityFilterType, SortDirection } from '../utils/filters';
 import { useCollectionData } from '../hooks/useCollectionData';
 import { useCollectionDiff } from '../hooks/useCollectionDiff';
@@ -152,7 +153,7 @@ export default function AkiraPage() {
 
           <div className="container">
             {filteredCards.length === 0 ? (
-              <EmptyState icon="🃏" title="Aucune carte trouvée" message="Essayez de modifier vos filtres ou votre recherche" />
+              <EmptyState icon="search" title="Aucune carte trouvée" message="Essayez de modifier vos filtres ou votre recherche" />
             ) : (
               <>
                 {categories.map((category) => {
@@ -227,7 +228,7 @@ export default function AkiraPage() {
                       );
                     }}
                   >
-                    🛒 Ajouter au panier
+                    <Icon name="cart" size={18} /> Ajouter au panier
                   </button>
                 )}
               </div>

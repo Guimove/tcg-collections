@@ -6,6 +6,7 @@ import EmptyState from '../components/EmptyState';
 import CardModal from '../components/CardModal';
 import CollectionPageLayout from '../components/CollectionPageLayout';
 import DiffBanner from '../components/DiffBanner';
+import Icon from '../components/Icon';
 import { useCollectionData } from '../hooks/useCollectionData';
 import { useCollectionDiff } from '../hooks/useCollectionDiff';
 import { filterByQuantity, computeSimpleStats, sortCards, addSimpleCardToCart, QuantityFilterType, SortDirection } from '../utils/filters';
@@ -401,7 +402,7 @@ export default function LorcanaPage() {
 
           {/* Cards Grid */}
           {filteredCards.length === 0 ? (
-            <EmptyState icon="🃏" title="Aucune carte trouvée" message="Essayez de modifier vos filtres ou votre recherche" />
+            <EmptyState icon="search" title="Aucune carte trouvée" message="Essayez de modifier vos filtres ou votre recherche" />
           ) : (
             <div className="container">
               {uniqueSets.map((set) => {
@@ -451,9 +452,9 @@ export default function LorcanaPage() {
                             <p className="card-id">{card.cardId}</p>
                             <div className="card-meta">
                               <span className={`card-ink ink-${card.ink.toLowerCase()}`}>{card.ink}</span>
-                              {card.cost && <span className="card-cost">💎 {card.cost}</span>}
-                              {card.strength && <span className="card-strength">⚔️ {card.strength}</span>}
-                              {card.lore && <span className="card-lore">📖 {card.lore}</span>}
+                              {card.cost && <span className="card-cost"><Icon name="gem" size={13} /> {card.cost}</span>}
+                              {card.strength && <span className="card-strength"><Icon name="sword" size={13} /> {card.strength}</span>}
+                              {card.lore && <span className="card-lore"><Icon name="book" size={13} /> {card.lore}</span>}
                             </div>
                           </div>
                         </div>
@@ -510,7 +511,7 @@ export default function LorcanaPage() {
                       );
                     }}
                   >
-                    🛒 Ajouter au panier
+                    <Icon name="cart" size={18} /> Ajouter au panier
                   </button>
                 )}
               </div>

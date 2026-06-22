@@ -1,5 +1,7 @@
+import Icon, { type IconName } from './Icon';
+
 interface EmptyStateProps {
-  icon: string;
+  icon: IconName;
   title: string;
   message: string;
 }
@@ -7,7 +9,9 @@ interface EmptyStateProps {
 export default function EmptyState({ icon, title, message }: EmptyStateProps) {
   return (
     <div className="empty-state">
-      <div className="empty-state-icon">{icon}</div>
+      <div className="empty-state-icon">
+        <Icon name={icon} size={28} />
+      </div>
       <h3>{title}</h3>
       <p>{message}</p>
     </div>

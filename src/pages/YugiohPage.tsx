@@ -238,7 +238,7 @@ export default function YugiohPage() {
           )}
 
           {filteredItems.length === 0 ? (
-            <EmptyState icon="🃏" title="Aucune carte trouvée" message="Essayez de modifier vos filtres ou votre recherche" />
+            <EmptyState icon="search" title="Aucune carte trouvée" message="Essayez de modifier vos filtres ou votre recherche" />
           ) : (
             <div className="marketplace-grid">
               {filteredItems.slice(0, visibleCount).map((item, index) => (

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Icon from './Icon';
 
 export interface Stat {
   value: number;
@@ -16,7 +17,7 @@ export default function CollectionHeader({ title, subtitle, stats }: CollectionH
     <div className="header-stats-container">
       <div className="header-left">
         <Link to="/" className="back-button" title="Retour à l'accueil">
-          ← Accueil
+          <Icon name="arrow-left" size={15} /> Accueil
         </Link>
         <header className="header">
           <h1>{title}</h1>

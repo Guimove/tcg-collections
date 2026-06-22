@@ -72,12 +72,12 @@ function BarChart({ data, colorVar }: { data: BarChartData[]; colorVar?: string 
   );
 }
 
-function CompletionRing({ percent }: { percent: number }) {
+function CompletionRing({ percent, color }: { percent: number; color?: string }) {
   const radius = 40;
   const circumference = 2 * Math.PI * radius;
   const offset = circumference - (percent / 100) * circumference;
   return (
-    <svg className="completion-ring" viewBox="0 0 100 100">
+    <svg className="completion-ring" viewBox="0 0 100 100" style={{ color }}>
       <circle cx="50" cy="50" r={radius} className="ring-bg" />
       <circle cx="50" cy="50" r={radius} className="ring-fill"
         strokeDasharray={circumference}
@@ -158,7 +158,7 @@ function TCGStatsCard({ name, slug, cards, loading, accentColor, breakdownField,
             </div>
           </div>
         </div>
-        <CompletionRing percent={stats.completion} />
+        <CompletionRing percent={stats.completion} color={accentColor} />
       </div>
       {breakdown.length > 0 && (
         <div className="stats-card-breakdown">

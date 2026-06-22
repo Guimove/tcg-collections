@@ -3,6 +3,7 @@ import OptimizedImage from '../components/OptimizedImage';
 import CollectionPageLayout from '../components/CollectionPageLayout';
 import EmptyState from '../components/EmptyState';
 import DiffBanner from '../components/DiffBanner';
+import Icon from '../components/Icon';
 import { useCollectionData } from '../hooks/useCollectionData';
 import { useCollectionDiff } from '../hooks/useCollectionDiff';
 import './DreamcastPage.css';
@@ -129,7 +130,7 @@ export default function DreamcastPage() {
               <div className="search-box">
                 <input
                   type="text"
-                  placeholder="🔍 Rechercher un jeu ou numéro de série..."
+                  placeholder="Rechercher un jeu ou numéro de série..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="search-input"
@@ -188,7 +189,7 @@ export default function DreamcastPage() {
 
           {/* Games List */}
           {filteredGames.length === 0 ? (
-            <EmptyState icon="🎮" title="Aucun jeu trouvé" message="Essayez de modifier vos filtres de recherche" />
+            <EmptyState icon="search" title="Aucun jeu trouvé" message="Essayez de modifier vos filtres de recherche" />
           ) : (
             <div className="container">
               {gamesByRegion.map(([region, regionGames]) => (
@@ -235,13 +236,13 @@ export default function DreamcastPage() {
                             <span className="info-label">Inventaire:</span>
                             <div className="status-icons">
                               <span className={`status-icon ${game.disc ? 'owned' : 'missing'}`} title="Disque">
-                                💿 {game.disc ? '✓' : '✗'}
+                                <Icon name="disc" size={14} /> <Icon name={game.disc ? 'check' : 'close'} size={12} />
                               </span>
                               <span className={`status-icon ${game.manual ? 'owned' : 'missing'}`} title="Notice">
-                                📄 {game.manual ? '✓' : '✗'}
+                                <Icon name="manual" size={14} /> <Icon name={game.manual ? 'check' : 'close'} size={12} />
                               </span>
                               <span className={`status-icon ${game.box ? 'owned' : 'missing'}`} title="Boîte">
-                                📦 {game.box ? '✓' : '✗'}
+                                <Icon name="box" size={14} /> <Icon name={game.box ? 'check' : 'close'} size={12} />
                               </span>
                             </div>
                           </div>
