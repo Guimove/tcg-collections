@@ -448,7 +448,7 @@ export default function LorcanaPage() {
                             </div>
                           </div>
                           <div className="card-info">
-                            <h3 className="card-name">{card.name}</h3>
+                            <h3 className="card-name" title={card.name}>{card.name}</h3>
                             <p className="card-id">{card.cardId}</p>
                             <div className="card-meta">
                               <span className={`card-ink ink-${card.ink.toLowerCase()}`}>{card.ink}</span>

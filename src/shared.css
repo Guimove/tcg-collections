@@ -494,6 +494,16 @@
 .collection-page .card-container.not-owned .quantity-badge,
 .collection-page .card-item.not-owned .quantity-badge { display: none; }
 
+/* Skip rendering/layout of off-screen cards (cheap virtualization for long grids).
+   The `auto` keyword caches each card's real size after first paint. */
+.collection-page .card-tile,
+.collection-page .card-item,
+.collection-page .card-container,
+.collection-page .game-card {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 340px;
+}
+
 /* =====================================================================
    LOADING / EMPTY / ERROR
    ===================================================================== */

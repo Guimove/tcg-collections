@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import './YugiohPage.css';
 import { AggregatedCard, ProcessedCardVersion } from '../types';
 import { loadDefaultCSV } from '../utils/csvParser';
@@ -31,6 +31,7 @@ export default function YugiohPage() {
 
   // Lazy loading state
   const [visibleCount, setVisibleCount] = useState(120);
+  const sentinelRef = useRef<HTMLDivElement>(null);
 
   // Load default CSV on mount
   useEffect(() => {
@@ -112,21 +113,21 @@ export default function YugiohPage() {
     setVisibleCount(120);
   }, [searchQuery, rarityFilter, languageFilter, extensionFilter, sortBy, sortDirection]);
 
-  // Lazy loading on scroll
+  // Lazy loading via an IntersectionObserver sentinel — no per-scroll layout reads
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-
-      if (scrollTop + windowHeight >= documentHeight - 500 && visibleCount < filteredItems.length) {
-        setVisibleCount(prev => Math.min(prev + 80, filteredItems.length));
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [visibleCount, filteredItems.length]);
+    const el = sentinelRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisibleCount((prev) => Math.min(prev + 80, filteredItems.length));
+        }
+      },
+      { rootMargin: '600px' },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [filteredItems.length]);
 
   // Stats
   const totalAllCards = aggregatedCards.reduce((sum, item) => sum + item.totalToKeep + item.totalForSale, 0);
@@ -240,6 +241,7 @@ export default function YugiohPage() {
           {filteredItems.length === 0 ? (
             <EmptyState icon="search" title="Aucune carte trouvée" message="Essayez de modifier vos filtres ou votre recherche" />
           ) : (
+            <>
             <div className="marketplace-grid">
               {filteredItems.slice(0, visibleCount).map((item, index) => (
                 <CardTile
@@ -257,6 +259,10 @@ export default function YugiohPage() {
                 />
               ))}
             </div>
+            {visibleCount < filteredItems.length && (
+              <div ref={sentinelRef} aria-hidden="true" style={{ height: 1 }} />
+            )}
+            </>
           )}
 
           {selectedCard && (
@@ -317,7 +323,7 @@ function CardTile({ item, onClick }: CardTileProps) {
       </div>
 
       <div className="card-header">
-        <div className="card-name">{item['Nom de la carte']}</div>
+        <div className="card-name" title={item['Nom de la carte']}>{item['Nom de la carte']}</div>
         <div className="card-badges">
           <span className="badge badge-rarity" style={{ background: rarityColor }}>
             {rarityName}
