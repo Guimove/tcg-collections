@@ -33,12 +33,12 @@
     "globals": "^17.7.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.62.0",
-    "vite": "^7.3.2"
+    "vite": "^7.3.7"
   },
   "dependencies": {
     "papaparse": "^5.5.3",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
-    "react-router-dom": "^7.12.0"
+    "react-router-dom": "^7.18.5"
   }
 }
