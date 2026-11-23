@@ -10,7 +10,11 @@ RUN npm run build
 FROM nginx:alpine
 
 COPY --from=builder /app/dist /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Gabarit : l'entrypoint nginx remplit ${NGINX_LOCAL_RESOLVERS} (resolv.conf) et ${COTE_VITRINE_URL}.
+COPY nginx.conf /etc/nginx/templates/default.conf.template
+ENV NGINX_ENTRYPOINT_LOCAL_RESOLVERS=1 \
+    COTE_VITRINE_URL=http://app-z935c5bd2-cote.z5b2bf3ce-cote.svc.cluster.local:3000/vitrine/yugioh/collection.csv
+RUN rm -f /etc/nginx/conf.d/default.conf
 
 # nginx:alpine already has nginx user (uid 101) — just fix permissions
 RUN chown -R nginx:nginx /usr/share/nginx/html && \
